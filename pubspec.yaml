@@ -1,0 +1,55 @@
+name: jobby_application
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  bloc: ^8.1.1
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.2
+  flutter_iconly: any
+  flutter_localizations:
+    sdk: flutter
+  flutter_phosphor_icons: ^0.0.1+6
+  go_router: ^10.0.0
+  intl: ^0.17.0
+  percent_indicator: ^4.2.3
+  pin_code_fields: ^8.0.1
+  another_flushbar: ^1.12.30
+  flutter_svg: ^2.0.5
+  carousel_slider: ^4.2.1
+
+dev_dependencies:
+  bloc_test: ^9.1.1
+  flutter_test:
+    sdk: flutter
+  mocktail: ^0.3.0
+  very_good_analysis: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/
+    - assets/animations/
+    - assets/fonts/
+    - assets/images/
+    - assets/svg/
+  fonts:
+    - family: Kantumruy Pro
+      fonts:
+        - asset: assets/fonts/kantumruy_pro/KantumruyPro-Light.ttf
+          weight: 300
+        - asset: assets/fonts/kantumruy_pro/KantumruyPro-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/kantumruy_pro/KantumruyPro-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/kantumruy_pro/KantumruyPro-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/kantumruy_pro/KantumruyPro-Bold.ttf
+          weight: 700
