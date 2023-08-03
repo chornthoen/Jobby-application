@@ -1,3 +1,4 @@
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,13 +25,12 @@ class ChatDetailPage extends StatefulWidget {
 class _ChatDetailPageState extends State<ChatDetailPage> {
   late TextEditingController messageController;
 
-
-
   @override
   void initState() {
     super.initState();
     messageController = TextEditingController();
   }
+
   @override
   void dispose() {
     messageController.dispose();
@@ -46,6 +46,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       FocusScope.of(context).unfocus();
     }
   }
+
   List<String> messages = [
     'Hello, Chorn Thoen',
     'Hello, how are you? I am fine. What about you? ',
@@ -57,11 +58,11 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     'Hello, how are you? I am fine. ',
     // 'Where are you?',
   ];
+  bool isShowEmoji = false;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: CustomAppBarChat(
@@ -77,7 +78,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
+                children: [
                   const SizedBox(height: 20),
                   ListView.builder(
                     shrinkWrap: true,
@@ -93,7 +94,6 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                       );
                     },
                   ),
-
                   const SizedBox(height: 5),
                   ListView.builder(
                     shrinkWrap: true,
@@ -105,13 +105,11 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                       );
                     },
                   ),
-
                 ],
               ),
             ),
           ),
         ),
-        // text field bottom bar
         bottomNavigationBar: CustomTextFieldChat(
           messageController: messageController,
           onSend: () {
@@ -120,10 +118,38 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
               messageController.clear();
             });
           },
+          onEmoji: () {
+            setState(() {
+              isShowEmoji = !isShowEmoji;
+            });
+          },
+          onPickImage: () {},
+          onPickFile: () {},
+        ),
+      ),
+    );
+  }
 
+  Widget buildEmoji() {
+    return Container(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+        left: 16,
+        right: 16,
+      ),
+      child: SizedBox(
+        height: 300,
+        child: EmojiPicker(
+          textEditingController: messageController,
+          config: const Config(
+            columns: 7,
+            emojiSizeMax: 32 * 1.3,
+          ),
+          onEmojiSelected: (category, emoji) {
+            print(emoji);
+          },
         ),
       ),
     );
   }
 }
-

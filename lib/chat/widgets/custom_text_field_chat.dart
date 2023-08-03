@@ -8,13 +8,13 @@ class CustomTextFieldChat extends StatefulWidget {
     super.key,
     required this.messageController,
     this.onSend,
-    this.onFile,
+    this.onEmoji,
     this.onPickImage,
     this.onPickFile,
   });
   final TextEditingController messageController;
   final VoidCallback? onSend;
-  final VoidCallback? onFile;
+  final VoidCallback? onEmoji;
   final VoidCallback? onPickImage;
   final VoidCallback? onPickFile;
 
@@ -24,6 +24,7 @@ class CustomTextFieldChat extends StatefulWidget {
 }
 
 class _CustomTextFieldChatState extends State<CustomTextFieldChat> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -61,7 +62,7 @@ class _CustomTextFieldChatState extends State<CustomTextFieldChat> {
                       decoration: InputDecoration(
                         prefixIcon: IconButton(
                           splashRadius: 24,
-                          onPressed: (){},
+                          onPressed: widget.onEmoji,
                           icon: SvgPicture.asset(
                             'assets/svg/smile.svg',
                             height: 26,
@@ -70,7 +71,7 @@ class _CustomTextFieldChatState extends State<CustomTextFieldChat> {
                         ),
                         suffixIcon: IconButton(
                           splashRadius: 24,
-                          onPressed: widget.onFile,
+                          onPressed: widget.onPickFile,
                           icon: SvgPicture.asset(
                             'assets/svg/attach.svg',
                             height: 26,

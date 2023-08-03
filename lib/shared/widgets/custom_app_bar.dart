@@ -8,12 +8,20 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     this.logo = '',
     this.subTitle = '',
     this.child,
+    this.icon1,
+    this.icon2,
+    this.onBookmarkTap,
+    this.onShareTap,
   });
 
   final String? title;
   final String? logo;
   final String? subTitle;
   final Widget? child;
+  final IconData? icon1;
+  final IconData? icon2;
+  final VoidCallback? onBookmarkTap;
+  final VoidCallback? onShareTap;
 
   @override
   Size get preferredSize => const Size.fromHeight(62);
@@ -49,6 +57,31 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         Padding(
           padding: const EdgeInsets.only(right: 4, top: 4),
           child: child,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 1),
+          child: Row(
+            children: [
+              IconButton(
+                splashRadius: 24,
+                onPressed: onBookmarkTap,
+                icon:  Icon(
+                  icon1,
+                  color: AppColors.kPrimaryColor,
+                  size: 24,
+                ),
+              ),
+              IconButton(
+                splashRadius: 24,
+                onPressed: onShareTap,
+                icon:  Icon(
+                  icon2,
+                  color: AppColors.kPrimaryColor,
+                  size: 24,
+                ),
+              ),
+            ],
+          )
         ),
         Padding(
           padding: const EdgeInsets.only(right: 10, top: 20),

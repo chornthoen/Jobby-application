@@ -119,7 +119,7 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   const SizedBox(height: 20),
                   ButtonAction(
-                    isClick: isAllControllerNotEmpty,
+                    isClick: true,
                     onPressed: () {
                       if (emailController.text.isEmpty) {
                         SnackBarTop.topSnackBar(

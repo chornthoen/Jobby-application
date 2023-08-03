@@ -40,8 +40,6 @@ class ItemHotJobs extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.only(
         top: sizeBox1 ?? 1,
-        left: 16,
-        right: 16,
         bottom: sizeBox ?? 14,
       ),
       padding: const EdgeInsets.all(12),

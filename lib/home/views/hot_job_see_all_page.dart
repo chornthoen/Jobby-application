@@ -16,15 +16,13 @@ class _HotJobSeeAllPageState extends State<HotJobSeeAllPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: 'Hot Jobs',
-      ),
+      appBar: CustomAppBar(title: 'Hot Jobs'),
       body: Container(
         child: ListView.builder(
           itemCount: matchingModel.length,
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
-          itemBuilder: (context,index){
+          itemBuilder: (context, index) {
             final model = matchingModel[index];
             return ItemHotJobs(
               sizeBox1: matchingModel[index] == matchingModel.first ? 10 : 0,
@@ -37,8 +35,8 @@ class _HotJobSeeAllPageState extends State<HotJobSeeAllPage> {
               date: model.date,
               color: model.color,
               isSaved: model.isSaved,
-              onApply: (){},
-              onSaved: (){
+              onApply: () {},
+              onSaved: () {
                 setState(() {
                   model.isSaved = !model.isSaved;
                 });

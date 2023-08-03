@@ -5,6 +5,7 @@ import 'package:jobby_application/home/models/company_for_you_model.dart';
 import 'package:jobby_application/home/models/explore_models.dart';
 import 'package:jobby_application/home/models/hot_job_model.dart';
 import 'package:jobby_application/home/models/trending_model.dart';
+import 'package:jobby_application/home/views/apply_now_page.dart';
 import 'package:jobby_application/home/views/blogs_page.dart';
 import 'package:jobby_application/home/views/company_see_all_page.dart';
 import 'package:jobby_application/home/views/ebook_page.dart';
@@ -110,7 +111,9 @@ class _HomePageState extends State<HomePage> {
                       hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
                     });
                   },
-                  onApply: () {},
+                  onApply: () {
+                    context.push(ApplyNowPage.routePath);
+                  },
                 );
               },
             ),
@@ -203,11 +206,11 @@ class _HomePageState extends State<HomePage> {
                     description: listExplore[index].description,
                     onPressed: () {
                       if (index == 0) {
-                        context.push(CompanySeeAllPage.routePath);
+                        context.push(BlogsPage.routePath);
                       } else if (index == 1) {
                         context.push(EventPage.routePath);
                       } else if (index == 2) {
-                        context.push(BlogsPage.routePath);
+                        context.push(EBookPage.routePath);
                       }
                     },
                   );

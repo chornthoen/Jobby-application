@@ -150,19 +150,39 @@ class InfoProfile extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  padding: const EdgeInsets.all(2),
-                  decoration: const BoxDecoration(
-                    color: AppColors.kWhiteColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: const CircleAvatar(
-                    backgroundColor: AppColors.kWhiteColor,
-                    radius: 40,
-                    backgroundImage: AssetImage('assets/images/thoen.png'),
-                  ),
+                Stack(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(2),
+                      decoration: const BoxDecoration(
+                        color: AppColors.kWhiteColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const CircleAvatar(
+                        backgroundColor: AppColors.kWhiteColor,
+                        radius: 40,
+                        backgroundImage: AssetImage('assets/images/thoen.png'),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: 0,
+                      child: Container(
+                        padding: const EdgeInsets.all(2),
+                        decoration: const BoxDecoration(
+                          color: AppColors.kWhiteColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/svg/verified.svg',
+                          width: 20,
+                          height: 20,
+                        ),
+                      ),
+                    )
+                  ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -182,33 +202,16 @@ class InfoProfile extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5),
-                const Text(
-                  'Mobile Developer',
-                  style: TextStyle(
-                    color: AppColors.kQuaternaryColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 26),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      ItemLike(
-                        imagePath: 'assets/images/facebook_3d.png',
-                      ),
-                      ItemLike(
-                        imagePath: 'assets/images/google_3d.png',
-                      ),
-                      ItemLike(
-                        imagePath: 'assets/images/x.png',
-                      ),
-                      ItemLike(
-                        imagePath: 'assets/images/youtube.png',
-                      ),
+                    children:  [
+                      TextRole(text: 'UX/UI design'),
+                      TextRole(text: 'Senior Developer'),
+                      TextRole(text: 'Web Developer'),
+
                     ],
                   ),
                 )
@@ -221,6 +224,36 @@ class InfoProfile extends StatelessWidget {
   }
 }
 
+class TextRole extends StatelessWidget {
+  const TextRole({
+    super.key,
+    required this.text,
+  });
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 8,
+        vertical: 5,
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.kGray100,
+        borderRadius: BorderRadius.circular(14),
+      ),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 14,
+          color: AppColors.kQuaternaryColor,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    );
+  }
+}
+
 class BodyInfo extends StatelessWidget {
   const BodyInfo({
     super.key,
@@ -228,97 +261,91 @@ class BodyInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        child: Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  ItemWidget(
-                    svgPath: 'assets/svg/file-check.svg',
-                    title: 'Applied',
-                    description: '234',
-                    color: AppColors.kGreen200Color,
-                  ),
-                  ItemWidget(
-                    svgPath: 'assets/svg/message.svg',
-                    title: 'Review',
-                    description: '200',
-                    color: AppColors.kPurple200Color,
-                  ),
-                  ItemWidget(
-                    svgPath: 'assets/svg/user-check.svg',
-                    title: 'Contacted',
-                    description: '100',
-                    color: AppColors.kOrange200Color,
-                  ),
-                ],
+    return Container(
+      color: AppColors.kWhiteColor,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              ItemWidget(
+                svgPath: 'assets/svg/file-check.svg',
+                title: 'Applied',
+                description: '234',
+                color: AppColors.kGreen200Color,
               ),
-              const SizedBox(height: 14),
-              const Text(
-                'General Information',
-                style: TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
+              ItemWidget(
+                svgPath: 'assets/svg/message.svg',
+                title: 'Review',
+                description: '200',
+                color: AppColors.kPurple200Color,
               ),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-                itemCount: listSetting.length,
-                itemBuilder: (context, index) {
-                  final item = listSetting[index];
-                  return  ItemCard(
-                    title: item.title,
-                    icon: item.icon,
-                    onPressed: () {
-                    },
-                  );
-                },
+              ItemWidget(
+                svgPath: 'assets/svg/user-check.svg',
+                title: 'Contacted',
+                description: '100',
+                color: AppColors.kOrange200Color,
               ),
-              const SizedBox(height: 14),
-              Container(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                decoration: BoxDecoration(
-                  color: AppColors.kWhiteColor,
-                  borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    const BoxShadow(
-                      color: AppColors.kGray200,
-                      blurRadius: 2,
-                      offset: Offset(0, 5),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      PhosphorIcons.sign_out,
-                      color: AppColors.kRedColor,
-                      size: 24,
-                    ),
-                    const SizedBox(width: 10),
-                    Text(
-                      'Logout',
-                      style: TextStyle(
-                        color: AppColors.kRedColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w400,
-                      ),),
-                  ],
-                ),
-              )
             ],
           ),
-        ),
+          const SizedBox(height: 14),
+          const Text(
+            'General Information',
+            style: TextStyle(
+              color: AppColors.kPrimaryColor,
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const BouncingScrollPhysics(),
+            itemCount: listSetting.length,
+            itemBuilder: (context, index) {
+              final item = listSetting[index];
+              return  ItemCard(
+                title: item.title,
+                icon: item.icon,
+                onPressed: () {
+                },
+              );
+            },
+          ),
+          const SizedBox(height: 14),
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+            decoration: BoxDecoration(
+              color: AppColors.kWhiteColor,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                const BoxShadow(
+                  color: AppColors.kGray200,
+                  blurRadius: 2,
+                  offset: Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Icon(
+                  PhosphorIcons.sign_out,
+                  color: AppColors.kRedColor,
+                  size: 24,
+                ),
+                const SizedBox(width: 10),
+                Text(
+                  'Logout',
+                  style: TextStyle(
+                    color: AppColors.kRedColor,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400,
+                  ),),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

@@ -4,9 +4,12 @@ import 'package:jobby_application/chat/views/call_video_pang.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
 import 'package:jobby_application/create_password/views/create_password_page.dart';
 import 'package:jobby_application/forget_password/views/forget_password_page.dart';
+import 'package:jobby_application/home/views/apply_now_page.dart';
+import 'package:jobby_application/home/views/blog_detail_page.dart';
 import 'package:jobby_application/home/views/blogs_page.dart';
 import 'package:jobby_application/home/views/company_see_all_page.dart';
 import 'package:jobby_application/home/views/ebook_page.dart';
+import 'package:jobby_application/home/views/event_detail_page.dart';
 import 'package:jobby_application/home/views/event_page.dart';
 import 'package:jobby_application/home/views/hot_job_see_all_page.dart';
 import 'package:jobby_application/home/views/trending_see_all_page.dart';
@@ -25,6 +28,8 @@ import 'package:jobby_application/signin/views/sign_in_page.dart';
 import 'package:jobby_application/splash/views/splash_page.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_forget_password_page.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_sign_up_job_seeker.dart';
+
+import '../home/views/ebook_detail_page.dart';
 
 class AppRouter {
   AppRouter._();
@@ -127,12 +132,29 @@ class AppRouter {
       ),
       GoRoute(
         path: BlogsPage.routePath,
-        builder: (context, state) => const EBookPage(),
+        builder: (context, state) => const BlogsPage(),
       ),
       GoRoute(
         path: EventPage.routePath,
-        builder: (context, state) => const EBookPage(),
+        builder: (context, state) => const EventPage(),
       ),
+      GoRoute(
+        path: BlogDetailPage.routePath,
+        builder: (context, state) => const BlogDetailPage(),
+      ),
+      GoRoute(
+        path: EventDetailPage.routePath,
+        builder: (context, state) => const EventDetailPage(),
+      ),
+      GoRoute(
+        path: EbookDetailPage.routePath,
+        builder: (context, state) => const EbookDetailPage(),
+      ),
+      GoRoute(
+        path: ApplyNowPage.routePath,
+        builder: (context, state) => const ApplyNowPage(),
+      ),
+
 
     ],
   );
