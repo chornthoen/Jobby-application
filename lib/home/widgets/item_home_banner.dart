@@ -13,6 +13,7 @@ class ItemHomeBanner extends StatelessWidget {
     required this.description,
     this.onPressed,
   });
+
   final String image;
   final String title;
   final String description;
@@ -33,8 +34,7 @@ class ItemHomeBanner extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
-                image:
-                AssetImage('assets/images/background_banner.png'),
+                image: AssetImage('assets/images/background_banner.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -132,7 +132,7 @@ class InfoProfile extends StatelessWidget {
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-             color: AppColors.kWhiteColor,
+              color: AppColors.kWhiteColor,
               boxShadow: [
                 const BoxShadow(
                   color: AppColors.kGray200,
@@ -141,7 +141,6 @@ class InfoProfile extends StatelessWidget {
                 ),
               ],
             ),
-
           ),
           Positioned(
             top: 16,
@@ -153,15 +152,23 @@ class InfoProfile extends StatelessWidget {
                 Stack(
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(2),
+                      height: 80,
+                      width: 80,
+                      padding: const EdgeInsets.all(10),
                       decoration: const BoxDecoration(
-                        color: AppColors.kWhiteColor,
+                        color: AppColors.kBlue200Color,
                         shape: BoxShape.circle,
+                        border: Border.fromBorderSide(
+                          BorderSide(
+                            color: AppColors.kWhiteColor,
+                            width: 2,
+                          ),
+                        ),
                       ),
-                      child: const CircleAvatar(
-                        backgroundColor: AppColors.kWhiteColor,
-                        radius: 40,
-                        backgroundImage: AssetImage('assets/images/thoen.png'),
+                      child: Image(
+                        image: AssetImage('assets/images/business.png'),
+                        height: 40,
+                        width: 40,
                       ),
                     ),
                     Positioned(
@@ -187,7 +194,7 @@ class InfoProfile extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text(
-                      'Chorn Thoen',
+                      'Business Analyst',
                       style: TextStyle(
                         color: AppColors.kPrimaryColor,
                         fontSize: 22,
@@ -207,11 +214,10 @@ class InfoProfile extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children:  [
+                    children: [
                       TextRole(text: 'UX/UI design'),
                       TextRole(text: 'Senior Developer'),
                       TextRole(text: 'Web Developer'),
-
                     ],
                   ),
                 )
@@ -229,6 +235,7 @@ class TextRole extends StatelessWidget {
     super.key,
     required this.text,
   });
+
   final String text;
 
   @override
@@ -254,151 +261,4 @@ class TextRole extends StatelessWidget {
   }
 }
 
-class BodyInfo extends StatelessWidget {
-  const BodyInfo({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.kWhiteColor,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              ItemWidget(
-                svgPath: 'assets/svg/file-check.svg',
-                title: 'Applied',
-                description: '234',
-                color: AppColors.kGreen200Color,
-              ),
-              ItemWidget(
-                svgPath: 'assets/svg/message.svg',
-                title: 'Review',
-                description: '200',
-                color: AppColors.kPurple200Color,
-              ),
-              ItemWidget(
-                svgPath: 'assets/svg/user-check.svg',
-                title: 'Contacted',
-                description: '100',
-                color: AppColors.kOrange200Color,
-              ),
-            ],
-          ),
-          const SizedBox(height: 14),
-          const Text(
-            'General Information',
-            style: TextStyle(
-              color: AppColors.kPrimaryColor,
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          ListView.builder(
-            shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            itemCount: listSetting.length,
-            itemBuilder: (context, index) {
-              final item = listSetting[index];
-              return  ItemCard(
-                title: item.title,
-                icon: item.icon,
-                onPressed: () {
-                },
-              );
-            },
-          ),
-          const SizedBox(height: 14),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-            decoration: BoxDecoration(
-              color: AppColors.kWhiteColor,
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                const BoxShadow(
-                  color: AppColors.kGray200,
-                  blurRadius: 2,
-                  offset: Offset(0, 5),
-                ),
-              ],
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  PhosphorIcons.sign_out,
-                  color: AppColors.kRedColor,
-                  size: 24,
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  'Logout',
-                  style: TextStyle(
-                    color: AppColors.kRedColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class ItemCard extends StatelessWidget {
-  const ItemCard({
-    super.key,
-    required this.title,
-    required this.icon,
-    this.onPressed,
-  });
-  final String title;
-  final String icon;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      elevation: 1,
-      child: ListTile(
-        minVerticalPadding: 0,
-        contentPadding: const EdgeInsets.only(
-          left: 12,
-          right: 4,
-        ),
-        onTap: onPressed,
-        title: Row(
-          children: [
-            SvgPicture.asset(
-              icon,
-              width: 25,
-              height: 25,
-              color: AppColors.kQuaternaryColor,
-            ),
-            const SizedBox(width: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                color: AppColors.kPrimaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-        trailing: const Icon(
-          Icons.arrow_forward_ios,
-          color: AppColors.kQuaternaryColor,
-          size: 20,
-        ),
-      ),
-    );
-  }
-}
 
