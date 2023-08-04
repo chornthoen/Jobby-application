@@ -3,7 +3,6 @@ import 'package:jobby_application/account/models/status_model.dart';
 import 'package:jobby_application/account/widgets/body_info.dart';
 import 'package:jobby_application/account/widgets/item_widget.dart';
 import 'package:jobby_application/account/widgets/profile_info.dart';
-import 'package:jobby_application/home/views/apply_now/models/status_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 
@@ -20,6 +19,7 @@ class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kWhiteColor,
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -73,6 +73,7 @@ class _AccountPageState extends State<AccountPage> {
                 ),
                 const SizedBox(height: 26),
                 const BodyInfo(),
+
               ],
             ),
           ),

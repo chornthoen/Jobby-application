@@ -4,6 +4,7 @@ import 'package:jobby_application/chat/views/call_video_pang.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
 import 'package:jobby_application/create_password/views/create_password_page.dart';
 import 'package:jobby_application/forget_password/views/forget_password_page.dart';
+import 'package:jobby_application/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/home/views/blog_detail_page.dart';
 import 'package:jobby_application/home/views/blogs_page.dart';
@@ -153,6 +154,10 @@ class AppRouter {
       GoRoute(
         path: ApplyNowPage.routePath,
         builder: (context, state) => const ApplyNowPage(),
+      ),
+      GoRoute(
+        path: DetailCompanyPage.routePath,
+        builder: (context, state) => const DetailCompanyPage(),
       ),
 
 

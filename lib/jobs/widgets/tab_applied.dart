@@ -19,7 +19,7 @@ class _AppliedContentState extends State<AppliedContent> {
         ListView.builder(
           itemCount: appliedModel.length,
           shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (context,index){
             final applied = appliedModel[index];
             return ItemApplied(

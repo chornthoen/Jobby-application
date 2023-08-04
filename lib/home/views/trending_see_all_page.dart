@@ -17,6 +17,7 @@ class _TrendingSeeAllPageState extends State<TrendingSeeAllPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.kBackgroundColor,
       appBar: const CustomAppBar(
         title: 'Trending now',
       ),

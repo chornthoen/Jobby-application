@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
@@ -9,18 +10,23 @@ class ItemWidget extends StatelessWidget {
     required this.title,
     required this.description,
     this.color,
+    this.isStar = false,
   });
 
   final String svgPath;
   final String title;
   final String description;
   final Color? color;
+  final bool? isStar;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.of(context).size.width * 0.27,
       margin: const EdgeInsets.symmetric(horizontal: 10),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: const EdgeInsets.all(12),
@@ -45,13 +51,25 @@ class ItemWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 5),
-          Text(
-            description,
-            style: const TextStyle(
-              color: AppColors.kPrimaryColor,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                description,
+                style: const TextStyle(
+                  color: AppColors.kPrimaryColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(width: 5),
+              if (isStar!)
+                Icon(
+                  PhosphorIcons.star_fill,
+                  size: 18,
+                  color: AppColors.kOrange400Color,
+                )
+            ],
           ),
         ],
       ),

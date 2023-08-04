@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/home/models/hot_job_model.dart';
 import 'package:jobby_application/home/models/tab_company_model.dart';
+import 'package:jobby_application/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 class TabCompany extends StatelessWidget {
   const TabCompany({Key? key}) : super(key: key);
@@ -23,7 +25,12 @@ class TabCompany extends StatelessWidget {
           status1: tabCompanyModel[index].status1,
           status2: tabCompanyModel[index].status2,
           status3: tabCompanyModel[index].status3,
-          onApply: () {},
+          onApply: () {
+            context.push(DetailCompanyPage.routePath);
+          },
+          onPressed: () {
+            context.push(DetailCompanyPage.routePath);
+          },
         );
       },
     );
@@ -41,6 +48,7 @@ class ItemCompany extends StatelessWidget {
     required this.status3,
     this.onApply,
     this.sizeBox = 14,
+    this.onPressed,
   });
 
   final String nameCompany;
@@ -52,6 +60,7 @@ class ItemCompany extends StatelessWidget {
   final String status3;
   final VoidCallback? onApply;
   final double? sizeBox;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -72,81 +81,84 @@ class ItemCompany extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(8),
-                decoration: const BoxDecoration(
-                  color: AppColors.kBlackColor,
-                  shape: BoxShape.circle,
-                ),
-                child: Image(
-                  image: AssetImage(image),
-                  height: 40,
-                  width: 40,
-                ),
-              ),
-              const SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        nameCompany,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          color: AppColors.kPrimaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      SvgPicture.asset(
-                        'assets/svg/verified.svg',
-                        height: 16,
-                        width: 16,
-                      ),
-                    ],
+          GestureDetector(
+            onTap: onPressed,
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: const BoxDecoration(
+                    color: AppColors.kBlackColor,
+                    shape: BoxShape.circle,
                   ),
-                  const SizedBox(height: 6),
-                  Row(
-                    children: [
-                      const Icon(
-                        PhosphorIcons.map_pin,
-                        color: AppColors.kQuaternaryColor,
-                        size: 18,
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        location,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: AppColors.kQuaternaryColor,
-                          fontWeight: FontWeight.w500,
+                  child: Image(
+                    image: AssetImage(image),
+                    height: 40,
+                    width: 40,
+                  ),
+                ),
+                const SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          nameCompany,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            color: AppColors.kPrimaryColor,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 10),
-                      const Icon(
-                        PhosphorIcons.briefcase,
-                        color: AppColors.kQuaternaryColor,
-                        size: 18,
-                      ),
-                      const SizedBox(width: 5),
-                      Text(
-                        '${totalJob} jobs',
-                        style: const TextStyle(
-                          fontSize: 16,
-                          color: AppColors.kQuaternaryColor,
-                          fontWeight: FontWeight.w500,
+                        const SizedBox(width: 4),
+                        SvgPicture.asset(
+                          'assets/svg/verified.svg',
+                          height: 16,
+                          width: 16,
                         ),
-                      ),
+                      ],
+                    ),
+                    const SizedBox(height: 6),
+                    Row(
+                      children: [
+                        const Icon(
+                          PhosphorIcons.map_pin,
+                          color: AppColors.kQuaternaryColor,
+                          size: 18,
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          location,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: AppColors.kQuaternaryColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(width: 10),
+                        const Icon(
+                          PhosphorIcons.briefcase,
+                          color: AppColors.kQuaternaryColor,
+                          size: 18,
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          '${totalJob} jobs',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: AppColors.kQuaternaryColor,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
 
 
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           Row(
             children: [
@@ -212,7 +224,7 @@ class ItemCompany extends StatelessWidget {
                 child: Row(
                   children: const [
                     Text(
-                      'Apply',
+                      'Apply Now',
                       style: TextStyle(
                         fontSize: 16,
                         color: AppColors.kPrimaryColor,

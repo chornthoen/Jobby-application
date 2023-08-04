@@ -7,33 +7,36 @@ class ButtonOutLineAction extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.width = double.infinity,
+    this.height = 50,
   }) : super(key: key);
   final String text;
   final VoidCallback onPressed;
   final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
         width: width,
+        height: height,
         child: OutlinedButton(
           onPressed: onPressed,
-          child: Text(
-            text,
-            style: TextStyle(
-              color: AppColors.kPrimaryColor,
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
           style: OutlinedButton.styleFrom(
-            side: BorderSide(
+            side: const BorderSide(
               color: AppColors.kPrimaryColor,
               width: 1,
             ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: AppColors.kPrimaryColor,
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),

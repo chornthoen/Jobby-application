@@ -7,12 +7,6 @@ import 'package:jobby_application/jobs/widgets/tab_rejected.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
-import '../../home/widgets/item_hot_jobs.dart';
-import '../../home/widgets/tab_compay.dart';
-import '../../home/widgets/tab_hight_salary.dart';
-import '../../home/widgets/tab_job.dart';
-import '../models/suitable_job_model.dart';
-
 class JobPage extends StatefulWidget {
   const JobPage({Key? key}) : super(key: key);
 
@@ -22,18 +16,11 @@ class JobPage extends StatefulWidget {
   State<JobPage> createState() => _JobPageState();
 }
 
-class _JobPageState extends State<JobPage> with SingleTickerProviderStateMixin {
-  late final TabController _tabController;
+class _JobPageState extends State<JobPage>  {
+
 
   @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 4, vsync: this, initialIndex: 0);
-  }
-
-  @override
-  //close keyboard
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
+    bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
 
   void closeKeyboard() {
     if (isKeyboardOpen) {

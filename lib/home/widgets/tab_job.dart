@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/home/models/hot_job_model.dart';
+import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/home/widgets/item_hot_jobs.dart';
 
 class TabJob extends StatefulWidget {
@@ -15,6 +17,7 @@ class _TabJobState extends State<TabJob> {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       itemCount: 3,
       itemBuilder: (context, index) {
         return ItemHotJobs(
@@ -33,7 +36,9 @@ class _TabJobState extends State<TabJob> {
               hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
             });
           },
-          onApply: () {},
+          onApply: () {
+            context.push(ApplyNowPage.routePath);
+          },
         );
 
       },

@@ -115,11 +115,12 @@ class ItemApplied extends StatelessWidget {
               ),
             ],
           ),
+          const SizedBox(height: 8),
           Row(
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
+                  horizontal: 8,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
@@ -129,7 +130,7 @@ class ItemApplied extends StatelessWidget {
                 child: Text(
                   time,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.kQuaternaryColor,
                     fontWeight: FontWeight.w500,
                   ),
@@ -138,7 +139,7 @@ class ItemApplied extends StatelessWidget {
               const SizedBox(width: 10),
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
+                  horizontal: 8,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
@@ -148,7 +149,7 @@ class ItemApplied extends StatelessWidget {
                 child: Text(
                   role,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.kQuaternaryColor,
                     fontWeight: FontWeight.w500,
                   ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/home/widgets/item_hot_jobs.dart';
 import 'package:jobby_application/jobs/models/matching_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
@@ -95,6 +97,7 @@ class _MatchingContentState extends State<MatchingContent> {
           itemCount: matchingModel.length,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           itemBuilder: (context,index){
             final model = matchingModel[index];
             return ItemHotJobs(
@@ -107,7 +110,9 @@ class _MatchingContentState extends State<MatchingContent> {
               date: model.date,
               color: model.color,
               isSaved: model.isSaved,
-              onApply: (){},
+              onApply: (){
+                context.push(ApplyNowPage.routePath);
+              },
               onSaved: (){
                 setState(() {
                   model.isSaved = !model.isSaved;

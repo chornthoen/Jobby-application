@@ -4,7 +4,16 @@ import 'package:jobby_application/home/widgets/item_home_banner.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+  const Profile({
+    Key? key,
+    required this.name,
+    required this.image,
+    this.color,
+
+  }) : super(key: key);
+  final String name;
+  final String image;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -42,21 +51,21 @@ class Profile extends StatelessWidget {
                     Container(
                       height: 80,
                       width: 80,
-                      padding: const EdgeInsets.all(10),
-                      decoration: const BoxDecoration(
-                        color: AppColors.kBlue200Color,
+                      padding: const EdgeInsets.all(14),
+                      decoration:  BoxDecoration(
+                        color: color,
                         shape: BoxShape.circle,
-                        border: Border.fromBorderSide(
+                        border: const Border.fromBorderSide(
                           BorderSide(
                             color: AppColors.kWhiteColor,
                             width: 2,
                           ),
                         ),
                       ),
-                      child: const Image(
-                        image: AssetImage('assets/images/business.png'),
-                        height: 40,
-                        width: 40,
+                      child:  Image(
+                        image: AssetImage(image),
+                        height: 35,
+                        width: 35,
                       ),
                     ),
                     Positioned(
@@ -81,9 +90,9 @@ class Profile extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
-                      'Business Analyst',
-                      style: TextStyle(
+                     Text(
+                      name,
+                      style: const TextStyle(
                         color: AppColors.kPrimaryColor,
                         fontSize: 22,
                         fontWeight: FontWeight.w700,

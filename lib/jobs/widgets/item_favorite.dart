@@ -116,7 +116,7 @@ class ItemFavorite extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
+                  horizontal: 8,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
@@ -126,7 +126,7 @@ class ItemFavorite extends StatelessWidget {
                 child: Text(
                   time,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.kQuaternaryColor,
                     fontWeight: FontWeight.w500,
                   ),
@@ -135,7 +135,7 @@ class ItemFavorite extends StatelessWidget {
               const SizedBox(width: 10),
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
+                  horizontal: 8,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
@@ -145,7 +145,7 @@ class ItemFavorite extends StatelessWidget {
                 child: Text(
                   role,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.kQuaternaryColor,
                     fontWeight: FontWeight.w500,
                   ),
@@ -157,9 +157,9 @@ class ItemFavorite extends StatelessWidget {
                 child: Row(
                   children: const [
                     Text(
-                      'Apply',
+                      'Apply Now',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         color: AppColors.kPrimaryColor,
                         fontWeight: FontWeight.w600,
                       ),
@@ -168,7 +168,7 @@ class ItemFavorite extends StatelessWidget {
                     Icon(
                       PhosphorIcons.arrow_right,
                       color: AppColors.kPrimaryColor,
-                      size: 22,
+                      size: 20,
                     ),
                   ],
                 ),

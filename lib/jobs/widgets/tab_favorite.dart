@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/jobs/models/suitable_job_model.dart';
 import 'package:jobby_application/jobs/widgets/item_favorite.dart';
 
@@ -34,6 +36,9 @@ class _FavoriteContentState extends State<FavoriteContent> {
                 setState(() {
                   suitableModel[index].isSaved = !suitableModel[index].isSaved;
                 });
+              },
+              onApply: () {
+                context.push(ApplyNowPage.routePath);
               },
             );
           },

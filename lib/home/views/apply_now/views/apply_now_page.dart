@@ -53,7 +53,11 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                       ),
                       const Align(
                         alignment: Alignment.bottomCenter,
-                        child: Profile(),
+                        child: Profile(
+                          name: 'Software Engineer',
+                          image: 'assets/images/technology.png',
+                          color: AppColors.kBlue400Color,
+                        ),
                       ),
                     ],
                   ),
@@ -107,6 +111,7 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                             const SizedBox(height: 10),
                             ButtonOutLineAction(
                               width: 120,
+                              height: 40,
                               text: seeMore ? 'See Less' : 'See More',
                               onPressed: () {
                                 setState(() {

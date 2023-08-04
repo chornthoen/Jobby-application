@@ -5,6 +5,7 @@ import 'package:jobby_application/home/models/company_for_you_model.dart';
 import 'package:jobby_application/home/models/explore_models.dart';
 import 'package:jobby_application/home/models/hot_job_model.dart';
 import 'package:jobby_application/home/models/trending_model.dart';
+import 'package:jobby_application/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/home/views/blogs_page.dart';
 import 'package:jobby_application/home/views/company_see_all_page.dart';
@@ -93,6 +94,7 @@ class _HomePageState extends State<HomePage> {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: hotJobModel.length,
               itemBuilder: (context, index) {
                 return ItemHotJobs(
@@ -137,6 +139,9 @@ class _HomePageState extends State<HomePage> {
                     image: listCompany[index].image,
                     title: listCompany[index].title,
                     description: listCompany[index].description,
+                    onPressed: () {
+                      context.push(DetailCompanyPage.routePath);
+                    },
                   );
                 },
               ),
@@ -155,6 +160,7 @@ class _HomePageState extends State<HomePage> {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               itemCount: hotJobModel.length,
               itemBuilder: (context, index) {
                 return ItemHotJobs(
@@ -173,7 +179,9 @@ class _HomePageState extends State<HomePage> {
                       hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
                     });
                   },
-                  onApply: () {},
+                  onApply: () {
+                    context.push(ApplyNowPage.routePath);
+                  },
                 );
               },
             ),
