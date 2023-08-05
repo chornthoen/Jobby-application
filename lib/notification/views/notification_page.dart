@@ -64,51 +64,52 @@ class _NotificationPageState extends State<NotificationPage> {
                           ),
                           if (notificationList[index].isRead == true)
                             Positioned(
-                            top: 0,
-                            right: 0,
-                            child: Container(
-                              padding: const EdgeInsets.all(6),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  width: 2,
-                                  color: AppColors.kWhiteColor,
+                              top: 0,
+                              right: 0,
+                              child: Container(
+                                padding: const EdgeInsets.all(6),
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    width: 2,
+                                    color: AppColors.kWhiteColor,
+                                  ),
+                                  color: AppColors.kPrimaryColor,
+                                  shape: BoxShape.circle,
                                 ),
-                                color: AppColors.kPrimaryColor,
-                                shape: BoxShape.circle,
                               ),
                             ),
-                          ),
                         ],
                       ),
                       const SizedBox(width: 14),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.7,
-                            child:  Text(
-                              notificationList[index].title,
-                              style: TextStyle(
-                                fontSize: 18,
+                      Flexible(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(
+                              child:  Text(
+                                notificationList[index].title,
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: notificationList[index].isRead == true
+                                      ? AppColors.kPrimaryColor
+                                      : AppColors.kQuinaryColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              notificationList[index].time,
+                              style:  TextStyle(
+                                fontSize: 14,
                                 color: notificationList[index].isRead == true
-                                    ? AppColors.kPrimaryColor
+                                    ? AppColors.kQuaternaryColor
                                     : AppColors.kQuinaryColor,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 5),
-                           Text(
-                            notificationList[index].time,
-                            style:  TextStyle(
-                              fontSize: 14,
-                              color: notificationList[index].isRead == true
-                                  ? AppColors.kQuaternaryColor
-                                  : AppColors.kQuinaryColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       )
                     ],
                   ),

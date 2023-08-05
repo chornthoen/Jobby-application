@@ -1,7 +1,5 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/call_video_pang.dart';
@@ -12,7 +10,10 @@ import 'package:jobby_application/chat/widgets/my_message.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ChatDetailPage extends StatefulWidget {
-  const ChatDetailPage({Key? key, required this.chatModel}) : super(key: key);
+  const ChatDetailPage({
+    Key? key,
+    required this.chatModel,
+  }) : super(key: key);
 
   final ChatModel chatModel;
 

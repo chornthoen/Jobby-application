@@ -49,7 +49,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
         title!,
         style: const TextStyle(
           color: AppColors.kPrimaryColor,
-          fontSize: 20,
+          fontSize: 18,
           fontWeight: FontWeight.w600,
         ),
       ),

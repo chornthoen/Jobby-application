@@ -125,7 +125,7 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                               ],
                             ),
                             const SizedBox(height: 20),
-                            TabCompanyDetail(),
+                            const TabCompanyDetail(),
                           ],
                         ),
                       ),

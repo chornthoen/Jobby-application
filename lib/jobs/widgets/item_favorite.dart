@@ -113,68 +113,78 @@ class ItemFavorite extends StatelessWidget {
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 6,
-                ),
-                decoration: BoxDecoration(
-                  color: AppColors.kGray100,
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: Text(
-                  time,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: AppColors.kQuaternaryColor,
-                    fontWeight: FontWeight.w500,
-                  ),
+              Expanded(
+                child: Row(
+                  children: [
+                    Flexible(
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.kGray100,
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Text(
+                          time,
+                          style: const TextStyle(
+                            fontSize: 12,
+                            color: AppColors.kQuaternaryColor,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 2),
+                    Flexible(
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.kGray100,
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        child: Text(
+                          role,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: AppColors.kQuaternaryColor,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(width: 10),
-              Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 8,
-                  vertical: 6,
-                ),
-                decoration: BoxDecoration(
-                  color: AppColors.kGray100,
-                  borderRadius: BorderRadius.circular(14),
-                ),
-                child: Text(
-                  role,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: AppColors.kQuaternaryColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              const Spacer(),
               TextButton(
                 onPressed: onApply,
                 child: Row(
                   children: const [
                     Text(
-                      'Apply Now',
+                      'Apply',
                       style: TextStyle(
                         fontSize: 14,
                         color: AppColors.kPrimaryColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(width: 5),
+                    SizedBox(width: 2),
                     Icon(
                       PhosphorIcons.arrow_right,
                       color: AppColors.kPrimaryColor,
-                      size: 20,
+                      size: 18,
                     ),
                   ],
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

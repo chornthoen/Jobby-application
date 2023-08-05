@@ -164,7 +164,7 @@ class ItemCompany extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
+                  horizontal: 10,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
@@ -174,7 +174,7 @@ class ItemCompany extends StatelessWidget {
                 child: Text(
                   status1,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.kQuaternaryColor,
                     fontWeight: FontWeight.w500,
                   ),
@@ -183,7 +183,7 @@ class ItemCompany extends StatelessWidget {
               const SizedBox(width: 10),
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
+                  horizontal: 10,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
@@ -193,7 +193,7 @@ class ItemCompany extends StatelessWidget {
                 child: Text(
                   status2,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.kQuaternaryColor,
                     fontWeight: FontWeight.w500,
                   ),
@@ -202,7 +202,7 @@ class ItemCompany extends StatelessWidget {
               const SizedBox(width: 10),
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
+                  horizontal: 10,
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
@@ -212,7 +212,7 @@ class ItemCompany extends StatelessWidget {
                 child: Text(
                   status3,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.kQuaternaryColor,
                     fontWeight: FontWeight.w500,
                   ),
@@ -226,12 +226,12 @@ class ItemCompany extends StatelessWidget {
                     Text(
                       'Apply Now',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         color: AppColors.kPrimaryColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(width: 5),
+                    SizedBox(width: 2),
                     Icon(
                       PhosphorIcons.arrow_right,
                       color: AppColors.kPrimaryColor,

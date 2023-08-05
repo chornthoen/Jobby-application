@@ -1,4 +1,10 @@
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/account/views/about_jobby_page.dart';
+import 'package:jobby_application/account/views/account_setting_page.dart';
+import 'package:jobby_application/account/views/id_identification_page.dart';
+import 'package:jobby_application/account/views/mange_cv_page.dart';
+import 'package:jobby_application/account/views/share_with_your_friend_page.dart';
+import 'package:jobby_application/account/views/your_jobby_profile_page.dart';
 import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/call_video_pang.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
@@ -30,6 +36,7 @@ import 'package:jobby_application/splash/views/splash_page.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_forget_password_page.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_sign_up_job_seeker.dart';
 
+import '../account/views/your_work_criteria_page.dart';
 import '../home/views/ebook_detail_page.dart';
 
 class AppRouter {
@@ -158,6 +165,34 @@ class AppRouter {
       GoRoute(
         path: DetailCompanyPage.routePath,
         builder: (context, state) => const DetailCompanyPage(),
+      ),
+      GoRoute(
+        path: YourJobbyProfilePage.routePath,
+        builder: (context, state) => const YourJobbyProfilePage(),
+      ),
+      GoRoute(
+        path: MangeCVPage.routePath,
+        builder: (context, state) => const MangeCVPage(),
+      ),
+      GoRoute(
+        path: YourWorkCriteriaPage.routePath,
+        builder: (context, state) => const YourWorkCriteriaPage(),
+      ),
+      GoRoute(
+        path: IDIdentificationPage.routePath,
+        builder: (context, state) => const IDIdentificationPage(),
+      ),
+      GoRoute(
+        path: ShareWithYourFriendPage.routePath,
+        builder: (context, state) => const ShareWithYourFriendPage(),
+      ),
+      GoRoute(
+        path: AccountSettingPage.routePath,
+        builder: (context, state) => const AccountSettingPage(),
+      ),
+      GoRoute(
+        path: AboutJobbyPage.routePath,
+        builder: (context, state) => const AboutJobbyPage(),
       ),
 
 

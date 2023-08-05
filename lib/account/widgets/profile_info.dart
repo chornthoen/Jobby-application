@@ -11,12 +11,12 @@ class ProfileInfo extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
       margin: const EdgeInsets.symmetric(horizontal: 16),
-      height: MediaQuery.of(context).size.height * 0.29,
+      height: MediaQuery.of(context).size.height * 0.32,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.24,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -31,7 +31,7 @@ class ProfileInfo extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 16,
+            top: 0,
             left: 0,
             right: 0,
             child: Column(
@@ -77,7 +77,7 @@ class ProfileInfo extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 12),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(

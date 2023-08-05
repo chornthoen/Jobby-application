@@ -55,7 +55,7 @@ class MessageOther extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 100),
+          const SizedBox(width: 100),
         ],
       ),
     );

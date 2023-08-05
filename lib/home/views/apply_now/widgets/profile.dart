@@ -86,7 +86,7 @@ class Profile extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -106,7 +106,7 @@ class Profile extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 26),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 2),
                   child: Row(

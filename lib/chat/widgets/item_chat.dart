@@ -73,8 +73,7 @@ class ItemChat extends StatelessWidget {
               ],
             ),
             const SizedBox(width: 10),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.55,
+            Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -116,7 +115,6 @@ class ItemChat extends StatelessWidget {
                 ],
               ),
             ),
-            const Spacer(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -145,7 +143,7 @@ class ItemChat extends StatelessWidget {
                     ),
                   ),
               ],
-            )
+            ),
           ],
         ),
       ),

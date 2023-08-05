@@ -14,7 +14,7 @@ class TabReviews extends StatefulWidget {
 
 class _TabReviewsState extends State<TabReviews> {
 
-  bool isNext = false;
+  bool isNext = true;
   @override
   Widget build(BuildContext context) {
     return Container(

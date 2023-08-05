@@ -26,18 +26,16 @@ class _AccountPageState extends State<AccountPage> {
             child: Column(
               children: [
                 Container(
-                  height: 320,
-                  color: AppColors.kWhiteColor,
+                  height: MediaQuery.of(context).size.height * 0.42,
                   child: Stack(
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 80),
-                        height: 220,
+                        height: MediaQuery.of(context).size.height * 0.28,
                         color: AppColors.kOrange400Color,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
-                        padding: const EdgeInsets.only(top: 30),
+                        padding: const EdgeInsets.only(top: 40),
                         child: const Image(
                           image: AssetImage('assets/images/bg_profile.png'),
                           width: 200,

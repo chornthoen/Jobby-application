@@ -48,11 +48,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
-      appBar:  AppBarHome(
+      appBar: AppBarHome(
         name: 'Chorn Thoen',
         diamond: '100.00',
         imageProfile: 'assets/images/thoen.png',
-        onNotification: (){
+        onNotification: () {
           context.push(NotificationPage.routePath);
         },
       ),
@@ -197,18 +197,17 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.4,
+              height: MediaQuery.of(context).size.height * 0.42,
               child: ListView.builder(
                 padding: const EdgeInsets.only(
                   left: 16,
                   bottom: 10,
                   top: 10,
-
                 ),
                 scrollDirection: Axis.horizontal,
                 itemCount: listExplore.length,
                 itemBuilder: (context, index) {
-                  return  ItemExploreMore(
+                  return ItemExploreMore(
                     image: listExplore[index].image,
                     title: listExplore[index].title,
                     description: listExplore[index].description,
@@ -225,13 +224,10 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
     );
   }
 }
-

@@ -10,6 +10,7 @@ class ItemExploreMore extends StatelessWidget {
     required this.description,
     this.onPressed,
   });
+
   final String image;
   final String title;
   final String description;
@@ -18,18 +19,18 @@ class ItemExploreMore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.36,
       width: MediaQuery.of(context).size.width * 0.7,
       margin: const EdgeInsets.only(
         right: 16,
       ),
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 8,
+      ),
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [AppColors.kBoxShadowColor,
-          AppColors.kBoxShadowColor1
-        ],
+        boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +53,7 @@ class ItemExploreMore extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             description,
-            style:const TextStyle(
+            style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
               color: AppColors.kQuaternaryColor,
@@ -60,7 +61,7 @@ class ItemExploreMore extends StatelessWidget {
           ),
           const Spacer(),
           SizedBox(
-            width: 150,
+            width: 155,
             child: TextButton(
               onPressed: onPressed,
               child: Row(
@@ -79,12 +80,10 @@ class ItemExploreMore extends StatelessWidget {
                     color: AppColors.kPrimaryColor,
                     size: 22,
                   ),
-
                 ],
               ),
             ),
           ),
-
         ],
       ),
     );
