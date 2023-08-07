@@ -41,15 +41,21 @@ class _ChangeAccountPageState extends State<ChangeAccountPage> {
               index == 2 ? true : false,
 
             ),
-            const SizedBox(height: 30),
-            ButtonAction(
-              isClick: true,
-              text: 'Change Account',
-              onPressed:(){
-                context.pop(context);
-              },
-            )
           ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        margin: const EdgeInsets.only(
+          bottom: 16,
+          left: 16,
+          right: 16,
+        ),
+        child: ButtonAction(
+          isClick: true,
+          text: 'Change Account',
+          onPressed: () {
+            context.go(ChangeAccountPage.routePath);
+          },
         ),
       ),
     );

@@ -17,6 +17,32 @@ class ReferencePersonPage extends StatefulWidget {
 }
 
 class _ReferencePersonPageState extends State<ReferencePersonPage> {
+  late TextEditingController fullNameController;
+  late TextEditingController companyNameController;
+  late TextEditingController titleController;
+  late TextEditingController emailController;
+  late TextEditingController phoneNumberController;
+
+  @override
+  void initState() {
+    super.initState();
+    fullNameController = TextEditingController();
+    companyNameController = TextEditingController();
+    titleController = TextEditingController();
+    emailController = TextEditingController();
+    phoneNumberController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    fullNameController.dispose();
+    companyNameController.dispose();
+    titleController.dispose();
+    emailController.dispose();
+    phoneNumberController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,52 +55,62 @@ class _ReferencePersonPageState extends State<ReferencePersonPage> {
             children: [
               const TextCustom(text: 'Full name'),
               const SizedBox(height: 10),
-              const TextFieldForms(
+              TextFieldForms(
                 hintText: 'Full name',
+                controller: fullNameController,
               ),
               const SizedBox(height: 20),
               const TextCustom(text: 'Company name'),
               const SizedBox(height: 10),
-              const TextFieldForms(
+              TextFieldForms(
                 hintText: 'Company name',
+                controller: companyNameController,
               ),
               const SizedBox(height: 20),
               const TextCustom(
                 text: 'Title',
               ),
               const SizedBox(height: 10),
-              const TextFieldForms(
+              TextFieldForms(
                 hintText: 'Title',
+                controller: titleController,
               ),
               const SizedBox(height: 20),
               const TextCustom(
                 text: 'Email',
               ),
               const SizedBox(height: 10),
-              const TextFieldForms(
+              TextFieldForms(
                 hintText: 'Email',
+                controller: emailController,
               ),
               const SizedBox(height: 20),
-              const TextCustom(
-                text: 'Phone number',
-              ),
+              const TextCustom(text: 'Phone number'),
               const SizedBox(height: 10),
-              const TextFieldForms(
+              TextFieldForms(
                 hintText: 'Phone number',
+                controller: phoneNumberController,
               ),
               const SizedBox(height: 40),
-              ButtonAction(
-                isClick: true,
-                text: 'Save',
-                onPressed: () {
-                  context.pop(context);
-                },
-              ),
             ],
           ),
+        ),
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.only(
+          left: 16,
+          right: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        margin: const EdgeInsets.only(bottom: 20),
+        child: ButtonAction(
+          isClick: true,
+          text: 'Save',
+          onPressed: () {
+            context.pop(context);
+          },
         ),
       ),
     );
   }
 }
-                                                                      

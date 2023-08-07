@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/account/widgets/item_widget.dart';
 import 'package:jobby_application/home/views/apply_now/models/status_model.dart';
 import 'package:jobby_application/home/views/apply_now/widgets/action_back_and_save.dart';
@@ -181,19 +182,22 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
               });
             },
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 50,
-              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-              child: ButtonAction(
-                isClick: true,
-                onPressed: () {},
-                text: 'Apply Now',
-              ),
-            ),
-          )
         ],
+      ),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.only(
+          left: 16,
+          right: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        margin: const EdgeInsets.only(bottom: 10),
+        child: ButtonAction(
+          isClick: true,
+          text: 'Apply Now',
+          onPressed: () {
+            context.pop(context);
+          },
+        ),
       ),
     );
   }

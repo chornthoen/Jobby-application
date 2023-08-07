@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -190,14 +191,23 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                   hintText: 'Personal Website',
                   controller: personalWebsiteController,
                 ),
-                const SizedBox(height: 30),
-                ButtonAction(
-                  text: 'Save',
-                  onPressed: () {},
-                  isClick: true,
-                ),
               ],
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.only(
+            left: 16,
+            right: 16,
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          margin: const EdgeInsets.only(bottom: 15),
+          child: ButtonAction(
+            isClick: true,
+            text: 'Save',
+            onPressed: () {
+              context.pop(context);
+            },
           ),
         ),
       ),

@@ -162,17 +162,20 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   //button continue guest
                   const SizedBox(height: 40),
-                  Center(
-                    child: CustomTextButton(
-                      text: 'Continue as a guest',
-                      onPressed: () {
-                        context.push(MainView.routePath);
-                      },
-                    ),
-                  ),
+
                 ],
               ),
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          margin: const EdgeInsets.only(bottom: 10),
+          height: 40,
+          child: CustomTextButton(
+            text: 'Continue as a guest',
+            onPressed: () {
+              context.push(MainView.routePath);
+            },
           ),
         ),
       ),

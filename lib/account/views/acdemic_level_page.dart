@@ -117,16 +117,24 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
                   maxLines: 2,
                   hintText: 'Description',
                 ),
-                const SizedBox(height: 40),
-                ButtonAction(
-                  isClick: true,
-                  text: 'Save',
-                  onPressed: () {
-                    context.pop(context);
-                  },
-                ),
+                const SizedBox(height: 10),
               ],
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.only(
+            left: 16,
+            right: 16,
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          margin: const EdgeInsets.only(bottom: 20),
+          child: ButtonAction(
+            isClick: true,
+            text: 'Save',
+            onPressed: () {
+              context.pop(context);
+            },
           ),
         ),
       ),
