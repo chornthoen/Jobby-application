@@ -1,6 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jobby_application/account/models/list_string.dart';
+import 'package:jobby_application/account/views/career_goal_page.dart';
+import 'package:jobby_application/account/views/acdemic_level_page.dart';
+import 'package:jobby_application/account/views/contact_info_page.dart';
+import 'package:jobby_application/account/views/hobby_page.dart';
+import 'package:jobby_application/account/views/language_page.dart';
+import 'package:jobby_application/account/views/prize_page.dart';
+import 'package:jobby_application/account/views/reference_person.dart';
+import 'package:jobby_application/account/views/skill_page.dart';
+import 'package:jobby_application/account/widgets/slide_profile.dart';
+import 'package:jobby_application/account/views/work_experience_page.dart';
+import 'package:jobby_application/account/widgets/action_skill.dart';
+import 'package:jobby_application/account/widgets/cover_and_profile.dart';
+import 'package:jobby_application/account/widgets/custom_container.dart';
+import 'package:jobby_application/account/widgets/icon_and_text.dart';
+import 'package:jobby_application/account/widgets/text_label_and_button.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
@@ -14,6 +30,13 @@ class YourJobbyProfilePage extends StatefulWidget {
 }
 
 class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
+
+  @override
+  void initState() {
+    super.initState();
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,22 +54,15 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               child: Column(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      color: AppColors.kWhiteColor,
-                      boxShadow: [
-                        AppColors.kBoxShadowColor,
-                        AppColors.kBoxShadowColor1
-                      ],
-                    ),
+                  CustomContainer(
                     child: Column(
                       children: [
                         TextLabelAndButton(
                           text: 'Chorn Thoen',
-                          icon: PhosphorIcons.pencil_simple,
-                          onTap: () {},
+                          icon1: PhosphorIcons.pencil_simple,
+                          onTap1: () {
+                            context.push(ContactInfoPage.routePath);
+                          },
                         ),
                         const SizedBox(height: 10),
                         const IconAndText(
@@ -64,7 +80,8 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                         const IconAndText(
                           svg: 'assets/svg/gender-male.svg',
                           text: 'Male',
-                        ),const IconAndText(
+                        ),
+                        const IconAndText(
                           svg: 'assets/svg/location.svg',
                           text: 'Phnom Penh',
                         ),
@@ -72,11 +89,344 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                           svg: 'assets/svg/world.svg',
                           text: 'www.thoenchorn.com',
                         ),
-
-
                       ],
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 20),
+                  const TextLabelAndButton(
+                    text: 'Slide profile',
+                    size: 22,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            const SlideProfiles(),
+            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextLabelAndButton(
+                    text: 'Career goals',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(CareerGoalPage.routePath);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                   Text(
+                    goals.isNotEmpty ? goals[0] : '',
+                    style: const TextStyle(
+                      color: AppColors.kQuaternaryColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'Work Experience',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(WorkExperiencePage.routePath);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Column(
+                      children: [
+                        TextLabelAndButton(
+                          text: 'Mobile Developer',
+                          icon1: PhosphorIcons.pencil_simple,
+                          icon: PhosphorIcons.trash,
+                          onTap1: () {
+                            context.push(WorkExperiencePage.routePath);
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        const IconAndText(
+                          svg: 'assets/svg/building.svg',
+                          text: 'Borey Peng Huoth',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/time.svg',
+                          text: '2019 - Present',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/file.svg',
+                          text:
+                              'Tmrw studio owns, manages and operates a system of Trade Centers',
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'Academic level',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(AcademicLevelPage.routePath);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Column(
+                      children: [
+                        TextLabelAndButton(
+                          text: 'Mobile Developer',
+                          icon1: PhosphorIcons.pencil_simple,
+                          icon: PhosphorIcons.trash,
+                          onTap1: () {
+                            context.push(AcademicLevelPage.routePath);
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        const IconAndText(
+                          svg: 'assets/svg/education.svg',
+                          text: 'Computer Science',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/star-outline.svg',
+                          text: 'GPA: 3.5',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/time.svg',
+                          text: '2020 - 2024',
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'Skills',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(SkillsPage.routePath);
+                      // setState(() {
+                      //   skills.add('Flutter');
+                      // });
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Wrap(
+                      direction: Axis.vertical,
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: [
+                        for (int i = 0; i < skills.length; i++)
+                          ActionSkills(
+                            text: skills[i],
+                            onTap: () {
+                              setState(() {
+                                skills.removeAt(i);
+                              });
+                            },
+                          ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'Languages',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(LanguagePage.routePath);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Wrap(
+                      direction: Axis.vertical,
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: [
+                        for (int i = 0; i < languages.length; i++)
+                          ActionSkills(
+                            text: languages[i],
+                            onTap: () {
+                              setState(() {
+                                languages.removeAt(i);
+                              });
+                            },
+                          ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'Prize',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(PrizePage.routePath);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Column(
+                      children: [
+                        TextLabelAndButton(
+                          text: 'Design award',
+                          icon1: PhosphorIcons.pencil_simple,
+                          icon: PhosphorIcons.trash,
+                          onTap1: () {
+                            context.push(PrizePage.routePath);
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        const IconAndText(
+                          svg: 'assets/svg/building.svg',
+                          text: 'www.thoenchorn.com',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/time.svg',
+                          text: '01/01/2024',
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Column(
+                      children: [
+                        TextLabelAndButton(
+                          text: 'UI/UX award',
+                          icon1: PhosphorIcons.pencil_simple,
+                          icon: PhosphorIcons.trash,
+                          onTap: () {
+                            context.push(PrizePage.routePath);
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        const IconAndText(
+                          svg: 'assets/svg/building.svg',
+                          text: 'www.thoenchorn.com',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/time.svg',
+                          text: '01/01/2024',
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'Hobbies',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(HobbyPage.routePath);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Wrap(
+                      direction: Axis.vertical,
+                      spacing: 10,
+                      runSpacing: 10,
+                      children: [
+                        for (int i = 0; i < hobbies.length; i++)
+                          ActionSkills(
+                            text: hobbies[i],
+                            onTap: () {
+                              setState(() {
+                                hobbies.removeAt(i);
+                              });
+                            },
+                          ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'References person',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap1: () {
+                      context.push(ReferencePersonPage.routePath);
+                    },
+                  ),
+                  const SizedBox(height: 10),
+                  CustomContainer(
+                    child: Column(
+                      children: [
+                        TextLabelAndButton(
+                          text: 'Chorn Thoen',
+                          icon1: PhosphorIcons.pencil_simple,
+                          icon: PhosphorIcons.trash,
+                          onTap1: () {
+                            context.push(ReferencePersonPage.routePath);
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        const IconAndText(
+                          svg: 'assets/svg/building.svg',
+                          text: 'Phnom Penh',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/jobs.svg',
+                          text: 'Mobile Developer',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/call.svg',
+                          text: '069 997 502',
+                        ),
+                        const IconAndText(
+                          svg: 'assets/svg/email.svg',
+                          text: 'thoenchorn@gmail.com',
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextLabelAndButton(
+                    text: 'Resume',
+                    size: 22,
+                    icon1: PhosphorIcons.plus_circle,
+                    onTap: () {},
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 14,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: AppColors.kGray200,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Flexible(
+                          child: Text(
+                            'Resume.pdf',
+                            style: TextStyle(
+                              color: AppColors.kPrimaryColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Icon(
+                          PhosphorIcons.x,
+                          color: AppColors.kPrimaryColor,
+                          size: 24,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  const SizedBox(
+                    height: 40,
+                  ),
                 ],
               ),
             )
@@ -87,166 +437,3 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
   }
 }
 
-class IconAndText extends StatelessWidget {
-  const IconAndText({
-    super.key,
-    required this.svg,
-    required this.text,
-  });
-  final String svg;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      child: Row(
-        children: [
-          SvgPicture.asset(
-            svg,
-            width: 22,
-            height: 22,
-            color: AppColors.kQuaternaryColor,
-          ),
-          const SizedBox(width: 10),
-          Text(
-            text,
-            style: const  TextStyle(
-              color: AppColors.kQuaternaryColor,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class TextLabelAndButton extends StatelessWidget {
-  const TextLabelAndButton({
-    super.key,
-    required this.text,
-    required this.icon,
-    this.onTap,
-  });
-  final String text;
-  final IconData icon;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          text,
-          style: const TextStyle(
-            color: AppColors.kPrimaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        const Spacer(),
-        Icon(
-          icon,
-          color: AppColors.kPrimaryColor,
-          size: 24,
-        ),
-      ],
-    );
-  }
-}
-
-class CoverAndProfile extends StatelessWidget {
-  const CoverAndProfile({
-    super.key,
-    required this.imageCover,
-    required this.imageProfile,
-  });
-
-  final String imageCover;
-  final String imageProfile;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.25,
-      child: Stack(
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Positioned(
-                top: 0,
-                right: 0,
-                left: 0,
-                child: Container(
-                  height: MediaQuery.of(context).size.height * 0.2,
-                  alignment: Alignment.topCenter,
-                  color: AppColors.kOrange400Color,
-                ),
-              ),
-              Positioned(
-                top: 0,
-                right: 0,
-                left: 0,
-                child: Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.only(top: 10),
-                  height: 170,
-                  width: double.infinity,
-                  child: const Image(
-                    image: AssetImage('assets/images/bg_profile.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Positioned(
-                right: 16,
-                bottom: 56,
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: AppColors.kPrimaryColor.withOpacity(0.5),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(
-                    Icons.camera_alt_outlined,
-                    color: AppColors.kWhiteColor,
-                    size: 24,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              padding: const EdgeInsets.all(2),
-              decoration: const BoxDecoration(
-                color: AppColors.kWhiteColor,
-                shape: BoxShape.circle,
-              ),
-              child: CircleAvatar(
-                radius: 46,
-                backgroundImage: const AssetImage('assets/images/thoen.png'),
-                child: Container(
-                  padding: const EdgeInsets.all(38),
-                  decoration: BoxDecoration(
-                    color: AppColors.kPrimaryColor.withOpacity(0.4),
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(
-                    Icons.camera_alt_outlined,
-                    color: AppColors.kWhiteColor,
-                    size: 20,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}

@@ -1,9 +1,22 @@
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/account/views/career_goal_page.dart';
 import 'package:jobby_application/account/views/about_jobby_page.dart';
 import 'package:jobby_application/account/views/account_setting_page.dart';
+import 'package:jobby_application/account/views/acdemic_level_page.dart';
+import 'package:jobby_application/account/views/change_acount_page.dart';
+import 'package:jobby_application/account/views/change_password_page.dart';
+import 'package:jobby_application/account/views/contact_info_page.dart';
+import 'package:jobby_application/account/views/hobby_page.dart';
 import 'package:jobby_application/account/views/id_identification_page.dart';
+import 'package:jobby_application/account/views/language_page.dart';
 import 'package:jobby_application/account/views/mange_cv_page.dart';
+import 'package:jobby_application/account/views/privacy_and_policy_page.dart';
+import 'package:jobby_application/account/views/prize_page.dart';
+import 'package:jobby_application/account/views/reference_person.dart';
 import 'package:jobby_application/account/views/share_with_your_friend_page.dart';
+import 'package:jobby_application/account/views/skill_page.dart';
+import 'package:jobby_application/account/views/term_of_service_page.dart';
+import 'package:jobby_application/account/views/work_experience_page.dart';
 import 'package:jobby_application/account/views/your_jobby_profile_page.dart';
 import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/call_video_pang.dart';
@@ -22,6 +35,7 @@ import 'package:jobby_application/home/views/hot_job_see_all_page.dart';
 import 'package:jobby_application/home/views/trending_see_all_page.dart';
 import 'package:jobby_application/main/views/main_view.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
+import 'package:jobby_application/notification/views/setting_notification_page.dart';
 import 'package:jobby_application/onboarding/views/on_boarding_page.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise2_page.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise3_page.dart';
@@ -194,8 +208,62 @@ class AppRouter {
         path: AboutJobbyPage.routePath,
         builder: (context, state) => const AboutJobbyPage(),
       ),
-
-
+      GoRoute(
+        path: AcademicLevelPage.routePath,
+        builder: (context, state) => const AcademicLevelPage(),
+      ),
+      GoRoute(
+        path: CareerGoalPage.routePath,
+        builder: (context, state) => const CareerGoalPage(),
+      ),
+      GoRoute(
+        path: ContactInfoPage.routePath,
+        builder: (context, state) => const ContactInfoPage(),
+      ),
+      GoRoute(
+        path: HobbyPage.routePath,
+        builder: (context, state) => const HobbyPage(),
+      ),
+      GoRoute(
+        path: LanguagePage.routePath,
+        builder: (context, state) => const LanguagePage(),
+      ),
+      GoRoute(
+        path: PrizePage.routePath,
+        builder: (context, state) => const PrizePage(),
+      ),
+      GoRoute(
+        path: ReferencePersonPage.routePath,
+        builder: (context, state) => const ReferencePersonPage(),
+      ),
+      GoRoute(
+        path: SkillsPage.routePath,
+        builder: (context, state) => const SkillsPage(),
+      ),
+      GoRoute(
+        path: WorkExperiencePage.routePath,
+        builder: (context, state) => const WorkExperiencePage(),
+      ),
+      GoRoute(
+        path: SettingNotificationPage.routePath,
+        builder: (context, state) => const SettingNotificationPage(),
+      ),
+      GoRoute(
+        path: ChangePasswordPage.routePath,
+        builder: (context, state) => const ChangePasswordPage(),
+      ),
+      GoRoute(
+        path: TermOfServicePage.routePath,
+        builder: (context, state) => const TermOfServicePage(),
+      ),
+      GoRoute(
+        path: PrivacyAndPolicyPage.routePath,
+        builder: (context, state) => const PrivacyAndPolicyPage(),
+      ),
+      GoRoute(
+        path: ChangeAccountPage.routePath,
+        builder: (context, state) => const ChangeAccountPage(),
+      ),
     ],
   );
 }

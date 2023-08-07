@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/account/models/setting_model.dart';
 import 'package:jobby_application/account/views/about_jobby_page.dart';
 import 'package:jobby_application/account/views/account_setting_page.dart';
+import 'package:jobby_application/account/views/change_acount_page.dart';
 import 'package:jobby_application/account/views/id_identification_page.dart';
 import 'package:jobby_application/account/views/mange_cv_page.dart';
 import 'package:jobby_application/account/views/share_with_your_friend_page.dart';
@@ -63,6 +64,9 @@ class BodyInfo extends StatelessWidget {
                       break;
                     case 'Share with your friend':
                       context.push(ShareWithYourFriendPage.routePath);
+                      break;
+                    case 'Change account':
+                      context.push(ChangeAccountPage.routePath);
                       break;
                     default:
                   }

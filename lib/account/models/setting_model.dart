@@ -17,38 +17,43 @@ List<SettingModel> listSetting = [
     title: 'Your Jobby profile',
     icon: 'assets/svg/user.svg',
   ),
-  SettingModel(
+  const SettingModel(
     id: 2,
     title: 'Manage CV',
     icon: 'assets/svg/folders.svg',
   ),
-  SettingModel(
+  const SettingModel(
     id: 3,
     title: 'Your work criteria',
     icon: 'assets/svg/viewfinder.svg',
   ),
-  SettingModel(
+  const SettingModel(
     id: 4,
+    title: 'Change account',
+    icon: 'assets/svg/exchange.svg',
+  ),
+  const SettingModel(
+    id: 5,
     title: 'ID identification',
     icon: 'assets/svg/id.svg',
   ),
-  SettingModel(
-    id: 5,
+  const SettingModel(
+    id: 6,
     title: 'Share with your friend',
     icon: 'assets/svg/share.svg',
   ),
-  SettingModel(
-    id: 6,
+  const SettingModel(
+    id: 7,
     title: 'Account setting',
     icon: 'assets/svg/setting.svg',
   ),
-  SettingModel(
-    id: 7,
+  const SettingModel(
+    id: 8,
     title: 'About Jobby',
     icon: 'assets/svg/info.svg',
   ),
-  SettingModel(
-    id: 8,
+  const SettingModel(
+    id: 9,
     title: 'Log out',
     icon: 'assets/svg/logout.svg',
   ),

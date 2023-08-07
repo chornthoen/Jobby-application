@@ -23,7 +23,7 @@ class _MatchingContentState extends State<MatchingContent> {
         CustomWidget(
           image: 'assets/images/business.png',
           title: 'Your business is doing great',
-          description: 'Complete your profile to ',
+          description: 'Update your work experience to impress employers',
           onTap: () {
           },
         ),

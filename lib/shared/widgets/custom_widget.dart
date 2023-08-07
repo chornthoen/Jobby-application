@@ -22,49 +22,70 @@ class CustomWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.12,
       margin: const EdgeInsets.only(
         left: 16,
         right: 16,
         bottom: 14,
       ),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 14,
+      padding: const EdgeInsets.only(
+        right: 10,
+        top: 10,
+        bottom: 10,
       ),
       decoration:  BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image(
-            image: AssetImage(image),
-            width: 40,
-            height: 40,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children:  [
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.kPrimaryColor,
+          Expanded(
+            child: Row(
+              children: [
+                Image(
+                  image: AssetImage(image),
+                  width: 50,
+                  height: 50,
                 ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                description!,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.kQuaternaryColor,
+                const SizedBox(width: 10),
+                Flexible(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children:  [
+                      Flexible(
+                        child: Text(
+                          title,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.kPrimaryColor,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Flexible(
+                        child: Text(
+                          description!,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.kQuaternaryColor,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-          const Spacer(),
           GestureDetector(
             onTap: onTap,
             child: Container(
