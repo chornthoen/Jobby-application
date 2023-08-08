@@ -25,6 +25,7 @@ dependencies:
   emoji_picker_flutter: ^1.6.1
   clipboard: ^0.1.3
   dotted_line: any
+  dotted_border: any
 
 dev_dependencies:
   bloc_test: ^9.1.1

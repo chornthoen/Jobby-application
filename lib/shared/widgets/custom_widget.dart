@@ -8,7 +8,7 @@ class CustomWidget extends StatelessWidget {
     super.key,
     required this.image,
     required this.title,
-    this.description,
+    this.description = '',
     this.onTap,
     this.color = AppColors.kOrange200Color,
   });
@@ -70,7 +70,7 @@ class CustomWidget extends StatelessWidget {
                       const SizedBox(height: 6),
                       Flexible(
                         child: Text(
-                          description!,
+                          description ?? '',
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,

@@ -17,7 +17,7 @@ class ShareWithYourFriendPage extends StatefulWidget {
 
 class _ShareWithYourFriendPageState extends State<ShareWithYourFriendPage> {
 
-  final String text = 'https://jobby.com/chornthoen';
+  final String text = 'https://t.me/chornthoen';
   bool _isCopied = false;
   @override
   Widget build(BuildContext context) {

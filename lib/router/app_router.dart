@@ -7,6 +7,7 @@ import 'package:jobby_application/account/views/change_acount_page.dart';
 import 'package:jobby_application/account/views/change_password_page.dart';
 import 'package:jobby_application/account/views/contact_info_page.dart';
 import 'package:jobby_application/account/views/hobby_page.dart';
+import 'package:jobby_application/account/views/id_identification_detail_page.dart';
 import 'package:jobby_application/account/views/id_identification_page.dart';
 import 'package:jobby_application/account/views/language_page.dart';
 import 'package:jobby_application/account/views/mange_cv_page.dart';
@@ -263,6 +264,10 @@ class AppRouter {
       GoRoute(
         path: ChangeAccountPage.routePath,
         builder: (context, state) => const ChangeAccountPage(),
+      ),
+      GoRoute(
+        path: IDIdentificationDetailPage.routePath,
+        builder: (context, state) => const IDIdentificationDetailPage(),
       ),
     ],
   );

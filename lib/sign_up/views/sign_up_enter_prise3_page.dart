@@ -110,19 +110,27 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter position',
                 ),
-                 const SizedBox(height: 40),
-                ButtonAction(
-                  isClick: isAllControllerNotEmpty,
-                  text: 'Continue',
-                  onPressed: () {
-                    context.push(SignUpEnterPrise4Page.routePath);
-                  },
-                ),
               ],
             ),
           ),
         ),
+        bottomNavigationBar: Container(
+          padding: EdgeInsets.only(
+            left: 16,
+            right: 16,
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          margin: const EdgeInsets.only(bottom: 20),
+          child: ButtonAction(
+            isClick: isAllControllerNotEmpty,
+            text: 'Continue',
+            onPressed: () {
+              context.push(SignUpEnterPrise4Page.routePath);
+            },
+          ),
+        ),
       ),
+
     );
   }
 }
