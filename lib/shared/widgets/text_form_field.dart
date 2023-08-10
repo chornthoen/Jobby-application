@@ -17,6 +17,7 @@ class TextFieldForms extends StatefulWidget {
     this.onPressed,
     this.prefixText,
     this.maxLines = 1,
+    this.minLines = 1,
   });
 
   final String hintText;
@@ -31,6 +32,7 @@ class TextFieldForms extends StatefulWidget {
   final VoidCallback? onPressed;
   final String? prefixText;
   final int? maxLines;
+  final int? minLines;
 
   @override
   State<TextFieldForms> createState() => _TextFieldFormsState();
@@ -48,6 +50,7 @@ class _TextFieldFormsState extends State<TextFieldForms> {
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       maxLines: widget.maxLines,
+      minLines: widget.minLines,
       style: Theme.of(context).textTheme.labelLarge!.copyWith(
             fontSize: 16,
             fontWeight: FontWeight.w400,

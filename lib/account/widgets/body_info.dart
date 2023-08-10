@@ -12,6 +12,8 @@ import 'package:jobby_application/account/views/your_work_criteria_page.dart';
 import 'package:jobby_application/account/widgets/item_card.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
+import '../../jobs/views/work_criteria_page.dart';
+
 class BodyInfo extends StatelessWidget {
   const BodyInfo({
     super.key,
@@ -60,7 +62,7 @@ class BodyInfo extends StatelessWidget {
                       context.push(IDIdentificationPage.routePath);
                       break;
                     case 'Your work criteria':
-                      context.push(YourWorkCriteriaPage.routePath);
+                      context.push(WorkCriteriaPage.routePath);
                       break;
                     case 'Share with your friend':
                       context.push(ShareWithYourFriendPage.routePath);

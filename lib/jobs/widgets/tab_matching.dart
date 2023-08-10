@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/home/widgets/item_hot_jobs.dart';
 import 'package:jobby_application/jobs/models/matching_model.dart';
+import 'package:jobby_application/jobs/views/work_criteria_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_widget.dart';
 
@@ -25,6 +26,7 @@ class _MatchingContentState extends State<MatchingContent> {
           title: 'Your business is doing great',
           description: 'Update your work experience to impress employers',
           onTap: () {
+            context.push(WorkCriteriaPage.routePath);
           },
         ),
         const Padding(

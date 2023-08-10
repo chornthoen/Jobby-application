@@ -34,6 +34,7 @@ import 'package:jobby_application/home/views/event_detail_page.dart';
 import 'package:jobby_application/home/views/event_page.dart';
 import 'package:jobby_application/home/views/hot_job_see_all_page.dart';
 import 'package:jobby_application/home/views/trending_see_all_page.dart';
+import 'package:jobby_application/jobs/views/work_criteria_page.dart';
 import 'package:jobby_application/main/views/main_view.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/notification/views/setting_notification_page.dart';
@@ -268,6 +269,10 @@ class AppRouter {
       GoRoute(
         path: IDIdentificationDetailPage.routePath,
         builder: (context, state) => const IDIdentificationDetailPage(),
+      ),
+      GoRoute(
+        path: WorkCriteriaPage.routePath,
+        builder: (context, state) => const WorkCriteriaPage(),
       ),
     ],
   );

@@ -23,6 +23,7 @@ class _ShareWithYourFriendPageState extends State<ShareWithYourFriendPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Share With Your Friend'),
+      backgroundColor: AppColors.kBackgroundColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
