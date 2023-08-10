@@ -26,6 +26,7 @@ dependencies:
   clipboard: ^0.1.3
   dotted_line: any
   dotted_border: any
+  lottie: ^2.3.2
 
 dev_dependencies:
   bloc_test: ^9.1.1

@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/account/widgets/item_widget.dart';
 import 'package:jobby_application/home/views/apply_company/widgets/company_detail.dart';
-import 'package:jobby_application/home/views/apply_now/models/status_model.dart';
 import 'package:jobby_application/home/views/apply_now/widgets/action_back_and_save.dart';
 import 'package:jobby_application/home/views/apply_now/widgets/profile.dart';
-import 'package:jobby_application/home/views/apply_now/widgets/text_match_score.dart';
-import 'package:jobby_application/home/widgets/item_hot_jobs.dart';
-import 'package:jobby_application/jobs/models/matching_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/constant/constant.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
+import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class DetailCompanyPage extends StatefulWidget {
   const DetailCompanyPage({Key? key}) : super(key: key);
@@ -109,18 +104,51 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 ButtonOutLineAction(
-                                  width: MediaQuery.of(context).size.width * 0.4,
-                                  text: follow ? 'UnFollow' : 'Follow',
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
+                                  text: follow ? 'Following' : 'Follow',
                                   onPressed: () {
                                     setState(() {
-                                      follow = !follow;
+                                      if (follow) {
+                                        BottomSheets.showBottomSheetCustom(
+                                          context: context,
+                                          title: 'Unfollow This Company',
+                                          image: 'assets/images/unfollow.png',
+                                          description: 'You will stop receiving job alerts from this company. Do you want to continue?',
+                                          textButton: 'Unfollow',
+                                          onPressed: () {
+                                            setState(() {
+                                              follow = !follow;
+                                              Navigator.pop(context);
+                                            });
+                                          },
+                                        );
+                                      }
+                                      else {
+                                        follow = !follow;
+                                      }
                                     });
                                   },
                                 ),
                                 ButtonOutLineAction(
-                                  width: MediaQuery.of(context).size.width * 0.4,
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.4,
                                   text: 'Message',
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    BottomSheets.showBottomSheetCustom(
+                                      context: context,
+                                      title: 'Please login to send message',
+                                      image: 'assets/images/enter.png',
+                                      description: 'You will stop receiving job alerts from this company. Do you want to continue?',
+                                      textButton: 'Sign in',
+                                      onPressed: () {
+                                        setState(() {
+                                          follow = !follow;
+                                          Navigator.pop(context);
+                                        });
+                                      },
+                                    );
+                                  },
                                 ),
                               ],
                             ),

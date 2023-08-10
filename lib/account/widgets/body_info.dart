@@ -11,14 +11,21 @@ import 'package:jobby_application/account/views/your_jobby_profile_page.dart';
 import 'package:jobby_application/account/views/your_work_criteria_page.dart';
 import 'package:jobby_application/account/widgets/item_card.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
+import 'package:jobby_application/signin/views/sign_in_page.dart';
 
 import '../../jobs/views/work_criteria_page.dart';
 
-class BodyInfo extends StatelessWidget {
+class BodyInfo extends StatefulWidget {
   const BodyInfo({
     super.key,
   });
 
+  @override
+  State<BodyInfo> createState() => _BodyInfoState();
+}
+
+class _BodyInfoState extends State<BodyInfo> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -70,6 +77,9 @@ class BodyInfo extends StatelessWidget {
                     case 'Change account':
                       context.push(ChangeAccountPage.routePath);
                       break;
+                    case 'Log out':
+                      _showBottomSheetLogout(context);
+                      break;
                     default:
                   }
                 },
@@ -78,6 +88,22 @@ class BodyInfo extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  //show dialog logout
+  void _showBottomSheetLogout(BuildContext context) {
+    BottomSheets.showBottomSheetCustom(
+      context: context,
+      title: 'Log out',
+      image: 'assets/images/enter.png',
+      description: 'Are you sure you want to log out? You can always log back in.',
+      textButton: 'Log out',
+      onPressed: () {
+        setState(() {
+          context.go(SignInPage.routePath);
+        });
+      },
     );
   }
 }

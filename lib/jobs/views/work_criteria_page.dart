@@ -15,10 +15,10 @@ import 'package:jobby_application/jobs/widgets/item_industry.dart';
 import 'package:jobby_application/jobs/widgets/item_level.dart';
 import 'package:jobby_application/jobs/widgets/item_location.dart';
 import 'package:jobby_application/jobs/widgets/item_type_of_work.dart';
-import 'package:jobby_application/jobs/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class WorkCriteriaPage extends StatefulWidget {

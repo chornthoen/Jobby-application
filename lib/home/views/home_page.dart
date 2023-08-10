@@ -23,6 +23,7 @@ import 'package:jobby_application/home/widgets/widget_see_all.dart';
 import 'package:jobby_application/home/widgets/widget_slider.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -110,6 +111,11 @@ class _HomePageState extends State<HomePage> {
                   isSaved: hotJobModel[index].isSaved,
                   onSaved: () {
                     setState(() {
+                      if (hotJobModel[index].isSaved == false) {
+                        SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
+                      } else {
+                        SnackBarTop.topSnackBarLottie(context, 'Unsaved Successfully!');
+                      }
                       hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
                     });
                   },
