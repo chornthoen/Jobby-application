@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class ItemFavorite extends StatelessWidget {
   const ItemFavorite({
@@ -90,12 +91,21 @@ class ItemFavorite extends StatelessWidget {
               Column(
                 children: [
                   GestureDetector(
-                    onTap: onSaved,
-                    child: Icon(
-                      isSaved
+                    onTap: (){
+                      onSaved!();
+                      if (isSaved == false) {
+                        SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
+                      } else {
+                        SnackBarTop.topSnackBarLottie(context, 'Unsaved Successfully!');
+                      }
+                    },
+                    child:  Icon(
+                      isSaved == true
                           ? PhosphorIcons.bookmark_simple_fill
                           : PhosphorIcons.bookmark_simple,
-                      color: AppColors.kPrimaryColor,
+                      color: isSaved == true
+                          ? AppColors.kPrimaryColor
+                          : AppColors.kQuinaryColor,
                       size: 24,
                     ),
                   ),

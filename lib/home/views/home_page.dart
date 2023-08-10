@@ -111,11 +111,6 @@ class _HomePageState extends State<HomePage> {
                   isSaved: hotJobModel[index].isSaved,
                   onSaved: () {
                     setState(() {
-                      if (hotJobModel[index].isSaved == false) {
-                        SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
-                      } else {
-                        SnackBarTop.topSnackBarLottie(context, 'Unsaved Successfully!');
-                      }
                       hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
                     });
                   },

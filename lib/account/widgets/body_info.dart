@@ -95,7 +95,7 @@ class _BodyInfoState extends State<BodyInfo> {
   void _showBottomSheetLogout(BuildContext context) {
     BottomSheets.showBottomSheetCustom(
       context: context,
-      title: 'Log out',
+      title: 'LOG OUT ACCOUNT',
       image: 'assets/images/enter.png',
       description: 'Are you sure you want to log out? You can always log back in.',
       textButton: 'Log out',

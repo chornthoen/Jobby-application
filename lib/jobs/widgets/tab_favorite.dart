@@ -12,6 +12,13 @@ class FavoriteContent extends StatefulWidget {
 }
 
 class _FavoriteContentState extends State<FavoriteContent> {
+
+  //remove saved
+  void removeSaved() {
+    setState(() {
+      suitableModel.removeWhere((element) => element.isSaved == false);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,6 +42,7 @@ class _FavoriteContentState extends State<FavoriteContent> {
               onSaved: () {
                 setState(() {
                   suitableModel[index].isSaved = !suitableModel[index].isSaved;
+                  removeSaved();
                 });
               },
               onApply: () {

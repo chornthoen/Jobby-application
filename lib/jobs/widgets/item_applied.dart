@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class ItemApplied extends StatelessWidget {
   const ItemApplied({
@@ -93,7 +94,14 @@ class ItemApplied extends StatelessWidget {
               Column(
                 children: [
                   GestureDetector(
-                    onTap: onSaved,
+                    onTap: (){
+                      onSaved!();
+                      if (isSaved == false) {
+                        SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
+                      } else {
+                        SnackBarTop.topSnackBarLottie(context, 'Unsaved Successfully!');
+                      }
+                    },
                     child:  Icon(
                       isSaved
                           ? PhosphorIcons.bookmark_simple_fill
