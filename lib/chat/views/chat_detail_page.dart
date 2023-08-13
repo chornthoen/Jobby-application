@@ -116,7 +116,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
           messageController: messageController,
           onSend: () {
             setState(() {
-              messages.add(messageController.text);
+              messages.add(messageController.text.trim());
               messageController.clear();
             });
           },
@@ -154,4 +154,71 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       ),
     );
   }
+}
+
+class MessageModel {
+  String sms;
+  bool isMe;
+
+  MessageModel({required this.sms, required this.isMe});
+
+  final List<MessageModel> messages = [
+    MessageModel(
+      sms: 'Hello, Chorn Thoen',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. What about you? ',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. ',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'Hello!!!!!!!',
+      isMe: true,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. What about you? ',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. ',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'This is my message.',
+      isMe: true,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. What about you? ',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'Where are you?',
+      isMe: true,
+    ),
+    MessageModel(
+      sms: 'When will you come back?',
+      isMe: true,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. What about you? ',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. ',
+      isMe: false,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. What about you? ',
+      isMe: true,
+    ),
+    MessageModel(
+      sms: 'Hello, how are you? I am fine. ',
+      isMe: true,
+    ),
+
+  ];
 }

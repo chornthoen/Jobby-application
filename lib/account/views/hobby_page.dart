@@ -37,6 +37,7 @@ class _HobbyPageState extends State<HobbyPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const CustomAppBar(title: 'Hobby'),
+        backgroundColor: AppColors.kBackgroundColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(

@@ -12,6 +12,8 @@ import 'package:jobby_application/shared/constant/constant.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
+import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
+
 class ApplyNowPage extends StatefulWidget {
   const ApplyNowPage({Key? key}) : super(key: key);
 
@@ -178,6 +180,11 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
             isSaved: isSaved,
             onSaved: () {
               setState(() {
+                if (!isSaved) {
+                  SnackBarTop.topSnackBarLottie(context,'Saved Successfully!');
+                } else {
+                  SnackBarTop.topSnackBarLottie(context,'Unsaved Successfully!');
+                }
                 isSaved = !isSaved;
               });
             },

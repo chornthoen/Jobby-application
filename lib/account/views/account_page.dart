@@ -31,7 +31,7 @@ class _AccountPageState extends State<AccountPage> {
                     children: [
                       Container(
                         height: MediaQuery.of(context).size.height * 0.28,
-                        color: AppColors.kOrange400Color,
+                        color: AppColors.kPurple400Color,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
@@ -49,27 +49,32 @@ class _AccountPageState extends State<AccountPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 10),
-                Container(
-                  height: 100,
-                  alignment: Alignment.center,
-                  margin: const EdgeInsets.only(top: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 70),
-                  child: ListView.builder(
-                    itemCount: statusModel.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      final model = statusModel[index];
-                      return ItemWidget(
-                        svgPath: model.svgUrl,
-                        title: model.title,
-                        description: model.description,
-                        color: model.color,
-                      );
-                    },
-                  ),
+
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    ItemWidget(
+                      svgPath: 'assets/svg/file-check.svg',
+                      title: 'Applied',
+                      description: '222',
+                      color: AppColors.kGreen200Color,
+                    ),
+                    ItemWidget(
+                      svgPath: 'assets/svg/message.svg',
+                      title: 'Reviewed',
+                      description: '222',
+                      color: AppColors.kPurple200Color,
+                    ),
+                    ItemWidget(
+                      svgPath: 'assets/svg/user-check.svg',
+                      title: 'Connected',
+                      description: '222',
+                      color: AppColors.kRed200Color,
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 26),
+                const SizedBox(height: 20),
                 const BodyInfo(),
 
               ],

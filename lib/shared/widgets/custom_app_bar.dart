@@ -12,6 +12,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     this.icon2,
     this.onBookmarkTap,
     this.onShareTap,
+    this.size = 18,
   });
 
   final String? title;
@@ -20,6 +21,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final Widget? child;
   final IconData? icon1;
   final IconData? icon2;
+  final double? size;
   final VoidCallback? onBookmarkTap;
   final VoidCallback? onShareTap;
 
@@ -47,9 +49,9 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title!,
-        style: const TextStyle(
+        style:  TextStyle(
           color: AppColors.kPrimaryColor,
-          fontSize: 18,
+          fontSize: size,
           fontWeight: FontWeight.w600,
         ),
       ),

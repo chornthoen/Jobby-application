@@ -37,6 +37,7 @@ class _SkillsPageState extends State<SkillsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Skill'),
+      backgroundColor: AppColors.kBackgroundColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(

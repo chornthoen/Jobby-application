@@ -152,7 +152,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 40),
                   TextAndButton(
                     text: 'Don’t have an account?',
                     onPressed: () {
@@ -160,8 +160,6 @@ class _SignInPageState extends State<SignInPage> {
                     },
                     textButton: 'Sign Up',
                   ),
-                  //button continue guest
-                  const SizedBox(height: 40),
 
                 ],
               ),
@@ -171,11 +169,16 @@ class _SignInPageState extends State<SignInPage> {
         bottomNavigationBar: Container(
           margin: const EdgeInsets.only(bottom: 10),
           height: 40,
-          child: CustomTextButton(
-            text: 'Continue as a guest',
-            onPressed: () {
-              context.push(MainView.routePath);
-            },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomTextButton(
+                text: 'Continue as a guest',
+                onPressed: () {
+                  context.push(MainView.routePath);
+                },
+              ),
+            ],
           ),
         ),
       ),

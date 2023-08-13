@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/account/views/account_page.dart';
 import 'package:jobby_application/chat/views/chat_page.dart';
 import 'package:jobby_application/home/views/home_page.dart';
@@ -47,11 +48,15 @@ class _BodyMainViewState extends State<_BodyMainView>
       body: TabBarView(
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
-        children: const [
+        children:  [
           HomePage(),
           JobPage(),
           ChatPage(),
-          QuizzPage(),
+          GestureDetector(
+            onTap: () {
+              context.go(QuizzPage.routePath );
+            },
+          ),
           AccountPage(),
         ],
       ),

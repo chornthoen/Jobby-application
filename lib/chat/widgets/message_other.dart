@@ -20,7 +20,7 @@ class MessageOther extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          if (index == 0)
+          // if (index == 0)
             SizedBox(
               child: CircleAvatar(
                 radius: 14,
@@ -28,7 +28,7 @@ class MessageOther extends StatelessWidget {
                 backgroundImage: AssetImage(image!),
               ),
             ),
-          if (index != 0) const SizedBox(width: 26),
+          // if (index != 0) const SizedBox(width: 26),
           const SizedBox(width: 8),
           Flexible(
             child: Container(

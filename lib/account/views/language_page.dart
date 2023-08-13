@@ -36,7 +36,8 @@ class _LanguagePageState extends State<LanguagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(title: 'Skill'),
+        appBar: const CustomAppBar(title: 'Language'),
+        backgroundColor: AppColors.kBackgroundColor,
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(

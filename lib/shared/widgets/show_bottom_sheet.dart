@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:jobby_application/quizz/models/quiz_model.dart';
+import 'package:jobby_application/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 class BottomSheets {
+  bool isClick = false;
   static void showBottomSheet({
     required BuildContext context,
     required Widget child,
@@ -71,8 +76,7 @@ class BottomSheets {
                     style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.kPrimaryColor
-                    ),
+                        color: AppColors.kPrimaryColor),
                   ),
                   const SizedBox(height: 10),
                   Image(
@@ -81,7 +85,8 @@ class BottomSheets {
                     height: 180,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 10),
                     child: Text(
                       description,
                       textAlign: TextAlign.center,
@@ -108,6 +113,190 @@ class BottomSheets {
                 },
               ),
               const SizedBox(height: 20),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  static void showBottomSheetDetailQuiz({
+   required BuildContext context,
+   required QuizModel quizModel,
+    required VoidCallback onPressed,
+    required VoidCallback isLike,
+    bool? isLikeClick,
+  }) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(16),
+          topRight: Radius.circular(16),
+        ),
+      ),
+      backgroundColor: AppColors.kBackgroundColor,
+      builder: (context) {
+        return Container(
+          height: MediaQuery.of(context).size.height * 0.6,
+          child: Column(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 8),
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: AppColors.kGreyColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const SizedBox(),
+                    const Text(
+                      'Quiz Detail',
+                      style: TextStyle(
+                        color: AppColors.kPrimaryColor,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: const BoxDecoration(
+                          color: AppColors.kGray200,
+                          shape: BoxShape.circle,
+                        ),
+                        child: const Icon(
+                          PhosphorIcons.x,
+                          size: 20,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              ItemQuizs(
+                image: quizModel.image,
+                title: quizModel.title,
+                level: quizModel.level,
+                question: quizModel.question,
+                like: quizModel.like,
+                user: quizModel.user,
+                percent: quizModel.percent,
+                onPressed: () {},
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  children: [
+                    const Text(
+                      'Tmrw studio owns, manages and operates a system of Trade Centers - A shopping, entertainment and culinary paradise with 4 brand lines.',
+                      style: TextStyle(
+                        color: AppColors.kQuaternaryColor,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 16,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.kBlueColor,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/svg/like1.svg',
+                            width: 35,
+                            height: 35,
+                            color: AppColors.kWhiteColor,
+                          ),
+                          const SizedBox(width: 8),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Text(
+                                '100%',
+                                style: TextStyle(
+                                  color: AppColors.kWhiteColor,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              SizedBox(height: 4),
+                              Text(
+                                '100 votes',
+                                style: TextStyle(
+                                  color: AppColors.kWhiteColor,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.kWhiteColor,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: IconButton(
+                              onPressed: isLike,
+                              icon: SvgPicture.asset(
+                                'assets/svg/like1.svg',
+                                width: 30,
+                                height: 30,
+                                color: isLikeClick == false
+                                    ? AppColors.kBlueColor
+                                    : AppColors.kRed400Color,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.kWhiteColor,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: IconButton(
+                              onPressed: isLike,
+                              icon: SvgPicture.asset(
+                                'assets/svg/dislike.svg',
+                                width: 30,
+                                height: 30,
+                                color: AppColors.kBlueColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: ButtonAction(
+                  isClick: true,
+                  onPressed: onPressed,
+                  text: 'Play Now',
+                ),
+              ),
+              const SizedBox(height: 26),
             ],
           ),
         );

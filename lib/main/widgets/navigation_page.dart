@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jobby_application/quizz/views/quizz_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -27,6 +29,17 @@ class _NavigationPageState extends State<NavigationPage> {
           onTap: (index) {
             setState(() {
               tabController = index;
+              if (tabController == 0) {
+                widget.tabController.animateTo(0);
+              } else if (tabController == 1) {
+                widget.tabController.animateTo(1);
+              } else if (tabController == 2) {
+                widget.tabController.animateTo(2);
+              } else if (tabController == 3) {
+                context.push(QuizzPage.routePath);
+              } else if (tabController == 4) {
+                widget.tabController.animateTo(4);
+              }
             });
           },
           indicatorSize: TabBarIndicatorSize.label,

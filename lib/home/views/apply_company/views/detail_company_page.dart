@@ -7,6 +7,8 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
+import '../../../../shared/widgets/snack_bar_top.dart';
+
 class DetailCompanyPage extends StatefulWidget {
   const DetailCompanyPage({Key? key}) : super(key: key);
 
@@ -44,7 +46,7 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                       Container(
                         padding: const EdgeInsets.only(top: 80),
                         height: 220,
-                        color: AppColors.kPurple400Color,
+                        color: AppColors.kRed400Color,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
@@ -114,7 +116,8 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                                           context: context,
                                           title: 'Unfollow This Company',
                                           image: 'assets/images/unfollow.png',
-                                          description: 'You will stop receiving job alerts from this company. Do you want to continue?',
+                                          description:
+                                              'You will stop receiving job alerts from this company. Do you want to continue?',
                                           textButton: 'Unfollow',
                                           onPressed: () {
                                             setState(() {
@@ -123,8 +126,7 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                                             });
                                           },
                                         );
-                                      }
-                                      else {
+                                      } else {
                                         follow = !follow;
                                       }
                                     });
@@ -139,7 +141,8 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                                       context: context,
                                       title: 'Please login to send message',
                                       image: 'assets/images/enter.png',
-                                      description: 'You will stop receiving job alerts from this company. Do you want to continue?',
+                                      description:
+                                          'You will stop receiving job alerts from this company. Do you want to continue?',
                                       textButton: 'Sign in',
                                       onPressed: () {
                                         setState(() {
@@ -167,6 +170,11 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
             isSaved: isSaved,
             onSaved: () {
               setState(() {
+                if (!isSaved) {
+                  SnackBarTop.topSnackBarLottie(context,'Saved Successfully!');
+                } else {
+                  SnackBarTop.topSnackBarLottie(context,'Unsaved Successfully!');
+                }
                 isSaved = !isSaved;
               });
             },

@@ -44,6 +44,7 @@ class _CareerGoalPageState extends State<CareerGoalPage> {
     return GestureDetector(
       onTap: closeKeyboard,
       child: Scaffold(
+        backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(title: 'Career Goal'),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

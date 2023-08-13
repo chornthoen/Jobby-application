@@ -5,9 +5,11 @@ class WidgetSeeAll extends StatelessWidget {
   const WidgetSeeAll({
     super.key,
     required this.title,
+    this.color = AppColors.kPrimaryColor,
     required this.onPressed,
   });
   final String title;
+  final Color? color;
   final VoidCallback onPressed;
 
 
@@ -18,27 +20,26 @@ class WidgetSeeAll extends StatelessWidget {
         left: 16,
         right: 10,
         top: 10,
-        bottom: 10,
       ),
       child: Row(
         children: [
           Text(
             title,
-            style: const TextStyle(
+            style:  TextStyle(
               fontSize: 22,
               fontWeight: FontWeight.w700,
-              color: AppColors.kPrimaryColor,
+              color: color,
             ),
           ),
           const Spacer(),
           TextButton(
             onPressed: onPressed,
-            child: const Text(
+            child:  Text(
               'See All',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: AppColors.kQuaternaryColor,
+                color: color,
               ),
             ),
           ),

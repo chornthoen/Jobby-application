@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/account/views/career_goal_page.dart';
 import 'package:jobby_application/account/views/about_jobby_page.dart';
@@ -39,6 +40,12 @@ import 'package:jobby_application/main/views/main_view.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/notification/views/setting_notification_page.dart';
 import 'package:jobby_application/onboarding/views/on_boarding_page.dart';
+import 'package:jobby_application/quizz/models/quiz_model.dart';
+import 'package:jobby_application/quizz/question/views/question_1.dart';
+import 'package:jobby_application/quizz/question/views/succes_quiz_page.dart';
+import 'package:jobby_application/quizz/views/leaderboard_page.dart';
+import 'package:jobby_application/quizz/views/more_turns_page.dart';
+import 'package:jobby_application/quizz/views/quizz_page.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise2_page.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise3_page.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise4_page.dart';
@@ -54,9 +61,11 @@ import 'package:jobby_application/verify_otp_code/views/otp_sign_up_job_seeker.d
 
 import '../account/views/your_work_criteria_page.dart';
 import '../home/views/ebook_detail_page.dart';
+import '../quizz/views/see_all_program.dart';
 
 class AppRouter {
   AppRouter._();
+
   static final routerConfig = GoRouter(
     routes: [
       GoRoute(
@@ -273,6 +282,35 @@ class AppRouter {
       GoRoute(
         path: WorkCriteriaPage.routePath,
         builder: (context, state) => const WorkCriteriaPage(),
+      ),
+      GoRoute(
+        path: QuizzPage.routePath,
+        builder: (context, state) => const QuizzPage(),
+      ),
+      GoRoute(
+        path: LeaderBoardPage.routePath,
+        builder: (context, state) => const LeaderBoardPage(),
+      ),
+      GoRoute(
+        path: MoreTurnsPage.routePath,
+        builder: (context, state) => const MoreTurnsPage(),
+      ),
+      GoRoute(
+        path: SeeAllProgrammingPage.routePath,
+        builder: (context, state) => const SeeAllProgrammingPage(),
+      ),
+      GoRoute(
+        path: Question1Page.routePath,
+        builder: (context, state) => const Question1Page(),
+      ),
+      GoRoute(
+        path: SuccessQuizPage.routePath,
+        builder: (context, state) {
+          final questionModel = state.extra;
+          return SuccessQuizPage(
+            questionModel: questionModel! as QuestionModel,
+          );
+        },
       ),
     ],
   );

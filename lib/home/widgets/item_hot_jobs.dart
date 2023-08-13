@@ -47,9 +47,7 @@ class ItemHotJobs extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [AppColors.kBoxShadowColor,
-          AppColors.kBoxShadowColor1
-        ],
+        boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Column(
         children: [
@@ -81,7 +79,7 @@ class ItemHotJobs extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    '${name} • ${salary}',
+                    '$name • $salary',
                     style: const TextStyle(
                       fontSize: 16,
                       color: AppColors.kQuaternaryColor,
@@ -94,15 +92,21 @@ class ItemHotJobs extends StatelessWidget {
               Column(
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       onSaved!();
                       if (isSaved == false) {
-                        SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
+                        SnackBarTop.topSnackBarLottie(
+                          context,
+                          'Saved Successfully!',
+                        );
                       } else {
-                        SnackBarTop.topSnackBarLottie(context, 'Unsaved Successfully!');
+                        SnackBarTop.topSnackBarLottie(
+                          context,
+                          'Unsaved Successfully!',
+                        );
                       }
                     },
-                    child:  Icon(
+                    child: Icon(
                       isSaved == true
                           ? PhosphorIcons.bookmark_simple_fill
                           : PhosphorIcons.bookmark_simple,
