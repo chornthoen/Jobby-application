@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/quizz/models/quiz_model.dart';
+import 'package:jobby_application/quizz/question/views/question_1.dart';
 import 'package:jobby_application/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -74,7 +76,7 @@ class _SeeAllProgrammingPageState extends State<SeeAllProgrammingPage> {
                     context: context,
                     quizModel: quizModel[index],
                     onPressed: () {
-                      Navigator.pop(context);
+                      context.push(Question1Page.routePath);
                     },
                     isLike: () {
                       setState(() {

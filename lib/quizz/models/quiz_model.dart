@@ -126,8 +126,7 @@ class AnswerModel{
   });
 }
 
-List<QuestionModel> getQuestion(){
-  List<QuestionModel> questions = [
+  List<QuestionModel> questionsList = [
     QuestionModel(
       question: 'What is the capital of France?',
       answersList: [
@@ -191,5 +190,3 @@ List<QuestionModel> getQuestion(){
   //         ]
   //     )
   // );
-  return questions;
-}

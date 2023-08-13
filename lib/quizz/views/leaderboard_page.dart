@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jobby_application/quizz/widgets/tab_all_time.dart';
 import 'package:jobby_application/quizz/widgets/tab_weekly.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-
-import '../widgets/tab_all_time.dart';
 
 class LeaderBoardPage extends StatefulWidget {
   const LeaderBoardPage({Key? key}) : super(key: key);
@@ -44,7 +43,7 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            toolbarHeight: 80,
+            toolbarHeight: 65,
             automaticallyImplyLeading: false,
             leading: Padding(
               padding: const EdgeInsets.only(left: 16),
@@ -54,8 +53,8 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
                 },
                 child: const Image(
                   image: AssetImage('assets/images/back.png'),
-                  width: 40,
-                  height: 40,
+                  width: 44,
+                  height: 44,
                 ),
               ),
             ),
@@ -72,7 +71,6 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
           ),
           body: Column(
             children: [
-              const SizedBox(height: 16),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 16),
                 padding: const EdgeInsets.all(3),

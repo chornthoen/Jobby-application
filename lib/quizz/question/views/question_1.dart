@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/quizz/models/quiz_model.dart';
 import 'package:jobby_application/quizz/question/views/succes_quiz_page.dart';
+import 'package:jobby_application/quizz/views/quizz_page.dart';
+import 'package:jobby_application/quizz/widgets/widget_question.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -18,10 +20,12 @@ class Question1Page extends StatefulWidget {
 }
 
 class _Question1PageState extends State<Question1Page> {
-
-  List<QuestionModel> q = getQuestion();
   int currentQuestion = 0;
   AnswerModel? selectedAnswerModel;
+  late QuestionModel questionModel;
+  bool isSelectQuestion = false;
+  int score = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,61 +104,67 @@ class _Question1PageState extends State<Question1Page> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                 Text(
-                  'Question ${currentQuestion+1}/${q.length}',
-                  style: TextStyle(
+                Text(
+                  'Question ${currentQuestion + 1}/${questionsList.length}',
+                  style: const TextStyle(
                     color: AppColors.kQuaternaryColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.kOrange200Color.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    children: [
-                      const Image(
-                        image: AssetImage('assets/images/lightbulb.png'),
-                        width: 20,
-                        height: 20,
-
-                      ),
-                      const Text(
-                        'Hint',
-                        style: TextStyle(
-                          color: AppColors.kOrange400Color,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                GestureDetector(
+                  onTap: () {
+                    _showBottomSheetSuccess(context);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.kOrange200Color.withOpacity(0.5),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: const [
+                        Image(
+                          image: AssetImage('assets/images/lightbulb.png'),
+                          width: 20,
+                          height: 20,
                         ),
-                      ),
-                    ],
+                        Text(
+                          'Hint',
+                          style: TextStyle(
+                            color: AppColors.kOrange400Color,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
             ),
             const SizedBox(height: 8),
             RankWidget(
-              percent: (currentQuestion +1).toDouble() /q.length.toDouble(),
+              percent: (currentQuestion + 1).toDouble() /
+                  questionsList.length.toDouble(),
             ),
             const SizedBox(height: 16),
             Question(
-              question: q[currentQuestion].question,
+              question: questionsList[currentQuestion].question,
             ),
             const SizedBox(height: 16),
             Expanded(
               child: ListView.builder(
-                itemCount: q[currentQuestion].answersList.length,
+                itemCount: questionsList[currentQuestion].answersList.length,
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  final answer = q[currentQuestion].answersList[index];
-                  return _answer(answer,index+1);
+                  final answer =
+                      questionsList[currentQuestion].answersList[index];
+                  return _answer(answer, index + 1);
                 },
               ),
             ),
@@ -168,29 +178,40 @@ class _Question1PageState extends State<Question1Page> {
         ),
         child: ButtonAction(
           isClick: selectedAnswerModel != null,
-          text: currentQuestion < q.length - 1 ? 'Next' : 'Submit',
+          text: currentQuestion < questionsList.length - 1 ? 'Next' : 'Submit',
           onPressed: () {
             if (selectedAnswerModel == null) return;
-            if (currentQuestion < q.length - 1) {
+            if (currentQuestion < questionsList.length - 1) {
               setState(() {
                 currentQuestion++;
                 selectedAnswerModel = null;
               });
             } else {
-              context.go(SuccessQuizPage.routePath,
-                extra: q[currentQuestion],
-              );
+              _showBottomSheetSuccess(context);
             }
           },
-
         ),
       ),
     );
   }
-  Widget _answer(AnswerModel answer,int index){
+
+  Widget _answer(AnswerModel answer, int index) {
     final isSelected = answer == selectedAnswerModel;
-    return  GestureDetector(
+    return GestureDetector(
       onTap: () {
+        if (selectedAnswerModel == null) {
+          if (answer.isCorrect == true) {
+            setState(() {
+              isSelectQuestion = true;
+              score++;
+            });
+          }
+          if (!answer.isCorrect) {
+            setState(() {
+              isSelectQuestion = false;
+            });
+          }
+        }
         setState(() {
           selectedAnswerModel = answer;
         });
@@ -207,9 +228,10 @@ class _Question1PageState extends State<Question1Page> {
             margin: const EdgeInsets.only(
               bottom: 14,
             ),
-
             decoration: BoxDecoration(
-              color: isSelected ? AppColors.kBlue400Color : AppColors.kSeptenaryColor,
+              color: isSelected
+                  ? AppColors.kBlue400Color
+                  : AppColors.kSeptenaryColor,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Container(
@@ -218,7 +240,9 @@ class _Question1PageState extends State<Question1Page> {
                 vertical: 20,
               ),
               decoration: BoxDecoration(
-                color: isSelected ? AppColors.kBlue200Color : AppColors.kWhiteColor,
+                color: isSelected
+                    ? AppColors.kBlue200Color
+                    : AppColors.kWhiteColor,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
@@ -248,143 +272,165 @@ class _Question1PageState extends State<Question1Page> {
       ),
     );
   }
-}
 
-class RankWidget extends StatelessWidget {
-  const RankWidget({
-    super.key,
-    required this.percent,
-  });
-  final double percent;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 26,
-      child: Stack(
-        alignment: Alignment.centerRight,
-        children: [
-          LinearPercentIndicator(
-            lineHeight: 10,
-            percent: percent,
-            backgroundColor: AppColors.kGray200,
-            progressColor: AppColors.kPurple400Color,
-            barRadius: const Radius.circular(10),
-          ),
-          Positioned(
-            right: 0,
-            child: SvgPicture.asset(
-              'assets/svg/star-circle-color.svg',
-              height: 26,
-              width: 26,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class Question extends StatelessWidget {
-  const Question({
-    super.key,
-    required this.question,
-  });
-  final String question;
-
-  @override
-  Widget build(BuildContext context) {
-    return  Text(
-      question,
-      style: TextStyle(
-        color: AppColors.kPrimaryColor,
-        fontSize: 20,
-        fontWeight: FontWeight.w500,
-      ),
-    );
-  }
-}
-
-class ItemQuestion extends StatefulWidget {
-  const ItemQuestion({
-    super.key,
-    required this.answer,
-    required this.isCorrect,
-     this.onPressed,
-  });
-  final String answer;
-  final bool isCorrect;
-  final VoidCallback? onPressed;
-
-  @override
-  State<ItemQuestion> createState() => _ItemQuestionState();
-}
-
-class _ItemQuestionState extends State<ItemQuestion> {
-
-  bool isSelected = false;
-  AnswerModel? selectedAnswerModel;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          isSelected = !isSelected;
-        });
-        widget.onPressed!();
-      },
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.only(
-              top: 1,
-              left: 1,
-              right: 1,
-              bottom: 6,
-            ),
-            margin: const EdgeInsets.only(
-              bottom: 14,
-            ),
-
-            decoration: BoxDecoration(
-              color: widget.isCorrect ? AppColors.kBlue400Color : AppColors.kSeptenaryColor,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 20,
-              ),
-              decoration: BoxDecoration(
-                color: widget.isCorrect ? AppColors.kBlue200Color : AppColors.kWhiteColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SvgPicture.asset(
-                    'assets/svg/letter1.svg',
-                    height: 28,
-                    width: 28,
-                  ),
-                  const SizedBox(width: 10),
-                   Flexible(
-                    child: Text(
-                      widget.answer,
-                      style: TextStyle(
-                        color: AppColors.kPrimaryColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
+  void _showBottomSheetSuccess(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      useSafeArea: true,
+      useRootNavigator: true,
+      enableDrag: false,
+      builder: (context) {
+        return Scaffold(
+          backgroundColor: AppColors.kBackgroundColor,
+          body: SafeArea(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Center(
+                      child: Image(
+                        image:
+                            AssetImage('assets/images/on_boarding_4.png'),
+                        width: 220,
+                        height: 250,
                       ),
                     ),
-                  ),
-                ],
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'Congratulations! Get x25',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            SvgPicture.asset(
+                              'assets/svg/diamond-color.svg',
+                              width: 30,
+                              height: 30,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'You have successfully completed $score/${questionsList.length} points',
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: AppColors.kQuaternaryColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'Your answer',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: questionsList.length,
+                      itemBuilder: (context, index) {
+                        final question = questionsList[index];
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                  isSelectQuestion == false
+                                      ? 'assets/svg/true.svg'
+                                      : 'assets/svg/false.svg',
+                                  width: 22,
+                                  height: 22,
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  'Question ${index + 1}',
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.kQuaternaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              question.question,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.kPrimaryColor,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              question.answersList
+                                  .firstWhere(
+                                    (element) {
+                                      return element.isCorrect == false;
+                                    }
+                                  ).answerText,
+                              style: const TextStyle(
+                                decoration: TextDecoration.lineThrough,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.kOrangeColor,
+                              ),
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              question.answersList
+                                  .firstWhere(
+                                    (element) => element.isCorrect == true,
+                                  )
+                                  .answerText,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w400,
+                                color: AppColors.kQuaternaryColor,
+                              ),
+                            ),
+                            const Divider()
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
-          )
-        ],
-      ),
+          ),
+          bottomNavigationBar: Container(
+            margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+            child: ButtonAction(
+              isClick: true,
+              text: 'Go to home',
+              onPressed: () {
+                context.go( QuizzPage.routePath);
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }
+
+
+

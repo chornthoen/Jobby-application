@@ -40,7 +40,7 @@ class _QuizzPageState extends State<QuizzPage> {
             backgroundColor: Colors.transparent,
             elevation: 0,
             toolbarHeight: 70,
-            leadingWidth: 62,
+            leadingWidth: 60,
             automaticallyImplyLeading: false,
             leading: GestureDetector(
               onTap: () {
@@ -50,8 +50,8 @@ class _QuizzPageState extends State<QuizzPage> {
                 margin: const EdgeInsets.only(left: 16),
                 child: const Image(
                   image: AssetImage('assets/images/go_home.png'),
-                  width: 50,
-                  height: 50,
+                  width: 40,
+                  height: 40,
                 ),
               ),
             ),
@@ -62,8 +62,8 @@ class _QuizzPageState extends State<QuizzPage> {
                 },
                 child: const Image(
                   image: AssetImage('assets/images/rank.png'),
-                  width: 50,
-                  height: 50,
+                  width: 42,
+                  height: 42,
                 ),
               ),
               const SizedBox(width: 16),
@@ -76,8 +76,8 @@ class _QuizzPageState extends State<QuizzPage> {
                   children: [
                     const Image(
                       image: AssetImage('assets/images/pech.png'),
-                      width: 100,
-                      height: 50,
+                      width: 80,
+                      height: 45,
                     ),
                     Row(
                       children: [
@@ -91,7 +91,7 @@ class _QuizzPageState extends State<QuizzPage> {
                           '10',
                           style: TextStyle(
                             color: AppColors.kWhiteColor,
-                            fontSize: 26,
+                            fontSize: 24,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -115,7 +115,9 @@ class _QuizzPageState extends State<QuizzPage> {
                   ),
                 ),
                 WidgetSeeAll(
-                  onPressed: () {},
+                  onPressed: () {
+                    context.push(SeeAllProgrammingPage.routePath);
+                  },
                   color: AppColors.kWhiteColor,
                   title: 'In-Progress',
                 ),

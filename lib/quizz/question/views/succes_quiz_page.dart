@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/quizz/models/quiz_model.dart';
+import 'package:jobby_application/quizz/views/quizz_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
-
-import '../../views/quizz_page.dart';
 
 class SuccessQuizPage extends StatefulWidget {
   const SuccessQuizPage({
@@ -13,7 +12,7 @@ class SuccessQuizPage extends StatefulWidget {
     required this.questionModel,
   }) : super(key: key);
 
-  final QuestionModel questionModel;
+  final List<QuestionModel> questionModel;
 
   static const String routePath = '/success-quiz';
 
@@ -24,9 +23,10 @@ class SuccessQuizPage extends StatefulWidget {
 class _SuccessQuizPageState extends State<SuccessQuizPage> {
   @override
   void initState() {
-    print(widget.questionModel.question);
+    currentIndex++;
     super.initState();
   }
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,10 +86,17 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                   ),
                 ),
                 const SizedBox(height: 8),
-                itemAnswer(
-                  title: widget.questionModel.question,
-                  answer: 'Early in the SDLC',
-                  isTrue: true,
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: widget.questionModel.length,
+                  itemBuilder: (context, index) {
+                    return itemAnswer(
+                      title: widget.questionModel[index].question,
+                      answer: widget.questionModel[index].answersList[index].answerText,
+                      isTrue: widget.questionModel[index].answersList[index].isCorrect,
+                    );
+                  },
                 ),
 
               ],
@@ -146,18 +153,18 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
           ),
         ),
         const SizedBox(height: 8),
-        Text(
-          'Early in the SDLC',
-          style: TextStyle(
-            decoration: TextDecoration.lineThrough,
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-            color: AppColors.kOrangeColor,
-          ),
-        ),
+        // Text(
+        //   'Early in the SDLC',
+        //   style: TextStyle(
+        //     decoration: TextDecoration.lineThrough,
+        //     fontSize: 16,
+        //     fontWeight: FontWeight.w400,
+        //     color: AppColors.kOrangeColor,
+        //   ),
+        // ),
         SizedBox(height: 5),
         Text(
-          'Early in the SDLC',
+          answer,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
@@ -219,7 +226,8 @@ class ItemSuccess extends StatelessWidget {
         ),
         SizedBox(height: 5),
         Text(
-          'Early in the SDLC',
+          //'Your answer: ${question.answersList.firstWhere((element) => element.isCorrect).answerText}',
+          'Your answer: Early in the SDLC',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
