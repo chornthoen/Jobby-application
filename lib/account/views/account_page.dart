@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jobby_application/account/models/status_model.dart';
 import 'package:jobby_application/account/widgets/body_info.dart';
 import 'package:jobby_application/account/widgets/item_widget.dart';
 import 'package:jobby_application/account/widgets/profile_info.dart';

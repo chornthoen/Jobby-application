@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/forget_password/views/forget_password_page.dart';
 import 'package:jobby_application/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
@@ -175,7 +176,8 @@ class _SignInPageState extends State<SignInPage> {
               CustomTextButton(
                 text: 'Continue as a guest',
                 onPressed: () {
-                  context.push(MainView.routePath);
+                  context.push(MainEmployerPage.routePath);
+                  //context.push(MainView.routePath);
                 },
               ),
             ],

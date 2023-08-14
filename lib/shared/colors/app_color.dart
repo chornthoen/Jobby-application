@@ -76,12 +76,12 @@ class AppColors{
   //box shadow
   static BoxShadow kBoxShadowColor = const BoxShadow(
     color: AppColors.kGray200,
-    blurRadius: 12,
+    blurRadius: 8,
     offset: Offset(6, 6),
   );
   static BoxShadow kBoxShadowColor1 = const BoxShadow(
     color: AppColors.kGray200,
-    blurRadius: 10,
+    blurRadius: 8,
     offset: Offset(-6, -6),
   );
 

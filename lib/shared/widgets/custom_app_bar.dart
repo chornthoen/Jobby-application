@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     this.onBookmarkTap,
     this.onShareTap,
     this.size = 18,
+    this.onBackTap = null,
   });
 
   final String? title;
@@ -24,6 +25,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   final double? size;
   final VoidCallback? onBookmarkTap;
   final VoidCallback? onShareTap;
+  final VoidCallback? onBackTap;
 
   @override
   Size get preferredSize => const Size.fromHeight(62);
@@ -38,7 +40,13 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       leading: IconButton(
         splashRadius: 25,
         onPressed: () {
-          Navigator.pop(context);
+          if (onBackTap != null) {
+            onBackTap!();
+          }
+          else {
+            Navigator.pop(context);
+          }
+
         },
         icon: const Icon(
           PhosphorIcons.arrow_left,

@@ -14,6 +14,8 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
     this.onProfile,
     this.onNotification,
     this.onSearch,
+    this.isEmployer = false,
+
   });
 
   final String imageProfile;
@@ -22,6 +24,7 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
   final VoidCallback? onProfile;
   final VoidCallback? onNotification;
   final VoidCallback? onSearch;
+  final bool? isEmployer;
 
   @override
   Size get preferredSize => const Size.fromHeight(80);
@@ -53,7 +56,7 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
               Row(
                 children: [
                   Text(
-                    'Hello! ',
+                    '',
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       fontSize: 16,
                       color: AppColors.kPrimaryColor,
@@ -110,30 +113,31 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
           const Spacer(),
           Row(
             children: [
-              GestureDetector(
-                onTap: onSearch,
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: const BoxDecoration(
-                    color: AppColors.kWhiteColor,
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.kGray100,
-                        blurRadius: 10,
-                        offset: Offset(0, 6),
+              if (isEmployer == false)
+                GestureDetector(
+                  onTap: onSearch,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: const BoxDecoration(
+                      color: AppColors.kWhiteColor,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.kGray100,
+                          blurRadius: 10,
+                          offset: Offset(0, 6),
+                        ),
+                      ],
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        PhosphorIcons.magnifying_glass,
+                        color: AppColors.kQuaternaryColor,
+                        size: 28,
                       ),
-                    ],
-                  ),
-                  child: const Center(
-                    child: Icon(
-                      PhosphorIcons.magnifying_glass,
-                      color: AppColors.kQuaternaryColor,
-                      size: 28,
                     ),
                   ),
                 ),
-              ),
               const SizedBox(width: 10),
               GestureDetector(
                 onTap: onNotification,

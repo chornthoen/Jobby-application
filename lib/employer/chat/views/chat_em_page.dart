@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
 import 'package:jobby_application/chat/widgets/item_chat.dart';
+import 'package:jobby_application/employer/chat/views/chat_em_detail_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-import '../models/chat_model.dart';
+class ChatEmployerPage extends StatefulWidget {
+  const ChatEmployerPage({Key? key}) : super(key: key);
 
-class ChatPage extends StatefulWidget {
-  const ChatPage({Key? key}) : super(key: key);
-
-  static const String routePath = '/chat-page';
+  static const String routePath = '/chat_employer';
 
   @override
-  State<ChatPage> createState() => _ChatPageState();
+  State<ChatEmployerPage> createState() => _ChatEmployerPageState();
 }
 
-class _ChatPageState extends State<ChatPage> {
+class _ChatEmployerPageState extends State<ChatEmployerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +76,7 @@ class _ChatPageState extends State<ChatPage> {
                 setState(() {
                   modelChat[index].isMessageRead = false;
                   context.push(
-                    ChatDetailPage.routePath,
+                    ChatEmployerDetailPage.routePath,
                     extra: modelChat[index],
                   );
                 });
@@ -88,4 +88,3 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 }
-

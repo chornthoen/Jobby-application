@@ -1,0 +1,249 @@
+
+class JobShowingModel {
+
+  JobShowingModel({
+    required this.title,
+    required this.location,
+    required this.jobType,
+    required this.salary,
+    required this.candidate,
+    this.isPaused = false,
+    this.isExpired = false,
+  });
+  final String title;
+  final String location;
+  final String jobType;
+  final String salary;
+  final String candidate;
+  final bool? isPaused;
+  final bool? isExpired;
+}
+class JobPendingModel {
+  JobPendingModel({
+    required this.title,
+    required this.status,
+  });
+  final String title;
+  final String status;
+}
+
+List<JobShowingModel> listJobExpire = [
+  JobShowingModel(
+    title: 'Senior UI/UX Designer',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+    isExpired: true,
+
+  ),
+  JobShowingModel(
+    title: 'Mobile Developer (Flutter)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 1000',
+    candidate: '22',
+    isPaused: false,
+    isExpired: true,
+  ),
+  JobShowingModel(
+    title: 'Frontend Developer (ReactJS)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+    isExpired: true,
+  ),
+  JobShowingModel(
+    title: 'Web Developer',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+    isExpired: true,
+  ),
+  JobShowingModel(
+    title: 'Full Stack Developer (NodeJS)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+    isExpired: true,
+  ),
+  JobShowingModel(
+    title: 'Backend Developer (NodeJS)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+    isExpired: true,
+  ),
+];
+List<JobShowingModel> listJobShowing = [
+  JobShowingModel(
+    title: 'Senior UI/UX Designer',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+  ),
+  JobShowingModel(
+    title: 'Mobile Developer (Flutter)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 1000',
+    candidate: '22',
+    isPaused: false,
+  ),
+  JobShowingModel(
+    title: 'Frontend Developer (ReactJS)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+  ),
+  JobShowingModel(
+    title: 'Web Developer',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+  ),
+  JobShowingModel(
+    title: 'Full Stack Developer (NodeJS)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+  ),
+  JobShowingModel(
+    title: 'Backend Developer (NodeJS)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: false,
+  ),
+];
+List<JobShowingModel> listJobPaused = [
+  JobShowingModel(
+    title: 'Senior UI/UX Designer',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: true,
+  ),
+  JobShowingModel(
+    title: 'Mobile Developer (Flutter)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 1000',
+    candidate: '22',
+    isPaused: true,
+  ),
+  JobShowingModel(
+    title: 'Frontend Developer (ReactJS)',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: true,
+  ),
+  JobShowingModel(
+    title: 'Web Developer',
+    location: 'Phnom Penh',
+    jobType: 'Full Time',
+    salary: r'$ 500 - $ 800',
+    candidate: '2',
+    isPaused: true,
+  ),
+
+];
+
+List<JobPendingModel> listJobRejected = [
+  JobPendingModel(
+    title: 'Senior UI/UX Designer',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Mobile Developer (Flutter)',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Frontend Developer (ReactJS)',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Web Developer',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Full Stack Developer (NodeJS)',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Backend Developer (NodeJS)',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Senior UI/UX Designer',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Mobile Developer (Flutter)',
+    status: 'Rejected',
+  ),
+  JobPendingModel(
+    title: 'Frontend Developer (ReactJS)',
+    status: 'Rejected',
+  ),
+];
+
+List<JobPendingModel> listJobPending = [
+  JobPendingModel(
+    title: 'Senior UI/UX Designer',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Mobile Developer (Flutter)',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Frontend Developer (ReactJS)',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Web Developer',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Full Stack Developer (NodeJS)',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Backend Developer (NodeJS)',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Senior UI/UX Designer',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Mobile Developer (Flutter)',
+    status: 'Pending',
+  ),
+  JobPendingModel(
+    title: 'Frontend Developer (ReactJS)',
+    status: 'Pending',
+  ),
+];

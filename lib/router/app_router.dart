@@ -24,6 +24,18 @@ import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/call_video_pang.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
 import 'package:jobby_application/create_password/views/create_password_page.dart';
+import 'package:jobby_application/employer/chat/views/chat_em_detail_page.dart';
+import 'package:jobby_application/employer/home/views/manager_post_page.dart';
+import 'package:jobby_application/employer/main/views/main_em.dart';
+import 'package:jobby_application/employer/post/views/post_em_page.dart';
+import 'package:jobby_application/employer/profile/views/about_jobby_em_page.dart';
+import 'package:jobby_application/employer/profile/views/account_setting_em_page.dart';
+import 'package:jobby_application/employer/profile/views/change_acount_em_page.dart';
+import 'package:jobby_application/employer/profile/views/company_profile_page.dart';
+import 'package:jobby_application/employer/profile/views/id_identification_em_page.dart';
+import 'package:jobby_application/employer/profile/views/member_em_page.dart';
+import 'package:jobby_application/employer/profile/views/service_packages_em_page.dart';
+import 'package:jobby_application/employer/profile/views/share_with_your_friend_em_page.dart';
 import 'package:jobby_application/forget_password/views/forget_password_page.dart';
 import 'package:jobby_application/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
@@ -312,6 +324,55 @@ class AppRouter {
           );
         },
       ),
-    ],
+      //-----------------------route path for employer-----------------------
+      GoRoute(
+        path: MainEmployerPage.routePath,
+        builder: (context, state) => const MainEmployerPage(),
+      ),
+      GoRoute(
+        path: ChatEmployerDetailPage.routePath,
+        builder: (context, state) {
+          final chat = state.extra;
+          return ChatEmployerDetailPage(chatModel: chat! as ChatModel);
+        },
+      ),
+      GoRoute(
+        path: ManagerPostPage.routePath,
+        builder: (context, state) => const ManagerPostPage(),
+      ),
+      GoRoute(
+        path: CompanyProfilePage.routePath,
+        builder: (context, state) => const CompanyProfilePage(),
+      ),
+      GoRoute(
+        path: ChangeAccountEmPage.routePath,
+        builder: (context, state) => const ChangeAccountEmPage(),
+      ),
+      GoRoute(
+        path: MemberEmPage.routePath,
+        builder: (context, state) => const MemberEmPage(),
+      ),
+      GoRoute(
+        path: ServicePackageEmPage.routePath,
+        builder: (context, state) => const ServicePackageEmPage(),
+      ),
+      GoRoute(
+        path: IDIdentificationEmPage.routePath,
+        builder: (context, state) => const IDIdentificationEmPage(),
+      ),
+      GoRoute(
+        path: ShareWithYourFriendEmPage.routePath,
+        builder: (context, state) => const ShareWithYourFriendEmPage(),
+      ),
+      GoRoute(
+        path: AccountSettingEmPage.routePath,
+        builder: (context, state) => const AccountSettingEmPage(),
+      ),
+      GoRoute(
+        path: PostEmployerPage.routePath,
+        builder: (context, state) => const PostEmployerPage(),
+      ),
+
+  ],
   );
 }

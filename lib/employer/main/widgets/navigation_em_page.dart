@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/employer/post/views/post_em_page.dart';
 import 'package:jobby_application/quizz/views/quizz_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-class NavigationPage extends StatefulWidget {
-  const NavigationPage({
+class NavigationEmployerPage extends StatefulWidget {
+  const NavigationEmployerPage({
     super.key,
     required this.tabController,
   });
@@ -13,10 +14,10 @@ class NavigationPage extends StatefulWidget {
   final TabController tabController;
 
   @override
-  State<NavigationPage> createState() => _NavigationPageState();
+  State<NavigationEmployerPage> createState() => _NavigationEmployerPageState();
 }
 
-class _NavigationPageState extends State<NavigationPage> {
+class _NavigationEmployerPageState extends State<NavigationEmployerPage> {
   int tabController = 0;
 
   @override
@@ -34,9 +35,9 @@ class _NavigationPageState extends State<NavigationPage> {
               } else if (tabController == 1) {
                 widget.tabController.animateTo(1);
               } else if (tabController == 2) {
-                widget.tabController.animateTo(2);
+                context.push(PostEmployerPage.routePath);
               } else if (tabController == 3) {
-                context.push(QuizzPage.routePath);
+                widget.tabController.animateTo(3);
               } else if (tabController == 4) {
                 widget.tabController.animateTo(4);
               }
@@ -64,23 +65,23 @@ class _NavigationPageState extends State<NavigationPage> {
             ),
             buildItem(
               tabController == 1
-                  ? 'assets/svg/jobs-active.svg'
-                  : 'assets/svg/jobs.svg',
-              'Jobs',
+                  ? 'assets/svg/search-active.svg'
+                  : 'assets/svg/user-search.svg',
+              'Search',
               0,
             ),
             buildItem(
               tabController == 2
-                  ? 'assets/svg/message-active.svg'
-                  : 'assets/svg/message.svg',
-              'Chat',
+                  ? 'assets/svg/add-circle.svg'
+                  : 'assets/svg/add-circle.svg',
+              'Post',
               0,
             ),
             buildItem(
               tabController == 3
-                  ? 'assets/svg/game-active.svg'
-                  : 'assets/svg/game.svg',
-              'Quiz',
+                  ? 'assets/svg/message-active.svg'
+                  : 'assets/svg/message.svg',
+              'Chat',
               0,
             ),
             buildItem(

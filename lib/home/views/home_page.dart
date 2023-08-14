@@ -23,7 +23,6 @@ import 'package:jobby_application/home/widgets/widget_see_all.dart';
 import 'package:jobby_application/home/widgets/widget_slider.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -50,7 +49,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
       appBar: AppBarHome(
-        name: 'Chorn Thoen',
+        name: 'Hello! Chorn Thoen',
         diamond: '100.00',
         imageProfile: 'assets/images/thoen.png',
         onNotification: () {

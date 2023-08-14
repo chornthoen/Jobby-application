@@ -1,0 +1,78 @@
+import 'package:flutter/material.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
+
+class ItemUpComing extends StatelessWidget {
+  const ItemUpComing({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.date,
+  });
+  final String title;
+  final String description;
+  final String date;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: AppColors.kSeptenaryColor,
+              width: 1,
+            ),
+          ),
+          margin: const EdgeInsets.only(bottom: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 8,
+                    height: 8,
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.kBlueColor,
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    date,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: AppColors.kQuinaryColor,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 5),
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: AppColors.kPrimaryColor,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                description,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.kQuinaryColor,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+}
