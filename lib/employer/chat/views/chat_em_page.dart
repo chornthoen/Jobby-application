@@ -55,35 +55,33 @@ class _ChatEmployerPageState extends State<ChatEmployerPage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: ListView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: modelChat.length,
-          itemBuilder: (context, index) {
-            final model = modelChat[index];
-            return ItemChat(
-              id: model.id,
-              avatarUrl: model.avatarUrl!,
-              name: model.name,
-              message: model.message,
-              time: model.time,
-              isMessageRead: model.isMessageRead,
-              online: model.online,
-              isVerified: model.isVerified,
-              countMessage: model.countMessage,
-              onTap: () {
-                setState(() {
-                  modelChat[index].isMessageRead = false;
-                  context.push(
-                    ChatEmployerDetailPage.routePath,
-                    extra: modelChat[index],
-                  );
-                });
-              },
-            );
-          },
-        ),
+      body: ListView.builder(
+        shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
+        itemCount: modelChat.length,
+        itemBuilder: (context, index) {
+          final model = modelChat[index];
+          return ItemChat(
+            id: model.id,
+            avatarUrl: model.avatarUrl!,
+            name: model.name,
+            message: model.message,
+            time: model.time,
+            isMessageRead: model.isMessageRead,
+            online: model.online,
+            isVerified: model.isVerified,
+            countMessage: model.countMessage,
+            onTap: () {
+              setState(() {
+                modelChat[index].isMessageRead = false;
+                context.push(
+                  ChatEmployerDetailPage.routePath,
+                  extra: modelChat[index],
+                );
+              });
+            },
+          );
+        },
       ),
     );
   }

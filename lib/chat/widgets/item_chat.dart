@@ -37,7 +37,7 @@ class ItemChat extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
         decoration: BoxDecoration(
           color: AppColors.kWhiteColor,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(16),
           border: Border.all(color: AppColors.kGray100),
           boxShadow: [
             AppColors.kBoxShadowColor,

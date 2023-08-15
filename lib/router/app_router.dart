@@ -25,7 +25,11 @@ import 'package:jobby_application/chat/views/call_video_pang.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
 import 'package:jobby_application/create_password/views/create_password_page.dart';
 import 'package:jobby_application/employer/chat/views/chat_em_detail_page.dart';
+import 'package:jobby_application/employer/home/views/gift_page.dart';
+import 'package:jobby_application/employer/home/views/loyalty_page.dart';
+import 'package:jobby_application/employer/home/views/manager_candidate_page.dart';
 import 'package:jobby_application/employer/home/views/manager_post_page.dart';
+import 'package:jobby_application/employer/home/views/service_package_page.dart';
 import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/employer/post/views/post_em_page.dart';
 import 'package:jobby_application/employer/profile/views/about_jobby_em_page.dart';
@@ -371,6 +375,22 @@ class AppRouter {
       GoRoute(
         path: PostEmployerPage.routePath,
         builder: (context, state) => const PostEmployerPage(),
+      ),
+      GoRoute(
+        path: ManagerCandidatePage.routePath,
+        builder: (context, state) => const ManagerCandidatePage(),
+      ),
+      GoRoute(
+        path: ServicePackagePage.routePath,
+        builder: (context, state) => const ServicePackagePage(),
+      ),
+      GoRoute(
+        path: LoyaltyPage.routePath,
+        builder: (context, state) => const LoyaltyPage(),
+      ),
+      GoRoute(
+        path: GiftPage.routePath,
+        builder: (context, state) => const GiftPage(),
       ),
 
   ],

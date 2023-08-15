@@ -1,37 +1,28 @@
-class SettingModel {
-  const SettingModel({
-    required this.title,
-    required this.icon,
-    required this.id,
-  });
 
-  final int id;
-  final String title;
-  final String icon;
-}
+import 'package:jobby_application/account/models/setting_model.dart';
 
-//list setting 3 item
-List<SettingModel> listSetting = [
+List<SettingModel> listSettingEmployer = [
   const SettingModel(
     id: 1,
-    title: 'Your Jobby profile',
+    title: 'Company Profile',
     icon: 'assets/svg/user.svg',
   ),
   const SettingModel(
     id: 2,
-    title: 'Manage CV',
-    icon: 'assets/svg/folders.svg',
-  ),
-  const SettingModel(
-    id: 3,
-    title: 'Your work criteria',
-    icon: 'assets/svg/viewfinder.svg',
-  ),
-  const SettingModel(
-    id: 4,
     title: 'Change account',
     icon: 'assets/svg/exchange.svg',
   ),
+  const SettingModel(
+    id: 3,
+    title: 'Member',
+    icon: 'assets/svg/user-add.svg',
+  ),
+  const SettingModel(
+    id: 4,
+    title: 'Service Packages',
+    icon: 'assets/svg/diamond.svg',
+  ),
+
   const SettingModel(
     id: 5,
     title: 'ID identification',
@@ -58,5 +49,3 @@ List<SettingModel> listSetting = [
     icon: 'assets/svg/logout.svg',
   ),
 ];
-
-

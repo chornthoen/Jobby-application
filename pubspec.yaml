@@ -14,7 +14,7 @@ dependencies:
   flutter_iconly: any
   flutter_localizations:
     sdk: flutter
-  flutter_phosphor_icons: ^0.0.1+6
+  flutter_phosphor_icons: any
   go_router: ^10.0.0
   intl: ^0.17.0
   percent_indicator: ^4.2.3

@@ -3,7 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/employer/home/models/category_model.dart';
 import 'package:jobby_application/employer/home/models/overview_model.dart';
 import 'package:jobby_application/employer/home/models/upcoming_model.dart';
+import 'package:jobby_application/employer/home/views/gift_page.dart';
+import 'package:jobby_application/employer/home/views/loyalty_page.dart';
+import 'package:jobby_application/employer/home/views/manager_candidate_page.dart';
 import 'package:jobby_application/employer/home/views/manager_post_page.dart';
+import 'package:jobby_application/employer/home/views/service_package_page.dart';
 import 'package:jobby_application/employer/home/widgets/item_category.dart';
 import 'package:jobby_application/employer/home/widgets/item_overview.dart';
 import 'package:jobby_application/employer/home/widgets/item_upcoming.dart';
@@ -119,10 +123,26 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                   return  ItemCategory(
                     title: item.title,
                     svgPath: item.svgPath,
-                    onPressed: (){
-                      context.push(ManagerPostPage.routePath);
-                    },
                     color: item.color,
+                    onPressed: (){
+                      switch(item.id){
+                        case 1:
+                          context.push(ManagerPostPage.routePath);
+                          break;
+                        case 2:
+                          context.push(ManagerCandidatePage.routePath);
+                          break;
+                        case 3:
+                          context.push(ServicePackagePage.routePath);
+                          break;
+                        case 4:
+                          context.push(LoyaltyPage.routePath);
+                          break;
+                        case 5:
+                          context.push(GiftPage.routePath);
+                          break;
+                      }
+                    },
                   );
                 },
               ),
