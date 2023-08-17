@@ -152,35 +152,11 @@ class BottomSheets {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const SizedBox(),
-                    const Text(
-                      'Quiz Detail',
-                      style: TextStyle(
-                        color: AppColors.kPrimaryColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(4),
-                        decoration: const BoxDecoration(
-                          color: AppColors.kGray200,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          PhosphorIcons.x,
-                          size: 20,
-                        ),
-                      ),
-                    ),
-                  ],
+                child: AppBarBottomSheet(
+                  title: quizModel.title,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
               ),
               const SizedBox(height: 16),
@@ -301,6 +277,48 @@ class BottomSheets {
           ),
         );
       },
+    );
+  }
+}
+
+class AppBarBottomSheet extends StatelessWidget {
+  const AppBarBottomSheet({
+    super.key,
+    this.title  = '',
+    this.onPressed,
+  });
+  final String? title;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        const SizedBox(),
+         Text(
+          title!,
+          style: const TextStyle(
+            color: AppColors.kPrimaryColor,
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        GestureDetector(
+          onTap: onPressed,
+          child: Container(
+            padding: const EdgeInsets.all(4),
+            decoration: const BoxDecoration(
+              color: AppColors.kGray200,
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(
+              PhosphorIcons.x,
+              size: 20,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

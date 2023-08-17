@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/account/views/career_goal_page.dart';
 import 'package:jobby_application/account/views/about_jobby_page.dart';
 import 'package:jobby_application/account/views/account_setting_page.dart';
 import 'package:jobby_application/account/views/acdemic_level_page.dart';
+import 'package:jobby_application/account/views/career_goal_page.dart';
 import 'package:jobby_application/account/views/change_acount_page.dart';
 import 'package:jobby_application/account/views/change_password_page.dart';
 import 'package:jobby_application/account/views/contact_info_page.dart';
@@ -20,6 +19,7 @@ import 'package:jobby_application/account/views/skill_page.dart';
 import 'package:jobby_application/account/views/term_of_service_page.dart';
 import 'package:jobby_application/account/views/work_experience_page.dart';
 import 'package:jobby_application/account/views/your_jobby_profile_page.dart';
+import 'package:jobby_application/account/views/your_work_criteria_page.dart';
 import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/call_video_pang.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
@@ -29,10 +29,10 @@ import 'package:jobby_application/employer/home/views/gift_page.dart';
 import 'package:jobby_application/employer/home/views/loyalty_page.dart';
 import 'package:jobby_application/employer/home/views/manager_candidate_page.dart';
 import 'package:jobby_application/employer/home/views/manager_post_page.dart';
+import 'package:jobby_application/employer/home/views/post_detail_page.dart';
 import 'package:jobby_application/employer/home/views/service_package_page.dart';
 import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/employer/post/views/post_em_page.dart';
-import 'package:jobby_application/employer/profile/views/about_jobby_em_page.dart';
 import 'package:jobby_application/employer/profile/views/account_setting_em_page.dart';
 import 'package:jobby_application/employer/profile/views/change_acount_em_page.dart';
 import 'package:jobby_application/employer/profile/views/company_profile_page.dart';
@@ -46,6 +46,7 @@ import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart
 import 'package:jobby_application/home/views/blog_detail_page.dart';
 import 'package:jobby_application/home/views/blogs_page.dart';
 import 'package:jobby_application/home/views/company_see_all_page.dart';
+import 'package:jobby_application/home/views/ebook_detail_page.dart';
 import 'package:jobby_application/home/views/ebook_page.dart';
 import 'package:jobby_application/home/views/event_detail_page.dart';
 import 'package:jobby_application/home/views/event_page.dart';
@@ -62,6 +63,7 @@ import 'package:jobby_application/quizz/question/views/succes_quiz_page.dart';
 import 'package:jobby_application/quizz/views/leaderboard_page.dart';
 import 'package:jobby_application/quizz/views/more_turns_page.dart';
 import 'package:jobby_application/quizz/views/quizz_page.dart';
+import 'package:jobby_application/quizz/views/see_all_program.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise2_page.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise3_page.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise4_page.dart';
@@ -74,10 +76,6 @@ import 'package:jobby_application/signin/views/sign_in_page.dart';
 import 'package:jobby_application/splash/views/splash_page.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_forget_password_page.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_sign_up_job_seeker.dart';
-
-import '../account/views/your_work_criteria_page.dart';
-import '../home/views/ebook_detail_page.dart';
-import '../quizz/views/see_all_program.dart';
 
 class AppRouter {
   AppRouter._();
@@ -391,6 +389,10 @@ class AppRouter {
       GoRoute(
         path: GiftPage.routePath,
         builder: (context, state) => const GiftPage(),
+      ),
+      GoRoute(
+        path: PostDetailPage.routePath,
+        builder: (context, state) => const PostDetailPage(),
       ),
 
   ],

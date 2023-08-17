@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class ContactInfoPage extends StatefulWidget {
@@ -215,36 +216,3 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
   }
 }
 
-class TextCustom extends StatelessWidget {
-  const TextCustom({
-    super.key,
-    this.star = true,
-    required this.text,
-  });
-
-  final bool star;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          text,
-          style: const TextStyle(
-            fontSize: 19,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        Text(
-          star ? '*' : '',
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            color: AppColors.kRed400Color,
-          ),
-        ),
-      ],
-    );
-  }
-}

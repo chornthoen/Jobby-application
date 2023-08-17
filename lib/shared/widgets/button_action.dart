@@ -10,18 +10,22 @@ class ButtonAction extends StatelessWidget {
     this.onPressed,
     this.child,
      required this.isClick,
+    this.width = double.infinity,
+    this.icon,
   });
   final String text;
   final VoidCallback? onPressed;
   final Widget? child;
   final bool isClick;
+  final double? width;
+  final IconData? icon;
 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 52,
-      width: MediaQuery.of(context).size.width,
+      height: 55,
+      width: width,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -40,13 +44,23 @@ class ButtonAction extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              text,
-              style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: isClick ? AppColors.kWhiteColor : AppColors.kQuinaryColor
-              ),
+            Row(
+              children: [
+                Text(
+                  text,
+                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: isClick ? AppColors.kWhiteColor : AppColors.kQuinaryColor,
+                  ),
+                ),
+                SizedBox(width: icon != null ? 5 : 0),
+                Icon(
+                  icon,
+                  color: isClick ? AppColors.kWhiteColor : AppColors.kQuinaryColor,
+                  size: 20,
+                )
+              ],
             ),
             const SizedBox(width: 10),
             Center(

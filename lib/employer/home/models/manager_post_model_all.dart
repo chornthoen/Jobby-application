@@ -247,3 +247,64 @@ List<JobPendingModel> listJobPending = [
     status: 'Pending',
   ),
 ];
+
+
+class ActionJobShowingModel {
+
+  ActionJobShowingModel({
+    required this.title,
+    required this.icon,
+  });
+  final String title;
+  final String icon;
+}
+final listActionJobShowing = [
+  ActionJobShowingModel(
+    title: 'Delete',
+    icon: 'assets/svg/delete.svg',
+  ),
+  ActionJobShowingModel(
+    title: 'Pause',
+    icon: 'assets/svg/close.svg',
+  ),
+  ActionJobShowingModel(
+    title: 'Extend',
+    icon: 'assets/svg/file-add.svg',
+  ),
+  ActionJobShowingModel(
+    title: 'Edit',
+    icon: 'assets/svg/edit.svg',
+  ),
+  ActionJobShowingModel(
+    title: 'Applied profile',
+    icon: 'assets/svg/file.svg',
+  ),
+];
+
+final listActionJobPaused = [
+  ActionJobShowingModel(
+    title: 'Edit',
+    icon: 'assets/svg/edit.svg',
+  ),
+  ActionJobShowingModel(
+    title: 'Show job',
+    icon: 'assets/svg/file.svg',
+  ),
+];
+final listActionJobReject = [
+  ActionJobShowingModel(
+    title: 'Delete',
+    icon: 'assets/svg/delete.svg',
+  ),
+  ActionJobShowingModel(
+    title: 'Repost',
+    icon: 'assets/svg/check-circle.svg',
+  ),
+  ActionJobShowingModel(
+    title: 'Edit',
+    icon: 'assets/svg/edit.svg',
+  ),
+
+];
+
+

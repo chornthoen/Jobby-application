@@ -73,16 +73,25 @@ class AppColors{
   //color semantic orange 200
   static const Color kOrange200Color = Color(0xFFF6DEB9);
 
+  //color semantic brown 500
+  static const Color kBrownColor = Color(0xFF674E32);
+  //color semantic brown 400
+  static const Color kBrown400Color = Color(0xFFC69F4A);
+  //color semantic brown 300
+  static const Color kBrown300Color = Color(0xFFD6B66E);
+  //color semantic brown 200
+  static const Color kBrown200Color = Color(0xFFF0E9B9);
+
   //box shadow
   static BoxShadow kBoxShadowColor = const BoxShadow(
     color: AppColors.kGray200,
     blurRadius: 8,
-    offset: Offset(6, 6),
+    offset: Offset(5, 5),
   );
   static BoxShadow kBoxShadowColor1 = const BoxShadow(
     color: AppColors.kGray200,
     blurRadius: 8,
-    offset: Offset(-6, -6),
+    offset: Offset(-5, -5),
   );
 
 

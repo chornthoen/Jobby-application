@@ -16,11 +16,10 @@ class _ProfileEmployerPageState extends State<ProfileEmployerPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.kWhiteColor,
+        backgroundColor: AppColors.kBackgroundColor,
       body: Stack(
         children: [
           SingleChildScrollView(
-            physics: const NeverScrollableScrollPhysics(),
             child: Column(
               children: [
                 SizedBox(

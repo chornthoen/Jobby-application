@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/text_custom.dart';
 
 import '../../shared/widgets/dropdown_button_custom.dart';
 import '../../shared/widgets/text_form_field.dart';

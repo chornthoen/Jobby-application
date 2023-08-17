@@ -16,46 +16,55 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 1,
-      child: ListTile(
-        minVerticalPadding: 0,
-        contentPadding: const EdgeInsets.only(
-          left: 12,
-          right: 4,
-        ),
-        onTap: onPressed,
-        title: Row(
-          children: [
-            SvgPicture.asset(
-              icon,
-              width: 25,
-              height: 25,
-              color: title == 'Log out'
-                  ? AppColors.kRedColor
-                  : AppColors.kQuaternaryColor,
-            ),
-            const SizedBox(width: 10),
-            Text(
-              title,
-              style:  TextStyle(
+    return Column(
+      children: [
+        ListTile(
+          //line 1
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+          minVerticalPadding: 0,
+          contentPadding: const EdgeInsets.only(
+            left: 12,
+            right: 4,
+          ),
+          onTap: onPressed,
+          title: Row(
+            children: [
+              SvgPicture.asset(
+                icon,
+                width: 25,
+                height: 25,
                 color: title == 'Log out'
                     ? AppColors.kRedColor
-                    : AppColors.kPrimaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
+                    : AppColors.kQuaternaryColor,
               ),
-            ),
-          ],
+              const SizedBox(width: 10),
+              Text(
+                title,
+                style: TextStyle(
+                  color: title == 'Log out'
+                      ? AppColors.kRedColor
+                      : AppColors.kPrimaryColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
+          ),
+          trailing: Icon(
+            Icons.arrow_forward_ios,
+            color: title == 'Log out'
+                ? AppColors.kRedColor
+                : AppColors.kQuaternaryColor,
+            size: 20,
+          ),
         ),
-        trailing:  Icon(
-          Icons.arrow_forward_ios,
-          color: title == 'Log out'
-              ? AppColors.kRedColor
-              : AppColors.kQuaternaryColor,
-          size: 20,
+        const Divider(
+          height: 1,
+          color: AppColors.kSeptenaryColor,
         ),
-      ),
+      ],
     );
   }
 }

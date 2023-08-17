@@ -46,3 +46,45 @@ final industryModel = [
     isClick: false,
   ),
 ];
+
+class PeopleModel {
+  PeopleModel({ this.position, this.isClick});
+
+  String? position;
+  bool? isClick;
+}
+
+final peopleModel = [
+  PeopleModel(
+    position: '1-10',
+    isClick: false,
+  ),
+  PeopleModel(
+    position: '11-50',
+    isClick: false,
+  ),
+  PeopleModel(
+    position: '51-200',
+    isClick: false,
+  ),
+  PeopleModel(
+    position: '201-500',
+    isClick: false,
+  ),
+  PeopleModel(
+    position: '501-1000',
+    isClick: false,
+  ),
+  PeopleModel(
+    position: '1001-5000',
+    isClick: false,
+  ),
+  PeopleModel(
+    position: '5001-10000',
+    isClick: false,
+  ),
+  PeopleModel(
+    position: '10001+',
+    isClick: false,
+  ),
+];

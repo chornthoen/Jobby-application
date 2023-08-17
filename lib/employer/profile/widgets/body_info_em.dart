@@ -28,7 +28,6 @@ class _BodyInfoEmployerState extends State<BodyInfoEmployer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.kWhiteColor,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

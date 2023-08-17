@@ -16,9 +16,9 @@ class ShareWithYourFriendEmPage extends StatefulWidget {
 }
 
 class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
-
   final String text = 'https://t.me/chornthoen';
   bool _isCopied = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,12 +66,6 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
             ),
             const SizedBox(height: 20),
             Container(
-              padding: const EdgeInsets.only(
-                left: 16,
-                right: 2,
-                top: 8,
-                bottom: 8,
-              ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
@@ -79,34 +73,48 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                   width: 1,
                 ),
               ),
-              child: Row(
-                children: [
-                   Text(
-                    text,
-                    style:const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.kPrimaryColor,
+              child: ListTile(
+                contentPadding: const EdgeInsets.symmetric(horizontal: 6),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                onTap: () {
+                  setState(() {
+                    _isCopied = true;
+                  });
+                  Clipboard.setData(
+                    ClipboardData(text: text),
+                  );
+                },
+                title: Row(
+                  children: [
+                    Text(
+                      text,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.kPrimaryColor,
+                      ),
                     ),
-                  ),
-                  const Spacer(),
-                  IconButton(
-                    splashRadius: 25,
-                    onPressed: () {
-                      setState(() {
-                        _isCopied = true;
-                      });
-                      Clipboard.setData(
-                        ClipboardData(text: text),
-                      );
-                    },
-                    icon:  Icon(
-                      _isCopied ? PhosphorIcons.checks : PhosphorIcons.copy,
-                      color: AppColors.kPrimaryColor,
-                      size: 24,
-                    ),
-                  )
-                ],
+                    const Spacer(),
+                    IconButton(
+                      splashRadius: 25,
+                      onPressed: () {
+                        setState(() {
+                          _isCopied = true;
+                        });
+                        Clipboard.setData(
+                          ClipboardData(text: text),
+                        );
+                      },
+                      icon: Icon(
+                        _isCopied ? PhosphorIcons.checks : PhosphorIcons.copy,
+                        color: AppColors.kPrimaryColor,
+                        size: 24,
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],

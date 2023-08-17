@@ -20,6 +20,7 @@ class PointsLine extends StatelessWidget {
       percent: percent,
       progressColor: color,
       backgroundColor: AppColors.kGray200,
+      barRadius: Radius.circular(10),
 
     );
   }
