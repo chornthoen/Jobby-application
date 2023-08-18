@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:jobby_application/home/widgets/item_speaker_list.dart';
+import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_detail_em.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/constant/constant.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
@@ -20,6 +20,7 @@ class _TabJobDetailState extends State<TabJobDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 16,
@@ -91,7 +92,7 @@ class _TabJobDetailState extends State<TabJobDetail> {
               ),
               const ItemDetailEm(
                 label: 'Salary',
-                value: '1k\$',
+                value: r'1k$',
               ),
               const ItemDetailEm(
                 label: 'Skills',
@@ -185,46 +186,3 @@ class _TabJobDetailState extends State<TabJobDetail> {
   }
 }
 
-class ItemDetailEm extends StatelessWidget {
-  const ItemDetailEm({
-    super.key,
-    required this.label,
-    required this.value,
-  });
-
-  final String label;
-  final String value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.height * 0.16,
-            child: Text(
-              label,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: AppColors.kQuinaryColor,
-              ),
-            ),
-          ),
-          Flexible(
-            child: Text(
-              value,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: AppColors.kPrimaryColor,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}

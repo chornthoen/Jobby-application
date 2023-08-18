@@ -7,7 +7,7 @@ class ButtonOutLineAction extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.width = double.infinity,
-    this.height = 55,
+    this.height = 54,
     this.icon,
   }) : super(key: key);
   final String text;

@@ -47,50 +47,53 @@ class TabABarJobShowing extends StatelessWidget {
         ),
       ),
       builder: (context) {
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          height: MediaQuery.of(context).size.height * 0.4,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppBarBottomSheet(
-                title: 'Job Details',
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-                itemCount: listActionJobShowing.length,
-                itemBuilder: (context, index) {
-                  final item = listActionJobShowing[index];
-                  return ItemAction(
-                    title: item.title,
-                    icon: item.icon,
-                    onTap: () {
-                      switch (item.title) {
-                        case 'Delete':
-                          Navigator.pop(context);
-                          break;
-                        case 'Pause':
-                          Navigator.pop(context);
-                          break;
-                        case 'Extend':
-                          Navigator.pop(context);
-                          break;
-                        case 'Edit':
-                          Navigator.pop(context);
-                          break;
-                        case 'Applied profile':
-                          Navigator.pop(context);
-                          break;
-                      }
-                    },
-                  );
-                },
-              ),
-            ],
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppBarBottomSheet(
+                  title: 'Job Details',
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: listActionJobShowing.length,
+                  itemBuilder: (context, index) {
+                    final item = listActionJobShowing[index];
+                    return ItemAction(
+                      title: item.title,
+                      icon: item.icon,
+                      onTap: () {
+                        switch (item.title) {
+                          case 'Delete':
+                            Navigator.pop(context);
+                            break;
+                          case 'Pause':
+                            Navigator.pop(context);
+                            break;
+                          case 'Extend':
+                            Navigator.pop(context);
+                            break;
+                          case 'Edit':
+                            Navigator.pop(context);
+                            break;
+                          case 'Applied profile':
+                            Navigator.pop(context);
+                            break;
+                        }
+                      },
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         );
       },

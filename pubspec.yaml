@@ -28,6 +28,8 @@ dependencies:
   dotted_border: any
   lottie: ^2.3.2
   rive: ^0.11.4
+  file_picker: ^5.3.1
+  image_picker: ^1.0.2
 
 dev_dependencies:
   bloc_test: ^9.1.1

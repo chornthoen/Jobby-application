@@ -91,7 +91,7 @@ class _TextFieldFormsState extends State<TextFieldForms> {
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(11),
-            borderSide: BorderSide(color: AppColors.kSeptenaryColor),
+            borderSide: const BorderSide(color: AppColors.kSeptenaryColor),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(11),

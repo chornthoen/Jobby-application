@@ -65,55 +65,60 @@ class BottomSheets {
       context: context,
       builder: (context) {
         return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-          child: Column(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.kPrimaryColor),
-                  ),
-                  const SizedBox(height: 10),
-                  Image(
-                    image: AssetImage(image),
-                    width: 180,
-                    height: 180,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 10),
-                    child: Text(
-                      description,
-                      textAlign: TextAlign.center,
+          padding: MediaQuery.of(context).viewInsets,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      title,
                       style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.kQuaternaryColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.kPrimaryColor),
+                    ),
+                    const SizedBox(height: 10),
+                    Image(
+                      image: AssetImage(image),
+                      width: 180,
+                      height: 180,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 10),
+                      child: Text(
+                        description,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.kQuaternaryColor,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              ButtonAction(
-                isClick: true,
-                text: textButton,
-                onPressed: onPressed,
-              ),
-              const SizedBox(height: 10),
-              ButtonOutLineAction(
-                text: 'Cancel',
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              const SizedBox(height: 20),
-            ],
+                  ],
+                ),
+                const SizedBox(height: 10),
+                ButtonAction(
+                  isClick: true,
+                  text: textButton,
+                  onPressed: onPressed,
+                ),
+                const SizedBox(height: 10),
+                ButtonOutLineAction(
+                  text: 'Cancel',
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                const SizedBox(height: 20),
+              ],
+            ),
           ),
         );
       },

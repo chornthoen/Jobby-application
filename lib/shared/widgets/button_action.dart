@@ -24,7 +24,7 @@ class ButtonAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
+      height: 54,
       width: width,
       child: ElevatedButton(
         onPressed: onPressed,
@@ -54,12 +54,7 @@ class ButtonAction extends StatelessWidget {
                     color: isClick ? AppColors.kWhiteColor : AppColors.kQuinaryColor,
                   ),
                 ),
-                SizedBox(width: icon != null ? 5 : 0),
-                Icon(
-                  icon,
-                  color: isClick ? AppColors.kWhiteColor : AppColors.kQuinaryColor,
-                  size: 20,
-                )
+
               ],
             ),
             const SizedBox(width: 10),

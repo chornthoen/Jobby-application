@@ -36,7 +36,7 @@ class _DropdownButtonCustomState extends State<DropdownButtonCustom> {
         underline: const SizedBox(),
         icon: const Icon(
           PhosphorIcons.caret_down,
-          color: AppColors.kPrimaryColor,
+          color: AppColors.kQuaternaryColor,
         ),
         value: widget.levelValue,
         onChanged: (String? newValue) {
