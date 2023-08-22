@@ -11,9 +11,9 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ChatDetailPage extends StatefulWidget {
   const ChatDetailPage({
-    Key? key,
+    super.key,
     required this.chatModel,
-  }) : super(key: key);
+  });
 
   final ChatModel chatModel;
 
