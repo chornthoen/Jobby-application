@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../shared/colors/app_color.dart';
-
+import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemTrending extends StatelessWidget {
   const ItemTrending({
-    super.key,
     required this.svgPath,
     required this.title,
     required this.description,
+    super.key,
     this.color,
     this.sizeBox = 12,
     this.colorBackground,
   });
+
   final String svgPath;
   final String title;
   final String description;
@@ -26,7 +26,7 @@ class ItemTrending extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height * 0.1,
       width: MediaQuery.of(context).size.width * 0.3,
-      margin:  EdgeInsets.only(right: sizeBox ?? 12),
+      margin: EdgeInsets.only(right: sizeBox ?? 12),
       padding: const EdgeInsets.all(10),
       alignment: Alignment.center,
       decoration: BoxDecoration(
@@ -40,7 +40,7 @@ class ItemTrending extends StatelessWidget {
             height: 50,
             width: 50,
             padding: const EdgeInsets.all(10),
-            decoration:  BoxDecoration(
+            decoration: BoxDecoration(
               color: colorBackground,
               shape: BoxShape.circle,
             ),
@@ -73,5 +73,3 @@ class ItemTrending extends StatelessWidget {
     );
   }
 }
-
-

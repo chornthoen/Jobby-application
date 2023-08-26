@@ -4,11 +4,10 @@ import 'package:jobby_application/quizz/models/quiz_model.dart';
 import 'package:jobby_application/quizz/question/views/question_1.dart';
 import 'package:jobby_application/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class SeeAllProgrammingPage extends StatefulWidget {
-  const SeeAllProgrammingPage({Key? key}) : super(key: key);
+  const SeeAllProgrammingPage({super.key});
 
   static const String routePath = '/see-all-programming-page';
 

@@ -1,10 +1,5 @@
 
 class ManagerCandidateModel{
-  final String image;
-  final String name;
-  final String position;
-  final String star;
-  final String status;
 
   ManagerCandidateModel({
     required this.image,
@@ -13,6 +8,11 @@ class ManagerCandidateModel{
     required this.star,
     required this.status,
   });
+  final String image;
+  final String name;
+  final String position;
+  final String star;
+  final String status;
 }
 //list 10 items of manager candidate
 final List<ManagerCandidateModel> managerCandidateList = [

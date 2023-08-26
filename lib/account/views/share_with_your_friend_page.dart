@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ShareWithYourFriendPage extends StatefulWidget {
-  const ShareWithYourFriendPage({Key? key}) : super(key: key);
+  const ShareWithYourFriendPage({super.key});
 
   static const String routePath = '/share_with_your_friend_page';
 
@@ -16,9 +16,9 @@ class ShareWithYourFriendPage extends StatefulWidget {
 }
 
 class _ShareWithYourFriendPageState extends State<ShareWithYourFriendPage> {
-
   final String text = 'https://t.me/chornthoen';
   bool _isCopied = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +42,7 @@ class _ShareWithYourFriendPageState extends State<ShareWithYourFriendPage> {
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
-                )
+                ),
               ],
             ),
             const SizedBox(height: 10),
@@ -74,16 +74,13 @@ class _ShareWithYourFriendPageState extends State<ShareWithYourFriendPage> {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: AppColors.kGray200,
-                  width: 1,
-                ),
+                border: Border.all(color: AppColors.kGray200),
               ),
               child: Row(
                 children: [
-                   Text(
+                  Text(
                     text,
-                    style:const TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                       color: AppColors.kPrimaryColor,
@@ -100,15 +97,15 @@ class _ShareWithYourFriendPageState extends State<ShareWithYourFriendPage> {
                         ClipboardData(text: text),
                       );
                     },
-                    icon:  Icon(
+                    icon: Icon(
                       _isCopied ? PhosphorIcons.checks : PhosphorIcons.copy,
                       color: AppColors.kPrimaryColor,
                       size: 24,
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -8,7 +8,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class JobPage extends StatefulWidget {
-  const JobPage({Key? key}) : super(key: key);
+  const JobPage({super.key});
 
   static const String routePath = '/job-page';
 
@@ -19,8 +19,7 @@ class JobPage extends StatefulWidget {
 class _JobPageState extends State<JobPage>  {
 
 
-  @override
-    bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
+  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
 
   void closeKeyboard() {
     if (isKeyboardOpen) {
@@ -42,6 +41,7 @@ class _JobPageState extends State<JobPage>  {
   ];
   int index = 0;
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: closeKeyboard,
@@ -121,5 +121,3 @@ class _JobPageState extends State<JobPage>  {
     );
   }
 }
-
-

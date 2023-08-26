@@ -1,11 +1,11 @@
 class LangaugModel {
-  final String? position;
-  bool? isClick;
 
   LangaugModel({
     this.position,
     this.isClick,
   });
+  final String? position;
+  bool? isClick;
 }
 
 final langaugModel = [

@@ -11,7 +11,7 @@ import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OTPSignUpJonSeekerPage extends StatefulWidget {
-  const OTPSignUpJonSeekerPage({Key? key}) : super(key: key);
+  const OTPSignUpJonSeekerPage({super.key});
 
   static const routePath = '/verify_otp_sign_up_page';
 
@@ -44,8 +44,6 @@ class _OTPSignUpJonSeekerPageState extends State<OTPSignUpJonSeekerPage> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -68,7 +66,8 @@ class _OTPSignUpJonSeekerPageState extends State<OTPSignUpJonSeekerPage> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'The verification code has been sent to phone number 0886697678. Please enter the code to continue.',
+                    'The verification code has been sent to phone number '
+                        '0886697678. Please enter the code to continue.',
                     style: TextStyle(
                       color: AppColors.kTertiaryColor,
                       fontSize: 16,
@@ -125,7 +124,9 @@ class _OTPSignUpJonSeekerPageState extends State<OTPSignUpJonSeekerPage> {
                         SnackBarTop.topSnackBar(context, 'Please enter OTP');
                       } else if (otpController.text.length < 6) {
                         SnackBarTop.topSnackBar(
-                            context, 'Please enter OTP 6 digits');
+                          context,
+                          'Please enter OTP 6 digits',
+                        );
                       } else {
                         context.push(CreatePasswordPage.routePath);
                       }

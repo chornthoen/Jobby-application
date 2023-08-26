@@ -2,11 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-import '../models/on_boarding_model.dart';
+import 'package:jobby_application/shared/models/on_boarding_model.dart';
 class ActionsBorderLine extends StatelessWidget {
   const ActionsBorderLine({
-    super.key,
-    required this.currentIndex,
+    required this.currentIndex, super.key,
   });
 
   final int currentIndex;

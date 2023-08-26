@@ -22,7 +22,7 @@ import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class WorkCriteriaPage extends StatefulWidget {
-  const WorkCriteriaPage({Key? key}) : super(key: key);
+  const WorkCriteriaPage({super.key});
 
   static const String routePath = '/workCriteriaPage';
 
@@ -89,7 +89,6 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 controller: addPositionController,
                 hintText: 'Add position',
                 maxLines: 3,
-                minLines: 1,
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: addPositionSheet,
               ),
@@ -182,14 +181,14 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
         context.pop(context);
         String? addPosition = '';
         for (var i = 0; i < addPositionModel.length; i++) {
-          if (addPositionModel[i].isClick == true) {
+          if (addPositionModel[i].isClick!) {
             addPosition = '${addPosition!}${addPositionModel[i].position!}, ';
           }
         }
         addPositionController.text = addPosition!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Job Are You Looking For'),
           SizedBox(height: 10),
           Expanded(child: ItemAddPosition()),
@@ -206,14 +205,14 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
         context.pop(context);
         String? typeOfWork = '';
         for (var i = 0; i < typeOfWorkModel.length; i++) {
-          if (typeOfWorkModel[i].isClick == true) {
+          if (typeOfWorkModel[i].isClick!) {
             typeOfWork = '${typeOfWork!}${typeOfWorkModel[i].position!}, ';
           }
         }
         typeOfWorkController.text = typeOfWork!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Type of Work'),
           SizedBox(height: 10),
           Expanded(child: ItemTypeOfWork()),
@@ -230,14 +229,14 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
         context.pop(context);
         String? location = '';
         for (var i = 0; i < locationModel.length; i++) {
-          if (locationModel[i].isClick == true) {
+          if (locationModel[i].isClick!) {
             location = '${location!}${locationModel[i].position!}, ';
           }
         }
         locationController.text = location!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Location'),
           SizedBox(height: 10),
           Expanded(child: ItemLocation()),
@@ -254,14 +253,14 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
         context.pop(context);
         String? level = '';
         for (var i = 0; i < levelModel.length; i++) {
-          if (levelModel[i].isClick == true) {
+          if (levelModel[i].isClick!) {
             level = '${level!}${levelModel[i].position!}, ';
           }
         }
         levelController.text = level!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Level'),
           SizedBox(height: 10),
           Expanded(child: ItemLevel()),
@@ -278,14 +277,14 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
         context.pop(context);
         String? industry = '';
         for (var i = 0; i < industryModel.length; i++) {
-          if (industryModel[i].isClick == true) {
+          if (industryModel[i].isClick!) {
             industry = '${industry!}${industryModel[i].position!}, ';
           }
         }
         industryController.text = industry!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Industry'),
           SizedBox(height: 10),
           Expanded(child: ItemIndustry()),
@@ -302,15 +301,15 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
         context.pop(context);
         String? expectedSalary = '';
         for (var i = 0; i < expectedSalaryModel.length; i++) {
-          if (expectedSalaryModel[i].isClick == true) {
+          if (expectedSalaryModel[i].isClick!) {
             expectedSalary =
                 '${expectedSalary!}${expectedSalaryModel[i].position!}, ';
           }
         }
         expectedSalaryController.text = expectedSalary!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Expected Salary'),
           SizedBox(height: 10),
           Expanded(child: ItemExpectedSalary()),

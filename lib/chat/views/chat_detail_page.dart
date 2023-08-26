@@ -11,8 +11,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ChatDetailPage extends StatefulWidget {
   const ChatDetailPage({
-    super.key,
-    required this.chatModel,
+    required this.chatModel, super.key,
   });
 
   final ChatModel chatModel;
@@ -144,11 +143,10 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
         child: EmojiPicker(
           textEditingController: messageController,
           config: const Config(
-            columns: 7,
             emojiSizeMax: 32 * 1.3,
           ),
           onEmojiSelected: (category, emoji) {
-            print(emoji);
+
           },
         ),
       ),
@@ -157,10 +155,10 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
 }
 
 class MessageModel {
-  String sms;
-  bool isMe;
 
   MessageModel({required this.sms, required this.isMe});
+  String sms;
+  bool isMe;
 
   final List<MessageModel> messages = [
     MessageModel(

@@ -13,12 +13,13 @@ import 'package:jobby_application/sign_up/views/sign_up_individual_page.dart';
 import 'package:jobby_application/signin/views/sign_in_page.dart';
 
 class SignUpChoosePositionPage extends StatefulWidget {
-  const SignUpChoosePositionPage({Key? key}) : super(key: key);
+  const SignUpChoosePositionPage({super.key});
 
   static const String routePath = '/sign-up-select-position-page';
 
   @override
-  State<SignUpChoosePositionPage> createState() => _SignUpChoosePositionPageState();
+  State<SignUpChoosePositionPage> createState() =>
+      _SignUpChoosePositionPageState();
 }
 
 class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
@@ -45,7 +46,7 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
             ),
             const SizedBox(height: 40),
             const LabelText(text: 'Choose your position'),
-            ItemRole(
+            itemRole(
               1,
               'Individual',
               PhosphorIcons.user_gear,
@@ -53,7 +54,7 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
 
             ),
             const SizedBox(height: 20),
-            ItemRole(
+            itemRole(
               2,
               'Enterprise',
               PhosphorIcons.buildings,
@@ -88,7 +89,7 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
     );
   }
 
-  Widget ItemRole(int id, String title, IconData icon, bool selected) {
+  Widget itemRole(int id, String title, IconData icon, bool selected) {
     return Material(
       child: GestureDetector(
         onTap: () {
@@ -134,4 +135,3 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
     );
   }
 }
-

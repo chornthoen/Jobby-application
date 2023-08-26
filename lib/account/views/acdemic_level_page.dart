@@ -4,14 +4,12 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/dropdown_button_custom.dart';
 import 'package:jobby_application/shared/widgets/text_custom.dart';
-
-import '../../shared/widgets/dropdown_button_custom.dart';
-import '../../shared/widgets/text_form_field.dart';
-import 'contact_info_page.dart';
+import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class AcademicLevelPage extends StatefulWidget {
-  const AcademicLevelPage({Key? key}) : super(key: key);
+  const AcademicLevelPage({super.key});
 
   static const String routePath = '/academic_level_page';
 
@@ -43,7 +41,7 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
       onTap: closeKeyboard,
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
-        appBar: CustomAppBar(title: 'Academic Level'),
+        appBar: const CustomAppBar(title: 'Academic Level'),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
@@ -78,11 +76,11 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
                     Expanded(
                       child: Column(
                         children: [
-                          TextCustom(
+                          const TextCustom(
                             text: 'Start Date',
                             star: false,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           TextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,
@@ -99,7 +97,7 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
                             text: 'End Date',
                             star: false,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           TextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,

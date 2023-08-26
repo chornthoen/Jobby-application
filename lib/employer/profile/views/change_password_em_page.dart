@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class ChangePasswordEmPage extends StatefulWidget {
-  const ChangePasswordEmPage({Key? key}) : super(key: key);
+  const ChangePasswordEmPage({super.key});
 
   static const String routePath = '/change-password-em-page';
 

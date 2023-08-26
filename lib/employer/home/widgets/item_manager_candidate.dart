@@ -1,16 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemManagerCandidate extends StatelessWidget {
   const ItemManagerCandidate({
-    super.key,
     required this.image,
     required this.name,
     required this.position,
     required this.star,
     required this.status,
+    super.key,
   });
 
   final String image;
@@ -66,7 +65,9 @@ class ItemManagerCandidate extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 6, vertical: 2),
+                          horizontal: 6,
+                          vertical: 2,
+                        ),
                         decoration: BoxDecoration(
                           color: star == '0'
                               ? AppColors.kGray200
@@ -100,7 +101,9 @@ class ItemManagerCandidate extends StatelessWidget {
                       const SizedBox(width: 10),
                       Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 6, vertical: 2),
+                          horizontal: 6,
+                          vertical: 2,
+                        ),
                         decoration: BoxDecoration(
                           color: AppColors.kGray200,
                           borderRadius: BorderRadius.circular(16),
@@ -130,7 +133,7 @@ class ItemManagerCandidate extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

@@ -7,10 +7,10 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
-import '../../../../shared/widgets/snack_bar_top.dart';
+import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class DetailCompanyPage extends StatefulWidget {
-  const DetailCompanyPage({Key? key}) : super(key: key);
+  const DetailCompanyPage({super.key});
 
   static const String routePath = '/detail-company-page';
 
@@ -68,100 +68,99 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                     ],
                   ),
                 ),
-                Container(
-                  color: AppColors.kWhiteColor,
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          ItemWidget(
-                            svgPath: 'assets/svg/location.svg',
-                            title: 'Location',
-                            description: 'Phnom Penh',
-                            color: AppColors.kGreen200Color,
+                Column(
+                  children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ItemWidget(
+                          svgPath: 'assets/svg/location.svg',
+                          title: 'Location',
+                          description: 'Phnom Penh',
+                          color: AppColors.kGreen200Color,
+                        ),
+                        ItemWidget(
+                          svgPath: 'assets/svg/users.svg',
+                          title: 'Followers',
+                          description: '11,000',
+                          color: AppColors.kPurple200Color,
+                        ),
+                        ItemWidget(
+                          svgPath: 'assets/svg/star-outline.svg',
+                          title: 'Rating',
+                          isStar: true,
+                          description: '9.5',
+                          color: AppColors.kGreen200Color,
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              ButtonOutLineAction(
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                text: follow ? 'Following' : 'Follow',
+                                onPressed: () {
+                                  setState(() {
+                                    if (follow) {
+                                      BottomSheets.showBottomSheetCustom(
+                                        context: context,
+                                        title: 'Unfollow This Company',
+                                        image: 'assets/images/unfollow.png',
+                                        description:
+                                            'You will stop receiving job alerts'
+                                            ' from this company. Do you '
+                                            'want to continue?',
+                                        textButton: 'Unfollow',
+                                        onPressed: () {
+                                          setState(() {
+                                            follow = !follow;
+                                            Navigator.pop(context);
+                                          });
+                                        },
+                                      );
+                                    } else {
+                                      follow = !follow;
+                                    }
+                                  });
+                                },
+                              ),
+                              ButtonOutLineAction(
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                text: 'Message',
+                                onPressed: () {
+                                  BottomSheets.showBottomSheetCustom(
+                                    context: context,
+                                    title: 'Please login to send message',
+                                    image: 'assets/images/enter.png',
+                                    description:
+                                        'You will stop receiving job alerts'
+                                        ' from this company. Do you '
+                                        'want to continue?',
+                                    textButton: 'Sign in',
+                                    onPressed: () {
+                                      setState(() {
+                                        follow = !follow;
+                                        Navigator.pop(context);
+                                      });
+                                    },
+                                  );
+                                },
+                              ),
+                            ],
                           ),
-                          ItemWidget(
-                            svgPath: 'assets/svg/users.svg',
-                            title: 'Followers',
-                            description: '11,000',
-                            color: AppColors.kPurple200Color,
-                          ),
-                          ItemWidget(
-                            svgPath: 'assets/svg/star-outline.svg',
-                            title: 'Rating',
-                            isStar: true,
-                            description: '9.5',
-                            color: AppColors.kGreen200Color,
-                          ),
+                          const SizedBox(height: 20),
+                          const TabCompanyDetail(),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 20),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                ButtonOutLineAction(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  text: follow ? 'Following' : 'Follow',
-                                  onPressed: () {
-                                    setState(() {
-                                      if (follow) {
-                                        BottomSheets.showBottomSheetCustom(
-                                          context: context,
-                                          title: 'Unfollow This Company',
-                                          image: 'assets/images/unfollow.png',
-                                          description:
-                                              'You will stop receiving job alerts from this company. Do you want to continue?',
-                                          textButton: 'Unfollow',
-                                          onPressed: () {
-                                            setState(() {
-                                              follow = !follow;
-                                              Navigator.pop(context);
-                                            });
-                                          },
-                                        );
-                                      } else {
-                                        follow = !follow;
-                                      }
-                                    });
-                                  },
-                                ),
-                                ButtonOutLineAction(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.4,
-                                  text: 'Message',
-                                  onPressed: () {
-                                    BottomSheets.showBottomSheetCustom(
-                                      context: context,
-                                      title: 'Please login to send message',
-                                      image: 'assets/images/enter.png',
-                                      description:
-                                          'You will stop receiving job alerts from this company. Do you want to continue?',
-                                      textButton: 'Sign in',
-                                      onPressed: () {
-                                        setState(() {
-                                          follow = !follow;
-                                          Navigator.pop(context);
-                                        });
-                                      },
-                                    );
-                                  },
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 20),
-                            const TabCompanyDetail(),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -171,9 +170,12 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
             onSaved: () {
               setState(() {
                 if (!isSaved) {
-                  SnackBarTop.topSnackBarLottie(context,'Saved Successfully!');
+                  SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
                 } else {
-                  SnackBarTop.topSnackBarLottie(context,'Unsaved Successfully!');
+                  SnackBarTop.topSnackBarLottie(
+                    context,
+                    'Unsaved Successfully!',
+                  );
                 }
                 isSaved = !isSaved;
               });

@@ -1,11 +1,9 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:jobby_application/account/models/hobby_models.dart';
-import 'package:jobby_application/account/models/languag_models.dart';
 import 'package:jobby_application/jobs/widgets/check_custom.dart';
 
 class ItemHobby extends StatefulWidget {
-  const ItemHobby({Key? key}) : super(key: key);
+  const ItemHobby({super.key});
 
   @override
   State<ItemHobby> createState() => _ItemHobbyState();

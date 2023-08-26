@@ -1,17 +1,16 @@
 class ChatModel {
-
   ChatModel({
     required this.id,
     required this.name,
     required this.message,
     required this.time,
-     this.avatarUrl,
     required this.isMessageRead,
     required this.online,
     required this.isVerified,
+    this.avatarUrl,
     this.countMessage,
-
   });
+
   int id;
   String name;
   String message;
@@ -23,41 +22,40 @@ class ChatModel {
   int? countMessage;
 }
 
-
 List<ChatModel> modelChat = [
   ChatModel(
-    id: 1,
-    name: 'Chorn Thoen',
-    message: 'Hello, How are you?',
-    time: '10:33 AM',
-    avatarUrl: 'assets/images/thoen.png',
-    isMessageRead: true,
-    online: true,
-    isVerified: true,
-    countMessage: 3
-  ),
+      id: 1,
+      name: 'Chorn Thoen',
+      message: 'Hello, How are you?',
+      time: '10:33 AM',
+      avatarUrl: 'assets/images/thoen.png',
+      isMessageRead: true,
+      online: true,
+      isVerified: true,
+      countMessage: 3,),
   ChatModel(
     id: 2,
     name: 'David Beckham',
-    message: 'Hello Devid, I am interested in your job. Can you tell me more about it?',
+    message:
+        'Hello Devid, I am interested in your job. Can you tell me more about '
+        'it?',
     time: '10:33 AM',
     avatarUrl: 'assets/images/profile_null.png',
     isMessageRead: true,
     online: false,
     isVerified: false,
-    countMessage: 1
+    countMessage: 1,
   ),
   ChatModel(
-    id: 3,
-    name: 'Jenny Wilson',
-    message: 'Hello, How are you? this is my message for you.',
-    time: '10:33 AM',
-    avatarUrl: 'assets/images/jenny.png',
-    isMessageRead: true,
-    online: true,
-    isVerified: true,
-    countMessage: 2
-  ),
+      id: 3,
+      name: 'Jenny Wilson',
+      message: 'Hello, How are you? this is my message for you.',
+      time: '10:33 AM',
+      avatarUrl: 'assets/images/jenny.png',
+      isMessageRead: true,
+      online: true,
+      isVerified: true,
+      countMessage: 2,),
   ChatModel(
     id: 4,
     name: 'Jerome Bell',
@@ -89,16 +87,15 @@ List<ChatModel> modelChat = [
     isVerified: false,
   ),
   ChatModel(
-    id: 7,
-    name: 'Apple',
-    message: 'See you soon.',
-    time: '11:45 AM',
-    avatarUrl: 'assets/images/apple.png',
-    isMessageRead: true,
-    online: true,
-    isVerified: true,
-    countMessage: 9
-  ),
+      id: 7,
+      name: 'Apple',
+      message: 'See you soon.',
+      time: '11:45 AM',
+      avatarUrl: 'assets/images/apple.png',
+      isMessageRead: true,
+      online: true,
+      isVerified: true,
+      countMessage: 9,),
   ChatModel(
     id: 8,
     name: 'Heng Sopheak',
@@ -109,6 +106,4 @@ List<ChatModel> modelChat = [
     online: true,
     isVerified: false,
   ),
-
 ];
-

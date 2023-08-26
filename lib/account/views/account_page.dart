@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 
 class AccountPage extends StatefulWidget {
-  const AccountPage({Key? key}) : super(key: key);
+  const AccountPage({super.key});
 
   static const String routePath = '/account-page';
 
@@ -24,7 +24,7 @@ class _AccountPageState extends State<AccountPage> {
           SingleChildScrollView(
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   height: MediaQuery.of(context).size.height * 0.42,
                   child: Stack(
                     children: [
@@ -50,9 +50,9 @@ class _AccountPageState extends State<AccountPage> {
                 ),
 
                 const SizedBox(height: 20),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children: [
                     ItemWidget(
                       svgPath: 'assets/svg/file-check.svg',
                       title: 'Applied',
@@ -84,5 +84,3 @@ class _AccountPageState extends State<AccountPage> {
     );
   }
 }
-
-

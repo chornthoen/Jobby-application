@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ChangeAccountEmPage extends StatefulWidget {
-  const ChangeAccountEmPage({Key? key}) : super(key: key);
+  const ChangeAccountEmPage({super.key});
 
   static const String routePath = '/change_account_em_page';
 
@@ -26,14 +26,14 @@ class _ChangeAccountEmPageState extends State<ChangeAccountEmPage> {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         child: Column(
           children: [
-            ActionAccount(
+            actionAccount(
             1,
               'Chorn Thoen',
               'Mobile Developer',
               'assets/images/thoen.png',
               index == 1 ? true : false,
           ),
-            ActionAccount(
+            actionAccount(
               2,
               'Rose',
               'UI Designer',
@@ -61,7 +61,7 @@ class _ChangeAccountEmPageState extends State<ChangeAccountEmPage> {
     );
   }
 
-  Widget ActionAccount(
+  Widget actionAccount(
     int id,
     String title,
     String subtitle,

@@ -5,7 +5,6 @@ import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class ItemHotJobs extends StatelessWidget {
   const ItemHotJobs({
-    super.key,
     required this.title,
     required this.name,
     required this.image,
@@ -13,6 +12,7 @@ class ItemHotJobs extends StatelessWidget {
     required this.time,
     required this.role,
     required this.date,
+    super.key,
     this.color,
     this.onSaved,
     this.onApply,
@@ -181,8 +181,8 @@ class ItemHotJobs extends StatelessWidget {
               ),
               TextButton(
                 onPressed: onApply,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Text(
                       'Apply',
                       style: TextStyle(

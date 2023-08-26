@@ -6,10 +6,9 @@ import 'package:jobby_application/account/models/card_model.dart';
 import 'package:jobby_application/account/views/id_identification_detail_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
-import 'package:jobby_application/shared/widgets/custom_widget.dart';
 
 class IDIdentificationPage extends StatefulWidget {
-  const IDIdentificationPage({Key? key}) : super(key: key);
+  const IDIdentificationPage({super.key});
 
   static const String routePath = '/id_identification_page';
 
@@ -72,7 +71,6 @@ class _IDIdentificationPageState extends State<IDIdentificationPage> {
                   ),
                   margin: const EdgeInsets.only(top: 16),
                   child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Image(
                         image: AssetImage(cardModel[index].image),
@@ -115,11 +113,10 @@ class _IDIdentificationPageState extends State<IDIdentificationPage> {
                   ),
                 );
               },
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-

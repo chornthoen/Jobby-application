@@ -5,9 +5,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class IconAndText extends StatelessWidget {
   const IconAndText({
-    super.key,
-    required this.svg,
-    required this.text,
+    required this.svg, required this.text, super.key,
   });
 
   final String svg;
@@ -20,7 +18,6 @@ class IconAndText extends StatelessWidget {
       width: double.infinity,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SvgPicture.asset(
             svg,

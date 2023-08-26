@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobby_application/account/models/setting_model.dart';
-import 'package:jobby_application/account/views/account_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemHomeBanner extends StatelessWidget {
   const ItemHomeBanner({
-    super.key,
     required this.image,
     required this.title,
     required this.description,
+    super.key,
     this.onPressed,
   });
 
@@ -82,9 +80,9 @@ class ItemHomeBanner extends StatelessWidget {
                             color: AppColors.kPrimaryColor,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Row(
+                          child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children: [
                               Text(
                                 'Join Now',
                                 style: TextStyle(
@@ -102,7 +100,7 @@ class ItemHomeBanner extends StatelessWidget {
                             ],
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -116,7 +114,7 @@ class ItemHomeBanner extends StatelessWidget {
 }
 
 class InfoProfile extends StatelessWidget {
-  const InfoProfile({Key? key}) : super(key: key);
+  const InfoProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -133,8 +131,8 @@ class InfoProfile extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: AppColors.kWhiteColor,
-              boxShadow: [
-                const BoxShadow(
+              boxShadow: const [
+                BoxShadow(
                   color: AppColors.kGray200,
                   blurRadius: 2,
                   offset: Offset(0, 5),
@@ -165,7 +163,7 @@ class InfoProfile extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: Image(
+                      child: const Image(
                         image: AssetImage('assets/images/business.png'),
                         height: 40,
                         width: 40,
@@ -186,7 +184,7 @@ class InfoProfile extends StatelessWidget {
                           height: 20,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(height: 20),
@@ -210,8 +208,8 @@ class InfoProfile extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 26),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -220,7 +218,7 @@ class InfoProfile extends StatelessWidget {
                       TextRole(text: 'Web Developer'),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -232,8 +230,7 @@ class InfoProfile extends StatelessWidget {
 
 class TextRole extends StatelessWidget {
   const TextRole({
-    super.key,
-    required this.text,
+    required this.text, super.key,
   });
 
   final String text;
@@ -260,5 +257,3 @@ class TextRole extends StatelessWidget {
     );
   }
 }
-
-

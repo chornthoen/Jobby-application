@@ -5,10 +5,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemCandidateDetail extends StatelessWidget {
   const ItemCandidateDetail({
-    super.key,
-    required this.name,
-    required this.image,
-    required this.date,
+    required this.name, required this.image, required this.date, super.key,
   });
   final String name;
   final String image;
@@ -57,7 +54,7 @@ class ItemCandidateDetail extends StatelessWidget {
                     ],
                   ),
                 ],
-              )
+              ),
             ],
           ),
           const SizedBox(height: 10),
@@ -79,7 +76,7 @@ class ItemCandidateDetail extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );

@@ -10,7 +10,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ManagerPostPage extends StatefulWidget {
-  const ManagerPostPage({Key? key}) : super(key: key);
+  const ManagerPostPage({super.key});
 
   static const String routePath = '/manager_post';
 
@@ -117,12 +117,3 @@ class _ManagerPostPageState extends State<ManagerPostPage>
     );
   }
 }
-
-
-
-
-
-
-
-
-

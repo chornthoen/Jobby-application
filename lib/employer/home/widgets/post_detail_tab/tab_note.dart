@@ -9,7 +9,7 @@ import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class TabNotes extends StatefulWidget {
-  const TabNotes({Key? key}) : super(key: key);
+  const TabNotes({super.key});
 
   @override
   State<TabNotes> createState() => _TabNotesState();
@@ -107,7 +107,7 @@ class _TabNotesState extends State<TabNotes> {
                   color: AppColors.kTertiaryColor,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -116,7 +116,7 @@ class _TabNotesState extends State<TabNotes> {
 
   //show bottom sheet add note
   void _showBottomSheetAddNote() {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
       backgroundColor: AppColors.kBackgroundColor,
@@ -191,7 +191,7 @@ class _TabNotesState extends State<TabNotes> {
   }
 
   void _showBottomSheetEditNote(int index) {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(

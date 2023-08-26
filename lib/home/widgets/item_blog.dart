@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-
 class ItemBlog extends StatelessWidget {
   const ItemBlog({
-    super.key,
     required this.image,
     required this.title,
     required this.read,
     required this.date,
+    super.key,
     this.onPressed,
     this.onBookmark,
     this.isBookmark = false,
@@ -121,7 +120,7 @@ class ItemBlog extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

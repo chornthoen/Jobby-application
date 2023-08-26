@@ -34,9 +34,9 @@ class MatchScore extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 5),
-        Expanded(
+        const Expanded(
           child: Column(
-            children: const [
+            children: [
               TextMatchScore(
                 label: 'Skill',
                 value: '70%',
@@ -71,7 +71,7 @@ class MatchScore extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
@@ -79,9 +79,7 @@ class MatchScore extends StatelessWidget {
 
 class TextMatchScore extends StatelessWidget {
   const TextMatchScore({
-    super.key,
-    required this.label,
-    required this.value,
+    required this.label, required this.value, super.key,
   });
   final String label;
   final String value;

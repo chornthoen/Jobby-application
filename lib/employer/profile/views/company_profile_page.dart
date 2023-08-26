@@ -13,7 +13,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class CompanyProfilePage extends StatefulWidget {
-  const CompanyProfilePage({Key? key}) : super(key: key);
+  const CompanyProfilePage({super.key});
 
   static const String routePath = '/company-profile-page';
 
@@ -117,7 +117,6 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
                 const TextCustom(text: 'Company'),
                 const SizedBox(height: 10),
                 TextFieldForms(
-                  minLines: 1,
                   maxLines: 5,
                   hintText: 'Company',
                   controller: companyController,
@@ -161,7 +160,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
                       ),
                     ),
                   ],
-                )
+                ),
 
               ],
             ),
@@ -193,14 +192,14 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
         context.pop(context);
         String? industry = '';
         for (var i = 0; i < industryModel.length; i++) {
-          if (industryModel[i].isClick == true) {
+          if (industryModel[i].isClick!) {
             industry = '${industry!}${industryModel[i].position!}, ';
           }
         }
         industryController.text = industry!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Industry'),
           SizedBox(height: 10),
           Expanded(child: ItemIndustry()),
@@ -216,14 +215,14 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
         context.pop(context);
         String? industry = '';
         for (var i = 0; i < peopleModel.length; i++) {
-          if (peopleModel[i].isClick == true) {
+          if (peopleModel[i].isClick!) {
             industry = '${industry!}${peopleModel[i].position!}, ';
           }
         }
         peopleController.text = industry!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Industry'),
           SizedBox(height: 10),
           Expanded(child: ItemPeople()),
@@ -233,5 +232,3 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
     );
   }
 }
-
-

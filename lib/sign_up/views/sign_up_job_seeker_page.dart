@@ -5,7 +5,6 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
-import 'package:jobby_application/shared/widgets/custom_text_button.dart';
 import 'package:jobby_application/shared/widgets/item_social.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
@@ -15,7 +14,7 @@ import 'package:jobby_application/shared/widgets/widget_or.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_sign_up_job_seeker.dart';
 
 class SignUpJobSeekerPage extends StatefulWidget {
-  const SignUpJobSeekerPage({Key? key}) : super(key: key);
+  const SignUpJobSeekerPage({super.key});
 
   static const String routePath = '/sign-up-page';
 
@@ -106,6 +105,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                   TextFieldForms(
                     onChange: (value) {
                       setState(() {});
+                      return null;
                     },
                     keyboardType: TextInputType.visiblePassword,
                     controller: passwordController,
@@ -126,10 +126,10 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                     onPressed: () {
                       if (emailController.text.isEmpty) {
                         SnackBarTop.topSnackBar(
-                            context, 'Please enter your phone number/email');
+                            context, 'Please enter your phone number/email',);
                       } else if (passwordController.text.isEmpty ) {
                         SnackBarTop.topSnackBar(
-                            context, 'Please enter your password');
+                            context, 'Please enter your password',);
                       }
                       context.push(OTPSignUpJonSeekerPage.routePath);
                     },

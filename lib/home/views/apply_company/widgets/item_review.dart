@@ -24,8 +24,8 @@ class ItemReviews extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Row(
-            children: const [
+          const Row(
+            children: [
               Star5(),
               SizedBox(width: 10),
               Text(
@@ -40,7 +40,9 @@ class ItemReviews extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           const Text(
-            'Tmrw studio owns, manages and operates a system of Trade Centers - A shopping, entertainment and culinary paradise with 4 brand lines.',
+            'Tmrw studio owns, manages and operates a system of Trade Centers'
+                ' - A shopping, entertainment and culinary paradise with'
+                ' 4 brand lines.',
             style: TextStyle(
               color: AppColors.kQuaternaryColor,
               fontSize: 16,
@@ -52,7 +54,7 @@ class ItemReviews extends StatelessWidget {
             height: 1,
             width: MediaQuery.of(context).size.width,
             color: AppColors.kGray200,
-          )
+          ),
         ],
       ),
     );

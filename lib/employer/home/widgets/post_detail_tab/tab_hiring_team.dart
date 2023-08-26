@@ -4,7 +4,7 @@ import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_hir
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabHiringTeam extends StatefulWidget {
-  const TabHiringTeam({Key? key}) : super(key: key);
+  const TabHiringTeam({super.key});
 
   @override
   State<TabHiringTeam> createState() => _TabHiringTeamState();
@@ -35,6 +35,3 @@ class _TabHiringTeamState extends State<TabHiringTeam> {
     );
   }
 }
-
-
-

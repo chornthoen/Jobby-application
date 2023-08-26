@@ -1,12 +1,12 @@
 
 class HobbyModel {
-  final String? position;
-  bool? isClick;
 
   HobbyModel({
     this.position,
     this.isClick,
   });
+  final String? position;
+  bool? isClick;
 }
 
 final hobbyModel = [

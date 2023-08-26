@@ -1,16 +1,15 @@
-
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemJobShowing extends StatelessWidget {
   const ItemJobShowing({
-    super.key,
     required this.title,
     required this.location,
     required this.jobType,
     required this.salary,
     required this.candidate,
     required this.onTap,
+    super.key,
     this.isPaused,
     this.isExpired = false,
     this.onPressed,
@@ -64,14 +63,14 @@ class ItemJobShowing extends StatelessWidget {
                         color: AppColors.kPrimaryColor,
                         size: 24,
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(height: 5),
-                if (isPaused == true)
+                if (isPaused!)
                   Container(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
                       color: AppColors.kQuaternaryColor,
                       borderRadius: BorderRadius.circular(14),
@@ -85,10 +84,10 @@ class ItemJobShowing extends StatelessWidget {
                       ),
                     ),
                   ),
-                if (isExpired == true)
+                if (isExpired!)
                   Container(
                     padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
                       color: AppColors.kRed400Color,
                       borderRadius: BorderRadius.circular(14),
@@ -189,10 +188,10 @@ class ItemJobShowing extends StatelessWidget {
                       ],
                     ),
                   ],
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

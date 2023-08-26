@@ -5,10 +5,10 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemWidget extends StatelessWidget {
   const ItemWidget({
-    super.key,
     required this.svgPath,
     required this.title,
     required this.description,
+    super.key,
     this.color,
     this.isStar = false,
   });
@@ -27,15 +27,15 @@ class ItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,
             ),
             child: SvgPicture.asset(
               svgPath,
-              width: 24,
-              height: 24,
+              width: 22,
+              height: 22,
               color: AppColors.kPrimaryColor,
             ),
           ),
@@ -66,7 +66,7 @@ class ItemWidget extends StatelessWidget {
                   PhosphorIcons.star_fill,
                   size: 18,
                   color: AppColors.kOrange400Color,
-                )
+                ),
             ],
           ),
         ],

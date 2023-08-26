@@ -5,7 +5,7 @@ import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_tim
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabTimeline extends StatefulWidget {
-  const TabTimeline({Key? key}) : super(key: key);
+  const TabTimeline({super.key});
 
   @override
   State<TabTimeline> createState() => _TabTimelineState();

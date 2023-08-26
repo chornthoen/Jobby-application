@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/home/widgets/item_hot_jobs.dart';
@@ -9,7 +8,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_widget.dart';
 
 class MatchingContent extends StatefulWidget {
-  const MatchingContent({Key? key}) : super(key: key);
+  const MatchingContent({super.key});
 
   @override
   State<MatchingContent> createState() => _MatchingContentState();
@@ -72,4 +71,3 @@ class _MatchingContentState extends State<MatchingContent> {
     );
   }
 }
-

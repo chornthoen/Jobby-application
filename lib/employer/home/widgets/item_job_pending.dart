@@ -3,10 +3,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemPending extends StatelessWidget {
   const ItemPending({
-    super.key,
-    required this.title,
-    required this.status,
-    required this.onTap,
+    required this.title, required this.status, required this.onTap, super.key,
   });
   final String title;
   final String status;
@@ -49,7 +46,7 @@ class ItemPending extends StatelessWidget {
                       color: AppColors.kPrimaryColor,
                       size: 24,
                     ),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(height: 8),
@@ -69,7 +66,7 @@ class ItemPending extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

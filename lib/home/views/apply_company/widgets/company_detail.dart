@@ -5,7 +5,7 @@ import 'package:jobby_application/home/views/apply_company/widgets/tab_review.da
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabCompanyDetail extends StatefulWidget {
-  const TabCompanyDetail({Key? key}) : super(key: key);
+  const TabCompanyDetail({super.key});
 
   @override
   State<TabCompanyDetail> createState() => _TabCompanyDetailState();
@@ -75,7 +75,3 @@ class _TabCompanyDetailState extends State<TabCompanyDetail> {
     );
   }
 }
-
-
-
-

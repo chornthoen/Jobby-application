@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class CareerGoalPage extends StatefulWidget {
-  const CareerGoalPage({Key? key}) : super(key: key);
+  const CareerGoalPage({super.key});
 
   static const String routePath = '/career_goal_page';
 

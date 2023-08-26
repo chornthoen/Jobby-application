@@ -5,7 +5,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class MangeCVPage extends StatefulWidget {
-  const MangeCVPage({Key? key}) : super(key: key);
+  const MangeCVPage({super.key});
 
   static const String routePath = '/mange_cv_page';
 
@@ -25,7 +25,8 @@ class _MangeCVPageState extends State<MangeCVPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Upload your CV or resume to apply the job vacancy in our application',
+              'Upload your CV or resume to apply the job vacancy in our'
+                  ' application',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -38,12 +39,12 @@ class _MangeCVPageState extends State<MangeCVPage> {
               onTap: () {},
               child: DottedBorder(
                 padding: const EdgeInsets.symmetric(vertical: 30),
-                dashPattern: [8, 4],
+                dashPattern: const [8, 4],
                 borderType: BorderType.RRect,
                 radius: const Radius.circular(10),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     SizedBox(width: 20),
                     Icon(
                       PhosphorIcons.cloud_arrow_up,
@@ -144,15 +145,15 @@ class _MangeCVPageState extends State<MangeCVPage> {
 }
 
 class ListCVModel{
-  final String title;
-  final String date;
-   int index;
 
   ListCVModel({
     required this.title,
     required this.date,
     required this.index,
   });
+  final String title;
+  final String date;
+   int index;
 }
 
 //list cv model 3 item
@@ -173,4 +174,3 @@ List<ListCVModel> listCV = [
     index: 2,
   ),
 ];
-

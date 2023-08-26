@@ -4,17 +4,17 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class AvatarRank extends StatelessWidget {
   const AvatarRank({
-    super.key,
     required this.image,
     required this.name,
     required this.diamond,
     required this.rank,
+    super.key,
     this.color1,
     this.color2,
     this.number,
     this.colorName = AppColors.kWhiteColor,
-
   });
+
   final String image;
   final String name;
   final String diamond;
@@ -27,7 +27,6 @@ class AvatarRank extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
@@ -50,7 +49,7 @@ class AvatarRank extends StatelessWidget {
                       ],
                     ),
                   ),
-                  child:  CircleAvatar(
+                  child: CircleAvatar(
                     radius: 46,
                     backgroundImage: AssetImage(image),
                   ),

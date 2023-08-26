@@ -1,14 +1,6 @@
 
 
 class QuizModel {
-  final String image;
-  final String title;
-  final String level;
-  final String question;
-  final String user;
-  final String like;
-  final String percent;
-  bool isLike;
 
   QuizModel({
     required this.image,
@@ -18,8 +10,16 @@ class QuizModel {
     required this.user,
     required this.like,
     required this.percent,
-    this.isLike = false,
+    required this.isLike,
   });
+  final String image;
+  final String title;
+  final String level;
+  final String question;
+  final String user;
+  final String like;
+  final String percent;
+  bool isLike;
 
 
 }
@@ -103,27 +103,28 @@ final quizModel = [
     user: '102',
     percent: '10%',
     isLike: false,
-  )
+  ),
 ];
+
 class QuestionModel{
-  final String question;
-  final List<AnswerModel> answersList;
 
   QuestionModel({
     required this.question,
     required this.answersList,
   });
+  final String question;
+  final List<AnswerModel> answersList;
 
 }
 
 class AnswerModel{
-  final String answerText;
-  final bool isCorrect;
 
   AnswerModel({
     required this.answerText,
     required this.isCorrect,
   });
+  final String answerText;
+  final bool isCorrect;
 }
 
   List<QuestionModel> questionsList = [
@@ -134,7 +135,7 @@ class AnswerModel{
         AnswerModel(answerText: 'London', isCorrect: false),
         AnswerModel(answerText: 'Paris', isCorrect: true),
         AnswerModel(answerText: 'Dublin', isCorrect: false),
-      ]
+      ],
     ),
     QuestionModel(
         question: 'Who is CEO of Tesla?',
@@ -143,7 +144,7 @@ class AnswerModel{
           AnswerModel(answerText: 'Elon Musk', isCorrect: true),
           AnswerModel(answerText: 'Bill Gates', isCorrect: false),
           AnswerModel(answerText: 'Tony Stark', isCorrect: false),
-        ]
+        ],
     ),
     QuestionModel(
         question: 'The iPhone was created by which company?',
@@ -152,41 +153,7 @@ class AnswerModel{
           AnswerModel(answerText: 'Intel', isCorrect: false),
           AnswerModel(answerText: 'Amazon', isCorrect: false),
           AnswerModel(answerText: 'Microsoft', isCorrect: false),
-        ]
+        ],
     ),
 
   ];
-
-  // questions.add(
-  //   QuestionModel(
-  //     question: 'What is the capital of France?',
-  //     answersList: [
-  //       AnswerModel(answerText: 'New York', isCorrect: false),
-  //       AnswerModel(answerText: 'London', isCorrect: false),
-  //       AnswerModel(answerText: 'Paris', isCorrect: true),
-  //       AnswerModel(answerText: 'Dublin', isCorrect: false),
-  //     ]
-  //   )
-  // );
-  // questions.add(
-  //     QuestionModel(
-  //         question: 'Who is CEO of Tesla?',
-  //         answersList: [
-  //           AnswerModel(answerText: 'Jeff Bezos', isCorrect: false),
-  //           AnswerModel(answerText: 'Elon Musk', isCorrect: true),
-  //           AnswerModel(answerText: 'Bill Gates', isCorrect: false),
-  //           AnswerModel(answerText: 'Tony Stark', isCorrect: false),
-  //         ]
-  //     )
-  // );
-  // questions.add(
-  //     QuestionModel(
-  //         question: 'The iPhone was created by which company?',
-  //         answersList: [
-  //           AnswerModel(answerText: 'Apple', isCorrect: true),
-  //           AnswerModel(answerText: 'Intel', isCorrect: false),
-  //           AnswerModel(answerText: 'Amazon', isCorrect: false),
-  //           AnswerModel(answerText: 'Microsoft', isCorrect: false),
-  //         ]
-  //     )
-  // );

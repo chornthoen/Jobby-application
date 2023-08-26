@@ -10,7 +10,7 @@ import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class HobbyPage extends StatefulWidget {
-  const HobbyPage({Key? key}) : super(key: key);
+  const HobbyPage({super.key});
 
   static const String routePath = '/hobby_page';
 
@@ -56,13 +56,12 @@ class _HobbyPageState extends State<HobbyPage> {
                 controller: hobbyController,
                 hintText: 'choose your hobby',
                 maxLines: 4,
-                minLines: 1,
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: addPositionSheet,
               ),
             ],
           ),
-        )
+        ),
     );
   }
   void addPositionSheet() {
@@ -72,14 +71,14 @@ class _HobbyPageState extends State<HobbyPage> {
         context.pop(context);
         String? addPosition = '';
         for (var i = 0; i < hobbyModel.length; i++) {
-          if (hobbyModel[i].isClick == true) {
+          if (hobbyModel[i].isClick!) {
             addPosition = '${addPosition!}${hobbyModel[i].position!}, ';
           }
         }
         hobbyController.text = addPosition!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Language'),
           SizedBox(height: 10),
           Expanded(child: ItemHobby()),

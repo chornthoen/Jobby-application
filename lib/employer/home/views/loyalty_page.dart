@@ -9,7 +9,7 @@ import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class LoyaltyPage extends StatefulWidget {
-  const LoyaltyPage({Key? key}) : super(key: key);
+  const LoyaltyPage({super.key});
 
   static const String routePath = '/loyalty-page';
 
@@ -18,8 +18,6 @@ class LoyaltyPage extends StatefulWidget {
 }
 
 class _LoyaltyPageState extends State<LoyaltyPage> {
-
-
   final String text = 'https://t.me/chornthoen';
   bool _isCopied = false;
 
@@ -108,7 +106,8 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                                         color: AppColors.kWhiteColor,
                                         shape: BoxShape.circle,
                                         border: Border.all(
-                                            color: AppColors.kOrangeColor),
+                                          color: AppColors.kOrangeColor,
+                                        ),
                                       ),
                                       child: SvgPicture.asset(
                                         'assets/svg/diamond-color.svg',
@@ -147,14 +146,14 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                   ),
             ),
             const SizedBox(height: 10),
-            Row(
+            const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 ItemMyPrivilege(
                   title: 'Gift Package',
                   svgUrl: 'assets/svg/gift.svg',
-                  description: '20\$',
+                  description: r'20$',
                 ),
                 ItemMyPrivilege(
                   title: 'Gift coupon',
@@ -196,7 +195,8 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
               ),
             ),
             const Text(
-              'Every time one of your friends users your code when purchasing he gets 20 points and you get 100 points',
+              'Every time one of your friends users your code when purchasing'
+                  ' he gets 20 points and you get 100 points',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
@@ -206,7 +206,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
             ),
             const SizedBox(height: 20),
             DottedBorder(
-              dashPattern: [8, 4],
+              dashPattern: const [8, 4],
               borderType: BorderType.RRect,
               color: AppColors.kSeptenaryColor,
               radius: const Radius.circular(10),
@@ -248,15 +248,14 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                         color: AppColors.kPrimaryColor,
                         size: 24,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-

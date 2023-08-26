@@ -1,15 +1,13 @@
 
 import 'package:flutter/material.dart';
 
-import '../colors/app_color.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ButtonAction extends StatelessWidget {
   const ButtonAction({
-    super.key,
-    required this.text,
+    required this.text, required this.isClick, super.key,
     this.onPressed,
     this.child,
-     required this.isClick,
     this.width = double.infinity,
     this.icon,
   });
@@ -23,7 +21,7 @@ class ButtonAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 54,
       width: width,
       child: ElevatedButton(
@@ -51,7 +49,8 @@ class ButtonAction extends StatelessWidget {
                   style: Theme.of(context).textTheme.labelLarge!.copyWith(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    color: isClick ? AppColors.kWhiteColor : AppColors.kQuinaryColor,
+                    color: isClick ? AppColors.kWhiteColor :
+                    AppColors.kQuinaryColor,
                   ),
                 ),
 
@@ -67,4 +66,3 @@ class ButtonAction extends StatelessWidget {
     );
   }
 }
-

@@ -11,10 +11,7 @@ class FavoriteModel{
     required this.salary,
     required this.role,
     required this.time,
-    this.color,
-    required this.image,
-    required this.date,
-      this.isSaved = false,
+    required this.image, required this.date, required this.isSaved, this.color,
   });
   int id;
   String title;

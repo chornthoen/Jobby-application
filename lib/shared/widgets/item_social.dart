@@ -4,9 +4,8 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemSocials extends StatelessWidget {
   const ItemSocials({
-    super.key,
+    required this.image, super.key,
     this.onPressed,
-    required this.image,
   });
   final String image;
   final VoidCallback? onPressed;
@@ -39,4 +38,3 @@ class ItemSocials extends StatelessWidget {
     );
   }
 }
-

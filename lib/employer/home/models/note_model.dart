@@ -1,9 +1,5 @@
 
 class NoteModel {
-  final String image;
-  final String name;
-  final String date;
-  late final String note;
 
   NoteModel({
     required this.image,
@@ -11,6 +7,10 @@ class NoteModel {
     required this.date,
     required this.note,
   });
+  final String image;
+  final String name;
+  final String date;
+  late final String note;
 }
 
 final List<NoteModel> listNote = [
@@ -18,13 +18,15 @@ final List<NoteModel> listNote = [
     image: 'assets/images/rose.png',
     name: 'Rose Doe',
     date: '12/12/2021',
-    note: 'This is a note, you can edit or delete this note by clicking the icon on the right',
+    note: 'This is a note, you can edit or delete this note by clicking the'
+        ' icon on the right',
   ),
   NoteModel(
     image: 'assets/images/thoen.png',
     name: 'John Doe',
     date: '12/12/2021',
-    note: 'This is a note, you can edit or delete this note by clicking the icon on the right',
+    note: 'This is a note, you can edit or delete this note by clicking '
+        'the icon on the right',
   ),
   NoteModel(
     image: 'assets/images/rose.png',

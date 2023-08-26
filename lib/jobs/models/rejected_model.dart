@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-class RejectedModel{
-
+class RejectedModel {
   RejectedModel({
     required this.id,
     required this.title,
@@ -11,11 +9,12 @@ class RejectedModel{
     required this.salary,
     required this.role,
     required this.time,
-    this.color,
     required this.image,
     required this.date,
-    this.isSaved = false,
+    required this.isSaved,
+    this.color,
   });
+
   int id;
   String title;
   String name;
@@ -26,7 +25,6 @@ class RejectedModel{
   String image;
   String date;
   bool isSaved;
-
 }
 
 //list hot job 5 item
@@ -67,7 +65,6 @@ List<RejectedModel> rejectedModel = [
     date: '3h ago',
     isSaved: false,
   ),
-
   RejectedModel(
     id: 4,
     title: 'Product designer⚡️',
@@ -80,7 +77,6 @@ List<RejectedModel> rejectedModel = [
     date: '2h ago',
     isSaved: false,
   ),
-
   RejectedModel(
     id: 5,
     title: 'Business analyst ⚡️',
@@ -105,5 +101,4 @@ List<RejectedModel> rejectedModel = [
     date: '3h ago',
     isSaved: true,
   ),
-
 ];

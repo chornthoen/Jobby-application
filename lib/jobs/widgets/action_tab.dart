@@ -6,8 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ActionTop extends StatefulWidget {
   const ActionTop({
-    super.key,
-    required this.title,
+    required this.title, super.key,
   });
   final String title;
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
     this.title = '',
@@ -13,7 +13,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     this.onBookmarkTap,
     this.onShareTap,
     this.size = 18,
-    this.onBackTap = null,
+    this.onBackTap,
   });
 
   final String? title;
@@ -91,7 +91,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
                 ),
               ),
             ],
-          )
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(right: 10, top: 20),

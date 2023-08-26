@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 class TabCandidate extends StatefulWidget {
-  const TabCandidate({Key? key}) : super(key: key);
+  const TabCandidate({super.key});
 
   @override
   State<TabCandidate> createState() => _TabCandidateState();
@@ -41,9 +41,9 @@ class _TabCandidateState extends State<TabCandidate> {
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
-                          color: AppColors.kPrimaryColor),
+                          color: AppColors.kPrimaryColor,),
                     ),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(height: 10),
@@ -78,6 +78,3 @@ class _TabCandidateState extends State<TabCandidate> {
     );
   }
 }
-
-
-

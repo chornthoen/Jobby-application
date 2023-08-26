@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabPostDetail extends StatelessWidget {
   const TabPostDetail({
-    super.key,
-    this.number,
     required this.title,
     required this.index,
     required this.tabController,
+    super.key,
+    this.number,
   });
 
   final String? number;
@@ -25,8 +24,8 @@ class TabPostDetail extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
-            color:
-            tabController == index ? AppColors.kPrimaryColor
+            color: tabController == index
+                ? AppColors.kPrimaryColor
                 : AppColors.kSeptenaryColor,
             shape: BoxShape.circle,
           ),
@@ -42,7 +41,7 @@ class TabPostDetail extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

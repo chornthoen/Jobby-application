@@ -14,8 +14,8 @@ import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class QuizzPage extends StatefulWidget {
   const QuizzPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static const String routePath = '/quizz-page-3';
 
@@ -96,7 +96,7 @@ class _QuizzPageState extends State<QuizzPage> {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -161,7 +161,8 @@ class _QuizzPageState extends State<QuizzPage> {
                           },
                           isLike: () {
                             setState(() {
-                              quizModel[index].isLike = !quizModel[index].isLike;
+                              quizModel[index].isLike =
+                              !quizModel[index].isLike;
                             });
                           },
                           isLikeClick: quizModel[index].isLike,

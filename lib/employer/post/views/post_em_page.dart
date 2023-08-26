@@ -14,7 +14,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class PostEmployerPage extends StatefulWidget {
-  const PostEmployerPage({Key? key}) : super(key: key);
+  const PostEmployerPage({super.key});
 
   static const String routePath = '/post_employer';
 
@@ -70,8 +70,9 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
     'Entry Level',
     'Mid Level',
     'Senior Level',
-    'Junior Level'
+    'Junior Level',
   ];
+
   String levelValue = 'Entry Level';
   List<String> jobType = [
     'Full Time',
@@ -245,14 +246,14 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
         context.pop(context);
         String? industry = '';
         for (var i = 0; i < industryModel.length; i++) {
-          if (industryModel[i].isClick == true) {
+          if (industryModel[i].isClick!) {
             industry = '${industry!}${industryModel[i].position!}, ';
           }
         }
         industryController.text = industry!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Industry'),
           SizedBox(height: 10),
           Expanded(child: ItemIndustry()),

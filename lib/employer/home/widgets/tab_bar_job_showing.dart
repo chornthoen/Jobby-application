@@ -36,10 +36,9 @@ class TabABarJobShowing extends StatelessWidget {
     );
   }
   void _showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       useRootNavigator: true,
-      enableDrag: true,
       backgroundColor: AppColors.kBackgroundColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(

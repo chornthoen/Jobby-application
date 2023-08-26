@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 
 class ItemAddPosition extends StatefulWidget {
-  const ItemAddPosition({Key? key}) : super(key: key);
+  const ItemAddPosition({super.key});
 
   @override
   State<ItemAddPosition> createState() => _ItemAddPositionState();
@@ -42,10 +42,10 @@ class _ItemAddPositionState extends State<ItemAddPosition> {
 
 class TextAdd extends StatelessWidget {
   const TextAdd({
-    Key? key,
+    super.key,
     this.text,
     this.onTap,
-  }) : super(key: key);
+  });
   final String? text;
   final VoidCallback? onTap;
 

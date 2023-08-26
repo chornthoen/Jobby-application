@@ -8,7 +8,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class EbookDetailPage extends StatefulWidget {
-  const EbookDetailPage({Key? key}) : super(key: key);
+  const EbookDetailPage({super.key});
 
   static const String routePath = '/ebookDetailPage';
 
@@ -135,7 +135,11 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                   ),
                   const SizedBox(height: 14),
                   const Text(
-                    'Employee performance reviews, where managers evaluate their staff’s overall performance, are vital for every business. However, the effectiveness of those sessions depends on how they are prepared and conducted.',
+                    'Employee performance reviews, where managers evaluate '
+                        'their staff’s overall performance, are vital for'
+                        ' every business. However, the effectiveness of'
+                        ' those sessions depends on how they are prepared'
+                        ' and conducted.',
                     style: TextStyle(
                       color: AppColors.kQuaternaryColor,
                       fontSize: 17,
@@ -147,8 +151,8 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                     children: [
                       TextButton(
                         onPressed: () {},
-                        child: Row(
-                          children: const [
+                        child: const Row(
+                          children: [
                             Icon(
                               PhosphorIcons.download_simple,
                               color: AppColors.kPrimaryColor,
@@ -203,7 +207,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

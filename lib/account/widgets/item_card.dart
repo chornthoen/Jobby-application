@@ -4,9 +4,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
-    super.key,
-    required this.title,
-    required this.icon,
+    required this.title, required this.icon, super.key,
     this.onPressed,
   });
 

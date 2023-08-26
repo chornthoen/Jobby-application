@@ -25,7 +25,8 @@ List<BlogModel> listBlog = [
     isSaved: false,
   ),
   BlogModel(
-    title: 'How to get a job at Google. Google is known for its challenging interview questions',
+    title: 'How to get a job at Google. Google is known for its challenging'
+        ' interview questions',
     image: 'assets/images/blog2.png',
     date: '20/10/2021',
     readTime: 7,
@@ -39,7 +40,8 @@ List<BlogModel> listBlog = [
     isSaved: false,
   ),
   BlogModel(
-    title: 'How to get a job at Google – Google is known for its challenging interview questions',
+    title: 'How to get a job at Google – Google is known for its challenging'
+        ' interview questions',
     image: 'assets/images/blog4.png',
     date: '20/10/2021',
     readTime: 44,
@@ -60,4 +62,3 @@ List<BlogModel> listBlog = [
     isSaved: false,
   ),
 ];
-

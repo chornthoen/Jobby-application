@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../colors/app_color.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TextAndButton extends StatelessWidget {
   const TextAndButton({
-    super.key,
-    required this.text,
+    required this.text, required this.textButton, super.key,
     this.onPressed,
-    required this.textButton,
   });
   final String text;
   final VoidCallback? onPressed;

@@ -5,7 +5,7 @@ import 'package:jobby_application/quizz/widgets/item_leader_boad.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabAllTime extends StatefulWidget {
-  const TabAllTime({Key? key}) : super(key: key);
+  const TabAllTime({super.key});
 
   @override
   State<TabAllTime> createState() => _TabAllTimeState();

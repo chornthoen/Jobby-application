@@ -3,9 +3,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CoverAndProfile extends StatelessWidget {
   const CoverAndProfile({
-    super.key,
-    required this.imageCover,
-    required this.imageProfile,
+    required this.imageCover, required this.imageProfile, super.key,
   });
 
   final String imageCover;

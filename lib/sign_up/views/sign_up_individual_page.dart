@@ -9,7 +9,7 @@ import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class SignUpIndividualPage extends StatefulWidget {
-  const SignUpIndividualPage({Key? key}) : super(key: key);
+  const SignUpIndividualPage({super.key});
 
   static const String routePath = '/sign-up-individual-page';
 
@@ -18,7 +18,6 @@ class SignUpIndividualPage extends StatefulWidget {
 }
 
 class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
-  late final GlobalKey<FormState> _globalKey;
   late TextEditingController phoneNumberController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
@@ -27,7 +26,6 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
   @override
   void initState() {
     super.initState();
-    _globalKey = GlobalKey<FormState>();
     phoneNumberController = TextEditingController();
     emailController = TextEditingController();
     passwordController = TextEditingController();
@@ -108,13 +106,15 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
                 TextFieldForms(
                   onChange: (value) {
                     setState(() {});
+                    return null;
                   },
                   keyboardType: TextInputType.visiblePassword,
                   controller: confirmPasswordController,
                   obscureText: obscureTextConfirm,
                   hintText: 'Enter your confirm password',
                   suffixIcon:
-                  obscureTextConfirm ? PhosphorIcons.eye_slash :PhosphorIcons.eye,
+                  obscureTextConfirm ? PhosphorIcons.eye_slash
+                      :PhosphorIcons.eye,
                   onPressed: () {
                     setState(() {
                       obscureTextConfirm = !obscureTextConfirm;

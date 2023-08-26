@@ -4,9 +4,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ActionInItem extends StatelessWidget {
   const ActionInItem({
-    super.key,
-    required this.svgPath,
-    required this.text,
+    required this.svgPath, required this.text, super.key,
   });
 
   final String svgPath;

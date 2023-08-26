@@ -9,7 +9,7 @@ import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class SignUpEnterPrise4Page extends StatefulWidget {
-  const SignUpEnterPrise4Page({Key? key}) : super(key: key);
+  const SignUpEnterPrise4Page({super.key});
 
   static const String routePath = '/sign-up-enter-prise4-page';
 
@@ -18,7 +18,6 @@ class SignUpEnterPrise4Page extends StatefulWidget {
 }
 
 class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
-  late final GlobalKey<FormState> _globalKey;
   late TextEditingController phoneController;
 
   late TextEditingController emailController;
@@ -29,7 +28,6 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
   @override
   void initState() {
     super.initState();
-    _globalKey = GlobalKey<FormState>();
     phoneController = TextEditingController();
     emailController = TextEditingController();
     passwordController = TextEditingController();
@@ -118,6 +116,7 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                 TextFieldForms(
                   onChange: (value) {
                     setState(() {});
+                    return null;
                   },
                   keyboardType: TextInputType.visiblePassword,
                   controller: confirmPasswordController,

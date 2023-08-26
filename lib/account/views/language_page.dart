@@ -10,7 +10,7 @@ import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class LanguagePage extends StatefulWidget {
-  const LanguagePage({Key? key}) : super(key: key);
+  const LanguagePage({super.key});
 
   static const String routePath = '/language_page';
 
@@ -56,13 +56,12 @@ class _LanguagePageState extends State<LanguagePage> {
                 controller: languageController,
                 hintText: 'choose your language',
                 maxLines: 3,
-                minLines: 1,
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: addPositionSheet,
               ),
             ],
           ),
-        )
+        ),
     );
   }
   void addPositionSheet() {
@@ -72,14 +71,14 @@ class _LanguagePageState extends State<LanguagePage> {
         context.pop(context);
         String? addPosition = '';
         for (var i = 0; i < langaugModel.length; i++) {
-          if (langaugModel[i].isClick == true) {
+          if (langaugModel[i].isClick!) {
             addPosition = '${addPosition!}${langaugModel[i].position!}, ';
           }
         }
         languageController.text = addPosition!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Language'),
           SizedBox(height: 10),
           Expanded(child: ItemLangauge()),

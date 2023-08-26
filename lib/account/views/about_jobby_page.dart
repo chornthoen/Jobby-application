@@ -3,7 +3,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class AboutJobbyPage extends StatefulWidget {
-  const AboutJobbyPage({Key? key}) : super(key: key);
+  const AboutJobbyPage({super.key});
 
   static const String routePath = '/about_jobby_page';
 

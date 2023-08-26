@@ -3,10 +3,8 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class WidgetSeeAll extends StatelessWidget {
   const WidgetSeeAll({
-    super.key,
-    required this.title,
+    required this.title, required this.onPressed, super.key,
     this.color = AppColors.kPrimaryColor,
-    required this.onPressed,
   });
   final String title;
   final Color? color;

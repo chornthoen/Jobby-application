@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/employer/home/models/service_package_model.dart';
 import 'package:jobby_application/employer/home/widgets/item_service_packages.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
-import '../../../shared/widgets/button_action.dart';
-
 class ServicePackageEmPage extends StatefulWidget {
-  const ServicePackageEmPage({Key? key}) : super(key: key);
+  const ServicePackageEmPage({super.key});
 
   static const String routePath = '/service_package_em_page';
 

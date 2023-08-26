@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/account/models/list_string.dart';
-import 'package:jobby_application/account/views/career_goal_page.dart';
 import 'package:jobby_application/account/views/acdemic_level_page.dart';
+import 'package:jobby_application/account/views/career_goal_page.dart';
 import 'package:jobby_application/account/views/contact_info_page.dart';
 import 'package:jobby_application/account/views/hobby_page.dart';
 import 'package:jobby_application/account/views/language_page.dart';
 import 'package:jobby_application/account/views/prize_page.dart';
 import 'package:jobby_application/account/views/reference_person.dart';
 import 'package:jobby_application/account/views/skill_page.dart';
-import 'package:jobby_application/account/widgets/slide_profile.dart';
 import 'package:jobby_application/account/views/work_experience_page.dart';
 import 'package:jobby_application/account/widgets/action_skill.dart';
 import 'package:jobby_application/account/widgets/cover_and_profile.dart';
 import 'package:jobby_application/account/widgets/custom_container.dart';
 import 'package:jobby_application/account/widgets/icon_and_text.dart';
+import 'package:jobby_application/account/widgets/slide_profile.dart';
 import 'package:jobby_application/account/widgets/text_label_and_button.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class YourJobbyProfilePage extends StatefulWidget {
-  const YourJobbyProfilePage({Key? key}) : super(key: key);
+  const YourJobbyProfilePage({super.key});
 
   static const String routePath = '/your_jobby_profile_page';
 
@@ -158,7 +158,8 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                         const IconAndText(
                           svg: 'assets/svg/file.svg',
                           text:
-                              'Tmrw studio owns, manages and operates a system of Trade Centers',
+                              'Tmrw studio owns, manages and operates a system '
+                                  'of Trade Centers',
                         ),
                       ],
                     ),
@@ -402,9 +403,9 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       borderRadius: BorderRadius.circular(8),
                       color: AppColors.kGray200,
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Flexible(
                           child: Text(
                             'Resume.pdf',
@@ -429,11 +430,10 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-

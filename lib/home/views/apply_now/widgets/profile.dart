@@ -5,12 +5,10 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class Profile extends StatelessWidget {
   const Profile({
-    Key? key,
-    required this.name,
-    required this.image,
+    required this.name, required this.image, super.key,
     this.color,
 
-  }) : super(key: key);
+  });
   final String name;
   final String image;
   final Color? color;
@@ -83,7 +81,7 @@ class Profile extends StatelessWidget {
                           height: 20,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -107,17 +105,17 @@ class Profile extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 2),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children: [
                       TextRole(text: 'UX/UI design'),
                       TextRole(text: 'Senior Developer'),
                       TextRole(text: 'Web Developer'),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

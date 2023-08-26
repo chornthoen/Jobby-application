@@ -6,10 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemSpeakerList extends StatelessWidget {
   const ItemSpeakerList({
-    super.key,
-    required this.image,
-    required this.name,
-    required this.position,
+    required this.image, required this.name, required this.position, super.key,
   });
   final String image;
   final String name;
@@ -59,7 +56,7 @@ class ItemSpeakerList extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -68,10 +65,7 @@ class ItemSpeakerList extends StatelessWidget {
 
 class ItemDetail extends StatelessWidget {
   const ItemDetail({
-    super.key,
-    required this.svg,
-    required this.label,
-    required this.value,
+    required this.svg, required this.label, required this.value, super.key,
   });
   final String svg;
   final String label;
@@ -84,10 +78,9 @@ class ItemDetail extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.height * 0.16,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SvgPicture.asset(
                   svg,
@@ -122,4 +115,3 @@ class ItemDetail extends StatelessWidget {
     );
   }
 }
-

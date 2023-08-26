@@ -3,12 +3,12 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class Star5 extends StatelessWidget {
-  const Star5({Key? key}) : super(key: key);
+  const Star5({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: const [
+    return const Row(
+      children: [
         Icon(
           PhosphorIcons.star_fill,
           color: AppColors.kOrange400Color,

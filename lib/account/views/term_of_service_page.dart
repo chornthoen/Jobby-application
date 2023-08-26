@@ -3,7 +3,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class TermOfServicePage extends StatefulWidget {
-  const TermOfServicePage({Key? key}) : super(key: key);
+  const TermOfServicePage({super.key});
 
   static const String routePath = '/term-of-service-page';
 

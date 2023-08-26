@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 class StatusModel{
-  String title;
-  String description;
-  String svgUrl;
-  Color color;
 
   StatusModel({
     required this.title,
@@ -12,6 +8,10 @@ class StatusModel{
     required this.svgUrl,
     required this.color,
   });
+  String title;
+  String description;
+  String svgUrl;
+  Color color;
 
 }
 

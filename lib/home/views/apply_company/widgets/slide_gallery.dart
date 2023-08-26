@@ -1,12 +1,11 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:jobby_application/home/views/apply_company/models/slide_model.dart';
 
-import '../../../../shared/colors/app_color.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 
 class SlideGallery extends StatefulWidget {
-  const SlideGallery({Key? key}) : super(key: key);
+  const SlideGallery({super.key});
 
   @override
   State<SlideGallery> createState() => _SlideGalleryState();
@@ -20,42 +19,42 @@ class _SlideGalleryState extends State<SlideGallery> {
     super.initState();
     carouselController = CarouselController();
   }
+
   int currentTab = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          child: CarouselSlider.builder(
-            itemCount: slideModel.length,
-            carouselController: carouselController,
-            itemBuilder: (context, index, realIndex) {
-              return  Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage(slideModel[index].image),
-                      fit: BoxFit.cover,
-                    ),
-                  )
-              );
+        CarouselSlider.builder(
+          itemCount: slideModel.length,
+          carouselController: carouselController,
+          itemBuilder: (context, index, realIndex) {
+            return Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height * 0.3,
+                margin: const EdgeInsets.symmetric(
+                  vertical: 16,
+                  horizontal: 10,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage(slideModel[index].image),
+                    fit: BoxFit.cover,
+                  ),
+                ),);
+          },
+          options: CarouselOptions(
+            height: MediaQuery.of(context).size.height * 0.2,
+            viewportFraction: 1,
+            autoPlay: true,
+            autoPlayAnimationDuration: const Duration(seconds: 1),
+            onPageChanged: (index, reason) {
+              setState(() {
+                currentTab = index;
+              });
             },
-            options: CarouselOptions(
-              height: MediaQuery.of(context).size.height * 0.2,
-              viewportFraction: 1,
-              autoPlay: true,
-              autoPlayInterval:const   Duration(seconds: 4),
-              autoPlayAnimationDuration: const Duration(seconds: 1),
-              autoPlayCurve: Curves.fastOutSlowIn,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  currentTab = index;
-                });
-              },
-            ),
           ),
         ),
         Row(
@@ -74,7 +73,7 @@ class _SlideGalleryState extends State<SlideGallery> {
                 ),
               ),
           ],
-        )
+        ),
       ],
     );
   }

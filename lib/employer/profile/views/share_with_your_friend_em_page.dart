@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ShareWithYourFriendEmPage extends StatefulWidget {
-  const ShareWithYourFriendEmPage({Key? key}) : super(key: key);
+  const ShareWithYourFriendEmPage({super.key});
 
   static const String routePath = '/share_with_your_friend_em_page';
 
@@ -42,7 +42,7 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
-                )
+                ),
               ],
             ),
             const SizedBox(height: 10),
@@ -65,13 +65,11 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
               ],
             ),
             const SizedBox(height: 20),
-            Container(
+            DecoratedBox(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: AppColors.kGray200,
-                  width: 1,
-                ),
+                  color: AppColors.kGray200,),
               ),
               child: ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 6),
@@ -112,11 +110,11 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                         color: AppColors.kPrimaryColor,
                         size: 24,
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

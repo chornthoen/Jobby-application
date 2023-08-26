@@ -4,7 +4,7 @@ import 'package:jobby_application/jobs/models/applied_models.dart';
 import 'package:jobby_application/jobs/widgets/item_applied.dart';
 
 class AppliedContent extends StatefulWidget {
-  const AppliedContent({Key? key}) : super(key: key);
+  const AppliedContent({super.key});
 
   @override
   State<AppliedContent> createState() => _AppliedContentState();

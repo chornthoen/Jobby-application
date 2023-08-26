@@ -9,7 +9,7 @@ import 'package:jobby_application/shared/widgets/text_form_field.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise3_page.dart';
 
 class SignUpEnterPrise2Page extends StatefulWidget {
-  const SignUpEnterPrise2Page({Key? key}) : super(key: key);
+  const SignUpEnterPrise2Page({super.key});
 
   static const String routePath = '/sign-up-enter-prise-page';
 
@@ -18,7 +18,6 @@ class SignUpEnterPrise2Page extends StatefulWidget {
 }
 
 class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
-  late final GlobalKey<FormState> _globalKey;
   late TextEditingController companyNameController;
   late TextEditingController taxCodeController;
   late TextEditingController websiteController;
@@ -34,7 +33,6 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
   @override
   void initState() {
     super.initState();
-    _globalKey = GlobalKey<FormState>();
     companyNameController = TextEditingController();
     taxCodeController = TextEditingController();
     websiteController = TextEditingController();
@@ -172,10 +170,10 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: AppColors.kGray200),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Icon(
                           Icons.upload_file,
                           color: AppColors.kPrimaryColor,

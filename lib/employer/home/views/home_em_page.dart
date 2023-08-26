@@ -16,7 +16,7 @@ import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class HomeEmployerPage extends StatefulWidget {
-  const HomeEmployerPage({Key? key}) : super(key: key);
+  const HomeEmployerPage({super.key});
 
   static const String routePath = '/home_employer';
 
@@ -61,7 +61,7 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 1.73,
+                  childAspectRatio: 1.6,
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 15,
                 ),
@@ -153,10 +153,3 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
     );
   }
 }
-
-
-
-
-
-
-

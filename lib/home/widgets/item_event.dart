@@ -5,18 +5,19 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemEvent extends StatelessWidget {
   const ItemEvent({
-    super.key,
     required this.image,
     required this.title,
     required this.date,
     required this.day,
     required this.month,
     required this.count,
+    required this.status,
+    super.key,
     this.onPressed,
     this.isSaved = false,
     this.onSaved,
-    required this.status,
   });
+
   final VoidCallback? onPressed;
   final String image;
   final String title;
@@ -27,7 +28,6 @@ class ItemEvent extends StatelessWidget {
   final bool isSaved;
   final VoidCallback? onSaved;
   final String status;
-
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +59,8 @@ class ItemEvent extends StatelessWidget {
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(10),
-
                         ),
-                        image:  DecorationImage(
+                        image: DecorationImage(
                           image: AssetImage(image),
                           fit: BoxFit.cover,
                         ),
@@ -79,7 +78,7 @@ class ItemEvent extends StatelessWidget {
                           color: AppColors.kBlue400Color,
                           borderRadius: BorderRadius.circular(40),
                         ),
-                        child:  Text(
+                        child: Text(
                           status,
                           style: const TextStyle(
                             color: AppColors.kWhiteColor,
@@ -194,7 +193,7 @@ class ItemEvent extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

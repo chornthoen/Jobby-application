@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemCommentInEvent extends StatelessWidget {
   const ItemCommentInEvent({
-    super.key,
     required this.image,
     required this.name,
     required this.date,
@@ -13,9 +11,10 @@ class ItemCommentInEvent extends StatelessWidget {
     required this.like,
     required this.share,
     required this.isLiked,
+    super.key,
     this.onLikeTap,
-
   });
+
   final String image;
   final String name;
   final String date;
@@ -37,9 +36,8 @@ class ItemCommentInEvent extends StatelessWidget {
               CircleAvatar(
                 radius: 26,
                 backgroundColor: AppColors.kWhiteColor,
-                backgroundImage:  AssetImage(
+                backgroundImage: AssetImage(
                   image,
-
                 ),
               ),
               const SizedBox(width: 10),
@@ -63,7 +61,7 @@ class ItemCommentInEvent extends StatelessWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
           const SizedBox(height: 10),
@@ -79,12 +77,16 @@ class ItemCommentInEvent extends StatelessWidget {
             children: [
               TextButton.icon(
                 onPressed: onLikeTap,
-                icon:  Icon(
-                  isLiked ?PhosphorIcons.thumbs_up_fill: PhosphorIcons.thumbs_up,
-                  color: isLiked ? AppColors.kPrimaryColor : AppColors.kQuinaryColor,
+                icon: Icon(
+                  isLiked
+                      ? PhosphorIcons.thumbs_up_fill
+                      : PhosphorIcons.thumbs_up,
+                  color: isLiked
+                      ? AppColors.kPrimaryColor
+                      : AppColors.kQuinaryColor,
                   size: 24,
                 ),
-                label:  Text(
+                label: Text(
                   '$like',
                   style: const TextStyle(
                     color: AppColors.kQuinaryColor,
@@ -96,12 +98,12 @@ class ItemCommentInEvent extends StatelessWidget {
               const SizedBox(width: 10),
               TextButton.icon(
                 onPressed: () {},
-                icon:  const Icon(
+                icon: const Icon(
                   PhosphorIcons.share,
                   color: AppColors.kQuinaryColor,
                   size: 24,
                 ),
-                label:  Text(
+                label: Text(
                   '$share',
                   style: const TextStyle(
                     color: AppColors.kQuinaryColor,
@@ -110,14 +112,13 @@ class ItemCommentInEvent extends StatelessWidget {
                   ),
                 ),
               ),
-
             ],
           ),
           Container(
             height: 1,
             width: double.infinity,
             color: AppColors.kGray200,
-          )
+          ),
         ],
       ),
     );

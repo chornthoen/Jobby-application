@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/home/models/event_models.dart';
 import 'package:jobby_application/home/views/event_detail_page.dart';
@@ -9,10 +8,8 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
-import '../models/ebook_model.dart';
-
 class EventPage extends StatefulWidget {
-  const EventPage({Key? key}) : super(key: key);
+  const EventPage({super.key});
 
   static const String routePath = '/eventPage';
 
@@ -130,12 +127,10 @@ class _EventPageState extends State<EventPage> {
                   },
                 );
               },
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
-
-

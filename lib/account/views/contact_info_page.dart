@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class ContactInfoPage extends StatefulWidget {
-  const ContactInfoPage({Key? key}) : super(key: key);
+  const ContactInfoPage({super.key});
 
   static const String routePath = '/contact_info_page';
 
@@ -88,7 +88,7 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                       children: [
                         Radio(
                           fillColor: MaterialStateProperty.all<Color>(
-                              AppColors.kPrimaryColor),
+                              AppColors.kPrimaryColor,),
                           value: 'Male',
                           groupValue: gender,
                           onChanged: (value) {
@@ -104,14 +104,14 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                             fontWeight: FontWeight.w400,
                             color: AppColors.kBlackColor,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Row(
                       children: [
                         Radio(
                           fillColor: MaterialStateProperty.all<Color>(
-                              AppColors.kPrimaryColor),
+                              AppColors.kPrimaryColor,),
                           value: 'Female',
                           groupValue: gender,
                           onChanged: (value) {
@@ -127,7 +127,7 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                             fontWeight: FontWeight.w400,
                             color: AppColors.kBlackColor,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     Row(
@@ -152,7 +152,7 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                             fontWeight: FontWeight.w400,
                             color: AppColors.kBlackColor,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ],
@@ -215,4 +215,3 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
     );
   }
 }
-

@@ -4,12 +4,13 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemCategory extends StatelessWidget {
   const ItemCategory({
-    super.key,
     required this.title,
     required this.svgPath,
     required this.onPressed,
     required this.color,
+    super.key,
   });
+
   final String title;
   final String svgPath;
   final VoidCallback onPressed;
@@ -53,7 +54,7 @@ class ItemCategory extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

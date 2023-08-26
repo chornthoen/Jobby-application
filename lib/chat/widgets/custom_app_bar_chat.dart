@@ -3,10 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-class CustomAppBarChat extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBarChat extends StatelessWidget implements PreferredSizeWidget  {
   const CustomAppBarChat({
-    super.key,
-    required this.chatModel,
+    required this.chatModel, super.key,
     this.onCall,
     this.onVideoCall,
   });
@@ -15,8 +14,6 @@ class CustomAppBarChat extends StatelessWidget with PreferredSizeWidget {
   final VoidCallback? onCall;
   final VoidCallback? onVideoCall;
 
-  @override
-  Size get preferredSize => const Size.fromHeight(80);
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +100,7 @@ class CustomAppBarChat extends StatelessWidget with PreferredSizeWidget {
                     ),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ],
@@ -135,4 +132,7 @@ class CustomAppBarChat extends StatelessWidget with PreferredSizeWidget {
       ],
     );
   }
+
+  @override
+  Size get preferredSize => throw UnimplementedError();
 }

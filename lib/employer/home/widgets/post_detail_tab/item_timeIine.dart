@@ -4,13 +4,13 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemTimeline extends StatelessWidget {
   const ItemTimeline({
-    super.key,
     required this.timePause,
     required this.timeShow,
     required this.image,
     required this.name,
-
+    super.key,
   });
+
   final String timePause;
   final String timeShow;
   final String image;
@@ -41,9 +41,6 @@ class ItemTimeline extends StatelessWidget {
             dashColor: AppColors.kQuinaryColor,
             dashGapLength: 5,
             dashLength: 5,
-            lineThickness: 1,
-            dashRadius: 0,
-            dashGapRadius: 0,
           ),
           ActionTimeline(
             time: timeShow,
@@ -60,14 +57,14 @@ class ItemTimeline extends StatelessWidget {
 
 class ActionTimeline extends StatelessWidget {
   const ActionTimeline({
-    super.key,
     required this.time,
     required this.status,
     required this.statusChange,
     required this.image,
     required this.name,
-
+    super.key,
   });
+
   final String time;
   final String status;
   final String statusChange;
@@ -91,7 +88,7 @@ class ActionTimeline extends StatelessWidget {
             horizontal: 8,
             vertical: 5,
           ),
-          child:  Text(
+          child: Text(
             time,
             style: const TextStyle(
               fontSize: 14,
@@ -109,7 +106,7 @@ class ActionTimeline extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               RichText(
-                text:  TextSpan(
+                text: TextSpan(
                   text: 'Status changed - ',
                   style: const TextStyle(
                     fontSize: 16,
@@ -146,7 +143,7 @@ class ActionTimeline extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Row(
-                children:  [
+                children: [
                   const Text(
                     'by',
                     style: TextStyle(
@@ -161,7 +158,6 @@ class ActionTimeline extends StatelessWidget {
                     backgroundImage: AssetImage(
                       image,
                     ),
-
                   ),
                   const SizedBox(width: 5),
                   Text(

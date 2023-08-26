@@ -4,11 +4,11 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemNotes extends StatelessWidget {
   const ItemNotes({
-    super.key,
     required this.image,
     required this.name,
     required this.date,
     required this.note,
+    super.key,
     this.onEdit,
     this.onDelete,
   });
@@ -27,7 +27,6 @@ class ItemNotes extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           CircleAvatar(
             radius: 26,
@@ -42,7 +41,6 @@ class ItemNotes extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
                           name,
@@ -103,7 +101,7 @@ class ItemNotes extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

@@ -80,9 +80,9 @@ class ProfileInfo extends StatelessWidget {
                 const SizedBox(height: 14),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children: [
                       ItemLike(
                         imagePath: 'assets/images/facebook_3d.png',
                       ),

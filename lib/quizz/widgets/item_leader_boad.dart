@@ -4,17 +4,17 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemLeaderboard extends StatelessWidget {
   const ItemLeaderboard({
-    super.key,
     required this.id,
     required this.image,
     required this.name,
     required this.diamond,
+    super.key,
   });
+
   final int id;
   final String image;
   final String name;
   final String diamond;
-
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ItemLeaderboard extends StatelessWidget {
             const SizedBox(width: 14),
             CircleAvatar(
               radius: 30,
-              backgroundImage:  AssetImage(image),
+              backgroundImage: AssetImage(image),
             ),
             const SizedBox(width: 10),
             Text(

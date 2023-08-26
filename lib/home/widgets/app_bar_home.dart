@@ -5,11 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 
-class AppBarHome extends StatelessWidget with PreferredSizeWidget {
+class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
   const AppBarHome({
-    super.key,
+    required this.name, super.key,
     this.imageProfile = 'assets/images/profile_null.png',
-    required this.name,
     this.diamond = '',
     this.onProfile,
     this.onNotification,
@@ -28,6 +27,7 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(80);
+
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +107,7 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
           const Spacer(),
@@ -189,4 +189,5 @@ class AppBarHome extends StatelessWidget with PreferredSizeWidget {
       ),
     );
   }
+
 }

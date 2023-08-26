@@ -3,13 +3,11 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ButtonOutLineAction extends StatelessWidget {
   const ButtonOutLineAction({
-    Key? key,
-    required this.text,
-    required this.onPressed,
+    required this.text, required this.onPressed, super.key,
     this.width = double.infinity,
     this.height = 54,
     this.icon,
-  }) : super(key: key);
+  });
   final String text;
   final VoidCallback onPressed;
   final double? width;
@@ -18,16 +16,14 @@ class ButtonOutLineAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       height: height,
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           side: const BorderSide(
-            color: AppColors.kPrimaryColor,
-            width: 1,
-          ),
+            color: AppColors.kPrimaryColor,),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),

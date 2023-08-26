@@ -8,7 +8,7 @@ import 'package:jobby_application/shared/widgets/text_form_field.dart';
 import 'package:jobby_application/sign_up/views/sign_up_enter_prise4_page.dart';
 
 class SignUpEnterPrise3Page extends StatefulWidget {
-  const SignUpEnterPrise3Page({Key? key}) : super(key: key);
+  const SignUpEnterPrise3Page({super.key});
 
   static const String routePath = '/sign-up-enter-prise3-page';
 
@@ -17,7 +17,6 @@ class SignUpEnterPrise3Page extends StatefulWidget {
 }
 
 class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
-  late final GlobalKey<FormState> _globalKey;
   late TextEditingController companyNameController;
   late TextEditingController phoneNumberController;
   late TextEditingController emailController;
@@ -27,7 +26,6 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
   @override
   void initState() {
     super.initState();
-    _globalKey = GlobalKey<FormState>();
     companyNameController = TextEditingController();
     phoneNumberController = TextEditingController();
     emailController = TextEditingController();
@@ -105,6 +103,7 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
                 TextFieldForms(
                   onChange: (value) {
                     setState(() {});
+                    return null;
                   },
                   controller: positionController,
                   keyboardType: TextInputType.emailAddress,

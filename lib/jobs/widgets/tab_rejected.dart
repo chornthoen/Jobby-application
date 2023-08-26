@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:jobby_application/jobs/models/suitable_job_model.dart';
+import 'package:jobby_application/jobs/models/rejected_model.dart';
 import 'package:jobby_application/jobs/widgets/item_rejected.dart';
 
-import '../models/rejected_model.dart';
-
 class RejectedContent extends StatefulWidget {
-  const RejectedContent({Key? key}) : super(key: key);
+  const RejectedContent({super.key});
 
   @override
   State<RejectedContent> createState() => _RejectedContentState();

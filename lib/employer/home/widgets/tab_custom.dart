@@ -4,8 +4,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabCustom extends StatelessWidget {
   const TabCustom({
-    super.key,
-    required this.title,
+    required this.title, super.key,
     this.number,
   });
 
@@ -44,7 +43,7 @@ class TabCustom extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -53,11 +52,10 @@ class TabCustom extends StatelessWidget {
 }
 class ItemAction extends StatelessWidget {
   const ItemAction({
-    Key? key,
+    required this.icon, super.key,
     this.title,
-    required this.icon,
     this.onTap,
-  }) : super(key: key);
+  });
 
   final String? title;
   final String icon;

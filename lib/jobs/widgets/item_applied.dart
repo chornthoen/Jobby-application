@@ -5,7 +5,6 @@ import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class ItemApplied extends StatelessWidget {
   const ItemApplied({
-    super.key,
     required this.title,
     required this.name,
     required this.image,
@@ -13,12 +12,12 @@ class ItemApplied extends StatelessWidget {
     required this.time,
     required this.role,
     required this.date,
+    super.key,
     this.color,
     this.onSaved,
     this.onApply,
     this.sizeBox = 14,
     this.isSaved = false,
-
   });
 
   final String title;
@@ -47,9 +46,7 @@ class ItemApplied extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [AppColors.kBoxShadowColor,
-          AppColors.kBoxShadowColor1
-        ],
+        boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Column(
         children: [
@@ -81,7 +78,7 @@ class ItemApplied extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    '${name} • ${salary}',
+                    '$name • $salary',
                     style: const TextStyle(
                       fontSize: 16,
                       color: AppColors.kQuaternaryColor,
@@ -94,15 +91,21 @@ class ItemApplied extends StatelessWidget {
               Column(
                 children: [
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       onSaved!();
                       if (isSaved == false) {
-                        SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
+                        SnackBarTop.topSnackBarLottie(
+                          context,
+                          'Saved Successfully!',
+                        );
                       } else {
-                        SnackBarTop.topSnackBarLottie(context, 'Unsaved Successfully!');
+                        SnackBarTop.topSnackBarLottie(
+                          context,
+                          'Unsaved Successfully!',
+                        );
                       }
                     },
-                    child:  Icon(
+                    child: Icon(
                       isSaved
                           ? PhosphorIcons.bookmark_simple_fill
                           : PhosphorIcons.bookmark_simple,
@@ -190,9 +193,9 @@ class ItemApplied extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-              )
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

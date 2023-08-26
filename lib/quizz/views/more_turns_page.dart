@@ -5,7 +5,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class MoreTurnsPage extends StatefulWidget {
-  const MoreTurnsPage({Key? key}) : super(key: key);
+  const MoreTurnsPage({super.key});
 
   static const String routePath = '/more-turns-page';
 
@@ -37,4 +37,3 @@ class _MoreTurnsPageState extends State<MoreTurnsPage> {
     );
   }
 }
-

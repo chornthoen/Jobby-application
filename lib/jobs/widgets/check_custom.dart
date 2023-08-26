@@ -4,12 +4,12 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CheckCustom extends StatefulWidget {
   const CheckCustom({
-    Key? key,
+    super.key,
     this.isClick,
     this.title,
     this.onTap,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   final bool? isClick;
   final String? title;

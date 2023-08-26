@@ -1,13 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemMoreTurns extends StatelessWidget {
   const ItemMoreTurns({
-    super.key,
     required this.title,
     required this.value,
+    super.key,
   });
+
   final String title;
   final String value;
 
@@ -27,27 +27,30 @@ class ItemMoreTurns extends StatelessWidget {
                     height: 60,
                   ),
                   Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
-                        decoration: BoxDecoration(
-                          color: AppColors.kOrange400Color,
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(
-                            color: AppColors.kWhiteColor,
-                            width: 1.4,
-                          ),
+                    bottom: 0,
+                    right: 0,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 4,
+                        vertical: 2,
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.kOrange400Color,
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(
+                          color: AppColors.kWhiteColor,
+                          width: 1.4,
                         ),
-                        child: Text(
-                          'x$value',
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                            color: AppColors.kWhiteColor,
-                          ),
+                      ),
+                      child: Text(
+                        'x$value',
+                        style: const TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                          color: AppColors.kWhiteColor,
                         ),
-                      )
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -70,7 +73,6 @@ class ItemMoreTurns extends StatelessWidget {
           thickness: 1,
           height: 30,
         ),
-
       ],
     );
   }

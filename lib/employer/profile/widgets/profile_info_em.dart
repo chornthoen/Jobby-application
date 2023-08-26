@@ -11,12 +11,12 @@ class ProfileInfoEmployer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10),
       margin: const EdgeInsets.symmetric(horizontal: 16),
-      height: MediaQuery.of(context).size.height * 0.34,
+      height: MediaQuery.of(context).size.height * 0.36,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.26,
+            height: MediaQuery.of(context).size.height * 0.265,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -80,9 +80,9 @@ class ProfileInfoEmployer extends StatelessWidget {
                 const SizedBox(height: 14),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
+                    children: [
                       ItemWidget(
                         svgPath: 'assets/svg/jobs.svg',
                         title: 'Total Jobs',

@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class ReferencePersonPage extends StatefulWidget {
-  const ReferencePersonPage({Key? key}) : super(key: key);
+  const ReferencePersonPage({super.key});
 
   static const String routePath = '/reference_person_page';
 

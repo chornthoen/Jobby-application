@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -6,7 +5,7 @@ import 'package:jobby_application/chat/widgets/action_call.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CallVideoPage extends StatefulWidget {
-  const CallVideoPage({Key? key}) : super(key: key);
+  const CallVideoPage({super.key});
 
   static const String routePath = '/call_video_page';
 
@@ -19,6 +18,7 @@ class _CallVideoPageState extends State<CallVideoPage> {
   int secondsRemaining = 0;
 
   DateTime now = DateTime.now();
+
   void startTimer() {
     timer = Timer.periodic(const Duration(seconds: 1), (_) {
       setState(() {
@@ -26,6 +26,7 @@ class _CallVideoPageState extends State<CallVideoPage> {
       });
     });
   }
+
   String formatTime(int timeInSecs) {
     final minutes = (timeInSecs / 60).floor();
     final seconds = timeInSecs - (minutes * 60);
@@ -35,7 +36,6 @@ class _CallVideoPageState extends State<CallVideoPage> {
     }
     return '$minutes:$formattedSeconds';
   }
-
 
   @override
   void initState() {
@@ -53,12 +53,14 @@ class _CallVideoPageState extends State<CallVideoPage> {
     timer.cancel();
     super.dispose();
   }
+
   bool isLoad = false;
 
   bool isVoid = true;
   bool isCamera = true;
   bool isSound = true;
   bool isCallEnd = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,14 +75,14 @@ class _CallVideoPageState extends State<CallVideoPage> {
           Positioned(
             bottom: 0,
             child: Container(
-              width: MediaQuery.of(context).size.width ,
+              width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.5,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    AppColors.kPrimaryColor.withOpacity(0.0),
+                    AppColors.kPrimaryColor,
                     AppColors.kPrimaryColor.withOpacity(0.8),
                   ],
                 ),
@@ -97,7 +99,7 @@ class _CallVideoPageState extends State<CallVideoPage> {
                 margin: const EdgeInsets.only(right: 5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  image:  const DecorationImage(
+                  image: const DecorationImage(
                     image: AssetImage('assets/images/ly.png'),
                     fit: BoxFit.cover,
                   ),
@@ -132,7 +134,7 @@ class _CallVideoPageState extends State<CallVideoPage> {
             left: 0,
             right: 0,
             child: Column(
-              children:  [
+              children: [
                 const Text(
                   'Rose',
                   style: TextStyle(
@@ -142,10 +144,12 @@ class _CallVideoPageState extends State<CallVideoPage> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                 Text(
-                   isLoad ? secondsRemaining == 0
-                       ? '00:00'
-                       : formatTime(secondsRemaining) : 'Calling...',
+                Text(
+                  isLoad
+                      ? secondsRemaining == 0
+                          ? '00:00'
+                          : formatTime(secondsRemaining)
+                      : 'Calling...',
                   style: const TextStyle(
                     color: AppColors.kWhiteColor,
                     fontSize: 16,
@@ -153,7 +157,10 @@ class _CallVideoPageState extends State<CallVideoPage> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 20,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -163,7 +170,9 @@ class _CallVideoPageState extends State<CallVideoPage> {
                             isCamera = !isCamera;
                           });
                         },
-                        icon: isCamera ? Icons.videocam_outlined : Icons.videocam_off_outlined,
+                        icon: isCamera
+                            ? Icons.videocam_outlined
+                            : Icons.videocam_off_outlined,
                         color: AppColors.kWhiteColor.withOpacity(0.2),
                         isSubmit: isCamera,
                       ),
@@ -191,11 +200,10 @@ class _CallVideoPageState extends State<CallVideoPage> {
                         onPressed: () {},
                         icon: Icons.call_end,
                         color: AppColors.kRedColor,
-                        isSubmit: false,
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -204,4 +212,3 @@ class _CallVideoPageState extends State<CallVideoPage> {
     );
   }
 }
-

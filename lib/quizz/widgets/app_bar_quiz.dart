@@ -20,12 +20,10 @@ class AppBarQuiz extends StatelessWidget {
             onTap: () {
               context.push(MainView.routePath);
             },
-            child: Container(
-              child: const Image(
-                image: AssetImage('assets/images/go_home.png'),
-                width: 50,
-                height: 50,
-              ),
+            child: const Image(
+              image: AssetImage('assets/images/go_home.png'),
+              width: 50,
+              height: 50,
             ),
           ),
           const Spacer(),
@@ -33,12 +31,10 @@ class AppBarQuiz extends StatelessWidget {
             onTap: () {
               context.push(LeaderBoardPage.routePath);
             },
-            child: Container(
-              child: const Image(
-                image: AssetImage('assets/images/rank.png'),
-                width: 50,
-                height: 50,
-              ),
+            child: const Image(
+              image: AssetImage('assets/images/rank.png'),
+              width: 50,
+              height: 50,
             ),
           ),
           const SizedBox(width: 16),
@@ -47,12 +43,10 @@ class AppBarQuiz extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Container(
-                  child: const Image(
-                    image: AssetImage('assets/images/pech.png'),
-                    width: 100,
-                    height: 50,
-                  ),
+                const Image(
+                  image: AssetImage('assets/images/pech.png'),
+                  width: 100,
+                  height: 50,
                 ),
                 Row(
                   children: [
@@ -71,7 +65,7 @@ class AppBarQuiz extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),

@@ -1,21 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:jobby_application/jobs/models/add_position_model.dart';
 import 'package:jobby_application/jobs/models/industry_model.dart';
 import 'package:jobby_application/jobs/widgets/check_custom.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-import '../../employer/profile/views/company_profile_page.dart';
 
 
-// class ItemIndustry extends StatefulWidget {
-//   const ItemIndustry({Key? key}) : super(key: key);
-//
-//   @override
-//   State<ItemIndustry> createState() => _ItemIndustryState();
-// }
 class ItemIndustry extends StatefulWidget {
-  const ItemIndustry({Key? key}) : super(key: key);
+  const ItemIndustry({super.key});
 
   @override
   State<ItemIndustry> createState() => _ItemIndustryState();
@@ -52,7 +44,7 @@ class _ItemIndustryState extends State<ItemIndustry> {
 
 
 class ItemPeople extends StatefulWidget {
-  const ItemPeople({Key? key}) : super(key: key);
+  const ItemPeople({super.key});
 
   @override
   State<ItemPeople> createState() => _ItemPeopleState();
@@ -89,10 +81,10 @@ class _ItemPeopleState extends State<ItemPeople> {
 
 class TextAdd extends StatelessWidget {
   const TextAdd({
-    Key? key,
+    super.key,
     this.text,
     this.onTap,
-  }) : super(key: key);
+  });
   final String? text;
   final VoidCallback? onTap;
 

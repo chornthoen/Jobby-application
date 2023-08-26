@@ -1,11 +1,11 @@
 class LocationModel {
-  final String? position;
-  bool? isClick;
 
   LocationModel({
     this.position,
     this.isClick,
   });
+  final String? position;
+  bool? isClick;
 }
 
 final locationModel = [

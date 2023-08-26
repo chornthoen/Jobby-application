@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/quizz/models/quiz_model.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
-import '../../shared/colors/app_color.dart';
 
 class Question extends StatelessWidget {
   const Question({
-    super.key,
-    required this.question,
+    required this.question, super.key,
   });
 
   final String question;
@@ -27,9 +25,7 @@ class Question extends StatelessWidget {
 }
 class ItemQuestion extends StatefulWidget {
   const ItemQuestion({
-    super.key,
-    required this.answer,
-    required this.isCorrect,
+    required this.answer, required this.isCorrect, super.key,
     this.onPressed,
   });
 
@@ -105,7 +101,7 @@ class _ItemQuestionState extends State<ItemQuestion> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -114,8 +110,7 @@ class _ItemQuestionState extends State<ItemQuestion> {
 
 class RankWidget extends StatelessWidget {
   const RankWidget({
-    super.key,
-    required this.percent,
+    required this.percent, super.key,
   });
 
   final double percent;
@@ -147,4 +142,3 @@ class RankWidget extends StatelessWidget {
     );
   }
 }
-

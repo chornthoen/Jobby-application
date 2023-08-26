@@ -3,15 +3,15 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemUpComing extends StatelessWidget {
   const ItemUpComing({
-    super.key,
     required this.title,
     required this.description,
     required this.date,
+    super.key,
   });
+
   final String title;
   final String description;
   final String date;
-
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,7 @@ class ItemUpComing extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: AppColors.kSeptenaryColor,
-              width: 1,
-            ),
+            border: Border.all(color: AppColors.kSeptenaryColor),
           ),
           margin: const EdgeInsets.only(bottom: 10),
           child: Column(
@@ -71,7 +68,7 @@ class ItemUpComing extends StatelessWidget {
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }

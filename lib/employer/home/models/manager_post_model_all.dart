@@ -34,7 +34,6 @@ List<JobShowingModel> listJobExpire = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
     isExpired: true,
 
   ),
@@ -44,7 +43,6 @@ List<JobShowingModel> listJobExpire = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 1000',
     candidate: '22',
-    isPaused: false,
     isExpired: true,
   ),
   JobShowingModel(
@@ -53,7 +51,6 @@ List<JobShowingModel> listJobExpire = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
     isExpired: true,
   ),
   JobShowingModel(
@@ -62,7 +59,6 @@ List<JobShowingModel> listJobExpire = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
     isExpired: true,
   ),
   JobShowingModel(
@@ -71,7 +67,6 @@ List<JobShowingModel> listJobExpire = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
     isExpired: true,
   ),
   JobShowingModel(
@@ -80,7 +75,6 @@ List<JobShowingModel> listJobExpire = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
     isExpired: true,
   ),
 ];
@@ -91,7 +85,6 @@ List<JobShowingModel> listJobShowing = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
   ),
   JobShowingModel(
     title: 'Mobile Developer (Flutter)',
@@ -99,7 +92,6 @@ List<JobShowingModel> listJobShowing = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 1000',
     candidate: '22',
-    isPaused: false,
   ),
   JobShowingModel(
     title: 'Frontend Developer (ReactJS)',
@@ -107,7 +99,6 @@ List<JobShowingModel> listJobShowing = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
   ),
   JobShowingModel(
     title: 'Web Developer',
@@ -115,7 +106,6 @@ List<JobShowingModel> listJobShowing = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
   ),
   JobShowingModel(
     title: 'Full Stack Developer (NodeJS)',
@@ -123,7 +113,6 @@ List<JobShowingModel> listJobShowing = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
   ),
   JobShowingModel(
     title: 'Backend Developer (NodeJS)',
@@ -131,7 +120,6 @@ List<JobShowingModel> listJobShowing = [
     jobType: 'Full Time',
     salary: r'$ 500 - $ 800',
     candidate: '2',
-    isPaused: false,
   ),
 ];
 List<JobShowingModel> listJobPaused = [
@@ -306,5 +294,3 @@ final listActionJobReject = [
   ),
 
 ];
-
-

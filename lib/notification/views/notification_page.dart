@@ -5,7 +5,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class NotificationPage extends StatefulWidget {
-  const NotificationPage({Key? key}) : super(key: key);
+  const NotificationPage({super.key});
 
   static const String routePath = '/notification-page';
 
@@ -62,7 +62,7 @@ class _NotificationPageState extends State<NotificationPage> {
                               width: 40,
                             ),
                           ),
-                          if (notificationList[index].isRead == true)
+                          if (notificationList[index].isRead! == true)
                             Positioned(
                               top: 0,
                               right: 0,
@@ -90,7 +90,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                 notificationList[index].title,
                                 style: TextStyle(
                                   fontSize: 18,
-                                  color: notificationList[index].isRead == true
+                                  color: notificationList[index].isRead! == true
                                       ? AppColors.kPrimaryColor
                                       : AppColors.kQuinaryColor,
                                   fontWeight: FontWeight.w500,
@@ -102,7 +102,7 @@ class _NotificationPageState extends State<NotificationPage> {
                               notificationList[index].time,
                               style:  TextStyle(
                                 fontSize: 14,
-                                color: notificationList[index].isRead == true
+                                color: notificationList[index].isRead! == true
                                     ? AppColors.kQuaternaryColor
                                     : AppColors.kQuinaryColor,
                                 fontWeight: FontWeight.w500,
@@ -110,7 +110,7 @@ class _NotificationPageState extends State<NotificationPage> {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -118,7 +118,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   height: 1,
                   width: MediaQuery.of(context).size.width,
                   color: AppColors.kGray200,
-                )
+                ),
               ],
             ),
           );

@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ChangeAccountPage extends StatefulWidget {
-  const ChangeAccountPage({Key? key}) : super(key: key);
+  const ChangeAccountPage({super.key});
 
   static const String routePath = '/change-account-page';
 

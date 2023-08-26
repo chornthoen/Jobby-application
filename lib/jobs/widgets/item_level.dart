@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:jobby_application/jobs/models/add_position_model.dart';
 import 'package:jobby_application/jobs/models/level_model.dart';
 import 'package:jobby_application/jobs/widgets/check_custom.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 
 class ItemLevel extends StatefulWidget {
-  const ItemLevel({Key? key}) : super(key: key);
+  const ItemLevel({super.key});
 
   @override
   State<ItemLevel> createState() => _ItemLevelState();
@@ -43,10 +42,10 @@ class _ItemLevelState extends State<ItemLevel> {
 
 class TextAdd extends StatelessWidget {
   const TextAdd({
-    Key? key,
+    super.key,
     this.text,
     this.onTap,
-  }) : super(key: key);
+  });
   final String? text;
   final VoidCallback? onTap;
 

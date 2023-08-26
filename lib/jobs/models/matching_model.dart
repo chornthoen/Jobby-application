@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-class MatchingModel{
-
+class MatchingModel {
   MatchingModel({
     required this.id,
     required this.title,
@@ -11,11 +9,12 @@ class MatchingModel{
     required this.salary,
     required this.role,
     required this.time,
-    this.color,
     required this.image,
     required this.date,
-    this.isSaved = false,
+    required this.isSaved,
+    this.color,
   });
+
   int id;
   String title;
   String name;
@@ -26,7 +25,6 @@ class MatchingModel{
   String image;
   String date;
   bool isSaved;
-
 }
 
 //list hot job 5 item
@@ -42,7 +40,6 @@ List<MatchingModel> matchingModel = [
     image: 'assets/images/technology.png',
     date: '2h ago',
     isSaved: false,
-
   ),
   MatchingModel(
     id: 2,
@@ -92,7 +89,6 @@ List<MatchingModel> matchingModel = [
     date: '3h ago',
     isSaved: false,
   ),
-
   MatchingModel(
     id: 6,
     title: 'Product designer⚡️',
@@ -153,5 +149,4 @@ List<MatchingModel> matchingModel = [
     date: '3h ago',
     isSaved: true,
   ),
-
 ];

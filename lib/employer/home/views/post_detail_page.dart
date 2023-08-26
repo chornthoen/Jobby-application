@@ -8,7 +8,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class PostDetailPage extends StatefulWidget {
-  const PostDetailPage({Key? key}) : super(key: key);
+  const PostDetailPage({super.key});
 
   static const String routePath = '/post-detail-page';
 
@@ -119,4 +119,3 @@ class _PostDetailPageState extends State<PostDetailPage>
     );
   }
 }
-

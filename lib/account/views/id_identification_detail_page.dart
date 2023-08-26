@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class IDIdentificationDetailPage extends StatefulWidget {
-  const IDIdentificationDetailPage({Key? key}) : super(key: key);
+  const IDIdentificationDetailPage({super.key});
 
   static const String routePath = '/id_identification_detail_page';
 
@@ -15,7 +15,8 @@ class IDIdentificationDetailPage extends StatefulWidget {
       _IDIdentificationDetailPageState();
 }
 
-class _IDIdentificationDetailPageState extends State<IDIdentificationDetailPage> {
+class _IDIdentificationDetailPageState extends
+State<IDIdentificationDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,8 +103,8 @@ class _IDIdentificationDetailPageState extends State<IDIdentificationDetailPage>
               ),
             ),
             const SizedBox(height: 10),
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Icon(
                   PhosphorIcons.check,
                   color: AppColors.kQuaternaryColor,
@@ -121,8 +122,8 @@ class _IDIdentificationDetailPageState extends State<IDIdentificationDetailPage>
               ],
             ),
             const SizedBox(height: 10),
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Icon(
                   PhosphorIcons.check,
                   color: AppColors.kQuaternaryColor,

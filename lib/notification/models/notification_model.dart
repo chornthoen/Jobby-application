@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/colors/app_color.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 
 
 class NotificationModel{

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../colors/app_color.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TextFieldForms extends StatefulWidget {
   const TextFieldForms({
-    super.key,
-    required this.hintText,
+    required this.hintText, super.key,
     this.suffixIcon,
     this.controller,
     this.obscureText = false,

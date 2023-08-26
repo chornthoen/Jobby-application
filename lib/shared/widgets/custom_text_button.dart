@@ -3,9 +3,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
-    super.key,
-    required this.text,
-    required this.onPressed,
+    required this.text, required this.onPressed, super.key,
   });
   final String text;
   final VoidCallback onPressed;

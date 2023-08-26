@@ -4,12 +4,12 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemChat extends StatelessWidget {
   const ItemChat({
-    super.key,
     required this.id,
     required this.avatarUrl,
     required this.name,
     required this.message,
     required this.time,
+    super.key,
     this.isMessageRead = false,
     this.online = false,
     this.isVerified = false,
@@ -60,8 +60,9 @@ class ItemChat extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
-                      color:
-                      online ? AppColors.kGreenColor : AppColors.kSenaryColor,
+                      color: online
+                          ? AppColors.kGreenColor
+                          : AppColors.kSenaryColor,
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: AppColors.kWhiteColor,
@@ -81,11 +82,12 @@ class ItemChat extends StatelessWidget {
                     children: [
                       Text(
                         name,
-                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          fontSize: 18,
-                          color: AppColors.kPrimaryColor,
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style:
+                            Theme.of(context).textTheme.titleMedium!.copyWith(
+                                  fontSize: 18,
+                                  color: AppColors.kPrimaryColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
                       ),
                       const SizedBox(width: 4),
                       if (isVerified)

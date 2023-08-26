@@ -46,7 +46,8 @@ List<EventModel> eventModel = [
   ),
 
   EventModel(
-    title: 'Performance evaluation review is known for its challenging interview questions',
+    title: 'Performance evaluation review is known for its challenging'
+        ' interview questions',
     image: 'assets/images/events3.png',
     date: '20/10/2021',
     countUser: '20 - 310',
@@ -56,7 +57,8 @@ List<EventModel> eventModel = [
     isSaved: false,
   ),
   EventModel(
-    title: 'Performance evaluation review is known for its challenging interview questions',
+    title: 'Performance evaluation review is known for its challenging '
+        'interview questions',
     image: 'assets/images/events4.png',
     date: '20/10/2021',
     countUser: '20 - 30',

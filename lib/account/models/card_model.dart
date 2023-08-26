@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CardModel {
-  final String title;
-  final String image;
-  final Color color;
 
   CardModel({
     required this.title,
     required this.image,
     required this.color,
   });
+  final String title;
+  final String image;
+  final Color color;
 }
 
 final cardModel = [

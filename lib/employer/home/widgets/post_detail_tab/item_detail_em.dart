@@ -5,9 +5,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemDetailEm extends StatelessWidget {
   const ItemDetailEm({
-    super.key,
-    required this.label,
-    required this.value,
+    required this.label, required this.value, super.key,
   });
 
   final String label;
@@ -20,7 +18,7 @@ class ItemDetailEm extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: MediaQuery.of(context).size.height * 0.16,
             child: Text(
               label,

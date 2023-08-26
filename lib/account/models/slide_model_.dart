@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class SlideProfile {
-  String image;
-  String title;
-  String subtitle;
-  Color color;
 
   SlideProfile({
     required this.image,
@@ -15,6 +11,10 @@ class SlideProfile {
     required this.subtitle,
     required this.color,
   });
+  String image;
+  String title;
+  String subtitle;
+  Color color;
 }
 
 List<SlideProfile> sliderProfile = [

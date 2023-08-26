@@ -4,8 +4,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class LabelText extends StatelessWidget {
   const LabelText({
-    super.key,
-    required this.text,
+    required this.text, super.key,
   });
 
   final String text;

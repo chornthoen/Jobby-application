@@ -5,9 +5,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CustomWidget extends StatelessWidget {
   const CustomWidget({
-    super.key,
-    required this.image,
-    required this.title,
+    required this.image, required this.title, super.key,
     this.description = '',
     this.onTap,
     this.color = AppColors.kOrange200Color,

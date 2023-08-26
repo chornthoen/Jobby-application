@@ -10,7 +10,7 @@ import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class SkillsPage extends StatefulWidget {
-  const SkillsPage({Key? key}) : super(key: key);
+  const SkillsPage({super.key});
 
   static const String routePath = '/skills_page';
 
@@ -56,13 +56,12 @@ class _SkillsPageState extends State<SkillsPage> {
               controller: skillController,
               hintText: 'Add your skills',
               maxLines: 3,
-              minLines: 1,
               suffixIcon: PhosphorIcons.caret_down,
               onPressed: addPositionSheet,
             ),
           ],
         ),
-      )
+      ),
     );
   }
   void addPositionSheet() {
@@ -72,14 +71,14 @@ class _SkillsPageState extends State<SkillsPage> {
         context.pop(context);
         String? addPosition = '';
         for (var i = 0; i < addPositionModel.length; i++) {
-          if (addPositionModel[i].isClick == true) {
+          if (addPositionModel[i].isClick!) {
             addPosition = '${addPosition!}${addPositionModel[i].position!}, ';
           }
         }
         skillController.text = addPosition!;
       },
-      child: Column(
-        children: const [
+      child: const Column(
+        children: [
           ActionTop(title: 'Skills'),
           SizedBox(height: 10),
           Expanded(child: ItemAddPosition()),

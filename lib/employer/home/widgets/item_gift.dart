@@ -5,11 +5,11 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemGift extends StatelessWidget {
   const ItemGift({
-    super.key,
     required this.title,
     required this.description,
     required this.date,
     required this.status,
+    super.key,
   });
 
   final String title;
@@ -25,25 +25,22 @@ class ItemGift extends StatelessWidget {
         Container(
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
-              color: AppColors.kWhiteColor,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppColors.kSeptenaryColor),
-              boxShadow: [
-                AppColors.kBoxShadowColor,
-                AppColors.kBoxShadowColor1,
-              ]
+            color: AppColors.kWhiteColor,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: AppColors.kSeptenaryColor),
+            boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
           ),
           child: Column(
             children: [
               Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 child: Row(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                         Text(
+                        Text(
                           title,
                           style: const TextStyle(
                             fontSize: 24,
@@ -52,7 +49,7 @@ class ItemGift extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 8),
-                         Text(
+                        Text(
                           description,
                           style: const TextStyle(
                             fontSize: 14,
@@ -75,13 +72,13 @@ class ItemGift extends StatelessWidget {
                 dashColor: AppColors.kSeptenaryColor,
                 dashGapLength: 8,
                 dashLength: 8,
-                lineThickness: 1,
               ),
               const SizedBox(height: 16),
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: const BoxDecoration(
                       color: AppColors.kSeptenaryColor,
                       borderRadius: BorderRadius.only(
@@ -89,7 +86,7 @@ class ItemGift extends StatelessWidget {
                         topRight: Radius.circular(10),
                       ),
                     ),
-                    child:  Text(
+                    child: Text(
                       date,
                       style: const TextStyle(
                         fontSize: 16,
@@ -100,7 +97,8 @@ class ItemGift extends StatelessWidget {
                   ),
                   const Spacer(),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: const BoxDecoration(
                       color: AppColors.kPrimaryColor,
                       borderRadius: BorderRadius.only(
@@ -108,7 +106,7 @@ class ItemGift extends StatelessWidget {
                         topLeft: Radius.circular(10),
                       ),
                     ),
-                    child:  Text(
+                    child: Text(
                       status,
                       style: const TextStyle(
                         fontSize: 16,
@@ -116,9 +114,9 @@ class ItemGift extends StatelessWidget {
                         color: AppColors.kWhiteColor,
                       ),
                     ),
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),

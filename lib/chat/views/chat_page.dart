@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
 import 'package:jobby_application/chat/widgets/item_chat.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-import '../models/chat_model.dart';
-
 class ChatPage extends StatefulWidget {
-  const ChatPage({Key? key}) : super(key: key);
+  const ChatPage({super.key});
 
   static const String routePath = '/chat-page';
 
@@ -88,4 +87,3 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 }
-

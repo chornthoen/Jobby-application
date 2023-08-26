@@ -80,7 +80,7 @@ class BottomSheets {
                       style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: AppColors.kPrimaryColor),
+                          color: AppColors.kPrimaryColor,),
                     ),
                     const SizedBox(height: 10),
                     Image(
@@ -90,7 +90,7 @@ class BottomSheets {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 10),
+                          horizontal: 16, vertical: 10,),
                       child: Text(
                         description,
                         textAlign: TextAlign.center,
@@ -132,7 +132,7 @@ class BottomSheets {
     required VoidCallback isLike,
     bool? isLikeClick,
   }) {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -142,7 +142,7 @@ class BottomSheets {
       ),
       backgroundColor: AppColors.kBackgroundColor,
       builder: (context) {
-        return Container(
+        return SizedBox(
           height: MediaQuery.of(context).size.height * 0.6,
           child: Column(
             children: [
@@ -180,7 +180,9 @@ class BottomSheets {
                 child: Column(
                   children: [
                     const Text(
-                      'Tmrw studio owns, manages and operates a system of Trade Centers - A shopping, entertainment and culinary paradise with 4 brand lines.',
+                      'Tmrw studio owns, manages and operates a system of '
+                          'Trade Centers - A shopping, entertainment and '
+                          'culinary paradise with 4 brand lines.',
                       style: TextStyle(
                         color: AppColors.kQuaternaryColor,
                         fontSize: 14,
@@ -206,9 +208,9 @@ class BottomSheets {
                             color: AppColors.kWhiteColor,
                           ),
                           const SizedBox(width: 8),
-                          Column(
+                          const Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Text(
                                 '100%',
                                 style: TextStyle(
@@ -229,7 +231,7 @@ class BottomSheets {
                             ],
                           ),
                           const Spacer(),
-                          Container(
+                          DecoratedBox(
                             decoration: BoxDecoration(
                               color: AppColors.kWhiteColor,
                               borderRadius: BorderRadius.circular(8),
@@ -247,7 +249,7 @@ class BottomSheets {
                             ),
                           ),
                           const SizedBox(width: 8),
-                          Container(
+                          DecoratedBox(
                             decoration: BoxDecoration(
                               color: AppColors.kWhiteColor,
                               borderRadius: BorderRadius.circular(8),

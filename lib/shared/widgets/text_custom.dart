@@ -4,9 +4,8 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TextCustom extends StatelessWidget {
   const TextCustom({
-    super.key,
+    required this.text, super.key,
     this.star = true,
-    required this.text,
   });
 
   final bool star;

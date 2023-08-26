@@ -4,9 +4,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class LabelIconAndText extends StatelessWidget {
   const LabelIconAndText({
-    super.key,
-    required this.icon,
-    required this.text,
+    required this.icon, required this.text, super.key,
   });
   final String icon;
   final String text;

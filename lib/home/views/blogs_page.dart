@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/home/models/blog_model.dart';
 import 'package:jobby_application/home/views/blog_detail_page.dart';
 import 'package:jobby_application/home/widgets/item_blog.dart';
-import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class BlogsPage extends StatefulWidget {
-  const BlogsPage({Key? key}) : super(key: key);
+  const BlogsPage({super.key});
 
   static const String routePath = '/blogsPage';
 

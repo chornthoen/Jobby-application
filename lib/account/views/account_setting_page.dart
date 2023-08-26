@@ -62,4 +62,3 @@ class _AccountSettingPageState extends State<AccountSettingPage> {
     );
   }
 }
-

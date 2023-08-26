@@ -11,7 +11,7 @@ import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerifyOTPForgetPage extends StatefulWidget {
-  const VerifyOTPForgetPage({Key? key}) : super(key: key);
+  const VerifyOTPForgetPage({super.key});
 
   static const routePath = '/verify_otp_forget_page';
 
@@ -68,7 +68,8 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Enter the phone number or email associated with your account and we’ll send you OTP to reset yourpassword',
+                    'Enter the phone number or email associated with your '
+                        'account and we’ll send you OTP to reset your password',
                     style: TextStyle(
                       color: AppColors.kTertiaryColor,
                       fontSize: 16,
@@ -125,7 +126,7 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                         SnackBarTop.topSnackBar(context, 'Please enter OTP');
                       } else if (otpController.text.length < 6) {
                         SnackBarTop.topSnackBar(
-                            context, 'Please enter OTP 6 digits');
+                            context, 'Please enter OTP 6 digits',);
                       } else {
                         context.push(CreatePasswordPage.routePath);
                       }

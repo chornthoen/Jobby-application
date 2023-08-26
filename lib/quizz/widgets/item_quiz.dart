@@ -4,7 +4,6 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemQuizs extends StatelessWidget {
   const ItemQuizs({
-    super.key,
     required this.image,
     required this.title,
     required this.level,
@@ -13,6 +12,7 @@ class ItemQuizs extends StatelessWidget {
     required this.like,
     required this.percent,
     required this.onPressed,
+    super.key,
   });
 
   final String image;
@@ -95,7 +95,7 @@ class ItemQuizs extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                       const SizedBox(height: 4),
@@ -127,7 +127,7 @@ class ItemQuizs extends StatelessWidget {
                         ],
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

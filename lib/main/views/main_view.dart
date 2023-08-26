@@ -21,7 +21,7 @@ class _MainViewState extends State<MainView> {
 
   @override
   Widget build(BuildContext context) {
-    return _BodyMainView();
+    return const _BodyMainView();
   }
 }
 
@@ -49,15 +49,15 @@ class _BodyMainViewState extends State<_BodyMainView>
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
         children:  [
-          HomePage(),
-          JobPage(),
-          ChatPage(),
+          const HomePage(),
+          const JobPage(),
+          const ChatPage(),
           GestureDetector(
             onTap: () {
               context.go(QuizzPage.routePath );
             },
           ),
-          AccountPage(),
+          const AccountPage(),
         ],
       ),
       bottomNavigationBar: NavigationPage(tabController: tabController),

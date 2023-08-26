@@ -15,7 +15,7 @@ import 'package:jobby_application/shared/widgets/button_outLine.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class ApplyNowPage extends StatefulWidget {
-  const ApplyNowPage({Key? key}) : super(key: key);
+  const ApplyNowPage({super.key});
 
   static const String routePath = '/apply_now_page';
 
@@ -65,112 +65,109 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                     ],
                   ),
                 ),
-                Container(
-                  color: AppColors.kWhiteColor,
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 100,
-                        margin: const EdgeInsets.only(top: 10),
-                        child: ListView.builder(
-                          itemCount: statusList.length,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            final model = statusList[index];
-                            return ItemWidget(
-                              svgPath: model.svgUrl,
-                              title: model.title,
-                              description: model.description,
-                              color: model.color,
-                            );
-                          },
-                        ),
+                Column(
+                  children: [
+                    Container(
+                      height: 100,
+                      margin: const EdgeInsets.only(top: 10),
+                      child: ListView.builder(
+                        itemCount: statusList.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          final model = statusList[index];
+                          return ItemWidget(
+                            svgPath: model.svgUrl,
+                            title: model.title,
+                            description: model.description,
+                            color: model.color,
+                          );
+                        },
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SizedBox(height: 14),
-                            const Text(
-                              'Description',
-                              style: TextStyle(
-                                color: AppColors.kPrimaryColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                              ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 14),
+                          const Text(
+                            'Description',
+                            style: TextStyle(
+                              color: AppColors.kPrimaryColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
                             ),
-                            const SizedBox(height: 10),
-                            Text(
-                              Constant.description,
-                              style: const TextStyle(
-                                color: AppColors.kQuaternaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              maxLines: seeMore ? 100 : 6,
-                              overflow: TextOverflow.ellipsis,
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            Constant.description,
+                            style: const TextStyle(
+                              color: AppColors.kQuaternaryColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
                             ),
-                            const SizedBox(height: 10),
-                            ButtonOutLineAction(
-                              width: 120,
-                              height: 40,
-                              text: seeMore ? 'See Less' : 'See More',
-                              onPressed: () {
-                                setState(() {
-                                  seeMore = !seeMore;
-                                });
-                              },
+                            maxLines: seeMore ? 100 : 6,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          const SizedBox(height: 10),
+                          ButtonOutLineAction(
+                            width: 120,
+                            height: 40,
+                            text: seeMore ? 'See Less' : 'See More',
+                            onPressed: () {
+                              setState(() {
+                                seeMore = !seeMore;
+                              });
+                            },
+                          ),
+                          const Text(
+                            'Match Score',
+                            style: TextStyle(
+                              color: AppColors.kPrimaryColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
                             ),
-                            const Text(
-                              'Match Score',
-                              style: TextStyle(
-                                color: AppColors.kPrimaryColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                              ),
+                          ),
+                          const SizedBox(height: 10),
+                          const MatchScore(),
+                          const SizedBox(height: 20),
+                          const Text(
+                            'Similar Jobs',
+                            style: TextStyle(
+                              color: AppColors.kPrimaryColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w700,
                             ),
-                            const SizedBox(height: 10),
-                            const MatchScore(),
-                            const SizedBox(height: 20),
-                            const Text(
-                              'Similar Jobs',
-                              style: TextStyle(
-                                color: AppColors.kPrimaryColor,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                            ListView.builder(
-                              itemCount: 4,
-                              shrinkWrap: true,
-                              physics: const BouncingScrollPhysics(),
-                              itemBuilder: (context, index) {
-                                final model = matchingModel[index];
-                                return ItemHotJobs(
-                                  title: model.title,
-                                  name: model.name,
-                                  image: model.image,
-                                  salary: model.salary,
-                                  time: model.time,
-                                  role: model.role,
-                                  date: model.date,
-                                  color: model.color,
-                                  isSaved: model.isSaved,
-                                  onApply: () {},
-                                  onSaved: () {
-                                    setState(() {
-                                      model.isSaved = !model.isSaved;
-                                    });
-                                  },
-                                );
-                              },
-                            ),
-                          ],
-                        ),
+                          ),
+                          ListView.builder(
+                            itemCount: 4,
+                            shrinkWrap: true,
+                            physics: const BouncingScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              final model = matchingModel[index];
+                              return ItemHotJobs(
+                                title: model.title,
+                                name: model.name,
+                                image: model.image,
+                                salary: model.salary,
+                                time: model.time,
+                                role: model.role,
+                                date: model.date,
+                                color: model.color,
+                                isSaved: model.isSaved,
+                                onApply: () {},
+                                onSaved: () {
+                                  setState(() {
+                                    model.isSaved = !model.isSaved;
+                                  });
+                                },
+                              );
+                            },
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 70),
               ],
@@ -181,9 +178,12 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
             onSaved: () {
               setState(() {
                 if (!isSaved) {
-                  SnackBarTop.topSnackBarLottie(context,'Saved Successfully!');
+                  SnackBarTop.topSnackBarLottie(context, 'Saved Successfully!');
                 } else {
-                  SnackBarTop.topSnackBarLottie(context,'Unsaved Successfully!');
+                  SnackBarTop.topSnackBarLottie(
+                    context,
+                    'Unsaved Successfully!',
+                  );
                 }
                 isSaved = !isSaved;
               });
@@ -209,5 +209,3 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
     );
   }
 }
-
-

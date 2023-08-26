@@ -322,7 +322,7 @@ class AppRouter {
         builder: (context, state) {
           final questionModel = state.extra;
           return SuccessQuizPage(
-            questionModel: questionModel as List<QuestionModel>,
+            questionModel: questionModel! as List<QuestionModel>,
           );
         },
       ),

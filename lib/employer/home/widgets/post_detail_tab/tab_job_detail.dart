@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 class TabJobDetail extends StatefulWidget {
-  const TabJobDetail({Key? key}) : super(key: key);
+  const TabJobDetail({super.key});
 
   @override
   State<TabJobDetail> createState() => _TabJobDetailState();
@@ -139,7 +139,7 @@ class _TabJobDetailState extends State<TabJobDetail> {
                 ),
               ),
               const SizedBox(height: 10),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: ListTile(
                   shape: RoundedRectangleBorder(
@@ -175,9 +175,9 @@ class _TabJobDetailState extends State<TabJobDetail> {
                     icon: PhosphorIcons.caret_down,
                     isClick: true,
                     onPressed: () {},
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
@@ -185,4 +185,3 @@ class _TabJobDetailState extends State<TabJobDetail> {
     );
   }
 }
-

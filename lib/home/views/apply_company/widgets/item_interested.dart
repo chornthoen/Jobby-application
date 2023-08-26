@@ -1,18 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemInterested extends StatelessWidget {
   const ItemInterested({
-    Key? key,
     required this.image,
     required this.nameCompany,
     required this.location,
+    super.key,
     this.onTab,
     this.isFollow,
     this.follow = false,
-  }) : super(key: key);
+  });
+
   final String image;
   final String nameCompany;
   final String location;
@@ -76,7 +76,7 @@ class ItemInterested extends StatelessWidget {
                   ? PhosphorIcons.check_circle_fill
                   : PhosphorIcons.plus_circle_fill,
               color:
-              follow ? AppColors.kOrange400Color : AppColors.kPrimaryColor,
+                  follow ? AppColors.kOrange400Color : AppColors.kPrimaryColor,
               size: 20,
             ),
             label: Text(
@@ -89,7 +89,7 @@ class ItemInterested extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-          )
+          ),
         ],
       ),
     );

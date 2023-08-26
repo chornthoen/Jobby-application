@@ -11,7 +11,7 @@ import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class EventDetailPage extends StatefulWidget {
-  const EventDetailPage({Key? key}) : super(key: key);
+  const EventDetailPage({super.key});
 
   static const String routePath = '/eventDetailPage';
 
@@ -59,8 +59,10 @@ class _EventDetailPageState extends State<EventDetailPage> {
       });
     }
   }
+
   //close keyboard
   bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
+
   void closeKeyboard() {
     if (isKeyboardOpen) {
       FocusScope.of(context).unfocus();
@@ -125,12 +127,16 @@ class _EventDetailPageState extends State<EventDetailPage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 10,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
-                      'Market Insight – See salary, understand your favorite job position',
+                      'Market Insight – See salary, understand your favorite'
+                      ' job position',
                       style: TextStyle(
                         color: AppColors.kPrimaryColor,
                         fontSize: 20,
@@ -186,7 +192,11 @@ class _EventDetailPageState extends State<EventDetailPage> {
                     ),
                     const SizedBox(height: 14),
                     const Text(
-                      'Employee performance reviews, where managers evaluate their staff’s overall performance, are vital for every business. However, the effectiveness of those sessions depends on how they are prepared and conducted.',
+                      'Employee performance reviews, where managers evaluate '
+                      'their staff’s overall performance, are vital for'
+                      ' every business. However, the effectiveness of those'
+                      ' sessions depends on how they are prepared and '
+                      'conducted.',
                       style: TextStyle(
                         color: AppColors.kQuaternaryColor,
                         fontSize: 17,
@@ -218,7 +228,12 @@ class _EventDetailPageState extends State<EventDetailPage> {
                       svg: 'assets/svg/list.svg',
                       label: 'Overview:',
                       value:
-                          'The 4.0 revolution makes the term artificial intelligence no longer strange to everyone, no matter what field you are in. The use of AI in recruitment has been and is the mainstream in the future with undeniable benefits for both employers and candidates.',
+                          'The 4.0 revolution makes the term artificial '
+                              'intelligence no longer strange to everyone, no '
+                              'matter what field you are in. The use of AI in '
+                              'recruitment has been and is the mainstream in '
+                              'the future with undeniable benefits for both'
+                              ' employers and candidates.',
                     ),
                     const SizedBox(height: 8),
                     const Text(
@@ -255,6 +270,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
                     TextFieldForms(
                       onChange: (value) {
                         setState(() {});
+                        return null;
                       },
                       controller: _commentController,
                       hintText: 'Add your comment',
@@ -301,7 +317,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),

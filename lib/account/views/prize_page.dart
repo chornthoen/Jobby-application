@@ -8,7 +8,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class PrizePage extends StatefulWidget {
-  const PrizePage({Key? key}) : super(key: key);
+  const PrizePage({super.key});
 
   static const String routePath = '/prize_page';
 

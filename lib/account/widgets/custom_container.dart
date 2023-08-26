@@ -3,9 +3,8 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CustomContainer extends StatelessWidget {
   const CustomContainer({
-    Key? key,
-    required this.child,
-  }) : super(key: key);
+    required this.child, super.key,
+  });
   final Widget child;
 
   @override

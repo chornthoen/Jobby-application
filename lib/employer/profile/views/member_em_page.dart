@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class MemberEmPage extends StatefulWidget {
-  const MemberEmPage({Key? key}) : super(key: key);
+  const MemberEmPage({super.key});
 
   static const String routePath = '/member_em_page';
 
@@ -64,9 +64,9 @@ class ItemAddMember extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
+        const Expanded(
           child: Column(
-            children: const [
+            children: [
               TextCustom(text: 'Email'),
               SizedBox(height: 10),
               TextFieldForms(hintText: 'Email'),
@@ -76,11 +76,11 @@ class ItemAddMember extends StatelessWidget {
         const SizedBox(width: 10),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.35,
-          child: Column(
+          child: const Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   TextCustom(text: 'Role'),
                   Icon(
                     PhosphorIcons.trash,
@@ -89,8 +89,8 @@ class ItemAddMember extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              const TextFieldForms(hintText: 'Role'),
+              SizedBox(height: 10),
+              TextFieldForms(hintText: 'Role'),
             ],
           ),
         ),

@@ -8,9 +8,8 @@ import 'package:jobby_application/shared/widgets/button_action.dart';
 
 class SuccessQuizPage extends StatefulWidget {
   const SuccessQuizPage({
-    Key? key,
-    required this.questionModel,
-  }) : super(key: key);
+    required this.questionModel, super.key,
+  });
 
   final List<QuestionModel> questionModel;
 
@@ -38,9 +37,9 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
+                const Center(
                   child: Image(
-                    image: const AssetImage('assets/images/on_boarding_4.png'),
+                    image: AssetImage('assets/images/on_boarding_4.png'),
                     width: 220,
                     height: 250,
                   ),
@@ -50,7 +49,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           'Congratulations! Get x25',
                           textAlign: TextAlign.center,
                           style: TextStyle(
@@ -93,8 +92,10 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                   itemBuilder: (context, index) {
                     return itemAnswer(
                       title: widget.questionModel[index].question,
-                      answer: widget.questionModel[index].answersList[index].answerText,
-                      isTrue: widget.questionModel[index].answersList[index].isCorrect,
+                      answer: widget.questionModel[index].
+                      answersList[index].answerText,
+                      isTrue: widget.questionModel[index].
+                      answersList[index].isCorrect,
                     );
                   },
                 ),
@@ -133,7 +134,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
               height: 22,
             ),
             const SizedBox(width: 8),
-            Text(
+            const Text(
               'Question 1',
               style: TextStyle(
                 fontSize: 16,
@@ -146,32 +147,24 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
         const SizedBox(height: 8),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w500,
             color: AppColors.kPrimaryColor,
           ),
         ),
         const SizedBox(height: 8),
-        // Text(
-        //   'Early in the SDLC',
-        //   style: TextStyle(
-        //     decoration: TextDecoration.lineThrough,
-        //     fontSize: 16,
-        //     fontWeight: FontWeight.w400,
-        //     color: AppColors.kOrangeColor,
-        //   ),
-        // ),
-        SizedBox(height: 5),
+
+        const SizedBox(height: 5),
         Text(
           answer,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
             color: AppColors.kQuaternaryColor,
           ),
         ),
-        Divider()
+        const Divider(),
       ],
     );
   }
@@ -195,7 +188,7 @@ class ItemSuccess extends StatelessWidget {
               height: 22,
             ),
             const SizedBox(width: 8),
-            Text(
+            const Text(
               'Question 1',
               style: TextStyle(
                 fontSize: 16,
@@ -206,7 +199,7 @@ class ItemSuccess extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 8),
-        Text(
+        const Text(
           'When should a developer apply usability priciples?',
           style: TextStyle(
             fontSize: 18,
@@ -215,7 +208,7 @@ class ItemSuccess extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        Text(
+        const Text(
           'Early in the SDLC',
           style: TextStyle(
             decoration: TextDecoration.lineThrough,
@@ -224,9 +217,8 @@ class ItemSuccess extends StatelessWidget {
             color: AppColors.kOrangeColor,
           ),
         ),
-        SizedBox(height: 5),
-        Text(
-          //'Your answer: ${question.answersList.firstWhere((element) => element.isCorrect).answerText}',
+        const SizedBox(height: 5),
+        const Text(
           'Your answer: Early in the SDLC',
           style: TextStyle(
             fontSize: 16,
@@ -234,7 +226,7 @@ class ItemSuccess extends StatelessWidget {
             color: AppColors.kQuaternaryColor,
           ),
         ),
-        Divider()
+        const Divider(),
       ],
     );
   }

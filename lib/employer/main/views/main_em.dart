@@ -9,7 +9,7 @@ import 'package:jobby_application/employer/profile/views/profile_page.dart';
 import 'package:jobby_application/employer/search/views/search_em_page.dart';
 
 class MainEmployerPage extends StatefulWidget {
-  const MainEmployerPage({Key? key}) : super(key: key);
+  const MainEmployerPage({super.key});
 
   static const String routePath = '/main_employer';
 
@@ -17,8 +17,9 @@ class MainEmployerPage extends StatefulWidget {
   State<MainEmployerPage> createState() => _MainEmployerPageState();
 }
 
-class _MainEmployerPageState extends State<MainEmployerPage> with SingleTickerProviderStateMixin{
-  late TabController tabController; // declare tab controller
+class _MainEmployerPageState extends State<MainEmployerPage>
+    with SingleTickerProviderStateMixin{
+  late TabController tabController;
 
   @override
   void initState() {
@@ -37,7 +38,7 @@ class _MainEmployerPageState extends State<MainEmployerPage> with SingleTickerPr
           const SearchEmployerPage(),
           GestureDetector(
             onTap: () {
-              context.go(PostEmployerPage.routePath );
+              context.push(PostEmployerPage.routePath );
             },
           ),
           const ChatEmployerPage(),

@@ -4,11 +4,11 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class DropdownButtonCustom extends StatefulWidget {
   const DropdownButtonCustom({
-    Key? key,
     required this.level,
     required this.levelValue,
     required this.onChanged,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<String> level;
 

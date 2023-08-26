@@ -9,7 +9,7 @@ import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class EBookPage extends StatefulWidget {
-  const EBookPage({Key? key}) : super(key: key);
+  const EBookPage({super.key});
 
   static const String routePath = '/eBookPage';
 
@@ -119,4 +119,3 @@ class _EBookPageState extends State<EBookPage> {
     );
   }
 }
-

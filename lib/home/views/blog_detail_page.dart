@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class BlogDetailPage extends StatefulWidget {
-  const BlogDetailPage({Key? key}) : super(key: key);
+  const BlogDetailPage({super.key});
 
   static const String routePath = '/blogDetailPage';
 
@@ -83,7 +83,8 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Market Insight – See salary, understand your favorite job position',
+                    'Market Insight – See salary, understand your favorite '
+                        'job position',
                     style: TextStyle(
                       color: AppColors.kPrimaryColor,
                       fontSize: 20,
@@ -91,8 +92,8 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       Icon(
                         PhosphorIcons.calendar_blank,
                         color: AppColors.kQuinaryColor,
@@ -138,7 +139,18 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                   ),
                   const SizedBox(height: 14),
                   const Text(
-                    'Digital transformation is the process of using digital technologies to create new — or modify existing — business processes, culture, and customer experiences to meet changing business and market requirements. With digital transformation, companies are taking a step back and revisiting everything they do, from internal systems to customer interactions both online and in person. They’re asking big questions like “Can we change our processes in a way that will enable better decision-making, game-changing efficiencies, or a better customer experience with more personalization?”',
+                    'Digital transformation is the process of '
+                        'using digital technologies to create new — or modify '
+                        'existing — business processes, culture, and customer '
+                        'experiences to meet changing business and market '
+                        'requirements. With digital transformation, companies'
+                        ' are taking a step back and revisiting everything '
+                        'they do, from internal systems to customer '
+                        'interactions both online and in person. They’re '
+                        'asking big questions like “Can we change our processes'
+                        ' in a way that will enable better decision-making,'
+                        ' game-changing efficiencies, or a better customer '
+                        'experience with more personalization?”',
                     style: TextStyle(
                       color: AppColors.kQuaternaryColor,
                       fontSize: 17,
@@ -180,10 +192,10 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
-      )
+      ),
     );
   }
 }

@@ -30,10 +30,10 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
         children: [
           Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
-                  children: const [
+                  children: [
                     Text(
                       'Total: ',
                       style: TextStyle(

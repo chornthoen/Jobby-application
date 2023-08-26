@@ -1,14 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
-
-import '../colors/app_color.dart';
 
 class CircularWidget extends StatelessWidget {
   const CircularWidget({
-    super.key,
-    required this.currentIndex,
-    required this.pageController,
+    required this.currentIndex, required this.pageController, super.key,
   });
 
   final int currentIndex;

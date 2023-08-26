@@ -58,5 +58,3 @@ List<SettingModel> listSetting = [
     icon: 'assets/svg/logout.svg',
   ),
 ];
-
-

@@ -4,10 +4,9 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ActionSkills extends StatelessWidget {
   const ActionSkills({
-    Key? key,
-    required this.text,
+    required this.text, super.key,
     this.onTap,
-  }) : super(key: key);
+  });
   final String text;
   final VoidCallback? onTap;
 

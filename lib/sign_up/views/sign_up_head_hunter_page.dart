@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SignUpHeadHunterPage extends StatefulWidget {
-  const SignUpHeadHunterPage({Key? key}) : super(key: key);
+  const SignUpHeadHunterPage({super.key});
 
   static const String routePath = '/sign-up-head-hunter-page';
 

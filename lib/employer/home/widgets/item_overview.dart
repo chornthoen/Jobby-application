@@ -4,17 +4,17 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemOverview extends StatelessWidget {
   const ItemOverview({
-    super.key,
     required this.title,
     required this.value,
     required this.percent,
     required this.isUp,
+    super.key,
   });
+
   final String title;
   final String value;
   final String percent;
   final bool isUp;
-
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,7 @@ class ItemOverview extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: AppColors.kSeptenaryColor,
-              width: 1,
-            ),
+            border: Border.all(color: AppColors.kSeptenaryColor),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +70,7 @@ class ItemOverview extends StatelessWidget {
                     isUp ? PhosphorIcons.arrow_up : PhosphorIcons.arrow_down,
                     color: isUp ? AppColors.kGreenColor : AppColors.kRedColor,
                     size: 18,
-                  )
+                  ),
                 ],
               ),
             ],

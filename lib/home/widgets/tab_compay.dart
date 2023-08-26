@@ -6,8 +6,9 @@ import 'package:jobby_application/home/models/hot_job_model.dart';
 import 'package:jobby_application/home/models/tab_company_model.dart';
 import 'package:jobby_application/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+
 class TabCompany extends StatelessWidget {
-  const TabCompany({Key? key}) : super(key: key);
+  const TabCompany({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class TabCompany extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 3,
       itemBuilder: (context, index) {
-        return  ItemCompany(
+        return ItemCompany(
           sizeBox: index == hotJobModel.length - 1 ? 0 : 14,
           nameCompany: tabCompanyModel[index].nameCompany,
           location: tabCompanyModel[index].locationCompany,
@@ -36,9 +37,9 @@ class TabCompany extends StatelessWidget {
     );
   }
 }
+
 class ItemCompany extends StatelessWidget {
   const ItemCompany({
-    super.key,
     required this.nameCompany,
     required this.location,
     required this.image,
@@ -46,6 +47,7 @@ class ItemCompany extends StatelessWidget {
     required this.status1,
     required this.status2,
     required this.status3,
+    super.key,
     this.onApply,
     this.sizeBox = 14,
     this.onPressed,
@@ -75,9 +77,7 @@ class ItemCompany extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [AppColors.kBoxShadowColor,
-          AppColors.kBoxShadowColor1
-        ],
+        boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Column(
         children: [
@@ -144,15 +144,13 @@ class ItemCompany extends StatelessWidget {
                         ),
                         const SizedBox(width: 5),
                         Text(
-                          '${totalJob} jobs',
+                          '$totalJob jobs',
                           style: const TextStyle(
                             fontSize: 16,
                             color: AppColors.kQuaternaryColor,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-
-
                       ],
                     ),
                   ],
@@ -221,8 +219,8 @@ class ItemCompany extends StatelessWidget {
               const Spacer(),
               TextButton(
                 onPressed: onApply,
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Text(
                       'Apply Now',
                       style: TextStyle(
@@ -241,10 +239,9 @@ class ItemCompany extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
   }
 }
-

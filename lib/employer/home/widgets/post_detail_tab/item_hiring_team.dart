@@ -4,12 +4,13 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemHiringTeam extends StatelessWidget {
   const ItemHiringTeam({
-    super.key,
     required this.image,
     required this.name,
     required this.position,
     required this.onPressed,
+    super.key,
   });
+
   final String image;
   final String name;
   final String position;
@@ -32,7 +33,7 @@ class ItemHiringTeam extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               boxShadow: [
                 AppColors.kBoxShadowColor,
-                AppColors.kBoxShadowColor1
+                AppColors.kBoxShadowColor1,
               ],
             ),
             child: Row(
@@ -71,10 +72,10 @@ class ItemHiringTeam extends StatelessWidget {
                 const Icon(
                   PhosphorIcons.pencil_simple,
                   size: 24,
-                )
+                ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

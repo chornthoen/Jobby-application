@@ -1,14 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemMyPrivilege extends StatelessWidget {
   const ItemMyPrivilege({
-    super.key,
     required this.title,
     required this.svgUrl,
     required this.description,
+    super.key,
   });
 
   final String title;
@@ -27,7 +26,7 @@ class ItemMyPrivilege extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             color: AppColors.kSecondaryColor,
             fontWeight: FontWeight.w400,
@@ -35,7 +34,7 @@ class ItemMyPrivilege extends StatelessWidget {
         ),
         Text(
           description,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             color: AppColors.kOrange400Color,
             fontWeight: FontWeight.w500,

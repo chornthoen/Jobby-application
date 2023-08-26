@@ -8,13 +8,11 @@ import 'package:jobby_application/account/views/id_identification_page.dart';
 import 'package:jobby_application/account/views/mange_cv_page.dart';
 import 'package:jobby_application/account/views/share_with_your_friend_page.dart';
 import 'package:jobby_application/account/views/your_jobby_profile_page.dart';
-import 'package:jobby_application/account/views/your_work_criteria_page.dart';
 import 'package:jobby_application/account/widgets/item_card.dart';
+import 'package:jobby_application/jobs/views/work_criteria_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/signin/views/sign_in_page.dart';
-
-import '../../jobs/views/work_criteria_page.dart';
 
 class BodyInfo extends StatefulWidget {
   const BodyInfo({
@@ -96,7 +94,7 @@ class _BodyInfoState extends State<BodyInfo> {
       context: context,
       title: 'LOG OUT ACCOUNT',
       image: 'assets/images/enter.png',
-      description: 'Are you sure you want to log out? You can always log back in.',
+      description: 'Are you sure you want to log out? You can always log back ',
       textButton: 'Log out',
       onPressed: () {
         setState(() {

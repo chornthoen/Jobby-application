@@ -5,7 +5,7 @@ import 'package:jobby_application/quizz/widgets/item_leader_boad.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabWeekly extends StatefulWidget {
-  const TabWeekly({Key? key}) : super(key: key);
+  const TabWeekly({super.key});
 
   @override
   State<TabWeekly> createState() => _TabWeeklyState();

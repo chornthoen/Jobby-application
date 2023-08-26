@@ -13,7 +13,7 @@ import 'package:jobby_application/sign_up_select/views/choose_positions_page.dar
 import 'package:jobby_application/signin/views/sign_in_page.dart';
 
 class SignUpSelectPage extends StatefulWidget {
-  const SignUpSelectPage({Key? key}) : super(key: key);
+  const SignUpSelectPage({super.key});
 
   static const String routePath = '/sign-up-select-page';
 
@@ -131,4 +131,3 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
     );
   }
 }
-

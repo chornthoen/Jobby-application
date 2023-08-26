@@ -18,7 +18,7 @@ import 'package:jobby_application/shared/widgets/widget_or.dart';
 import 'package:jobby_application/sign_up_select/views/choose_role_sign_up.dart';
 
 class SignInPage extends StatefulWidget {
-  const SignInPage({Key? key}) : super(key: key);
+  const SignInPage({super.key});
   static const String routePath = '/sign-in';
 
   @override
@@ -93,6 +93,7 @@ class _SignInPageState extends State<SignInPage> {
                   TextFieldForms(
                     onChange: (value) {
                       setState(() {});
+                      return null;
                     },
                     keyboardType: TextInputType.visiblePassword,
                     controller: passwordController,
@@ -115,7 +116,7 @@ class _SignInPageState extends State<SignInPage> {
                         onPressed: () {
                           context.push(ForgetPasswordPage.routePath);
                         },
-                      )
+                      ),
                     ],
                   ),
                   const SizedBox(height: 20),
@@ -124,10 +125,10 @@ class _SignInPageState extends State<SignInPage> {
                     onPressed: () {
                       if (emailController.text.isEmpty) {
                         SnackBarTop.topSnackBar(
-                            context, 'Please enter your phone number/email');
+                            context, 'Please enter your phone number/email',);
                       } else if (passwordController.text.isEmpty ) {
                         SnackBarTop.topSnackBar(
-                            context, 'Please enter your password');
+                            context, 'Please enter your password',);
                       }
                       context.push(MainView.routePath);
                     },
@@ -187,4 +188,3 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 }
-

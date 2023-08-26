@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
-
 class StarRate extends StatelessWidget {
   const StarRate({
-    super.key,
     required this.leading,
     required this.trailing,
     required this.percent,
-
+    super.key,
   });
+
   final String leading;
   final String trailing;
   final double percent;
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +25,7 @@ class StarRate extends StatelessWidget {
         animationDuration: 2000,
         backgroundColor: AppColors.kGray200,
         progressColor: AppColors.kOrange400Color,
-        barRadius: Radius.circular(10),
+        barRadius: const Radius.circular(10),
         leading: Text(
           leading,
           style: const TextStyle(
@@ -35,7 +33,6 @@ class StarRate extends StatelessWidget {
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),
-
         ),
         trailing: Text(
           trailing,
@@ -44,7 +41,6 @@ class StarRate extends StatelessWidget {
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),
-
         ),
       ),
     );

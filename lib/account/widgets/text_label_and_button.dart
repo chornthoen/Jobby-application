@@ -3,8 +3,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TextLabelAndButton extends StatelessWidget {
   const TextLabelAndButton({
-    super.key,
-    required this.text,
+    required this.text, super.key,
     this.icon,
     this.onTap,
     this.size = 20,

@@ -4,11 +4,11 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemServicePackage extends StatelessWidget {
   const ItemServicePackage({
-    super.key,
     required this.title,
     required this.diamond,
     required this.price,
     required this.index,
+    super.key,
   });
 
   final int index;
@@ -33,12 +33,18 @@ class ItemServicePackage extends StatelessWidget {
                 colors: index == 0
                     ? [AppColors.kRed200Color, AppColors.kRedColor]
                     : index == 1
-                    ? [AppColors.kOrange200Color, AppColors.kOrangeColor]
-                    : index == 2
-                    ? [AppColors.kGreen200Color, AppColors.kGreenColor]
-                    : index == 3
-                    ? [AppColors.kBlue200Color, AppColors.kBlueColor]
-                    : [AppColors.kPurple200Color, AppColors.kPurpleColor],
+                        ? [AppColors.kOrange200Color, AppColors.kOrangeColor]
+                        : index == 2
+                            ? [AppColors.kGreen200Color, AppColors.kGreenColor]
+                            : index == 3
+                                ? [
+                                    AppColors.kBlue200Color,
+                                    AppColors.kBlueColor,
+                                  ]
+                                : [
+                                    AppColors.kPurple200Color,
+                                    AppColors.kPurpleColor,
+                                  ],
               ),
             ),
           ),
@@ -89,7 +95,7 @@ class ItemServicePackage extends StatelessWidget {
                           ),
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
                 const Spacer(),
@@ -103,7 +109,7 @@ class ItemServicePackage extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

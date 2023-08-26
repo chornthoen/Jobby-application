@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../colors/app_color.dart';
+import 'package:jobby_application/shared/colors/app_color.dart';
 
 class WidgetOr extends StatelessWidget {
   const WidgetOr({
-    super.key,
-    required this.text,
+    required this.text, super.key,
   });
 
   final String text;

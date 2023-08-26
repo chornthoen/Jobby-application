@@ -6,7 +6,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 class TabReviews extends StatefulWidget {
-  const TabReviews({Key? key}) : super(key: key);
+  const TabReviews({super.key});
 
   @override
   State<TabReviews> createState() => _TabReviewsState();
@@ -23,7 +23,7 @@ class _TabReviewsState extends State<TabReviews> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
+          const Row(
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,7 +31,7 @@ class _TabReviewsState extends State<TabReviews> {
                   Row(
                     children: [
                       Row(
-                        children: const [
+                        children: [
                           Text(
                             '4.5',
                             style: TextStyle(
@@ -44,12 +44,12 @@ class _TabReviewsState extends State<TabReviews> {
                             PhosphorIcons.star_fill,
                             color: AppColors.kOrange400Color,
                             size: 30,
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
-                  const Text(
+                  Text(
                     '100 reviews',
                     style: TextStyle(
                       color: AppColors.kQuaternaryColor,
@@ -59,10 +59,10 @@ class _TabReviewsState extends State<TabReviews> {
                   ),
                 ],
               ),
-              const SizedBox(width: 20),
+              SizedBox(width: 20),
               Expanded(
                 child: Column(
-                  children: const [
+                  children: [
                     StarRate(
                       leading: '5 star',
                       trailing: '244',
@@ -114,7 +114,6 @@ class _TabReviewsState extends State<TabReviews> {
                 onPressed: () {
                   setState(() {
                     isNext = !isNext;
-                    print(isNext);
                   });
                 },
                 label: const Text(
@@ -135,7 +134,7 @@ class _TabReviewsState extends State<TabReviews> {
           ),
           if (isNext)
             const ListReview(),
-          const SizedBox(height: 30)
+          const SizedBox(height: 30),
         ],
       ),
     );
@@ -143,7 +142,7 @@ class _TabReviewsState extends State<TabReviews> {
 }
 
 class ListReview extends StatelessWidget {
-  const ListReview({Key? key}) : super(key: key);
+  const ListReview({super.key});
 
   @override
   Widget build(BuildContext context) {

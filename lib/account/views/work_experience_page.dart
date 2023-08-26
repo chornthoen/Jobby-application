@@ -9,7 +9,7 @@ import 'package:jobby_application/shared/widgets/text_custom.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class WorkExperiencePage extends StatefulWidget {
-  const WorkExperiencePage({Key? key}) : super(key: key);
+  const WorkExperiencePage({super.key});
 
   static const String routePath = '/work_experience_page';
 
@@ -99,11 +99,11 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
                     Expanded(
                       child: Column(
                         children: [
-                          TextCustom(
+                          const TextCustom(
                             text: 'Start Date',
                             star: false,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                            TextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,
@@ -120,7 +120,7 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
                             text: 'End Date',
                             star: false,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                            TextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,

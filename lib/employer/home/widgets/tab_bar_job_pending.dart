@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class TabBarJobPendingApproval extends StatelessWidget {
-  const TabBarJobPendingApproval({Key? key}) : super(key: key);
+  const TabBarJobPendingApproval({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +28,9 @@ class TabBarJobPendingApproval extends StatelessWidget {
     );
   }
   void _showBottomSheet(BuildContext context) {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       useRootNavigator: true,
-      enableDrag: true,
       backgroundColor: AppColors.kBackgroundColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(

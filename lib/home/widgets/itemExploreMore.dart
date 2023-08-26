@@ -4,10 +4,10 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemExploreMore extends StatelessWidget {
   const ItemExploreMore({
-    super.key,
     required this.image,
     required this.title,
     required this.description,
+    super.key,
     this.onPressed,
   });
 
@@ -64,8 +64,8 @@ class ItemExploreMore extends StatelessWidget {
             width: 155,
             child: TextButton(
               onPressed: onPressed,
-              child: Row(
-                children: const [
+              child: const Row(
+                children: [
                   Text(
                     'Explore Now',
                     style: TextStyle(

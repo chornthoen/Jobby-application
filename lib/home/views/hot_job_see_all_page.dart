@@ -6,7 +6,7 @@ import 'package:jobby_application/jobs/models/matching_model.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class HotJobSeeAllPage extends StatefulWidget {
-  const HotJobSeeAllPage({Key? key}) : super(key: key);
+  const HotJobSeeAllPage({super.key});
 
   static const String routePath = '/hotJobSeeAllPage';
 

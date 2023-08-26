@@ -10,7 +10,7 @@ import 'package:jobby_application/shared/widgets/text_form_field.dart';
 import 'package:jobby_application/verify_otp_code/views/otp_forget_password_page.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
-  const ForgetPasswordPage({Key? key}) : super(key: key);
+  const ForgetPasswordPage({super.key});
 
   static const routePath = '/forget_password_page';
 
@@ -64,7 +64,8 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  'Enter the phone number or email associated with your account and we’ll send you OTP to reset yourpassword',
+                  'Enter the phone number or email associated with your account'
+                      ' and we’ll send you OTP to reset your password',
                   style: TextStyle(
                     color: AppColors.kTertiaryColor,
                     fontSize: 16,
@@ -75,6 +76,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 TextFieldForms(
                   onChange: (value) {
                     setState(() {});
+                    return null;
                   },
                   keyboardType: TextInputType.emailAddress,
                   controller: emailController,
@@ -86,7 +88,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   onPressed: () {
                     if (emailController.text.isEmpty) {
                       SnackBarTop.topSnackBar(
-                          context, 'Please enter your phone number/email');
+                          context, 'Please enter your phone number/email',);
                       return;
                     }
                     context.push(VerifyOTPForgetPage.routePath);

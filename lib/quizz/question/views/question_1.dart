@@ -3,15 +3,13 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/quizz/models/quiz_model.dart';
-import 'package:jobby_application/quizz/question/views/succes_quiz_page.dart';
 import 'package:jobby_application/quizz/views/quizz_page.dart';
 import 'package:jobby_application/quizz/widgets/widget_question.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class Question1Page extends StatefulWidget {
-  const Question1Page({Key? key}) : super(key: key);
+  const Question1Page({super.key});
 
   static const String routePath = '/question-1-page';
 
@@ -89,7 +87,7 @@ class _Question1PageState extends State<Question1Page> {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
@@ -125,8 +123,8 @@ class _Question1PageState extends State<Question1Page> {
                       color: AppColors.kOrange200Color.withOpacity(0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Row(
-                      children: const [
+                    child: const Row(
+                      children: [
                         Image(
                           image: AssetImage('assets/images/lightbulb.png'),
                           width: 20,
@@ -143,7 +141,7 @@ class _Question1PageState extends State<Question1Page> {
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
             const SizedBox(height: 8),
@@ -267,14 +265,14 @@ class _Question1PageState extends State<Question1Page> {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
   void _showBottomSheetSuccess(BuildContext context) {
-    showModalBottomSheet(
+    showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
@@ -406,7 +404,7 @@ class _Question1PageState extends State<Question1Page> {
                                 color: AppColors.kQuaternaryColor,
                               ),
                             ),
-                            const Divider()
+                            const Divider(),
                           ],
                         );
                       },
@@ -431,6 +429,3 @@ class _Question1PageState extends State<Question1Page> {
     );
   }
 }
-
-
-
