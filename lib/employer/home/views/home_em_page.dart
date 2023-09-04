@@ -12,8 +12,10 @@ import 'package:jobby_application/employer/home/views/service_package_page.dart'
 import 'package:jobby_application/employer/home/widgets/item_category.dart';
 import 'package:jobby_application/employer/home/widgets/item_overview.dart';
 import 'package:jobby_application/employer/home/widgets/item_upcoming.dart';
+import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+
 
 class HomeEmployerPage extends StatefulWidget {
   const HomeEmployerPage({super.key});
@@ -36,6 +38,9 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
         imageProfile: 'assets/images/thoen.png',
         onNotification: () {
           context.push(NotificationPage.routePath);
+        },
+        onProfile: () {
+          tabController.animateTo(4);
         },
       ),
       body: SingleChildScrollView(

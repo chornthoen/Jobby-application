@@ -44,10 +44,13 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       title: Row(
         children: [
-          CircleAvatar(
-            backgroundColor: AppColors.kWhiteColor,
-            backgroundImage: AssetImage(imageProfile),
-            radius: 28,
+          GestureDetector(
+            onTap: onProfile,
+            child: CircleAvatar(
+              backgroundColor: AppColors.kWhiteColor,
+              backgroundImage: AssetImage(imageProfile),
+              radius: 28,
+            ),
           ),
           const SizedBox(width: 10),
           Column(

@@ -6,6 +6,7 @@ import 'package:jobby_application/candidate/home/views/home_page.dart';
 import 'package:jobby_application/candidate/jobs/views/job_page.dart';
 import 'package:jobby_application/candidate/main/widgets/navigation_page.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
+late TabController tabController;
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -34,7 +35,6 @@ class _BodyMainView extends StatefulWidget {
 
 class _BodyMainViewState extends State<_BodyMainView>
     with SingleTickerProviderStateMixin {
-  late TabController tabController; // declare tab controller
 
   @override
   void initState() {

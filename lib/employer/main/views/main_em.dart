@@ -8,6 +8,7 @@ import 'package:jobby_application/employer/post/views/post_em_page.dart';
 import 'package:jobby_application/employer/profile/views/profile_page.dart';
 import 'package:jobby_application/employer/search/views/search_em_page.dart';
 
+late TabController tabController;
 class MainEmployerPage extends StatefulWidget {
   const MainEmployerPage({super.key});
 
@@ -19,7 +20,7 @@ class MainEmployerPage extends StatefulWidget {
 
 class _MainEmployerPageState extends State<MainEmployerPage>
     with SingleTickerProviderStateMixin{
-  late TabController tabController;
+
 
   @override
   void initState() {

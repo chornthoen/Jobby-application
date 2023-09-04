@@ -42,7 +42,7 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
             ),
             const SizedBox(height: 40),
             const LabelText(text: 'You are'),
-            ItemRole(
+            itemRole(
               1,
               'Job Seeker',
               PhosphorIcons.user_bold,
@@ -50,7 +50,7 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
 
             ),
             const SizedBox(height: 20),
-            ItemRole(
+            itemRole(
               2,
               'Head Hunter',
               PhosphorIcons.crosshair_simple_bold,
@@ -85,7 +85,7 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
     );
   }
 
-  Widget ItemRole(int id, String title, IconData icon, bool selected) {
+  Widget itemRole(int id, String title, IconData icon, bool selected) {
     return Material(
       child: GestureDetector(
         onTap: () {
