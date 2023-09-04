@@ -8,41 +8,41 @@ import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
-class SignUpEnterPrise4Page extends StatefulWidget {
-  const SignUpEnterPrise4Page({super.key});
+class SignUpIndividualPage extends StatefulWidget {
+  const SignUpIndividualPage({super.key});
 
-  static const String routePath = '/sign-up-enter-prise4-page';
+  static const String routePath = '/sign-up-individual-page';
 
   @override
-  State<SignUpEnterPrise4Page> createState() => _SignUpEnterPrise4PageState();
+  State<SignUpIndividualPage> createState() => _SignUpIndividualPageState();
 }
 
-class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
-  late TextEditingController phoneController;
-
+class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
+  late TextEditingController phoneNumberController;
   late TextEditingController emailController;
   late TextEditingController passwordController;
   late TextEditingController confirmPasswordController;
 
-  //init state
   @override
   void initState() {
     super.initState();
-    phoneController = TextEditingController();
+    phoneNumberController = TextEditingController();
     emailController = TextEditingController();
     passwordController = TextEditingController();
     confirmPasswordController = TextEditingController();
   }
 
-  //dispose
   @override
   void dispose() {
-    phoneController.dispose();
+    phoneNumberController.dispose();
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
     super.dispose();
   }
+
+  bool obscureText = true;
+  bool obscureTextConfirm = true;
 
   bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
 
@@ -51,12 +51,10 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
       FocusScope.of(context).unfocus();
     }
   }
-  bool obscureText = true;
-  bool obscureTextConfirm = true;
-
   //all controller isNotEmpty
+
   bool get isAllControllerNotEmpty =>
-      phoneController.text.isNotEmpty &&
+      phoneNumberController.text.isNotEmpty &&
       emailController.text.isNotEmpty &&
       passwordController.text.isNotEmpty &&
       confirmPasswordController.text.isNotEmpty;
@@ -67,34 +65,26 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
       onTap: closeKeyboard,
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
-        appBar: const CustomAppBar(subTitle: 'Enterprise (4/4)'),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: SingleChildScrollView(
+        appBar: const CustomAppBar(subTitle: 'Individual (2/2)'),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Account information',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.kBlackColor,
-                  ),
-                ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Phone Number'),
                 TextFieldForms(
-                  controller: phoneController,
-                  keyboardType: TextInputType.phone,
-                  hintText: 'Enter company name',
+                  keyboardType: TextInputType.number,
+                  controller: phoneNumberController,
+                  hintText: 'Enter your phone number',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Email'),
                 TextFieldForms(
-                  controller: emailController,
                   keyboardType: TextInputType.emailAddress,
-                  hintText: 'Enter email',
+                  controller: emailController,
+                  hintText: 'Enter your email',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Password'),
@@ -104,7 +94,7 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                   obscureText: obscureText,
                   hintText: 'Enter your password',
                   suffixIcon:
-                  obscureText ? PhosphorIcons.eye_slash : PhosphorIcons.eye,
+                      obscureText ? PhosphorIcons.eye_slash : PhosphorIcons.eye,
                   onPressed: () {
                     setState(() {
                       obscureText = !obscureText;
@@ -121,9 +111,10 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                   keyboardType: TextInputType.visiblePassword,
                   controller: confirmPasswordController,
                   obscureText: obscureTextConfirm,
-                  hintText: 'Enter confirm password',
+                  hintText: 'Enter your confirm password',
                   suffixIcon:
-                  obscureTextConfirm ?PhosphorIcons.eye_slash:PhosphorIcons.eye,
+                  obscureTextConfirm ? PhosphorIcons.eye_slash
+                      :PhosphorIcons.eye,
                   onPressed: () {
                     setState(() {
                       obscureTextConfirm = !obscureTextConfirm;
@@ -143,9 +134,9 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
           margin: const EdgeInsets.only(bottom: 20),
           child: ButtonAction(
             isClick: isAllControllerNotEmpty,
-            text: 'Done',
+            text: 'Sign Up',
             onPressed: () {
-              context.push(MainView.routePath);
+              context.go(MainView.routePath);
             },
           ),
         ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
+import 'package:jobby_application/authentication/verify_otp_code/views/otp_sign_up_job_seeker.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -11,7 +13,6 @@ import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:jobby_application/shared/widgets/text_and_button.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 import 'package:jobby_application/shared/widgets/widget_or.dart';
-import 'package:jobby_application/verify_otp_code/views/otp_sign_up_job_seeker.dart';
 
 class SignUpJobSeekerPage extends StatefulWidget {
   const SignUpJobSeekerPage({super.key});
@@ -159,6 +160,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                   TextAndButton(
                     text: 'Don’t have an account?',
                     onPressed: () {
+                      context.push(SignInPage.routePath);
                     },
                     textButton: 'Sign In',
                   ),
