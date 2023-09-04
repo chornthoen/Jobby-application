@@ -1,5 +1,6 @@
 
-import 'package:jobby_application/account/models/setting_model.dart';
+
+import 'package:jobby_application/candidate/account/models/setting_model.dart';
 
 List<SettingModel> listSettingEmployer = [
   const SettingModel(

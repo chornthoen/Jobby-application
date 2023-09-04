@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/main/views/main_view.dart';
+import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';

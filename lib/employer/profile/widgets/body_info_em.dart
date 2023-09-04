@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/account/widgets/item_card.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
+import 'package:jobby_application/candidate/account/widgets/item_card.dart';
 import 'package:jobby_application/employer/profile/models/list_setting_em_model.dart';
 import 'package:jobby_application/employer/profile/views/about_jobby_em_page.dart';
 import 'package:jobby_application/employer/profile/views/account_setting_em_page.dart';

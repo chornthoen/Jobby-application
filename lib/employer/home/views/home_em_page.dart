@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/candidate/home/widgets/app_bar_home.dart';
 import 'package:jobby_application/employer/home/models/category_model.dart';
 import 'package:jobby_application/employer/home/models/overview_model.dart';
 import 'package:jobby_application/employer/home/models/upcoming_model.dart';
@@ -11,7 +12,6 @@ import 'package:jobby_application/employer/home/views/service_package_page.dart'
 import 'package:jobby_application/employer/home/widgets/item_category.dart';
 import 'package:jobby_application/employer/home/widgets/item_overview.dart';
 import 'package:jobby_application/employer/home/widgets/item_upcoming.dart';
-import 'package:jobby_application/home/widgets/app_bar_home.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/account/models/card_model.dart';
-import 'package:jobby_application/account/views/id_identification_detail_page.dart';
+import 'package:jobby_application/candidate/account/models/card_model.dart';
+import 'package:jobby_application/candidate/account/views/id_identification_detail_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 

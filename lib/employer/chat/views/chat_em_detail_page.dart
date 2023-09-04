@@ -1,12 +1,12 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/chat/models/chat_model.dart';
-import 'package:jobby_application/chat/views/call_video_pang.dart';
-import 'package:jobby_application/chat/widgets/custom_app_bar_chat.dart';
-import 'package:jobby_application/chat/widgets/custom_text_field_chat.dart';
-import 'package:jobby_application/chat/widgets/message_other.dart';
-import 'package:jobby_application/chat/widgets/my_message.dart';
+import 'package:jobby_application/candidate/chat/models/chat_model.dart';
+import 'package:jobby_application/candidate/chat/views/call_video_pang.dart';
+import 'package:jobby_application/candidate/chat/widgets/custom_app_bar_chat.dart';
+import 'package:jobby_application/candidate/chat/widgets/custom_text_field_chat.dart';
+import 'package:jobby_application/candidate/chat/widgets/message_other.dart';
+import 'package:jobby_application/candidate/chat/widgets/my_message.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ChatEmployerDetailPage extends StatefulWidget {

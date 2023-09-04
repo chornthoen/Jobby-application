@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobby_application/account/widgets/item_widget.dart';
+import 'package:jobby_application/candidate/account/widgets/item_widget.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ProfileInfoEmployer extends StatelessWidget {

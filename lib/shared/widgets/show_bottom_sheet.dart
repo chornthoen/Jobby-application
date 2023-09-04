@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:jobby_application/quizz/models/quiz_model.dart';
-import 'package:jobby_application/quizz/widgets/item_quiz.dart';
+import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
+import 'package:jobby_application/candidate/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
