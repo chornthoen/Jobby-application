@@ -5,7 +5,7 @@ import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart
 import 'package:jobby_application/home/widgets/item_hot_jobs.dart';
 
 class TabJob extends StatefulWidget {
-  const TabJob({Key? key}) : super(key: key);
+  const TabJob({super.key});
 
   @override
   State<TabJob> createState() => _TabJobState();

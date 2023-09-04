@@ -10,8 +10,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.child,
     this.icon1,
     this.icon2,
-    this.onBookmarkTap,
-    this.onShareTap,
+    this.onTap1,
+    this.onTap2,
     this.size = 18,
     this.onBackTap,
   });
@@ -23,8 +23,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? icon1;
   final IconData? icon2;
   final double? size;
-  final VoidCallback? onBookmarkTap;
-  final VoidCallback? onShareTap;
+  final VoidCallback? onTap1;
+  final VoidCallback? onTap2;
   final VoidCallback? onBackTap;
 
   @override
@@ -74,7 +74,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               IconButton(
                 splashRadius: 24,
-                onPressed: onBookmarkTap,
+                onPressed: onTap1,
                 icon:  Icon(
                   icon1,
                   color: AppColors.kPrimaryColor,
@@ -83,7 +83,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               IconButton(
                 splashRadius: 24,
-                onPressed: onShareTap,
+                onPressed: onTap2,
                 icon:  Icon(
                   icon2,
                   color: AppColors.kPrimaryColor,

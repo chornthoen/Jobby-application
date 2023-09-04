@@ -93,6 +93,4 @@ class AppColors{
     blurRadius: 8,
     offset: Offset(-5, -5),
   );
-
-
 }

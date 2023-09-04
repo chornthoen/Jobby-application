@@ -1,11 +1,11 @@
 class TypeOfWorkModel {
-  final String? position;
-  bool? isClick;
 
   TypeOfWorkModel({
     this.position,
     this.isClick,
   });
+  final String? position;
+  bool? isClick;
 }
 
 final typeOfWorkModel = [

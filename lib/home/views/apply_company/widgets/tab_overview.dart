@@ -7,7 +7,7 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 
 
 class TabOverview extends StatefulWidget {
-  const TabOverview({Key? key}) : super(key: key);
+  const TabOverview({super.key});
 
   @override
   State<TabOverview> createState() => _TabOverviewState();

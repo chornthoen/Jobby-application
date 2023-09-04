@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -8,7 +10,7 @@ import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class CreatePasswordPage extends StatefulWidget {
-  const CreatePasswordPage({Key? key}) : super(key: key);
+  const CreatePasswordPage({super.key});
 
   static const routePath = '/create_password_page';
 
@@ -98,16 +100,16 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
                   const SizedBox(height: 50),
                   ButtonAction(
                     isClick: true,
-                    onPressed: () {},
+                    onPressed: () {
+                      context.go(SignInPage.routePath);
+                    },
                     text: 'Done',
                   ),
-
                 ],
               ),
             ),
           ),
         ),
-
       ),
     );
   }

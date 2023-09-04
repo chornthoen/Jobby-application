@@ -1,9 +1,5 @@
 
 class TimelineModel{
-  final String timePause;
-  final String timeShow;
-  final String image;
-  final String name;
 
   TimelineModel({
     required this.timePause,
@@ -11,6 +7,10 @@ class TimelineModel{
     required this.image,
     required this.name,
   });
+  final String timePause;
+  final String timeShow;
+  final String image;
+  final String name;
 }
 
 final List<TimelineModel> listTimeline = [

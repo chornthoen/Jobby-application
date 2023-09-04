@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/create_password/views/create_password_page.dart';
+import 'package:jobby_application/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -10,16 +10,16 @@ import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-class VerifyOTPForgetPage extends StatefulWidget {
-  const VerifyOTPForgetPage({super.key});
+class OTPSignUpJonSeekerPage extends StatefulWidget {
+  const OTPSignUpJonSeekerPage({super.key});
 
-  static const routePath = '/verify_otp_forget_page';
+  static const routePath = '/verify_otp_sign_up_page';
 
   @override
-  State<VerifyOTPForgetPage> createState() => _VerifyOTPForgetPageState();
+  State<OTPSignUpJonSeekerPage> createState() => _OTPSignUpJonSeekerPageState();
 }
 
-class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
+class _OTPSignUpJonSeekerPageState extends State<OTPSignUpJonSeekerPage> {
   late final GlobalKey<FormState> _globalKey;
   late TextEditingController otpController;
 
@@ -44,8 +44,6 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -68,8 +66,8 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Enter the phone number or email associated with your '
-                        'account and we’ll send you OTP to reset your password',
+                    'The verification code has been sent to phone number '
+                        '0886697678. Please enter the code to continue.',
                     style: TextStyle(
                       color: AppColors.kTertiaryColor,
                       fontSize: 16,
@@ -120,18 +118,20 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                   ),
                   const SizedBox(height: 50),
                   ButtonAction(
-                    isClick: otpController.text.isNotEmpty,
+                    isClick: true,
                     onPressed: () {
                       if (otpController.text.isEmpty) {
                         SnackBarTop.topSnackBar(context, 'Please enter OTP');
                       } else if (otpController.text.length < 6) {
                         SnackBarTop.topSnackBar(
-                            context, 'Please enter OTP 6 digits',);
+                          context,
+                          'Please enter OTP 6 digits',
+                        );
                       } else {
-                        context.push(CreatePasswordPage.routePath);
+                        context.go(MainView.routePath);
                       }
                     },
-                    text: 'Get OTP',
+                    text: 'Done',
                   ),
                 ],
               ),

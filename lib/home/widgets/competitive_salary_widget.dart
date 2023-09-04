@@ -5,7 +5,7 @@ import 'package:jobby_application/home/widgets/tab_job.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class CompetitiveSalaryWidget extends StatefulWidget {
-  const CompetitiveSalaryWidget({Key? key}) : super(key: key);
+  const CompetitiveSalaryWidget({super.key});
 
   @override
   State<CompetitiveSalaryWidget> createState() =>

@@ -116,5 +116,3 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
     );
   }
 }
-
-

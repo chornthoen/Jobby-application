@@ -1,17 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemCompanyForYou extends StatelessWidget {
   const ItemCompanyForYou({
-    super.key,
     required this.image,
     required this.title,
     required this.description,
+    super.key,
     this.sizeBox = 12,
     this.onPressed,
   });
+
   final String image;
   final String title;
   final String description;
@@ -25,15 +25,13 @@ class ItemCompanyForYou extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width * 0.3,
         height: MediaQuery.of(context).size.height * 0.1,
-        margin:  EdgeInsets.only(right: sizeBox ?? 12, bottom: 12),
+        margin: EdgeInsets.only(right: sizeBox ?? 12, bottom: 12),
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: AppColors.kWhiteColor,
           borderRadius: BorderRadius.circular(10),
-          boxShadow: [AppColors.kBoxShadowColor,
-            AppColors.kBoxShadowColor1
-          ],
+          boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +42,7 @@ class ItemCompanyForYou extends StatelessWidget {
                   height: 45,
                   width: 45,
                   padding: const EdgeInsets.all(10),
-                  decoration:  const BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: AppColors.kBlackColor,
                     shape: BoxShape.circle,
                   ),

@@ -1,11 +1,11 @@
 class AddPositionModel {
-  final String? position;
-  bool? isClick;
 
   AddPositionModel({
     this.position,
     this.isClick,
   });
+  final String? position;
+  bool? isClick;
 }
 
 final addPositionModel = [

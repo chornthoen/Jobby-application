@@ -1,11 +1,11 @@
 class IndustryModel {
-  final String? position;
-  bool? isClick;
 
   IndustryModel({
     this.position,
     this.isClick,
   });
+  final String? position;
+  bool? isClick;
 }
 
 final industryModel = [

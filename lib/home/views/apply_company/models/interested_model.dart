@@ -1,17 +1,17 @@
 
 class InterestedModel{
 
-  String image;
-  String name;
-  String location;
-  bool isFollow;
-
   InterestedModel({
     required this.image,
     required this.name,
     required this.location,
     required this.isFollow,
   });
+
+  String image;
+  String name;
+  String location;
+  bool isFollow;
 }
 
 //list 4

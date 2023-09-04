@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/employer/home/models/manager_candidate_model.dart';
+import 'package:jobby_application/employer/home/views/candidate_detail_page.dart';
 import 'package:jobby_application/employer/home/widgets/item_manager_candidate.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
@@ -23,7 +25,7 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
       appBar: CustomAppBar(
         title: 'Manager Candidate',
         icon2: PhosphorIcons.magnifying_glass,
-        onShareTap: () {},
+        onTap2: () {},
       ),
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -88,6 +90,9 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
                       position: managerCandidate.position,
                       star: managerCandidate.star,
                       status: managerCandidate.status,
+                      onTap: () {
+                        context.push(CandidateDetailPage.routePath);
+                      },
                     );
                   },
                 ),

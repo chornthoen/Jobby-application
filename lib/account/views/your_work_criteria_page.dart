@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class YourWorkCriteriaPage extends StatefulWidget {
-  const YourWorkCriteriaPage({Key? key}) : super(key: key);
+  const YourWorkCriteriaPage({super.key});
 
   static const String routePath = '/your_work_criteria_page';
 

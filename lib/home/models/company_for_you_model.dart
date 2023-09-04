@@ -1,14 +1,14 @@
 
 class CompanyModel{
-  final String title;
-  final String description;
-  final String image;
 
   CompanyModel({
     required this.title,
     required this.description,
     required this.image,
   });
+  final String title;
+  final String description;
+  final String image;
 }
 
 //list company for you 5 item
@@ -64,4 +64,3 @@ List<CompanyModel> listCompany = [
     image: 'assets/images/slack_3d.png',
   ),
 ];
-

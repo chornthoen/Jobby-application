@@ -5,7 +5,7 @@ import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 
 class SearchEmployerPage extends StatefulWidget {
-  const SearchEmployerPage({Key? key}) : super(key: key);
+  const SearchEmployerPage({super.key});
 
   static const String routePath = '/search_employer';
 
@@ -27,8 +27,7 @@ class _SearchEmployerPageState extends State<SearchEmployerPage> {
           padding: EdgeInsets.only(top: 10),
           child: TextFieldForms(
             hintText: 'Search',
-            suffixIcon: PhosphorIcons.magnifying_glass
-
+            suffixIcon: PhosphorIcons.magnifying_glass,
           ),
         ),
         backgroundColor: AppColors.kBackgroundColor,

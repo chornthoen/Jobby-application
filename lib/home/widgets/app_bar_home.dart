@@ -38,7 +38,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
           bottom: Radius.circular(20),
         ),
       ),
-      backgroundColor: AppColors.kBackgroundColor,
+      backgroundColor: AppColors.kWhiteColor,
       elevation: 1,
       shadowColor: AppColors.kWhiteColor,
       automaticallyImplyLeading: false,

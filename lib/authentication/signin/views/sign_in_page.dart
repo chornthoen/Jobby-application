@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/employer/main/views/main_em.dart';
-import 'package:jobby_application/forget_password/views/forget_password_page.dart';
+import 'package:jobby_application/authentication/forget_password/views/forget_password_page.dart';
+import 'package:jobby_application/authentication/sign_up_select/views/choose_role_sign_up.dart';
 import 'package:jobby_application/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
@@ -15,7 +15,6 @@ import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:jobby_application/shared/widgets/text_and_button.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 import 'package:jobby_application/shared/widgets/widget_or.dart';
-import 'package:jobby_application/sign_up_select/views/choose_role_sign_up.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -177,7 +176,7 @@ class _SignInPageState extends State<SignInPage> {
               CustomTextButton(
                 text: 'Continue as a guest',
                 onPressed: () {
-                  context.push(MainEmployerPage.routePath);
+                  context.push(MainView.routePath);
                   //context.push(MainView.routePath);
                 },
               ),

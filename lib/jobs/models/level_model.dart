@@ -1,11 +1,11 @@
 class LevelModel {
-  final String? position;
-  bool? isClick;
 
   LevelModel({
     this.position,
     this.isClick,
   });
+  final String? position;
+  bool? isClick;
 }
 
 final levelModel = [

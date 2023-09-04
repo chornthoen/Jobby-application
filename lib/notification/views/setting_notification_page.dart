@@ -100,5 +100,3 @@ class _SettingNotificationPageState extends State<SettingNotificationPage> {
     );
   }
 }
-
-

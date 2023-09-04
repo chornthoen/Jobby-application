@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_prise2_page.dart';
+import 'package:jobby_application/authentication/sign_up/views/sign_up_individual_page.dart';
+import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -8,20 +11,18 @@ import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:jobby_application/shared/widgets/text_and_button.dart';
-import 'package:jobby_application/sign_up/views/sign_up_job_seeker_page.dart';
-import 'package:jobby_application/sign_up_select/views/choose_positions_page.dart';
-import 'package:jobby_application/signin/views/sign_in_page.dart';
 
-class SignUpSelectPage extends StatefulWidget {
-  const SignUpSelectPage({super.key});
+class SignUpChoosePositionPage extends StatefulWidget {
+  const SignUpChoosePositionPage({super.key});
 
-  static const String routePath = '/sign-up-select-page';
+  static const String routePath = '/sign-up-select-position-page';
 
   @override
-  State<SignUpSelectPage> createState() => _SignUpSelectPageState();
+  State<SignUpChoosePositionPage> createState() =>
+      _SignUpChoosePositionPageState();
 }
 
-class _SignUpSelectPageState extends State<SignUpSelectPage> {
+class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
 
   int index = 0;
 
@@ -29,7 +30,10 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
-      appBar: const CustomAppBar(),
+      appBar:  CustomAppBar(
+        subTitle: index == 1 ? 'Individual (1/2)' : index == 2 ?
+        'Enterprise (1/4)' : '',
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         child: Column(
@@ -41,19 +45,19 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
               color: AppColors.kPurple400Color,
             ),
             const SizedBox(height: 40),
-            const LabelText(text: 'You are'),
-            ItemRole(
+            const LabelText(text: 'Choose your position'),
+            itemRole(
               1,
-              'Job Seeker',
-              PhosphorIcons.user_bold,
+              'Individual',
+              PhosphorIcons.user_gear,
               index == 1 ? true : false,
 
             ),
             const SizedBox(height: 20),
-            ItemRole(
+            itemRole(
               2,
-              'Head Hunter',
-              PhosphorIcons.crosshair_simple_bold,
+              'Enterprise',
+              PhosphorIcons.buildings,
               index == 2 ? true : false,
             ),
             const SizedBox(height: 30),
@@ -63,9 +67,9 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
                 if ((index ==1 || index == 2) != true){
                   SnackBarTop.topSnackBar(context, 'Please select your role');
                 } else if (index == 1) {
-                  context.push(SignUpJobSeekerPage.routePath);
+                  context.push(SignUpIndividualPage.routePath);
                 } else if (index == 2) {
-                  context.push(SignUpChoosePositionPage.routePath);
+                  context.push(SignUpEnterPrise2Page.routePath);
                 }
               },
               text: 'Continue',
@@ -85,7 +89,7 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
     );
   }
 
-  Widget ItemRole(int id, String title, IconData icon, bool selected) {
+  Widget itemRole(int id, String title, IconData icon, bool selected) {
     return Material(
       child: GestureDetector(
         onTap: () {

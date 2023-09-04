@@ -5,7 +5,7 @@ import 'package:jobby_application/jobs/models/suitable_job_model.dart';
 import 'package:jobby_application/jobs/widgets/item_favorite.dart';
 
 class FavoriteContent extends StatefulWidget {
-  const FavoriteContent({Key? key}) : super(key: key);
+  const FavoriteContent({super.key});
 
   @override
   State<FavoriteContent> createState() => _FavoriteContentState();

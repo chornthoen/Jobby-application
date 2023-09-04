@@ -78,8 +78,8 @@ class _EventDetailPageState extends State<EventDetailPage> {
         appBar: CustomAppBar(
           icon1: PhosphorIcons.bookmark_simple,
           icon2: PhosphorIcons.share_network,
-          onBookmarkTap: () {},
-          onShareTap: () {},
+          onTap1: () {},
+          onTap2: () {},
         ),
         body: SingleChildScrollView(
           child: Column(

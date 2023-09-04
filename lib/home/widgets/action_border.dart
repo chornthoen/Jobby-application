@@ -4,8 +4,7 @@ import 'package:jobby_application/shared/models/banner_home_model.dart';
 
 class ActionBorder extends StatelessWidget {
   const ActionBorder({
-    super.key,
-    required this.currentTab,
+    required this.currentTab, super.key,
   });
 
   final int currentTab;

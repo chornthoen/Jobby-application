@@ -21,7 +21,7 @@ class SnackBarTop{
       ),
       duration: const Duration(seconds: 3),
       flushbarPosition: FlushbarPosition.TOP,
-      backgroundColor: AppColors.kPrimaryColor.withOpacity(0.1),
+      backgroundColor: AppColors.kPrimaryColor.withOpacity(0.6),
       barBlur: 1,
       margin: const EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(8),

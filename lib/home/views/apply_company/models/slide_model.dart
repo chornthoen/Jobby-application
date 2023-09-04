@@ -1,10 +1,10 @@
 
 class SlideModel{
-  String image;
 
   SlideModel({
     required this.image,
   });
+  String image;
 }
 
 List<SlideModel> slideModel = [

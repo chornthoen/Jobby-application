@@ -20,11 +20,23 @@ import 'package:jobby_application/account/views/term_of_service_page.dart';
 import 'package:jobby_application/account/views/work_experience_page.dart';
 import 'package:jobby_application/account/views/your_jobby_profile_page.dart';
 import 'package:jobby_application/account/views/your_work_criteria_page.dart';
+import 'package:jobby_application/authentication/create_password/views/create_password_page.dart';
+import 'package:jobby_application/authentication/forget_password/views/forget_password_page.dart';
+import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_prise2_page.dart';
+import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_prise3_page.dart';
+import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_prise4_page.dart';
+import 'package:jobby_application/authentication/sign_up/views/sign_up_individual_page.dart';
+import 'package:jobby_application/authentication/sign_up/views/sign_up_job_seeker_page.dart';
+import 'package:jobby_application/authentication/sign_up_select/views/choose_positions_page.dart';
+import 'package:jobby_application/authentication/sign_up_select/views/choose_role_sign_up.dart';
+import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
+import 'package:jobby_application/authentication/verify_otp_code/views/otp_forget_password_page.dart';
+import 'package:jobby_application/authentication/verify_otp_code/views/otp_sign_up_job_seeker.dart';
 import 'package:jobby_application/chat/models/chat_model.dart';
 import 'package:jobby_application/chat/views/call_video_pang.dart';
 import 'package:jobby_application/chat/views/chat_detail_page.dart';
-import 'package:jobby_application/create_password/views/create_password_page.dart';
 import 'package:jobby_application/employer/chat/views/chat_em_detail_page.dart';
+import 'package:jobby_application/employer/home/views/candidate_detail_page.dart';
 import 'package:jobby_application/employer/home/views/gift_page.dart';
 import 'package:jobby_application/employer/home/views/loyalty_page.dart';
 import 'package:jobby_application/employer/home/views/manager_candidate_page.dart';
@@ -40,7 +52,6 @@ import 'package:jobby_application/employer/profile/views/id_identification_em_pa
 import 'package:jobby_application/employer/profile/views/member_em_page.dart';
 import 'package:jobby_application/employer/profile/views/service_packages_em_page.dart';
 import 'package:jobby_application/employer/profile/views/share_with_your_friend_em_page.dart';
-import 'package:jobby_application/forget_password/views/forget_password_page.dart';
 import 'package:jobby_application/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/home/views/blog_detail_page.dart';
@@ -64,19 +75,7 @@ import 'package:jobby_application/quizz/views/leaderboard_page.dart';
 import 'package:jobby_application/quizz/views/more_turns_page.dart';
 import 'package:jobby_application/quizz/views/quizz_page.dart';
 import 'package:jobby_application/quizz/views/see_all_program.dart';
-import 'package:jobby_application/sign_up/views/sign_up_enter_prise2_page.dart';
-import 'package:jobby_application/sign_up/views/sign_up_enter_prise3_page.dart';
-import 'package:jobby_application/sign_up/views/sign_up_enter_prise4_page.dart';
-import 'package:jobby_application/sign_up/views/sign_up_head_hunter_page.dart';
-import 'package:jobby_application/sign_up/views/sign_up_individual_page.dart';
-import 'package:jobby_application/sign_up/views/sign_up_job_seeker_page.dart';
-import 'package:jobby_application/sign_up_select/views/choose_positions_page.dart';
-import 'package:jobby_application/sign_up_select/views/choose_role_sign_up.dart';
-import 'package:jobby_application/signin/views/sign_in_page.dart';
 import 'package:jobby_application/splash/views/splash_page.dart';
-import 'package:jobby_application/verify_otp_code/views/otp_forget_password_page.dart';
-import 'package:jobby_application/verify_otp_code/views/otp_sign_up_job_seeker.dart';
-
 class AppRouter {
   AppRouter._();
 
@@ -117,10 +116,6 @@ class AppRouter {
       GoRoute(
         path: OTPSignUpJonSeekerPage.routePath,
         builder: (context, state) => const OTPSignUpJonSeekerPage(),
-      ),
-      GoRoute(
-        path: SignUpHeadHunterPage.routePath,
-        builder: (context, state) => const SignUpHeadHunterPage(),
       ),
       GoRoute(
         path: SignUpChoosePositionPage.routePath,
@@ -393,6 +388,10 @@ class AppRouter {
       GoRoute(
         path: PostDetailPage.routePath,
         builder: (context, state) => const PostDetailPage(),
+      ),
+      GoRoute(
+        path: CandidateDetailPage.routePath,
+        builder: (context, state) => const CandidateDetailPage(),
       ),
 
   ],

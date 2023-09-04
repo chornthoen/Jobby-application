@@ -4,7 +4,7 @@ import 'package:jobby_application/home/widgets/item_hot_jobs.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabJobs extends StatefulWidget {
-  const TabJobs({Key? key}) : super(key: key);
+  const TabJobs({super.key});
 
   @override
   State<TabJobs> createState() => _TabJobsState();
@@ -16,7 +16,7 @@ class _TabJobsState extends State<TabJobs> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         const Text(
           '241 jobs in this company',
           style: TextStyle(

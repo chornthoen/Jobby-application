@@ -4,9 +4,7 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class PointsLine extends StatelessWidget {
   const PointsLine({
-    super.key,
-    required this.percent,
-    required this.color,
+    required this.percent, required this.color, super.key,
   });
   final double percent;
   final Color color;
@@ -20,7 +18,7 @@ class PointsLine extends StatelessWidget {
       percent: percent,
       progressColor: color,
       backgroundColor: AppColors.kGray200,
-      barRadius: Radius.circular(10),
+      barRadius: const Radius.circular(10),
 
     );
   }
