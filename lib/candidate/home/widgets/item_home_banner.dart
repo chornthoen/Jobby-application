@@ -20,9 +20,9 @@ class ItemHomeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.only(bottom: 10),
       margin: const EdgeInsets.symmetric(horizontal: 16),
-      height: MediaQuery.of(context).size.height * 0.3,
+      height: MediaQuery.of(context).size.height * 0.4,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -44,8 +44,8 @@ class ItemHomeBanner extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Image(
-                  height: 154,
-                  width: 180,
+                  height: 145,
+                  width: 184,
                   image: AssetImage('assets/images/woman.png'),
                 ),
                 Padding(

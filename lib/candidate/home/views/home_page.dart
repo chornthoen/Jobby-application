@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const SizedBox(height: 10),
             const WidgetSlider(),
             WidgetSeeAll(
               onPressed: () {
