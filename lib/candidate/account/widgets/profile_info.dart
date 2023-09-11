@@ -45,7 +45,7 @@ class ProfileInfo extends StatelessWidget {
                   ),
                   child: const CircleAvatar(
                     radius: 46,
-                    backgroundImage: AssetImage('assets/images/thoen.png'),
+                    backgroundImage: AssetImage('assets/images/rose.png'),
                   ),
                 ),
                 const SizedBox(height: 8),

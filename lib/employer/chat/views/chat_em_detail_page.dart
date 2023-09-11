@@ -1,4 +1,3 @@
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/chat/models/chat_model.dart';
@@ -119,103 +118,10 @@ class _ChatEmployerDetailPageState extends State<ChatEmployerDetailPage> {
               messageController.clear();
             });
           },
-          onEmoji: () {
-            setState(() {
-              isShowEmoji = !isShowEmoji;
-            });
-          },
           onPickImage: () {},
           onPickFile: () {},
         ),
       ),
     );
   }
-
-  Widget buildEmoji() {
-    return Container(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-        left: 16,
-        right: 16,
-      ),
-      child: SizedBox(
-        height: 300,
-        child: EmojiPicker(
-          textEditingController: messageController,
-          config: const Config(
-            emojiSizeMax: 32 * 1.3,
-          ),
-          onEmojiSelected: (category, emoji) {
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class MessageModel {
-
-  MessageModel({required this.sms, required this.isMe});
-  String sms;
-  bool isMe;
-
-  final List<MessageModel> messages = [
-    MessageModel(
-      sms: 'Hello, Chorn Thoen',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello!!!!!!!',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'This is my message.',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Where are you?',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'When will you come back?',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: true,
-    ),
-
-  ];
 }

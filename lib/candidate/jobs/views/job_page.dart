@@ -16,8 +16,14 @@ class JobPage extends StatefulWidget {
   State<JobPage> createState() => _JobPageState();
 }
 
-class _JobPageState extends State<JobPage>  {
+class _JobPageState extends State<JobPage> with SingleTickerProviderStateMixin {
+  late TabController tabController;
 
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 4, vsync: this);
+  }
 
   bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
 
@@ -51,71 +57,56 @@ class _JobPageState extends State<JobPage>  {
           automaticallyImplyLeading: false,
           backgroundColor: AppColors.kBackgroundColor,
           elevation: 0,
-          toolbarHeight: 108,
-          title: Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 10, bottom: 10),
-                child: TextFieldForms(
-                  prefixIcon: Icon(
-                    PhosphorIcons.magnifying_glass,
-                    size: 28,
-                  ),
-                  keyboardType: TextInputType.emailAddress,
-                  hintText: 'Search',
-                ),
+          toolbarHeight: 80,
+          title: const Padding(
+            padding: EdgeInsets.only(top: 10, bottom: 10),
+            child: TextFieldForms(
+              prefixIcon: Icon(
+                PhosphorIcons.magnifying_glass,
+                size: 28,
               ),
-              //list view
-              SizedBox(
-                height: 34,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: tabList.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          this.index = index;
-                        });
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.only(right: 10),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 8,
-                        ),
-                        decoration: BoxDecoration(
-                          color: this.index == index
-                              ? AppColors.kPrimaryColor
-                              : AppColors.kGray200,
-                          borderRadius: BorderRadius.circular(34),
-                        ),
-                        child: Text(
-                          tabList[index],
-                          style: TextStyle(
-                            color: this.index == index
-                                ? Colors.white
-                                : AppColors.kQuaternaryColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ],
+              keyboardType: TextInputType.emailAddress,
+              hintText: 'Search',
+            ),
           ),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              tabContent[index],
-            ],
-          ),
+        body: Column(
+          children: [
+            SizedBox(
+              height: 44,
+              child: TabBar(
+                controller: tabController,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                physics: const BouncingScrollPhysics(),
+                indicator: BoxDecoration(
+                  color: AppColors.kPrimaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                unselectedLabelColor: AppColors.kPrimaryColor,
+                labelStyle: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+                unselectedLabelStyle: const TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
+                ),
+                tabs: const [
+                  Tab(text: 'Matching'),
+                  Tab(text: 'Favorited'),
+                  Tab(text: 'Applied'),
+                  Tab(text: 'Rejected'),
+                ],
+              ),
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                physics: const NeverScrollableScrollPhysics(),
+                children: tabContent,
+              ),
+            ),
+          ],
         ),
       ),
     );

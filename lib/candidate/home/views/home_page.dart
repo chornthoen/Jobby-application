@@ -22,6 +22,7 @@ import 'package:jobby_application/candidate/home/widgets/item_trending.dart';
 import 'package:jobby_application/candidate/home/widgets/widget_see_all.dart';
 import 'package:jobby_application/candidate/home/widgets/widget_slider.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
+import 'package:jobby_application/candidate/search/views/search_view.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
@@ -52,13 +53,14 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBarHome(
         name: 'Hello! Chorn Thoen',
         diamond: '100.00',
-        imageProfile: 'assets/images/thoen.png',
+        imageProfile: 'assets/images/rose.png',
         onNotification: () {
           context.push(NotificationPage.routePath);
         },
-        onProfile: () {
-          tabController.animateTo(4);
+        onSearch: () {
+          context.push(SearchView.routePath);
         },
+        onProfile: () => tabController.animateTo(4),
       ),
       body: SingleChildScrollView(
         child: Column(

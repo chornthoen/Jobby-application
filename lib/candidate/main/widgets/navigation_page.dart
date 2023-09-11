@@ -67,28 +67,28 @@ class _NavigationPageState extends State<NavigationPage> {
                     ? 'assets/svg/jobs-active.svg'
                     : 'assets/svg/jobs.svg',
                 'Jobs',
-                0,
+                1,
               ),
               buildItem(
                 tabController == 2
                     ? 'assets/svg/message-active.svg'
                     : 'assets/svg/message.svg',
                 'Chat',
-                0,
+                2,
               ),
               buildItem(
                 tabController == 3
                     ? 'assets/svg/game-active.svg'
                     : 'assets/svg/game.svg',
                 'Quiz',
-                0,
+                3,
               ),
               buildItem(
                 tabController == 4
                     ? 'assets/svg/user-active.svg'
                     : 'assets/svg/user.svg',
                 'Profile',
-                0,
+                4,
               ),
             ],
           ),

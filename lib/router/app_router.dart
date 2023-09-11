@@ -55,6 +55,8 @@ import 'package:jobby_application/candidate/quizz/views/leaderboard_page.dart';
 import 'package:jobby_application/candidate/quizz/views/more_turns_page.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
 import 'package:jobby_application/candidate/quizz/views/see_all_program.dart';
+import 'package:jobby_application/candidate/search/views/detail_search_view.dart';
+import 'package:jobby_application/candidate/search/views/search_view.dart';
 import 'package:jobby_application/employer/chat/views/chat_em_detail_page.dart';
 import 'package:jobby_application/employer/home/views/candidate_detail_page.dart';
 import 'package:jobby_application/employer/home/views/gift_page.dart';
@@ -311,6 +313,17 @@ class AppRouter {
       GoRoute(
         path: Question1Page.routePath,
         builder: (context, state) => const Question1Page(),
+      ),
+      GoRoute(
+        path: SearchView.routePath,
+        builder: (context, state) => const SearchView(),
+      ),
+      GoRoute(
+        path: DetailSearchView.routePath,
+        builder: (context, state) {
+          final title = state.extra;
+          return DetailSearchView(title: title! as String);
+        },
       ),
       GoRoute(
         path: SuccessQuizPage.routePath,

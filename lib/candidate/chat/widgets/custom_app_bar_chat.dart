@@ -14,6 +14,9 @@ class CustomAppBarChat extends StatelessWidget implements PreferredSizeWidget  {
   final VoidCallback? onCall;
   final VoidCallback? onVideoCall;
 
+  @override
+  Size get preferredSize => const Size.fromHeight(70);
+
 
   @override
   Widget build(BuildContext context) {
@@ -133,6 +136,4 @@ class CustomAppBarChat extends StatelessWidget implements PreferredSizeWidget  {
     );
   }
 
-  @override
-  Size get preferredSize => throw UnimplementedError();
 }

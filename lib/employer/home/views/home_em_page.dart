@@ -35,7 +35,7 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
         isEmployer: true,
         name: 'Chorn Thoen',
         diamond: '100.00',
-        imageProfile: 'assets/images/thoen.png',
+        imageProfile: 'assets/images/rose.png',
         onNotification: () {
           context.push(NotificationPage.routePath);
         },

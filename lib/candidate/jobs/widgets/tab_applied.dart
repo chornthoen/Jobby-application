@@ -12,34 +12,29 @@ class AppliedContent extends StatefulWidget {
 class _AppliedContentState extends State<AppliedContent> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ListView.builder(
-          itemCount: appliedModel.length,
-          shrinkWrap: true,
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (context,index){
-            final applied = appliedModel[index];
-            return ItemApplied(
-              title: applied.title,
-              name: applied.name,
-              image: applied.image,
-              salary: applied.salary,
-              time: applied.time,
-              role: applied.role,
-              date: applied.date,
-              color: applied.color,
-              isSaved: applied.isSaved,
-              onSaved: () {
-                setState(() {
-                  applied.isSaved = !applied.isSaved;
-                });
-              },
-            );
+    return ListView.builder(
+      itemCount: appliedModel.length,
+      shrinkWrap: true,
+      physics: const BouncingScrollPhysics(),
+      itemBuilder: (context,index){
+        final applied = appliedModel[index];
+        return ItemApplied(
+          title: applied.title,
+          name: applied.name,
+          image: applied.image,
+          salary: applied.salary,
+          time: applied.time,
+          role: applied.role,
+          date: applied.date,
+          color: applied.color,
+          isSaved: applied.isSaved,
+          onSaved: () {
+            setState(() {
+              applied.isSaved = !applied.isSaved;
+            });
           },
-        ),
-      ],
+        );
+      },
     );
   }
 }

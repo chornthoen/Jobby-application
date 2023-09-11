@@ -12,35 +12,29 @@ class RejectedContent extends StatefulWidget {
 class _RejectedContentState extends State<RejectedContent> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ListView.builder(
-          itemCount: rejectedModel.length,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-
-          itemBuilder: (context,index){
-            final rejected = rejectedModel[index];
-            return ItemRejected(
-              title: rejected.title,
-              name: rejected.name,
-              image: rejected.image,
-              salary: rejected.salary,
-              time: rejected.time,
-              role: rejected.role,
-              date: rejected.date,
-              color: rejected.color,
-              isSaved: rejected.isSaved,
-              onSaved: () {
-                setState(() {
-                  rejected.isSaved = !rejected.isSaved;
-                });
-              },
-            );
+    return ListView.builder(
+      itemCount: rejectedModel.length,
+      shrinkWrap: true,
+      physics: const BouncingScrollPhysics(),
+      itemBuilder: (context,index){
+        final rejected = rejectedModel[index];
+        return ItemRejected(
+          title: rejected.title,
+          name: rejected.name,
+          image: rejected.image,
+          salary: rejected.salary,
+          time: rejected.time,
+          role: rejected.role,
+          date: rejected.date,
+          color: rejected.color,
+          isSaved: rejected.isSaved,
+          onSaved: () {
+            setState(() {
+              rejected.isSaved = !rejected.isSaved;
+            });
           },
-        ),
-      ],
+        );
+      },
     );
   }
 }

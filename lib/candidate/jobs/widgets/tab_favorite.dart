@@ -21,37 +21,32 @@ class _FavoriteContentState extends State<FavoriteContent> {
   }
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ListView.builder(
-          itemCount: suitableModel.length,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context,index){
-            return ItemFavorite(
-              title: suitableModel[index].title,
-              name: suitableModel[index].name,
-              image: suitableModel[index].image,
-              salary: suitableModel[index].salary,
-              time: suitableModel[index].time,
-              role: suitableModel[index].role,
-              date: suitableModel[index].date,
-              color: suitableModel[index].color,
-              isSaved: suitableModel[index].isSaved,
-              onSaved: () {
-                setState(() {
-                  suitableModel[index].isSaved = !suitableModel[index].isSaved;
-                  removeSaved();
-                });
-              },
-              onApply: () {
-                context.push(ApplyNowPage.routePath);
-              },
-            );
+    return ListView.builder(
+      itemCount: suitableModel.length,
+      shrinkWrap: true,
+      physics: const BouncingScrollPhysics(),
+      itemBuilder: (context,index){
+        return ItemFavorite(
+          title: suitableModel[index].title,
+          name: suitableModel[index].name,
+          image: suitableModel[index].image,
+          salary: suitableModel[index].salary,
+          time: suitableModel[index].time,
+          role: suitableModel[index].role,
+          date: suitableModel[index].date,
+          color: suitableModel[index].color,
+          isSaved: suitableModel[index].isSaved,
+          onSaved: () {
+            setState(() {
+              suitableModel[index].isSaved = !suitableModel[index].isSaved;
+              removeSaved();
+            });
           },
-        ),
-      ],
+          onApply: () {
+            context.push(ApplyNowPage.routePath);
+          },
+        );
+      },
     );
   }
 }
