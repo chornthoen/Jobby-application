@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
+import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/notification/models/notification_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -35,6 +37,7 @@ class _NotificationPageState extends State<NotificationPage> {
             onTap: () {
               setState(() {
                 notificationList[index].isRead = false;
+                context.push(MainView.routePath);
               });
             },
             child: Column(
