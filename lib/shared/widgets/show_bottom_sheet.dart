@@ -6,9 +6,11 @@ import 'package:jobby_application/candidate/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
+import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
-class BottomSheets {
+class ShowBottomSheetCustom {
   bool isClick = false;
+
   static void showBottomSheet({
     required BuildContext context,
     required Widget child,
@@ -78,9 +80,10 @@ class BottomSheets {
                     Text(
                       title,
                       style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.kPrimaryColor,),
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.kPrimaryColor,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Image(
@@ -90,7 +93,9 @@ class BottomSheets {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 10,),
+                        horizontal: 16,
+                        vertical: 10,
+                      ),
                       child: Text(
                         description,
                         textAlign: TextAlign.center,
@@ -126,8 +131,8 @@ class BottomSheets {
   }
 
   static void showBottomSheetDetailQuiz({
-   required BuildContext context,
-   required QuizModel quizModel,
+    required BuildContext context,
+    required QuizModel quizModel,
     required VoidCallback onPressed,
     required VoidCallback isLike,
     bool? isLikeClick,
@@ -181,8 +186,8 @@ class BottomSheets {
                   children: [
                     const Text(
                       'Tmrw studio owns, manages and operates a system of '
-                          'Trade Centers - A shopping, entertainment and '
-                          'culinary paradise with 4 brand lines.',
+                      'Trade Centers - A shopping, entertainment and '
+                      'culinary paradise with 4 brand lines.',
                       style: TextStyle(
                         color: AppColors.kQuaternaryColor,
                         fontSize: 14,
@@ -286,14 +291,92 @@ class BottomSheets {
       },
     );
   }
+
+  static void showBottomSheetAddNote({
+    required BuildContext context,
+    required TextEditingController noteController,
+    required VoidCallback saveNote,
+  }) {
+    showModalBottomSheet<void>(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: AppColors.kBackgroundColor,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
+      builder: (context) {
+        return Padding(
+          padding: MediaQuery.of(context).viewInsets,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppBarBottomSheet(
+                  title: 'Add Note',
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                const SizedBox(height: 10),
+                const Text(
+                  'Note',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.kBlackColor,
+                  ),
+                ),
+                const SizedBox(height: 10),
+                TextFieldForms(
+                  controller: noteController,
+                  hintText: 'Type your note here',
+                  maxLines: 5,
+                  minLines: 5,
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ButtonOutLineAction(
+                      width: 120,
+                      text: 'Cancel',
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                    const SizedBox(width: 10),
+                    ButtonAction(
+                      isClick: true,
+                      width: 120,
+                      text: 'Save',
+                      onPressed: () {
+                        saveNote();
+                      },
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 }
 
 class AppBarBottomSheet extends StatelessWidget {
   const AppBarBottomSheet({
     super.key,
-    this.title  = '',
+    this.title = '',
     this.onPressed,
   });
+
   final String? title;
   final VoidCallback? onPressed;
 
@@ -303,7 +386,7 @@ class AppBarBottomSheet extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         const SizedBox(),
-         Text(
+        Text(
           title!,
           style: const TextStyle(
             color: AppColors.kPrimaryColor,

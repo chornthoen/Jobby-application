@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/models/hot_job_model.dart';
 import 'package:jobby_application/candidate/home/models/tab_company_model.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/views/detail_company_page.dart';
+import 'package:jobby_application/candidate/home/views/company_info/views/detail_company_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabCompany extends StatelessWidget {

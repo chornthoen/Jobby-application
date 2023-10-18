@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/models/slide_model.dart';
+import 'package:jobby_application/candidate/home/views/company_info/models/slide_model.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
 

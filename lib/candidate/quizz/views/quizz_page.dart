@@ -153,7 +153,7 @@ class _QuizzPageState extends State<QuizzPage> {
                       user: quizModel[index].user,
                       percent: quizModel[index].percent,
                       onPressed: () {
-                        BottomSheets.showBottomSheetDetailQuiz(
+                        ShowBottomSheetCustom.showBottomSheetDetailQuiz(
                           context: context,
                           quizModel: quizModel[index],
                           onPressed: () {

@@ -175,7 +175,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
   }
 
   void addPositionSheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);
@@ -199,7 +199,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
   }
 
   void typeOfWorkSheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);
@@ -223,7 +223,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
   }
 
   void locationSheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);
@@ -247,7 +247,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
   }
 
   void levelSheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);
@@ -271,7 +271,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
   }
 
   void industrySheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);
@@ -295,7 +295,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
   }
 
   void expectedSalarySheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);

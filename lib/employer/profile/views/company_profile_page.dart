@@ -186,7 +186,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
   }
 
   void industrySheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);
@@ -209,7 +209,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
     );
   }
   void peopleSheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);

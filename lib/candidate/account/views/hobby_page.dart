@@ -65,7 +65,7 @@ class _HobbyPageState extends State<HobbyPage> {
     );
   }
   void addPositionSheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);

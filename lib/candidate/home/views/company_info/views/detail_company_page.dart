@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/account/widgets/item_widget.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/company_detail.dart';
 import 'package:jobby_application/candidate/home/views/apply_now/widgets/action_back_and_save.dart';
 import 'package:jobby_application/candidate/home/views/apply_now/widgets/profile.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/company_detail.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
-
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class DetailCompanyPage extends StatefulWidget {
@@ -109,7 +108,7 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                                 onPressed: () {
                                   setState(() {
                                     if (follow) {
-                                      BottomSheets.showBottomSheetCustom(
+                                      ShowBottomSheetCustom.showBottomSheetCustom(
                                         context: context,
                                         title: 'Unfollow This Company',
                                         image: 'assets/images/unfollow.png',
@@ -135,7 +134,7 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                                 width: MediaQuery.of(context).size.width * 0.4,
                                 text: 'Message',
                                 onPressed: () {
-                                  BottomSheets.showBottomSheetCustom(
+                                  ShowBottomSheetCustom.showBottomSheetCustom(
                                     context: context,
                                     title: 'Please login to send message',
                                     image: 'assets/images/enter.png',

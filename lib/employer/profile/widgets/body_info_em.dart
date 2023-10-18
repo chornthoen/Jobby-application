@@ -91,7 +91,7 @@ class _BodyInfoEmployerState extends State<BodyInfoEmployer> {
 
   //show dialog logout
   void _showBottomSheetLogout(BuildContext context) {
-    BottomSheets.showBottomSheetCustom(
+    ShowBottomSheetCustom.showBottomSheetCustom(
       context: context,
       title: 'LOG OUT ACCOUNT',
       image: 'assets/images/enter.png',

@@ -35,10 +35,10 @@ import 'package:jobby_application/candidate/account/views/your_work_criteria_pag
 import 'package:jobby_application/candidate/chat/models/chat_model.dart';
 import 'package:jobby_application/candidate/chat/views/call_video_pang.dart';
 import 'package:jobby_application/candidate/chat/views/chat_detail_page.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/candidate/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/candidate/home/views/blog_detail_page.dart';
 import 'package:jobby_application/candidate/home/views/blogs_page.dart';
+import 'package:jobby_application/candidate/home/views/company_info/views/detail_company_page.dart';
 import 'package:jobby_application/candidate/home/views/company_see_all_page.dart';
 import 'package:jobby_application/candidate/home/views/ebook_detail_page.dart';
 import 'package:jobby_application/candidate/home/views/ebook_page.dart';

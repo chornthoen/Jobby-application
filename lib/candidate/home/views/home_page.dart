@@ -5,9 +5,9 @@ import 'package:jobby_application/candidate/home/models/company_for_you_model.da
 import 'package:jobby_application/candidate/home/models/explore_models.dart';
 import 'package:jobby_application/candidate/home/models/hot_job_model.dart';
 import 'package:jobby_application/candidate/home/models/trending_model.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/views/detail_company_page.dart';
 import 'package:jobby_application/candidate/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/candidate/home/views/blogs_page.dart';
+import 'package:jobby_application/candidate/home/views/company_info/views/detail_company_page.dart';
 import 'package:jobby_application/candidate/home/views/company_see_all_page.dart';
 import 'package:jobby_application/candidate/home/views/ebook_page.dart';
 import 'package:jobby_application/candidate/home/views/event_page.dart';
@@ -135,10 +135,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 150,
               child: ListView.builder(
-                padding: const EdgeInsets.only(
-                  left: 16,
-                  top: 10
-                ),
+                padding: const EdgeInsets.only(left: 16, top: 10),
                 scrollDirection: Axis.horizontal,
                 itemCount: listCompany.length,
                 itemBuilder: (context, index) {

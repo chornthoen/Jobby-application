@@ -240,7 +240,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
     );
   }
   void industrySheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);

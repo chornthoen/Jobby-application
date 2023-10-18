@@ -114,7 +114,6 @@ class _TabNotesState extends State<TabNotes> {
     );
   }
 
-  //show bottom sheet add note
   void _showBottomSheetAddNote() {
     showModalBottomSheet<void>(
       context: context,

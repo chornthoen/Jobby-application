@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/item_review.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/star_rate.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/item_review.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/star_rate.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 

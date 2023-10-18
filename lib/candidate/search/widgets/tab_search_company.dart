@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/models/interested_model.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/item_interested.dart';
+import 'package:jobby_application/candidate/home/views/company_info/models/interested_model.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/item_interested.dart';
 class TabSearchCompany extends StatefulWidget {
   const TabSearchCompany({super.key});
 

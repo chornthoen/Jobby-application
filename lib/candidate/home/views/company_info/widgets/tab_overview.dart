@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/models/interested_model.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/item_interested.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/slide_gallery.dart';
+import 'package:jobby_application/candidate/home/views/company_info/models/interested_model.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/item_interested.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/slide_gallery.dart';
 import 'package:jobby_application/candidate/home/widgets/item_speaker_list.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 

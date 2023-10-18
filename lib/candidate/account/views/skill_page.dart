@@ -65,7 +65,7 @@ class _SkillsPageState extends State<SkillsPage> {
     );
   }
   void addPositionSheet() {
-    BottomSheets.showBottomSheet(
+    ShowBottomSheetCustom.showBottomSheet(
       context: context,
       onPressed: () {
         context.pop(context);

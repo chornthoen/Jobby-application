@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/star_5.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/star_5.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class ItemReviews extends StatelessWidget {
@@ -24,7 +24,7 @@ class ItemReviews extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          const Row(
+           const Row(
             children: [
               Star5(),
               SizedBox(width: 10),

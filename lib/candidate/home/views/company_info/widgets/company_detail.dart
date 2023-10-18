@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/tab_job.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/tab_overview.dart';
-import 'package:jobby_application/candidate/home/views/apply_company/widgets/tab_review.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/tab_job.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/tab_overview.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/tab_review.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class TabCompanyDetail extends StatefulWidget {
