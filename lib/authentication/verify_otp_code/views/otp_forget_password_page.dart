@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/create_password/views/create_password_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
@@ -36,20 +37,10 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
     super.dispose();
   }
 
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.closeKeyboard(context),
       child: Scaffold(
         appBar: const CustomAppBar(logo: 'Jobby.'),
         backgroundColor: AppColors.kBackgroundColor,

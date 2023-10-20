@@ -3,6 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
@@ -40,16 +41,10 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
 
   bool obscureText = true;
   bool obscureText2 = true;
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.closeKeyboard(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(logo: 'Jobby.'),

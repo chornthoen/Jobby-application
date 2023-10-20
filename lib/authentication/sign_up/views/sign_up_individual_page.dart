@@ -3,6 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
@@ -44,15 +45,6 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
   bool obscureText = true;
   bool obscureTextConfirm = true;
 
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-  //all controller isNotEmpty
-
   bool get isAllControllerNotEmpty =>
       phoneNumberController.text.isNotEmpty &&
       emailController.text.isNotEmpty &&
@@ -62,7 +54,7 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.closeKeyboard(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(subTitle: 'Individual (2/2)'),

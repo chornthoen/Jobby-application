@@ -5,6 +5,7 @@ import 'package:jobby_application/authentication/forget_password/views/forget_pa
 import 'package:jobby_application/authentication/sign_up_select/views/choose_role_sign_up.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
@@ -44,18 +45,7 @@ class _SignInPageState extends State<SignInPage> {
     passwordController.dispose();
     super.dispose();
   }
-
   bool obscureText = true;
-
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
-  //all controller isNotEmpty
   bool get isAllControllerNotEmpty =>
       emailController.text.isNotEmpty &&
       passwordController.text.isNotEmpty;
@@ -63,7 +53,7 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.closeKeyboard(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(logo: 'Jobby.'),

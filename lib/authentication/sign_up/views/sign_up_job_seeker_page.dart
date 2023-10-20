@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/authentication/verify_otp_code/views/otp_sign_up_job_seeker.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
@@ -46,14 +47,6 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
 
   bool obscureText = true;
 
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-  //all controller isNotEmpty
   bool get isAllControllerNotEmpty =>
       emailController.text.isNotEmpty &&
       passwordController.text.isNotEmpty;
@@ -61,7 +54,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.closeKeyboard(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(logo: 'Jobby.'),
