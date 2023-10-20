@@ -41,6 +41,7 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
 
   bool obscureText = true;
   bool obscureText2 = true;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -63,7 +64,7 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
                   ),
                   const SizedBox(height: 40),
                   const LabelText(text: 'New Password'),
-                  TextFieldForms(
+                  CustomTextFieldForms(
                     keyboardType: TextInputType.visiblePassword,
                     controller: newPasswordController,
                     obscureText: obscureText,
@@ -76,9 +77,10 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
                         obscureText = !obscureText;
                       });
                     },
-                  ),const SizedBox(height: 20),
+                  ),
+                  const SizedBox(height: 20),
                   const LabelText(text: 'Confirm Password'),
-                  TextFieldForms(
+                  CustomTextFieldForms(
                     keyboardType: TextInputType.visiblePassword,
                     controller: confirmPasswordController,
                     obscureText: obscureText2,

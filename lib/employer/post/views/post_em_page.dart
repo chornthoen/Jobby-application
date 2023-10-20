@@ -113,14 +113,14 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
             children: [
               const TextCustom(text: 'Job Title'),
               const SizedBox(height: 8),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Job Title',
                 controller: jobTitleController,
               ),
               const SizedBox(height: 10),
               const TextCustom(text: 'Location'),
               const SizedBox(height: 8),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Location',
                 controller: locationController,
               ),
@@ -139,7 +139,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
               const SizedBox(height: 10),
               const TextCustom(text: 'Industry'),
               const SizedBox(height: 8),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Industry',
                 suffixIcon: PhosphorIcons.caret_down,
                 controller: industryController,
@@ -171,7 +171,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
               const SizedBox(height: 10),
               const TextCustom(text: 'Description'),
               const SizedBox(height: 8),
-              TextFieldForms(
+              CustomTextFieldForms(
                 minLines: 3,
                 maxLines: 10,
                 hintText: 'Description',
@@ -180,7 +180,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
               const SizedBox(height: 10),
               const TextCustom(text: 'Boosted Job'),
               const SizedBox(height: 8),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Boosted Job',
                 controller: boostedJobController,
               ),
@@ -195,7 +195,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                           star: false,
                         ),
                         const SizedBox(height: 10),
-                        TextFieldForms(
+                        CustomTextFieldForms(
                           hintText: 'Title',
                           suffixIcon: PhosphorIcons.calendar_blank,
                           controller: startDateController,
@@ -213,7 +213,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                           star: false,
                         ),
                         const SizedBox(height: 10),
-                        TextFieldForms(
+                        CustomTextFieldForms(
                           hintText: 'Title',
                           suffixIcon: PhosphorIcons.calendar_blank,
                           onPressed: () {

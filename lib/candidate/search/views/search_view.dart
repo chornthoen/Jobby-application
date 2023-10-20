@@ -70,7 +70,7 @@ class _SearchViewState extends State<SearchView> {
           ),
           title: Container(
             margin: const EdgeInsets.only(top: 8),
-            child: TextFieldForms(
+            child: CustomTextFieldForms(
               prefixIcon: const Icon(PhosphorIcons.magnifying_glass, size: 24),
               controller: _searchController,
               keyboardType: TextInputType.emailAddress,

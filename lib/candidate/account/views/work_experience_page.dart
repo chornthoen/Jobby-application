@@ -72,13 +72,13 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
               children: [
                 const TextCustom(text: 'Title'),
                 const SizedBox(height: 10),
-                const TextFieldForms(
+                const CustomTextFieldForms(
                   hintText: 'Title',
                 ),
                 const SizedBox(height: 20),
                 const TextCustom(text: 'Company Name'),
                 const SizedBox(height: 10),
-                const TextFieldForms(
+                const CustomTextFieldForms(
                   hintText: 'Company Name',
                 ),
                 const SizedBox(height: 20),
@@ -104,7 +104,7 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
                             star: false,
                           ),
                           const SizedBox(height: 10),
-                           TextFieldForms(
+                           CustomTextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,
                              onPressed: () {},
@@ -121,7 +121,7 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
                             star: false,
                           ),
                           const SizedBox(height: 10),
-                           TextFieldForms(
+                           CustomTextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,
                             onPressed: () {
@@ -135,7 +135,7 @@ class _WorkExperiencePageState extends State<WorkExperiencePage> {
                 const SizedBox(height: 20),
                  const TextCustom(text: 'Current job', star: false),
                 const SizedBox(height: 10),
-                const TextFieldForms(
+                const CustomTextFieldForms(
                   maxLines: 2,
                   hintText: 'Current job',
                 ),

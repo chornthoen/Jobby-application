@@ -60,7 +60,7 @@ class _JobPageState extends State<JobPage> with SingleTickerProviderStateMixin {
           toolbarHeight: 80,
           title: const Padding(
             padding: EdgeInsets.only(top: 10, bottom: 10),
-            child: TextFieldForms(
+            child: CustomTextFieldForms(
               prefixIcon: Icon(
                 PhosphorIcons.magnifying_glass,
                 size: 28,

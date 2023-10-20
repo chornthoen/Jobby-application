@@ -267,7 +267,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    TextFieldForms(
+                    CustomTextFieldForms(
                       onChange: (value) {
                         setState(() {});
                         return null;

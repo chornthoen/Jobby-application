@@ -77,28 +77,28 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
               children: [
                 const TextCustom(text: 'Company Name'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Company name',
                   controller: companyNameController,
                 ),
                 const SizedBox(height: 10),
                 const TextCustom(text: 'Location'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Location',
                   controller: locationController,
                 ),
                 const SizedBox(height: 10),
                 const TextCustom(text: 'Website'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Website',
                   controller: websiteController,
                 ),
                 const SizedBox(height: 10),
                 const TextCustom(text: 'Industry'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Industry',
                   controller: industryController,
                   suffixIcon: PhosphorIcons.caret_down,
@@ -107,7 +107,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
                 const SizedBox(height: 10),
                 const TextCustom(text: 'People'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'People',
                   controller: peopleController,
                   suffixIcon: PhosphorIcons.caret_down,
@@ -116,7 +116,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
                 const SizedBox(height: 10),
                 const TextCustom(text: 'Company'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   maxLines: 5,
                   hintText: 'Company',
                   controller: companyController,

@@ -29,13 +29,13 @@ class _PrizePageState extends State<PrizePage> {
             children: [
               const TextCustom(text: 'Award’s name'),
               const SizedBox(height: 10),
-              const TextFieldForms(
+              const CustomTextFieldForms(
                 hintText: 'Award’s name',
               ),
               const SizedBox(height: 20),
               const TextCustom(text: 'Organizes', star: false),
               const SizedBox(height: 10),
-              const TextFieldForms(
+              const CustomTextFieldForms(
                 hintText: 'Organizes',
               ),
               const SizedBox(height: 20),
@@ -43,7 +43,7 @@ class _PrizePageState extends State<PrizePage> {
                 text: 'Award’s year',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Title',
                 suffixIcon: PhosphorIcons.calendar_blank,
                 onPressed: () {},

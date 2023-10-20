@@ -25,7 +25,7 @@ class _SearchEmployerPageState extends State<SearchEmployerPage> {
         elevation: 0,
         title: const Padding(
           padding: EdgeInsets.only(top: 10),
-          child: TextFieldForms(
+          child: CustomTextFieldForms(
             hintText: 'Search',
             suffixIcon: PhosphorIcons.magnifying_glass,
           ),

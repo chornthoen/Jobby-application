@@ -5,12 +5,12 @@ import 'package:jobby_application/authentication/forget_password/views/forget_pa
 import 'package:jobby_application/authentication/sign_up_select/views/choose_role_sign_up.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/utils/CustomSocials.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/custom_text_button.dart';
-import 'package:jobby_application/shared/widgets/item_social.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:jobby_application/shared/widgets/text_and_button.dart';
@@ -19,6 +19,7 @@ import 'package:jobby_application/shared/widgets/widget_or.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
+
   static const String routePath = '/sign-in';
 
   @override
@@ -26,7 +27,6 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-
   late final GlobalKey<FormState> _loginFormKey;
   late TextEditingController emailController;
   late TextEditingController passwordController;
@@ -45,10 +45,11 @@ class _SignInPageState extends State<SignInPage> {
     passwordController.dispose();
     super.dispose();
   }
+
   bool obscureText = true;
+
   bool get isAllControllerNotEmpty =>
-      emailController.text.isNotEmpty &&
-      passwordController.text.isNotEmpty;
+      emailController.text.isNotEmpty && passwordController.text.isNotEmpty;
 
   @override
   Widget build(BuildContext context) {
@@ -72,18 +73,14 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                   const SizedBox(height: 40),
                   const LabelText(text: 'Phone number/email'),
-                   TextFieldForms(
-                     keyboardType: TextInputType.emailAddress,
+                  CustomTextFieldForms(
+                    keyboardType: TextInputType.emailAddress,
                     controller: emailController,
                     hintText: 'Enter your phone number/email',
                   ),
                   const SizedBox(height: 20),
                   const LabelText(text: 'Password'),
-                  TextFieldForms(
-                    onChange: (value) {
-                      setState(() {});
-                      return null;
-                    },
+                  CustomTextFieldForms(
                     keyboardType: TextInputType.visiblePassword,
                     controller: passwordController,
                     obscureText: obscureText,
@@ -111,38 +108,13 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(height: 20),
                   ButtonAction(
                     isClick: true,
-                    onPressed: () {
-                      if (emailController.text.isEmpty) {
-                        SnackBarTop.topSnackBar(
-                            context, 'Please enter your phone number/email',);
-                      } else if (passwordController.text.isEmpty ) {
-                        SnackBarTop.topSnackBar(
-                            context, 'Please enter your password',);
-                      }
-                      context.push(MainView.routePath);
-                    },
+                    onPressed: onSignIn,
                     text: 'Sign In',
                   ),
                   const SizedBox(height: 20),
                   const WidgetOr(text: 'OR SIGNIN WITH'),
                   const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ItemSocials(
-                        onPressed: () {},
-                        image: 'assets/images/facebook.png',
-                      ),
-                      ItemSocials(
-                        onPressed: () {},
-                        image: 'assets/images/google.png',
-                      ),
-                      ItemSocials(
-                        onPressed: () {},
-                        image: 'assets/images/apple.png',
-                      ),
-                    ],
-                  ),
+                  const CustomSocials(),
                   const SizedBox(height: 40),
                   TextAndButton(
                     text: 'Don’t have an account?',
@@ -151,7 +123,6 @@ class _SignInPageState extends State<SignInPage> {
                     },
                     textButton: 'Sign Up',
                   ),
-
                 ],
               ),
             ),
@@ -175,5 +146,15 @@ class _SignInPageState extends State<SignInPage> {
         ),
       ),
     );
+  }
+
+  void onSignIn() {
+    if (emailController.text.isEmpty) {
+      SnackBarTop.topSnackBar(context, 'Please enter your phone number/email');
+    } else if (passwordController.text.isEmpty) {
+      SnackBarTop.topSnackBar(context, 'Please enter your password');
+    } else {
+      context.push(MainView.routePath);
+    }
   }
 }

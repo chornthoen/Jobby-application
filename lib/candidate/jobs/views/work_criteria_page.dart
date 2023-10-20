@@ -85,7 +85,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 ),
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: addPositionController,
                 hintText: 'Add position',
                 maxLines: 3,
@@ -98,7 +98,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 text: 'Type of work',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: typeOfWorkController,
                 hintText: 'Choose type of work',
                 suffixIcon: PhosphorIcons.caret_down,
@@ -110,7 +110,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 text: 'Location',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: locationController,
                 hintText: 'Choose location',
                 suffixIcon: PhosphorIcons.caret_down,
@@ -122,7 +122,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 text: 'Level',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: levelController,
                 hintText: 'Choose level',
                 suffixIcon: PhosphorIcons.caret_down,
@@ -134,7 +134,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 text: 'Industry',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: industryController,
                 hintText: 'Choose industry',
                 suffixIcon: PhosphorIcons.caret_down,
@@ -146,7 +146,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 text: 'Expected salary',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: expectedSalaryController,
                 hintText: 'Choose expected salary',
                 suffixIcon: PhosphorIcons.caret_down,

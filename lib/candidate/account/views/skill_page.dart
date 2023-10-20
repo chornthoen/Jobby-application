@@ -52,7 +52,7 @@ class _SkillsPageState extends State<SkillsPage> {
               ),
             ),
             const SizedBox(height: 10),
-            TextFieldForms(
+            CustomTextFieldForms(
               controller: skillController,
               hintText: 'Add your skills',
               maxLines: 3,

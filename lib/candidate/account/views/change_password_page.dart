@@ -57,21 +57,21 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
               children: [
                 const TextCustom(text: 'Old Password',star: false),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Old Password',
                   controller: oldPasswordController,
                 ),
                 const SizedBox(height: 20),
                 const TextCustom(text: 'New Password',star: false),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'New Password',
                   controller: newPasswordController,
                 ),
                 const SizedBox(height: 20),
                 const TextCustom(text: 'Confirm Password',star: false),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Confirm Password',
                   controller: confirmPasswordController,
                 ),

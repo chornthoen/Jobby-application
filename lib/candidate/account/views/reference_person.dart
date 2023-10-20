@@ -54,14 +54,14 @@ class _ReferencePersonPageState extends State<ReferencePersonPage> {
             children: [
               const TextCustom(text: 'Full name'),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Full name',
                 controller: fullNameController,
               ),
               const SizedBox(height: 20),
               const TextCustom(text: 'Company name'),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Company name',
                 controller: companyNameController,
               ),
@@ -70,7 +70,7 @@ class _ReferencePersonPageState extends State<ReferencePersonPage> {
                 text: 'Title',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Title',
                 controller: titleController,
               ),
@@ -79,14 +79,14 @@ class _ReferencePersonPageState extends State<ReferencePersonPage> {
                 text: 'Email',
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Email',
                 controller: emailController,
               ),
               const SizedBox(height: 20),
               const TextCustom(text: 'Phone number'),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 hintText: 'Phone number',
                 controller: phoneNumberController,
               ),

@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
-import 'package:jobby_application/authentication/verify_otp_code/views/otp_sign_up_job_seeker.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/utils/CustomSocials.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
-import 'package:jobby_application/shared/widgets/item_social.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:jobby_application/shared/widgets/text_and_button.dart';
@@ -25,7 +24,6 @@ class SignUpJobSeekerPage extends StatefulWidget {
 }
 
 class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
-
   late final GlobalKey<FormState> _loginFormKey;
   late TextEditingController emailController;
   late TextEditingController passwordController;
@@ -48,8 +46,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
   bool obscureText = true;
 
   bool get isAllControllerNotEmpty =>
-      emailController.text.isNotEmpty &&
-      passwordController.text.isNotEmpty;
+      emailController.text.isNotEmpty && passwordController.text.isNotEmpty;
 
   @override
   Widget build(BuildContext context) {
@@ -73,14 +70,14 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                   ),
                   const SizedBox(height: 30),
                   const LabelText(text: 'Full Name'),
-                  TextFieldForms(
+                  CustomTextFieldForms(
                     keyboardType: TextInputType.name,
                     controller: emailController,
                     hintText: 'Enter your full name',
                   ),
                   const SizedBox(height: 10),
                   const LabelText(text: 'Phone Number'),
-                  TextFieldForms(
+                  CustomTextFieldForms(
                     keyboardType: TextInputType.phone,
                     controller: passwordController,
                     obscureText: obscureText,
@@ -88,7 +85,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                   ),
                   const SizedBox(height: 10),
                   const LabelText(text: 'Email'),
-                  TextFieldForms(
+                  CustomTextFieldForms(
                     keyboardType: TextInputType.emailAddress,
                     controller: passwordController,
                     obscureText: obscureText,
@@ -96,7 +93,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                   ),
                   const SizedBox(height: 10),
                   const LabelText(text: 'Password'),
-                  TextFieldForms(
+                  CustomTextFieldForms(
                     onChange: (value) {
                       setState(() {});
                       return null;
@@ -117,38 +114,13 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                   const SizedBox(height: 24),
                   ButtonAction(
                     isClick: isAllControllerNotEmpty,
-                    onPressed: () {
-                      if (emailController.text.isEmpty) {
-                        SnackBarTop.topSnackBar(
-                            context, 'Please enter your phone number/email',);
-                      } else if (passwordController.text.isEmpty ) {
-                        SnackBarTop.topSnackBar(
-                            context, 'Please enter your password',);
-                      }
-                      context.push(OTPSignUpJonSeekerPage.routePath);
-                    },
+                    onPressed: onSignUp,
                     text: 'Sign Up',
                   ),
                   const SizedBox(height: 24),
                   const WidgetOr(text: 'OR SIGNUP WITH'),
                   const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ItemSocials(
-                        onPressed: () {},
-                        image: 'assets/images/facebook.png',
-                      ),
-                      ItemSocials(
-                        onPressed: () {},
-                        image: 'assets/images/google.png',
-                      ),
-                      ItemSocials(
-                        onPressed: () {},
-                        image: 'assets/images/apple.png',
-                      ),
-                    ],
-                  ),
+                  const CustomSocials(),
                   const SizedBox(height: 20),
                   TextAndButton(
                     text: 'Don’t have an account?',
@@ -164,5 +136,21 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
         ),
       ),
     );
+  }
+
+  void onSignUp() {
+    if (emailController.text.isEmpty) {
+      SnackBarTop.topSnackBar(
+        context,
+        'Please enter your phone number/email',
+      );
+    } else if (passwordController.text.isEmpty) {
+      SnackBarTop.topSnackBar(
+        context,
+        'Please enter your password',
+      );
+    } else {
+      context.go(SignInPage.routePath);
+    }
   }
 }

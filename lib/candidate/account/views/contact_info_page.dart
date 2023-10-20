@@ -71,7 +71,7 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
               children: [
                 const TextCustom(text: 'Full Name'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'full name',
                   controller: fullNameController,
                 ),
@@ -160,35 +160,35 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                 const SizedBox(height: 10),
                 const TextCustom(text: 'Title'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Title',
                   controller: titleController,
                 ),
                 const SizedBox(height: 20),
                 const TextCustom(text: 'Email'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Email',
                   controller: emailController,
                 ),
                 const SizedBox(height: 20),
                 const TextCustom(text: 'Phone number'),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Phone number',
                   controller: phoneNumberController,
                 ),
                 const SizedBox(height: 20),
                 const TextCustom(text: 'Address', star: false),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Address',
                   controller: addressController,
                 ),
                 const SizedBox(height: 20),
                 const TextCustom(text: 'Personal Website', star: false),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   hintText: 'Personal Website',
                   controller: personalWebsiteController,
                 ),

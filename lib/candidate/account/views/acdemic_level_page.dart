@@ -49,7 +49,7 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
               children: [
                 const TextCustom(text: 'School'),
                 const SizedBox(height: 10),
-                const TextFieldForms(
+                const CustomTextFieldForms(
                   hintText: 'School',
                 ),
                 const SizedBox(height: 20),
@@ -67,7 +67,7 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
                 const SizedBox(height: 20),
                 const TextCustom(text: 'Major'),
                 const SizedBox(height: 10),
-                const TextFieldForms(
+                const CustomTextFieldForms(
                   hintText: 'Major',
                 ),
                 const SizedBox(height: 20),
@@ -81,7 +81,7 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
                             star: false,
                           ),
                           const SizedBox(height: 10),
-                          TextFieldForms(
+                          CustomTextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,
                             onPressed: () {},
@@ -98,7 +98,7 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
                             star: false,
                           ),
                           const SizedBox(height: 10),
-                          TextFieldForms(
+                          CustomTextFieldForms(
                             hintText: 'Title',
                             suffixIcon: PhosphorIcons.calendar_blank,
                             onPressed: () {},
@@ -111,11 +111,11 @@ class _AcademicLevelPageState extends State<AcademicLevelPage> {
                 const SizedBox(height: 20),
                 const TextCustom(text: 'GPA', star: false),
                 const SizedBox(height: 10),
-                const TextFieldForms(
+                const CustomTextFieldForms(
                   hintText: 'GPA',
                 ),
                 const SizedBox(height: 20),
-                const TextFieldForms(
+                const CustomTextFieldForms(
                   maxLines: 2,
                   hintText: 'Description',
                 ),

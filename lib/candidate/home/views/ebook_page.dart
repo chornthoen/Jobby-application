@@ -36,7 +36,7 @@ class _EBookPageState extends State<EBookPage> {
           children: [
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-              child: TextFieldForms(
+              child: CustomTextFieldForms(
                 prefixIcon: Icon(
                   PhosphorIcons.magnifying_glass,
                   size: 28,

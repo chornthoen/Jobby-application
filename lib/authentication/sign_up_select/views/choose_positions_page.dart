@@ -23,16 +23,18 @@ class SignUpChoosePositionPage extends StatefulWidget {
 }
 
 class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
-
   int index = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
-      appBar:  CustomAppBar(
-        subTitle: index == 1 ? 'Individual (1/2)' : index == 2 ?
-        'Enterprise (1/4)' : '',
+      appBar: CustomAppBar(
+        subTitle: index == 1
+            ? 'Individual (1/2)'
+            : index == 2
+                ? 'Enterprise (1/4)'
+                : '',
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
@@ -51,7 +53,6 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
               'Individual',
               PhosphorIcons.user_gear,
               index == 1 ? true : false,
-
             ),
             const SizedBox(height: 20),
             itemRole(
@@ -64,7 +65,7 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
             ButtonAction(
               isClick: index == 1 || index == 2 ? true : false,
               onPressed: () {
-                if ((index ==1 || index == 2) != true){
+                if ((index == 1 || index == 2) != true) {
                   SnackBarTop.topSnackBar(context, 'Please select your role');
                 } else if (index == 1) {
                   context.push(SignUpIndividualPage.routePath);

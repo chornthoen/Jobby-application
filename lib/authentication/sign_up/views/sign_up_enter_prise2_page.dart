@@ -30,7 +30,6 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
   late TextEditingController industryController;
   late TextEditingController companySizeController;
 
-  //init state
   @override
   void initState() {
     super.initState();
@@ -46,7 +45,6 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
     companySizeController = TextEditingController();
   }
 
-  //dispose
   @override
   void dispose() {
     companyNameController.dispose();
@@ -85,49 +83,49 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Company Name'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: companyNameController,
                   keyboardType: TextInputType.name,
                   hintText: 'Enter company name',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Tax Code'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: taxCodeController,
                   keyboardType: TextInputType.number,
                   hintText: 'Enter tax code',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Website'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: websiteController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter website',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Phone Number'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: phoneNumberController,
                   keyboardType: TextInputType.phone,
                   hintText: 'Enter phone number',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Email'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter email',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Address'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: addressController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter address',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Industry'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Choose industry',
                   suffixIcon: PhosphorIcons.caret_down_bold,
@@ -137,7 +135,7 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Company Size'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Choose company size',
                   suffixIcon: PhosphorIcons.caret_down_bold,
@@ -147,7 +145,7 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Description'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: descriptionController,
                   maxLines: 3,
                   keyboardType: TextInputType.emailAddress,

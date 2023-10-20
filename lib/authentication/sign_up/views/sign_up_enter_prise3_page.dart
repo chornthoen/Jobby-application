@@ -23,7 +23,6 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
   late TextEditingController emailController;
   late TextEditingController positionController;
 
-  //init state
   @override
   void initState() {
     super.initState();
@@ -33,7 +32,6 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
     positionController = TextEditingController();
   }
 
-  //dispose
   @override
   void dispose() {
     companyNameController.dispose();
@@ -72,28 +70,28 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Full Name'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: companyNameController,
                   keyboardType: TextInputType.name,
                   hintText: 'Enter company name',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Phone Number'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: phoneNumberController,
                   keyboardType: TextInputType.phone,
                   hintText: 'Enter phone number',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Email'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter email',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Position'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   onChange: (value) {
                     setState(() {});
                     return null;
@@ -122,7 +120,6 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
           ),
         ),
       ),
-
     );
   }
 }

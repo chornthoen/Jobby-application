@@ -52,7 +52,7 @@ class _HobbyPageState extends State<HobbyPage> {
                 ),
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: hobbyController,
                 hintText: 'choose your hobby',
                 maxLines: 4,

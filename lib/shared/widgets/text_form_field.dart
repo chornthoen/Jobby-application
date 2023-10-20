@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
 
-class TextFieldForms extends StatefulWidget {
-  const TextFieldForms({
+class CustomTextFieldForms extends StatefulWidget {
+  const CustomTextFieldForms({
     required this.hintText, super.key,
     this.suffixIcon,
     this.controller,
@@ -34,10 +34,10 @@ class TextFieldForms extends StatefulWidget {
   final int? minLines;
 
   @override
-  State<TextFieldForms> createState() => _TextFieldFormsState();
+  State<CustomTextFieldForms> createState() => _CustomTextFieldFormsState();
 }
 
-class _TextFieldFormsState extends State<TextFieldForms> {
+class _CustomTextFieldFormsState extends State<CustomTextFieldForms> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(

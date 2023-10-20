@@ -58,7 +58,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 const SizedBox(height: 20),
                 const Text(
                   'Enter the phone number or email associated with your account'
-                      ' and we’ll send you OTP to reset your password',
+                  ' and we’ll send you OTP to reset your password',
                   style: TextStyle(
                     color: AppColors.kTertiaryColor,
                     fontSize: 16,
@@ -66,7 +66,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 ),
                 const SizedBox(height: 35),
                 const LabelText(text: 'Phone number/email'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   onChange: (value) {
                     setState(() {});
                     return null;
@@ -78,14 +78,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 const SizedBox(height: 50),
                 ButtonAction(
                   isClick: emailController.text.isNotEmpty,
-                  onPressed: () {
-                    if (emailController.text.isEmpty) {
-                      SnackBarTop.topSnackBar(
-                          context, 'Please enter your phone number/email',);
-                      return;
-                    }
-                    context.push(VerifyOTPForgetPage.routePath);
-                  },
+                  onPressed: onGetOTP,
                   text: 'Get OTP',
                 ),
               ],
@@ -94,5 +87,13 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
         ),
       ),
     );
+  }
+
+  void onGetOTP() {
+    if (emailController.text.isEmpty) {
+      SnackBarTop.topSnackBar(context, 'Please enter your phone number/email');
+      return;
+    }
+    context.push(VerifyOTPForgetPage.routePath);
   }
 }

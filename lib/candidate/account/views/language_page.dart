@@ -52,7 +52,7 @@ class _LanguagePageState extends State<LanguagePage> {
                 ),
               ),
               const SizedBox(height: 10),
-              TextFieldForms(
+              CustomTextFieldForms(
                 controller: languageController,
                 hintText: 'choose your language',
                 maxLines: 3,

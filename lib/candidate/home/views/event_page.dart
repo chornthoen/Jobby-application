@@ -40,7 +40,7 @@ class _EventPageState extends State<EventPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Expanded(
-                    child: TextFieldForms(
+                    child: CustomTextFieldForms(
                       prefixIcon: Icon(
                         PhosphorIcons.magnifying_glass,
                         size: 28,

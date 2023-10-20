@@ -69,7 +69,7 @@ class ItemAddMember extends StatelessWidget {
             children: [
               TextCustom(text: 'Email'),
               SizedBox(height: 10),
-              TextFieldForms(hintText: 'Email'),
+              CustomTextFieldForms(hintText: 'Email'),
             ],
           ),
         ),
@@ -90,7 +90,7 @@ class ItemAddMember extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              TextFieldForms(hintText: 'Role'),
+              CustomTextFieldForms(hintText: 'Role'),
             ],
           ),
         ),

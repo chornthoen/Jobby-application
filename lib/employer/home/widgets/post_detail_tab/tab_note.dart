@@ -150,7 +150,7 @@ class _TabNotesState extends State<TabNotes> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: _noteController,
                   hintText: 'Type your note here',
                   maxLines: 5,
@@ -224,7 +224,7 @@ class _TabNotesState extends State<TabNotes> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: _editingController,
                   hintText: 'Type your note here',
                   maxLines: 5,

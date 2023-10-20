@@ -25,7 +25,6 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
   late TextEditingController passwordController;
   late TextEditingController confirmPasswordController;
 
-  //init state
   @override
   void initState() {
     super.initState();
@@ -35,7 +34,6 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
     confirmPasswordController = TextEditingController();
   }
 
-  //dispose
   @override
   void dispose() {
     phoneController.dispose();
@@ -48,7 +46,6 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
   bool obscureText = true;
   bool obscureTextConfirm = true;
 
-  //all controller isNotEmpty
   bool get isAllControllerNotEmpty =>
       phoneController.text.isNotEmpty &&
       emailController.text.isNotEmpty &&
@@ -78,27 +75,27 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Phone Number'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: phoneController,
                   keyboardType: TextInputType.phone,
                   hintText: 'Enter company name',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Email'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter email',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Password'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   keyboardType: TextInputType.visiblePassword,
                   controller: passwordController,
                   obscureText: obscureText,
                   hintText: 'Enter your password',
                   suffixIcon:
-                  obscureText ? PhosphorIcons.eye_slash : PhosphorIcons.eye,
+                      obscureText ? PhosphorIcons.eye_slash : PhosphorIcons.eye,
                   onPressed: () {
                     setState(() {
                       obscureText = !obscureText;
@@ -107,17 +104,14 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Confirm Password'),
-                TextFieldForms(
-                  onChange: (value) {
-                    setState(() {});
-                    return null;
-                  },
+                CustomTextFieldForms(
                   keyboardType: TextInputType.visiblePassword,
                   controller: confirmPasswordController,
                   obscureText: obscureTextConfirm,
                   hintText: 'Enter confirm password',
-                  suffixIcon:
-                  obscureTextConfirm ?PhosphorIcons.eye_slash:PhosphorIcons.eye,
+                  suffixIcon: obscureTextConfirm
+                      ? PhosphorIcons.eye_slash
+                      : PhosphorIcons.eye,
                   onPressed: () {
                     setState(() {
                       obscureTextConfirm = !obscureTextConfirm;

@@ -66,21 +66,21 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
               children: [
                 const SizedBox(height: 20),
                 const LabelText(text: 'Phone Number'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   keyboardType: TextInputType.number,
                   controller: phoneNumberController,
                   hintText: 'Enter your phone number',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Email'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   keyboardType: TextInputType.emailAddress,
                   controller: emailController,
                   hintText: 'Enter your email',
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Password'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   keyboardType: TextInputType.visiblePassword,
                   controller: passwordController,
                   obscureText: obscureText,
@@ -95,7 +95,7 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
                 ),
                 const SizedBox(height: 20),
                 const LabelText(text: 'Confirm Password'),
-                TextFieldForms(
+                CustomTextFieldForms(
                   onChange: (value) {
                     setState(() {});
                     return null;
@@ -104,9 +104,9 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
                   controller: confirmPasswordController,
                   obscureText: obscureTextConfirm,
                   hintText: 'Enter your confirm password',
-                  suffixIcon:
-                  obscureTextConfirm ? PhosphorIcons.eye_slash
-                      :PhosphorIcons.eye,
+                  suffixIcon: obscureTextConfirm
+                      ? PhosphorIcons.eye_slash
+                      : PhosphorIcons.eye,
                   onPressed: () {
                     setState(() {
                       obscureTextConfirm = !obscureTextConfirm;
