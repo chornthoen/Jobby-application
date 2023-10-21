@@ -3,9 +3,10 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_prise3_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
@@ -68,7 +69,10 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(subTitle: 'Enterprise (2/4)'),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,49 +85,49 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                     color: AppColors.kBlackColor,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.xlg),
                 const LabelText(text: 'Company Name'),
                 CustomTextFieldForms(
                   controller: companyNameController,
                   keyboardType: TextInputType.name,
                   hintText: 'Enter company name',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Tax Code'),
                 CustomTextFieldForms(
                   controller: taxCodeController,
                   keyboardType: TextInputType.number,
                   hintText: 'Enter tax code',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Website'),
                 CustomTextFieldForms(
                   controller: websiteController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter website',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Phone Number'),
                 CustomTextFieldForms(
                   controller: phoneNumberController,
                   keyboardType: TextInputType.phone,
                   hintText: 'Enter phone number',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Email'),
                 CustomTextFieldForms(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter email',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Address'),
                 CustomTextFieldForms(
                   controller: addressController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter address',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Industry'),
                 CustomTextFieldForms(
                   keyboardType: TextInputType.emailAddress,
@@ -133,7 +137,7 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Company Size'),
                 CustomTextFieldForms(
                   keyboardType: TextInputType.emailAddress,
@@ -143,7 +147,7 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                     setState(() {});
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Description'),
                 CustomTextFieldForms(
                   controller: descriptionController,
@@ -151,14 +155,17 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter description (optional)',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Business license'),
                 Container(
-                  height: 50,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.sm,
+                    vertical: AppSpacing.md,
+                  ),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: AppColors.kGray100,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(AppSpacing.sm),
                     border: Border.all(color: AppColors.kGray200),
                   ),
                   child: const Center(
@@ -168,9 +175,9 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                         Icon(
                           Icons.upload_file,
                           color: AppColors.kPrimaryColor,
-                          size: 20,
+                          size: AppSpacing.xlg,
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: AppSpacing.sm),
                         Text(
                           'Upload business license',
                           style: TextStyle(
@@ -183,15 +190,15 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-                ButtonAction(
+                const SizedBox(height: AppSpacing.xlg),
+                CustomElevatedButton(
                   isClick: true,
                   text: 'Continue',
                   onPressed: () {
                     context.push(SignUpEnterPrise3Page.routePath);
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.xlg),
               ],
             ),
           ),

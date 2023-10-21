@@ -5,7 +5,7 @@ import 'package:jobby_application/employer/home/models/manager_candidate_model.d
 import 'package:jobby_application/employer/home/views/candidate_detail_page.dart';
 import 'package:jobby_application/employer/home/widgets/item_manager_candidate.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ManagerCandidatePage extends StatefulWidget {
@@ -101,7 +101,7 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 22, vertical: 16),
-            child: ButtonAction(
+            child: CustomElevatedButton(
               isClick: true,
               text: 'Filter Candidates',
               icon: PhosphorIcons.funnel,

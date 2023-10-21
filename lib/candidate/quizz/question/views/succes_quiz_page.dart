@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class SuccessQuizPage extends StatefulWidget {
   const SuccessQuizPage({
@@ -107,7 +107,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
       ),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-        child: ButtonAction(
+        child: CustomElevatedButton(
           isClick: true,
           text: 'Go to home',
           onPressed: () {

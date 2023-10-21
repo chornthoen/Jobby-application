@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/verify_otp_code/views/otp_forget_password_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
@@ -44,7 +45,10 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
         appBar: const CustomAppBar(logo: 'Jobby.'),
         backgroundColor: AppColors.kBackgroundColor,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: Form(
             key: _globalKey,
             child: Column(
@@ -55,7 +59,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   textBottom: 'your Password',
                   color: AppColors.kBlue400Color,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.xlg),
                 const Text(
                   'Enter the phone number or email associated with your account'
                   ' and we’ll send you OTP to reset your password',
@@ -64,7 +68,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                     fontSize: 16,
                   ),
                 ),
-                const SizedBox(height: 35),
+                const SizedBox(height: AppSpacing.lg * 2),
                 const LabelText(text: 'Phone number/email'),
                 CustomTextFieldForms(
                   onChange: (value) {
@@ -75,8 +79,8 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   controller: emailController,
                   hintText: 'Enter your phone number/email',
                 ),
-                const SizedBox(height: 50),
-                ButtonAction(
+                const SizedBox(height: AppSpacing.xxxlg * 1.2),
+                CustomElevatedButton(
                   isClick: emailController.text.isNotEmpty,
                   onPressed: onGetOTP,
                   text: 'Get OTP',

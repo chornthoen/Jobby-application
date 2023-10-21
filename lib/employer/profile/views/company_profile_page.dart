@@ -6,7 +6,7 @@ import 'package:jobby_application/candidate/jobs/models/industry_model.dart';
 import 'package:jobby_application/candidate/jobs/widgets/action_tab.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_industry.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_custom.dart';
@@ -173,7 +173,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
           margin: const EdgeInsets.only(bottom: 15),
-          child: ButtonAction(
+          child: CustomElevatedButton(
             isClick: true,
             text: 'Save',
             onPressed: () {

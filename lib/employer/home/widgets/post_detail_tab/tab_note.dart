@@ -3,7 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/employer/home/models/note_model.dart';
 import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_notes.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
@@ -168,7 +168,7 @@ class _TabNotesState extends State<TabNotes> {
                       },
                     ),
                     const SizedBox(width: 10),
-                    ButtonAction(
+                    CustomElevatedButton(
                       isClick: true,
                       width: 120,
                       text: 'Save',
@@ -242,7 +242,7 @@ class _TabNotesState extends State<TabNotes> {
                       },
                     ),
                     const SizedBox(width: 10),
-                    ButtonAction(
+                    CustomElevatedButton(
                       isClick: true,
                       width: 120,
                       text: 'Save',

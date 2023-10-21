@@ -16,7 +16,7 @@ import 'package:jobby_application/candidate/jobs/widgets/item_level.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_location.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_type_of_work.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
@@ -163,7 +163,7 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
         margin: const EdgeInsets.only(bottom: 10),
-        child: ButtonAction(
+        child: CustomElevatedButton(
           isClick: true,
           text: 'Save',
           onPressed: () {

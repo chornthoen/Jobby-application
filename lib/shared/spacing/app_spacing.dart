@@ -30,4 +30,5 @@ abstract class AppSpacing {
 
   /// xxlg spacing value (40pt)
   static const double xxxlg = 2.5 * spaceUnit;
+
 }

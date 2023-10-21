@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/account/models/list_string.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class CareerGoalPage extends StatefulWidget {
@@ -84,7 +84,7 @@ class _CareerGoalPageState extends State<CareerGoalPage> {
                 ),
               ),
               const Spacer(),
-              ButtonAction(
+              CustomElevatedButton(
                 text: 'Save',
                 onPressed: () {
                   setState(() {

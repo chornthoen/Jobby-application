@@ -3,10 +3,11 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/CustomSocials.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
@@ -56,7 +57,10 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(logo: 'Jobby.'),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: SingleChildScrollView(
             child: Form(
               key: _loginFormKey,
@@ -68,14 +72,14 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                     textBottom: 'New Account',
                     color: AppColors.kPurple400Color,
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: AppSpacing.lg * 2),
                   const LabelText(text: 'Full Name'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.name,
                     controller: emailController,
                     hintText: 'Enter your full name',
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   const LabelText(text: 'Phone Number'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.phone,
@@ -83,7 +87,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                     obscureText: obscureText,
                     hintText: 'Enter your phone number',
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   const LabelText(text: 'Email'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.emailAddress,
@@ -91,7 +95,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                     obscureText: obscureText,
                     hintText: 'Enter your email',
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   const LabelText(text: 'Password'),
                   CustomTextFieldForms(
                     onChange: (value) {
@@ -111,17 +115,21 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                       });
                     },
                   ),
-                  const SizedBox(height: 24),
-                  ButtonAction(
+                  const SizedBox(height: AppSpacing.xlg),
+                  CustomElevatedButton(
                     isClick: isAllControllerNotEmpty,
                     onPressed: onSignUp,
                     text: 'Sign Up',
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: AppSpacing.xlg),
                   const WidgetOr(text: 'OR SIGNUP WITH'),
-                  const SizedBox(height: 20),
-                  const CustomSocials(),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.xlg),
+                  CustomSocials(
+                    onFacebook: () {},
+                    onGoogle: () {},
+                    onApple: () {},
+                  ),
+                  const SizedBox(height: AppSpacing.xlg),
                   TextAndButton(
                     text: 'Don’t have an account?',
                     onPressed: () {
@@ -140,15 +148,9 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
 
   void onSignUp() {
     if (emailController.text.isEmpty) {
-      SnackBarTop.topSnackBar(
-        context,
-        'Please enter your phone number/email',
-      );
+      SnackBarTop.topSnackBar(context, 'Please enter your phone number/email');
     } else if (passwordController.text.isEmpty) {
-      SnackBarTop.topSnackBar(
-        context,
-        'Please enter your password',
-      );
+      SnackBarTop.topSnackBar(context, 'Please enter your password');
     } else {
       context.go(SignInPage.routePath);
     }

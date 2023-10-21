@@ -5,9 +5,10 @@ import 'package:jobby_application/authentication/forget_password/views/forget_pa
 import 'package:jobby_application/authentication/sign_up_select/views/choose_role_sign_up.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/CustomSocials.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/custom_text_button.dart';
@@ -59,7 +60,10 @@ class _SignInPageState extends State<SignInPage> {
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(logo: 'Jobby.'),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.md,
+          ),
           child: SingleChildScrollView(
             child: Form(
               key: _loginFormKey,
@@ -71,14 +75,14 @@ class _SignInPageState extends State<SignInPage> {
                     textBottom: 'Sign you in!',
                     color: AppColors.kOrange400Color,
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: AppSpacing.xxxlg),
                   const LabelText(text: 'Phone number/email'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.emailAddress,
                     controller: emailController,
                     hintText: 'Enter your phone number/email',
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.xlg),
                   const LabelText(text: 'Password'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.visiblePassword,
@@ -105,17 +109,21 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  ButtonAction(
+                  const SizedBox(height: AppSpacing.xlg),
+                  CustomElevatedButton(
                     isClick: true,
                     onPressed: onSignIn,
                     text: 'Sign In',
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.xlg),
                   const WidgetOr(text: 'OR SIGNIN WITH'),
-                  const SizedBox(height: 20),
-                  const CustomSocials(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: AppSpacing.xlg),
+                  CustomSocials(
+                    onFacebook: () {},
+                    onGoogle: () {},
+                    onApple: () {},
+                  ),
+                  const SizedBox(height: AppSpacing.lg * 2),
                   TextAndButton(
                     text: 'Don’t have an account?',
                     onPressed: () {
@@ -129,8 +137,7 @@ class _SignInPageState extends State<SignInPage> {
           ),
         ),
         bottomNavigationBar: Container(
-          margin: const EdgeInsets.only(bottom: 10),
-          height: 40,
+          margin: const EdgeInsets.only(bottom: AppSpacing.sm),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -2,9 +2,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
-class ButtonAction extends StatelessWidget {
-  const ButtonAction({
+class CustomElevatedButton extends StatelessWidget {
+  const CustomElevatedButton({
     required this.text, required this.isClick, super.key,
     this.onPressed,
     this.child,
@@ -21,8 +22,8 @@ class ButtonAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 54,
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
       width: width,
       child: ElevatedButton(
         onPressed: onPressed,
@@ -31,11 +32,11 @@ class ButtonAction extends StatelessWidget {
           backgroundColor: isClick ? AppColors.kPrimaryColor :
           AppColors.kSeptenaryColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppSpacing.sm),
           ),
           shadowColor: BoxShadow(
             color: AppColors.kBlackColor.withOpacity(0.8),
-            blurRadius: 10,
+            blurRadius: AppSpacing.sm,
             offset: const Offset(0, 9),
           ).color,
         ),
@@ -56,7 +57,7 @@ class ButtonAction extends StatelessWidget {
 
               ],
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: AppSpacing.sm),
             Center(
               child: child,
             ),

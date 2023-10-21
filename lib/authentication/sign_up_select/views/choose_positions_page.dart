@@ -5,8 +5,9 @@ import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_pri
 import 'package:jobby_application/authentication/sign_up/views/sign_up_individual_page.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
@@ -37,7 +38,10 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
                 : '',
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -46,7 +50,7 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
               textBottom: 'New Account',
               color: AppColors.kPurple400Color,
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: AppSpacing.xxxlg),
             const LabelText(text: 'Choose your position'),
             itemRole(
               1,
@@ -54,15 +58,15 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
               PhosphorIcons.user_gear,
               index == 1 ? true : false,
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xlg),
             itemRole(
               2,
               'Enterprise',
               PhosphorIcons.buildings,
               index == 2 ? true : false,
             ),
-            const SizedBox(height: 30),
-            ButtonAction(
+            const SizedBox(height: AppSpacing.lg * 2),
+            CustomElevatedButton(
               isClick: index == 1 || index == 2 ? true : false,
               onPressed: () {
                 if ((index == 1 || index == 2) != true) {
@@ -83,7 +87,7 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
               },
               textButton: 'Sign In',
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: AppSpacing.lg * 2),
           ],
         ),
       ),
@@ -99,12 +103,14 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
           });
         },
         child: Container(
-          height: 55,
           width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 14),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.md,
+          ),
           decoration: BoxDecoration(
             color: selected ? AppColors.kOrange200Color : AppColors.kWhiteColor,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(AppSpacing.sm),
             border: Border.all(color: AppColors.kGray200),
           ),
           child: Row(
@@ -112,9 +118,9 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
               Icon(
                 icon,
                 color: AppColors.kPrimaryColor,
-                size: 26,
+                size: AppSpacing.xlg,
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.sm),
               Text(
                 title,
                 style: const TextStyle(
@@ -127,7 +133,7 @@ class _SignUpChoosePositionPageState extends State<SignUpChoosePositionPage> {
               Icon(
                 PhosphorIcons.check_bold,
                 color: selected ? AppColors.kPrimaryColor : Colors.transparent,
-                size: 24,
+                size: AppSpacing.xlg,
               ),
             ],
           ),

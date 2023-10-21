@@ -4,7 +4,7 @@ import 'package:jobby_application/authentication/signin/views/sign_in_page.dart'
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/models/on_boarding_model.dart';
 import 'package:jobby_application/shared/widgets/action_borderline.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/circular_widget.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -144,7 +144,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   )
                 : Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: ButtonAction(
+                  child: CustomElevatedButton(
                       isClick: true,
                       text: 'Get Started',
                       onPressed: () {

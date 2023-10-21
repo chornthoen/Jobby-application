@@ -6,7 +6,7 @@ import 'package:jobby_application/candidate/jobs/widgets/action_tab.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_industry.dart';
 import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/dropdown_button_custom.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
@@ -226,7 +226,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                 ],
               ),
               const SizedBox(height: 20),
-              ButtonAction(
+              CustomElevatedButton(
                 isClick: true,
                 text: 'Post',
                 onPressed: (){},

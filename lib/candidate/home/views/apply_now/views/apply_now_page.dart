@@ -9,7 +9,7 @@ import 'package:jobby_application/candidate/home/widgets/item_hot_jobs.dart';
 import 'package:jobby_application/candidate/jobs/models/matching_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/constant/constant.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
@@ -198,7 +198,7 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
         margin: const EdgeInsets.only(bottom: 10),
-        child: ButtonAction(
+        child: CustomElevatedButton(
           isClick: true,
           text: 'Apply Now',
           onPressed: () {

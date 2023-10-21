@@ -6,7 +6,7 @@ import 'package:jobby_application/candidate/home/models/speaker_list_model.dart'
 import 'package:jobby_application/candidate/home/widgets/item_comment.dart';
 import 'package:jobby_application/candidate/home/widgets/item_speaker_list.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
@@ -278,7 +278,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
                     ),
                     const SizedBox(height: 10),
                     if (_commentController.text.isNotEmpty)
-                      ButtonAction(
+                      CustomElevatedButton(
                         isClick: true,
                         onPressed: () {
                           addComment();

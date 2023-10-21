@@ -3,9 +3,10 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
@@ -51,7 +52,10 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
         appBar: const CustomAppBar(logo: 'Jobby.'),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Form(
               key: _globalKey,
               child: Column(
@@ -62,7 +66,7 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
                     textBottom: 'Sign you in!',
                     color: AppColors.kGreen400Color,
                   ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: AppSpacing.xxxlg),
                   const LabelText(text: 'New Password'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.visiblePassword,
@@ -78,7 +82,7 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
                       });
                     },
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg * 1.3),
                   const LabelText(text: 'Confirm Password'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.visiblePassword,
@@ -94,8 +98,8 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
                       });
                     },
                   ),
-                  const SizedBox(height: 50),
-                  ButtonAction(
+                  const SizedBox(height: AppSpacing.xxxlg * 1.3),
+                  CustomElevatedButton(
                     isClick: true,
                     onPressed: () {
                       context.go(SignInPage.routePath);

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/employer/home/models/service_package_model.dart';
 import 'package:jobby_application/employer/home/widgets/item_service_packages.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ServicePackageEmPage extends StatefulWidget {
@@ -38,7 +38,7 @@ class _ServicePackageEmPageState extends State<ServicePackageEmPage> {
       ),
       bottomNavigationBar: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-        child: ButtonAction(
+        child: CustomElevatedButton(
           isClick: true,
           text: 'Buy more',
           onPressed: () {},

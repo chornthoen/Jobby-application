@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/create_password/views/create_password_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/customPicCodeTextField.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
@@ -32,12 +33,6 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
   }
 
   @override
-  void dispose() {
-    otpController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => CloseKeyboard.closeKeyboard(context),
@@ -46,7 +41,10 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
         backgroundColor: AppColors.kBackgroundColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Form(
               key: _globalKey,
               child: Column(
@@ -57,7 +55,7 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                     textBottom: 'verification code',
                     color: AppColors.kBlue400Color,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.xlg),
                   const Text(
                     'Enter the phone number or email associated with your '
                     'account and we’ll send you OTP to reset your password',
@@ -66,9 +64,9 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                       fontSize: 16,
                     ),
                   ),
-                  const SizedBox(height: 35),
+                  const SizedBox(height: AppSpacing.lg * 2),
                   const LabelText(text: 'Verification code'),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   CustomPinCodeTextField(
                     controller: otpController,
                     onChanged: (value) {
@@ -81,8 +79,8 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                       onPressed: () {},
                     ),
                   ),
-                  const SizedBox(height: 50),
-                  ButtonAction(
+                  const SizedBox(height: AppSpacing.xxxlg),
+                  CustomElevatedButton(
                     isClick: otpController.text.isNotEmpty,
                     onPressed: onGetOTP,
                     text: 'Get OTP',

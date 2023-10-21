@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
@@ -35,7 +35,7 @@ class ShowBottomSheetCustom {
                 bottom: 10,
                 left: 6,
                 right: 6,
-                child: ButtonAction(
+                child: CustomElevatedButton(
                   isClick: true,
                   text: 'Save',
                   onPressed: onPressed,
@@ -109,7 +109,7 @@ class ShowBottomSheetCustom {
                   ],
                 ),
                 const SizedBox(height: 10),
-                ButtonAction(
+                CustomElevatedButton(
                   isClick: true,
                   text: textButton,
                   onPressed: onPressed,
@@ -278,7 +278,7 @@ class ShowBottomSheetCustom {
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: ButtonAction(
+                child: CustomElevatedButton(
                   isClick: true,
                   onPressed: onPressed,
                   text: 'Play Now',
@@ -350,7 +350,7 @@ class ShowBottomSheetCustom {
                       },
                     ),
                     const SizedBox(width: 10),
-                    ButtonAction(
+                    CustomElevatedButton(
                       isClick: true,
                       width: 120,
                       text: 'Save',

@@ -6,7 +6,7 @@ import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
 import 'package:jobby_application/candidate/quizz/widgets/widget_question.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class Question1Page extends StatefulWidget {
   const Question1Page({super.key});
@@ -174,7 +174,7 @@ class _Question1PageState extends State<Question1Page> {
           horizontal: 16,
           vertical: 16,
         ),
-        child: ButtonAction(
+        child: CustomElevatedButton(
           isClick: selectedAnswerModel != null,
           text: currentQuestion < questionsList.length - 1 ? 'Next' : 'Submit',
           onPressed: () {
@@ -416,7 +416,7 @@ class _Question1PageState extends State<Question1Page> {
           ),
           bottomNavigationBar: Container(
             margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-            child: ButtonAction(
+            child: CustomElevatedButton(
               isClick: true,
               text: 'Go to home',
               onPressed: () {

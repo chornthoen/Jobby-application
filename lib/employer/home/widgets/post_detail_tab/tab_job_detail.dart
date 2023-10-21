@@ -3,7 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_detail_em.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/constant/constant.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 class TabJobDetail extends StatefulWidget {
@@ -169,7 +169,7 @@ class _TabJobDetailState extends State<TabJobDetail> {
                     onPressed: () {},
                     width: MediaQuery.of(context).size.width * 0.35,
                   ),
-                  ButtonAction(
+                  CustomElevatedButton(
                     width: MediaQuery.of(context).size.width * 0.35,
                     text: 'Publish',
                     icon: PhosphorIcons.caret_down,

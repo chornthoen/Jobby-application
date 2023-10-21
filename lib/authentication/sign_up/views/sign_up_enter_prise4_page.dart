@@ -3,9 +3,10 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/button_action.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
@@ -60,7 +61,10 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(subTitle: 'Enterprise (4/4)'),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,21 +77,21 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                     color: AppColors.kBlackColor,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Phone Number'),
                 CustomTextFieldForms(
                   controller: phoneController,
                   keyboardType: TextInputType.phone,
                   hintText: 'Enter company name',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Email'),
                 CustomTextFieldForms(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Enter email',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Password'),
                 CustomTextFieldForms(
                   keyboardType: TextInputType.visiblePassword,
@@ -102,7 +106,7 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                     });
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Confirm Password'),
                 CustomTextFieldForms(
                   keyboardType: TextInputType.visiblePassword,
@@ -118,23 +122,16 @@ class _SignUpEnterPrise4PageState extends State<SignUpEnterPrise4Page> {
                     });
                   },
                 ),
+                const SizedBox(height: AppSpacing.xxxlg),
+                CustomElevatedButton(
+                  isClick: isAllControllerNotEmpty,
+                  text: 'Done',
+                  onPressed: () {
+                    context.go(MainEmployerPage.routePath);
+                  },
+                ),
               ],
             ),
-          ),
-        ),
-        bottomNavigationBar: Container(
-          padding: EdgeInsets.only(
-            left: 16,
-            right: 16,
-            bottom: MediaQuery.of(context).viewInsets.bottom,
-          ),
-          margin: const EdgeInsets.only(bottom: 20),
-          child: ButtonAction(
-            isClick: isAllControllerNotEmpty,
-            text: 'Done',
-            onPressed: () {
-              context.go(MainEmployerPage.routePath);
-            },
           ),
         ),
       ),
