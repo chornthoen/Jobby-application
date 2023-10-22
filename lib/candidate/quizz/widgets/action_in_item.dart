@@ -23,7 +23,7 @@ class ActionInItem extends StatelessWidget {
         Text(
           text,
           style: const TextStyle(
-            color: AppColors.kQuaternaryColor,
+            color: AppColors.kColorGray600,
             fontSize: 14,
             fontWeight: FontWeight.w400,
           ),

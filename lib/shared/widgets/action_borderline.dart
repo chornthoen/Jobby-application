@@ -23,7 +23,7 @@ class ActionsBorderLine extends StatelessWidget {
             decoration: BoxDecoration(
               color: currentIndex == i
                   ? AppColors.kBlackColor
-                  : AppColors.kSeptenaryColor,
+                  : AppColors.kColorGray300,
               borderRadius: BorderRadius.circular(50),
             ),
           ),

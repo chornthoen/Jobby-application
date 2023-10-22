@@ -42,7 +42,7 @@ class _TabReviewsState extends State<TabReviews> {
                           ),
                           Icon(
                             PhosphorIcons.star_fill,
-                            color: AppColors.kOrange400Color,
+                            color: AppColors.kOrangeColor400,
                             size: 30,
                           ),
                         ],
@@ -52,7 +52,7 @@ class _TabReviewsState extends State<TabReviews> {
                   Text(
                     '100 reviews',
                     style: TextStyle(
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       fontSize: 18,
                       fontWeight: FontWeight.w500,
                     ),

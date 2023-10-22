@@ -78,7 +78,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
                     'assets/svg/verified.svg',
                     width: 16,
                     height: 16,
-                    color: AppColors.kOrange400Color,
+                    color: AppColors.kOrangeColor400,
                   ),
                 ],
               ),
@@ -91,14 +91,14 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
                 decoration: BoxDecoration(
                   color: AppColors.kWhiteColor,
                   borderRadius: BorderRadius.circular(100),
-                  border: Border.all(color: AppColors.kGray200),
+                  border: Border.all(color: AppColors.kColorGray200),
                 ),
                 child: Row(
                   children: [
                     Text(
                       diamond!,
                       style: const TextStyle(
-                        color: AppColors.kQuinaryColor,
+                        color: AppColors.kColorGray500,
                         fontSize: 15,
                         fontWeight: FontWeight.w500,
                       ),
@@ -126,7 +126,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.kGray100,
+                          color: AppColors.kColorGray100,
                           blurRadius: 10,
                           offset: Offset(0, 6),
                         ),
@@ -135,7 +135,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
                     child: const Center(
                       child: Icon(
                         PhosphorIcons.magnifying_glass,
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                         size: 28,
                       ),
                     ),
@@ -151,7 +151,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
                     shape: BoxShape.circle,
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.kGray100,
+                        color: AppColors.kColorGray100,
                         blurRadius: 10,
                         offset: Offset(0, 6),
                       ),
@@ -162,7 +162,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
                       children: [
                         const Icon(
                           PhosphorIcons.bell,
-                          color: AppColors.kQuaternaryColor,
+                          color: AppColors.kColorGray600,
                           size: 28,
                         ),
                         Positioned(
@@ -172,7 +172,7 @@ class AppBarHome extends StatelessWidget implements PreferredSizeWidget {
                             width: 11,
                             height: 11,
                             decoration: BoxDecoration(
-                              color: AppColors.kRed400Color,
+                              color: AppColors.kColorRed400,
                               shape: BoxShape.circle,
                               border: Border.all(
                                 color: AppColors.kWhiteColor,

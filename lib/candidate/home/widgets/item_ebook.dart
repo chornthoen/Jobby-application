@@ -65,7 +65,7 @@ class ItemEbook extends StatelessWidget {
                         'assets/svg/user.svg',
                         height: 24,
                         width: 23,
-                        color: AppColors.kQuinaryColor,
+                        color: AppColors.kColorGray500,
                       ),
                       const SizedBox(width: 5),
                       Text(
@@ -73,7 +73,7 @@ class ItemEbook extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          color: AppColors.kQuinaryColor,
+                          color: AppColors.kColorGray500,
                         ),
                       ),
                     ],
@@ -87,7 +87,7 @@ class ItemEbook extends StatelessWidget {
                           const Icon(
                             PhosphorIcons.calendar_blank,
                             size: 24,
-                            color: AppColors.kQuinaryColor,
+                            color: AppColors.kColorGray500,
                           ),
                           const SizedBox(width: 5),
                           Text(
@@ -95,7 +95,7 @@ class ItemEbook extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
-                              color: AppColors.kQuinaryColor,
+                              color: AppColors.kColorGray500,
                             ),
                           ),
                         ],

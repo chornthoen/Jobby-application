@@ -68,7 +68,7 @@ class _EBookPageState extends State<EBookPage> {
                       decoration: BoxDecoration(
                         color: this.index == index
                             ? AppColors.kPrimaryColor
-                            : AppColors.kGray200,
+                            : AppColors.kColorGray200,
                         borderRadius: BorderRadius.circular(34),
                       ),
                       child: Text(
@@ -76,7 +76,7 @@ class _EBookPageState extends State<EBookPage> {
                         style: TextStyle(
                           color: this.index == index
                               ? Colors.white
-                              : AppColors.kQuaternaryColor,
+                              : AppColors.kColorGray600,
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),

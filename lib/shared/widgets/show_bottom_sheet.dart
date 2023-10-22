@@ -102,7 +102,7 @@ class ShowBottomSheetCustom {
                         style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.kQuaternaryColor,
+                          color: AppColors.kColorGray600,
                         ),
                       ),
                     ),
@@ -189,7 +189,7 @@ class ShowBottomSheetCustom {
                       'Trade Centers - A shopping, entertainment and '
                       'culinary paradise with 4 brand lines.',
                       style: TextStyle(
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
                       ),
@@ -201,7 +201,7 @@ class ShowBottomSheetCustom {
                         vertical: 16,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.kBlueColor,
+                        color: AppColors.kColorBlue500,
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Row(
@@ -248,8 +248,8 @@ class ShowBottomSheetCustom {
                                 width: 30,
                                 height: 30,
                                 color: isLikeClick == false
-                                    ? AppColors.kBlueColor
-                                    : AppColors.kRed400Color,
+                                    ? AppColors.kColorBlue500
+                                    : AppColors.kColorRed400,
                               ),
                             ),
                           ),
@@ -265,7 +265,7 @@ class ShowBottomSheetCustom {
                                 'assets/svg/dislike.svg',
                                 width: 30,
                                 height: 30,
-                                color: AppColors.kBlueColor,
+                                color: AppColors.kColorBlue500,
                               ),
                             ),
                           ),
@@ -399,7 +399,7 @@ class AppBarBottomSheet extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.all(4),
             decoration: const BoxDecoration(
-              color: AppColors.kGray200,
+              color: AppColors.kColorGray200,
               shape: BoxShape.circle,
             ),
             child: const Icon(

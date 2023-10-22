@@ -59,7 +59,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                       decoration: BoxDecoration(
                         color: this.index == index
                             ? AppColors.kPrimaryColor
-                            : AppColors.kGray200,
+                            : AppColors.kColorGray200,
                         borderRadius: BorderRadius.circular(34),
                       ),
                       child: Text(
@@ -67,7 +67,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                         style: TextStyle(
                           color: this.index == index
                               ? Colors.white
-                              : AppColors.kQuaternaryColor,
+                              : AppColors.kColorGray600,
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),
@@ -96,7 +96,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                     children: [
                       Icon(
                         PhosphorIcons.calendar_blank,
-                        color: AppColors.kQuinaryColor,
+                        color: AppColors.kColorGray500,
                         size: 22,
                       ),
                       SizedBox(width: 5),
@@ -105,13 +105,13 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.kQuinaryColor,
+                          color: AppColors.kColorGray500,
                         ),
                       ),
                       SizedBox(width: 20),
                       Icon(
                         PhosphorIcons.clock,
-                        color: AppColors.kQuinaryColor,
+                        color: AppColors.kColorGray500,
                         size: 22,
                       ),
                       SizedBox(width: 5),
@@ -120,7 +120,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.kQuinaryColor,
+                          color: AppColors.kColorGray500,
                         ),
                       ),
                     ],
@@ -152,7 +152,7 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
                         ' game-changing efficiencies, or a better customer '
                         'experience with more personalization?”',
                     style: TextStyle(
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       fontSize: 17,
                       fontWeight: FontWeight.w400,
                     ),

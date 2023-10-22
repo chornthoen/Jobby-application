@@ -82,7 +82,7 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
                 child: TabBar(
                   controller: tabController,
                   indicator: BoxDecoration(
-                    color: AppColors.kBlue400Color,
+                    color: AppColors.kColorBlue400,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   unselectedLabelColor: AppColors.kWhiteColor.withOpacity(0.5),

@@ -42,7 +42,7 @@ class MessageOther extends StatelessWidget {
                   bottomRight: Radius.circular(12),
                 ),
                 border: Border.all(
-                  color: AppColors.kSenaryColor,
+                  color: AppColors.kColorGray400,
                 ),
               ),
               child: Text(

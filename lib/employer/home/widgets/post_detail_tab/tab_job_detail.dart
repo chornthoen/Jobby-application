@@ -33,7 +33,7 @@ class _TabJobDetailState extends State<TabJobDetail> {
                 width: double.infinity,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: AppColors.kPurple200Color,
+                  color: AppColors.kPurpleColor200,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Image(
@@ -50,7 +50,7 @@ class _TabJobDetailState extends State<TabJobDetail> {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                 ),
               ),
               const SizedBox(height: 5),
@@ -110,7 +110,7 @@ class _TabJobDetailState extends State<TabJobDetail> {
               Text(
                 Constant.description,
                 style: const TextStyle(
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                 ),
@@ -145,10 +145,10 @@ class _TabJobDetailState extends State<TabJobDetail> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                     side: const BorderSide(
-                      color: AppColors.kSeptenaryColor,
+                      color: AppColors.kColorGray300,
                     ),
                   ),
-                  focusColor: AppColors.kSeptenaryColor,
+                  focusColor: AppColors.kColorGray300,
                   onTap: () {},
                   title: const Text(
                     'Job Description.pdf',

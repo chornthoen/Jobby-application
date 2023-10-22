@@ -8,7 +8,7 @@ class CustomWidget extends StatelessWidget {
     required this.image, required this.title, super.key,
     this.description = '',
     this.onTap,
-    this.color = AppColors.kOrange200Color,
+    this.color = AppColors.kOrangeColor200,
   });
   final String image;
   final String title;
@@ -72,7 +72,7 @@ class CustomWidget extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                           ),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,

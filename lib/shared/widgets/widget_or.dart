@@ -17,7 +17,7 @@ class WidgetOr extends StatelessWidget {
         Expanded(
           child: Container(
             height: 1,
-            color: AppColors.kSenaryColor,
+            color: AppColors.kColorGray400,
           ),
         ),
         const SizedBox(width: 10),
@@ -25,7 +25,7 @@ class WidgetOr extends StatelessWidget {
           text,
           style: const TextStyle(
             fontSize: 16,
-            color: AppColors.kQuinaryColor,
+            color: AppColors.kColorGray500,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -33,7 +33,7 @@ class WidgetOr extends StatelessWidget {
         Expanded(
           child: Container(
             height: 1,
-            color: AppColors.kSenaryColor,
+            color: AppColors.kColorGray400,
           ),
         ),
       ],

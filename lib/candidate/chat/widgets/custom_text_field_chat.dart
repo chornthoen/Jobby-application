@@ -82,7 +82,7 @@ class _CustomTextFieldChatState extends State<CustomTextFieldChat> {
                             Theme.of(context).textTheme.labelLarge!.copyWith(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w400,
-                                  color: AppColors.kQuinaryColor,
+                                  color: AppColors.kColorGray500,
                                 ),
                         contentPadding: const EdgeInsets.symmetric(
                           vertical: 16,
@@ -91,7 +91,7 @@ class _CustomTextFieldChatState extends State<CustomTextFieldChat> {
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(48),
                           borderSide: const BorderSide(
-                            color: AppColors.kSeptenaryColor,
+                            color: AppColors.kColorGray300,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(

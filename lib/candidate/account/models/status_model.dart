@@ -21,18 +21,18 @@ List<StatusModel> statusModel = [
     title: 'Applied',
     description: '100',
     svgUrl: 'assets/svg/file-check.svg',
-    color: AppColors.kGreen200Color,
+    color: AppColors.kGreenColor200,
   ),
   StatusModel(
     title: 'Reviewed',
     description: '140',
     svgUrl: 'assets/svg/message.svg',
-    color: AppColors.kPurple200Color,
+    color: AppColors.kPurpleColor200,
   ),
   StatusModel(
     title: 'Contacted',
     description: '50',
     svgUrl: 'assets/svg/user-check.svg',
-    color: AppColors.kOrange200Color,
+    color: AppColors.kOrangeColor200,
   ),
 ];

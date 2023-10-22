@@ -41,7 +41,7 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                       ),
                     ),
                     Text(
@@ -58,7 +58,7 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                       ),
                     ),
                     Text(

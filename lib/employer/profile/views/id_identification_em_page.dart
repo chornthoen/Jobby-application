@@ -51,7 +51,7 @@ class _IDIdentificationEmPageState extends State<IDIdentificationEmPage> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
-                color: AppColors.kQuaternaryColor,
+                color: AppColors.kColorGray600,
               ),
             ),
             const SizedBox(height: 10),

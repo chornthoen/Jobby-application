@@ -96,7 +96,7 @@ class _TabNotesState extends State<TabNotes> {
               icon: const Icon(
                 PhosphorIcons.plus_circle,
                 size: 20,
-                color: AppColors.kTertiaryColor,
+                color: AppColors.kColorGray700,
               ),
               onPressed: _showBottomSheetAddNote,
               label: const Text(
@@ -104,7 +104,7 @@ class _TabNotesState extends State<TabNotes> {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
-                  color: AppColors.kTertiaryColor,
+                  color: AppColors.kColorGray700,
                 ),
               ),
             ),

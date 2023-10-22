@@ -30,7 +30,7 @@ class _AccountPageState extends State<AccountPage> {
                     children: [
                       Container(
                         height: MediaQuery.of(context).size.height * 0.28,
-                        color: AppColors.kPurple400Color,
+                        color: AppColors.kPurpleColor400,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
@@ -57,19 +57,19 @@ class _AccountPageState extends State<AccountPage> {
                       svgPath: 'assets/svg/file-check.svg',
                       title: 'Applied',
                       description: '222',
-                      color: AppColors.kGreen200Color,
+                      color: AppColors.kGreenColor200,
                     ),
                     ItemWidget(
                       svgPath: 'assets/svg/message.svg',
                       title: 'Reviewed',
                       description: '222',
-                      color: AppColors.kPurple200Color,
+                      color: AppColors.kPurpleColor200,
                     ),
                     ItemWidget(
                       svgPath: 'assets/svg/user-check.svg',
                       title: 'Connected',
                       description: '222',
-                      color: AppColors.kRed200Color,
+                      color: AppColors.kColorRed200,
                     ),
                   ],
                 ),

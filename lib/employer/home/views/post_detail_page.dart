@@ -56,7 +56,7 @@ class _PostDetailPageState extends State<PostDetailPage>
               ),
               indicatorSize: TabBarIndicatorSize.tab,
               labelColor: AppColors.kPrimaryColor,
-              unselectedLabelColor: AppColors.kQuinaryColor,
+              unselectedLabelColor: AppColors.kColorGray500,
               labelStyle: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,

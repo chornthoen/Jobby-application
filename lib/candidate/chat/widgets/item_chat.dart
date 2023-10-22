@@ -38,7 +38,7 @@ class ItemChat extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.kWhiteColor,
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: AppColors.kGray100),
+          border: Border.all(color: AppColors.kColorGray100),
           boxShadow: [
             AppColors.kBoxShadowColor,
             AppColors.kBoxShadowColor1,
@@ -62,7 +62,7 @@ class ItemChat extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: online
                           ? AppColors.kGreenColor
-                          : AppColors.kSenaryColor,
+                          : AppColors.kColorGray400,
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: AppColors.kWhiteColor,
@@ -124,7 +124,7 @@ class ItemChat extends StatelessWidget {
                   time,
                   style: const TextStyle(
                     fontSize: 14,
-                    color: AppColors.kQuinaryColor,
+                    color: AppColors.kColorGray500,
                   ),
                 ),
                 const SizedBox(height: 2),

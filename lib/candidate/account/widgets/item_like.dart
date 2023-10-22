@@ -15,7 +15,7 @@ class ItemLike extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: const BoxDecoration(
-        color: AppColors.kGray200,
+        color: AppColors.kColorGray200,
         shape: BoxShape.circle,
       ),
       child: Image(

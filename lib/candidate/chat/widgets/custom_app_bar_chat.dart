@@ -41,7 +41,7 @@ class CustomAppBarChat extends StatelessWidget implements PreferredSizeWidget  {
           },
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: AppColors.kQuaternaryColor,
+            color: AppColors.kColorGray600,
             size: 28,
           ),
         ),
@@ -87,7 +87,7 @@ class CustomAppBarChat extends StatelessWidget implements PreferredSizeWidget  {
                     decoration: BoxDecoration(
                       color: chatModel.online
                           ? AppColors.kGreenColor
-                          : AppColors.kSenaryColor,
+                          : AppColors.kColorGray400,
                       shape: BoxShape.circle,
                     ),
                   ),
@@ -97,7 +97,7 @@ class CustomAppBarChat extends StatelessWidget implements PreferredSizeWidget  {
                     style: TextStyle(
                       color: chatModel.online
                           ? AppColors.kGreenColor
-                          : AppColors.kSenaryColor,
+                          : AppColors.kColorGray400,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
@@ -117,7 +117,7 @@ class CustomAppBarChat extends StatelessWidget implements PreferredSizeWidget  {
               'assets/svg/call.svg',
               width: 30,
               height: 30,
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
             ),
           ),
         ),

@@ -57,7 +57,7 @@ class TextAdd extends StatelessWidget {
         vertical: 4,
       ),
       decoration: BoxDecoration(
-        color: AppColors.kGray200,
+        color: AppColors.kColorGray200,
         borderRadius: BorderRadius.circular(5),
       ),
       child: Row(
@@ -75,7 +75,7 @@ class TextAdd extends StatelessWidget {
             onTap: onTap,
             child: const Icon(
               PhosphorIcons.x,
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               size: 18,
             ),
           ),

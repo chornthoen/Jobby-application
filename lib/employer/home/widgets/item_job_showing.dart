@@ -72,7 +72,7 @@ class ItemJobShowing extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: const Text(
@@ -89,7 +89,7 @@ class ItemJobShowing extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     decoration: BoxDecoration(
-                      color: AppColors.kRed400Color,
+                      color: AppColors.kColorRed400,
                       borderRadius: BorderRadius.circular(14),
                     ),
                     child: const Text(
@@ -112,7 +112,7 @@ class ItemJobShowing extends StatelessWidget {
                           const Text(
                             'Location',
                             style: TextStyle(
-                              color: AppColors.kQuinaryColor,
+                              color: AppColors.kColorGray500,
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                             ),
@@ -121,7 +121,7 @@ class ItemJobShowing extends StatelessWidget {
                           Text(
                             location,
                             style: const TextStyle(
-                              color: AppColors.kQuaternaryColor,
+                              color: AppColors.kColorGray600,
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
@@ -130,7 +130,7 @@ class ItemJobShowing extends StatelessWidget {
                           const Text(
                             'Job Type',
                             style: TextStyle(
-                              color: AppColors.kQuinaryColor,
+                              color: AppColors.kColorGray500,
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
                             ),
@@ -139,7 +139,7 @@ class ItemJobShowing extends StatelessWidget {
                           Text(
                             jobType,
                             style: const TextStyle(
-                              color: AppColors.kQuaternaryColor,
+                              color: AppColors.kColorGray600,
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
@@ -153,7 +153,7 @@ class ItemJobShowing extends StatelessWidget {
                         const Text(
                           'Salary',
                           style: TextStyle(
-                            color: AppColors.kQuinaryColor,
+                            color: AppColors.kColorGray500,
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                           ),
@@ -162,7 +162,7 @@ class ItemJobShowing extends StatelessWidget {
                         Text(
                           salary,
                           style: const TextStyle(
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -171,7 +171,7 @@ class ItemJobShowing extends StatelessWidget {
                         const Text(
                           'Candidate',
                           style: TextStyle(
-                            color: AppColors.kQuinaryColor,
+                            color: AppColors.kColorGray500,
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
                           ),
@@ -180,7 +180,7 @@ class ItemJobShowing extends StatelessWidget {
                         Text(
                           candidate,
                           style: const TextStyle(
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),

@@ -50,7 +50,7 @@ class SnackBarTop{
       ),
       duration: const Duration(seconds: 2),
       flushbarPosition: FlushbarPosition.TOP,
-      backgroundColor: AppColors.kQuaternaryColor.withOpacity(0.8),
+      backgroundColor: AppColors.kColorGray600.withOpacity(0.8),
       barBlur: 1,
       margin: const EdgeInsets.all(8),
       borderRadius: BorderRadius.circular(8),

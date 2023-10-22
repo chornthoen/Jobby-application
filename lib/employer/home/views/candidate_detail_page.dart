@@ -82,7 +82,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                         'Apple job: UI/UX Designer',
                         style: TextStyle(
                           fontSize: 14,
-                          color: AppColors.kQuaternaryColor,
+                          color: AppColors.kColorGray600,
                         ),
                       ),
                       Row(
@@ -90,7 +90,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                           for (int i = 0; i < 5; i++)
                             const Icon(
                               Icons.star,
-                              color: AppColors.kOrange400Color,
+                              color: AppColors.kOrangeColor400,
                               size: 24,
                             ),
                         ],
@@ -179,7 +179,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                 ),
               ),
               const SizedBox(height: 10),
@@ -205,7 +205,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                 ),
               ),
               const Text(
@@ -230,7 +230,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                     icon: const Icon(
                       PhosphorIcons.plus_circle,
                       size: 20,
-                      color: AppColors.kTertiaryColor,
+                      color: AppColors.kColorGray700,
                     ),
                     onPressed: () {
                       ShowBottomSheetCustom.showBottomSheetAddNote(
@@ -248,7 +248,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.kTertiaryColor,
+                        color: AppColors.kColorGray700,
                       ),
                     ),
                   ),

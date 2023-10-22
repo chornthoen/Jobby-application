@@ -124,7 +124,7 @@ class ItemCompany extends StatelessWidget {
                       children: [
                         const Icon(
                           PhosphorIcons.map_pin,
-                          color: AppColors.kQuaternaryColor,
+                          color: AppColors.kColorGray600,
                           size: 18,
                         ),
                         const SizedBox(width: 5),
@@ -132,14 +132,14 @@ class ItemCompany extends StatelessWidget {
                           location,
                           style: const TextStyle(
                             fontSize: 16,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         const SizedBox(width: 10),
                         const Icon(
                           PhosphorIcons.briefcase,
-                          color: AppColors.kQuaternaryColor,
+                          color: AppColors.kColorGray600,
                           size: 18,
                         ),
                         const SizedBox(width: 5),
@@ -147,7 +147,7 @@ class ItemCompany extends StatelessWidget {
                           '$totalJob jobs',
                           style: const TextStyle(
                             fontSize: 16,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -166,14 +166,14 @@ class ItemCompany extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.kGray100,
+                  color: AppColors.kColorGray100,
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Text(
                   status1,
                   style: const TextStyle(
                     fontSize: 14,
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -185,14 +185,14 @@ class ItemCompany extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.kGray100,
+                  color: AppColors.kColorGray100,
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Text(
                   status2,
                   style: const TextStyle(
                     fontSize: 14,
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -204,14 +204,14 @@ class ItemCompany extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.kGray100,
+                  color: AppColors.kColorGray100,
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Text(
                   status3,
                   style: const TextStyle(
                     fontSize: 14,
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                     fontWeight: FontWeight.w500,
                   ),
                 ),

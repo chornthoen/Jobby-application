@@ -4,9 +4,9 @@ import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/customPicCodeTextField.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/custom_text_button.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
@@ -53,14 +53,14 @@ class _OTPSignUpJonSeekerPageState extends State<OTPSignUpJonSeekerPage> {
                   const CustomText(
                     textTop: 'Enter',
                     textBottom: 'verification code',
-                    color: AppColors.kBlue400Color,
+                    color: AppColors.kColorBlue400,
                   ),
                   const SizedBox(height: AppSpacing.xlg),
                   const Text(
                     'The verification code has been sent to phone number '
                     '0886697678. Please enter the code to continue.',
                     style: TextStyle(
-                      color: AppColors.kTertiaryColor,
+                      color: AppColors.kColorGray700,
                       fontSize: 16,
                     ),
                   ),
@@ -103,7 +103,7 @@ class _OTPSignUpJonSeekerPageState extends State<OTPSignUpJonSeekerPage> {
         'Please enter OTP 6 digits',
       );
     } else {
-      context.go(MainView.routePath);
+      context.push(MainView.routePath);
     }
   }
 }

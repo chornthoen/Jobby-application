@@ -43,7 +43,7 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                       Container(
                         padding: const EdgeInsets.only(top: 80),
                         height: 220,
-                        color: AppColors.kOrange400Color,
+                        color: AppColors.kOrangeColor400,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
@@ -59,7 +59,7 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                         child: Profile(
                           name: 'Software Engineer',
                           image: 'assets/images/technology.png',
-                          color: AppColors.kBlue400Color,
+                          color: AppColors.kColorBlue400,
                         ),
                       ),
                     ],
@@ -102,7 +102,7 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                           Text(
                             Constant.description,
                             style: const TextStyle(
-                              color: AppColors.kQuaternaryColor,
+                              color: AppColors.kColorGray600,
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
                             ),

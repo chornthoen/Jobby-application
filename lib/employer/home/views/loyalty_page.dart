@@ -186,7 +186,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 18,
-                        color: AppColors.kSecondaryColor,
+                        color: AppColors.kColorGray800,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -200,7 +200,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
-                color: AppColors.kQuinaryColor,
+                color: AppColors.kColorGray500,
                 fontWeight: FontWeight.w400,
               ),
             ),
@@ -208,7 +208,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
             DottedBorder(
               dashPattern: const [8, 4],
               borderType: BorderType.RRect,
-              color: AppColors.kSeptenaryColor,
+              color: AppColors.kColorGray300,
               radius: const Radius.circular(10),
               child: ListTile(
                 shape: RoundedRectangleBorder(

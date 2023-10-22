@@ -70,7 +70,7 @@ class _SignUpJobSeekerPageState extends State<SignUpJobSeekerPage> {
                   const CustomText(
                     textTop: 'Create',
                     textBottom: 'New Account',
-                    color: AppColors.kPurple400Color,
+                    color: AppColors.kPurpleColor400,
                   ),
                   const SizedBox(height: AppSpacing.lg * 2),
                   const LabelText(text: 'Full Name'),

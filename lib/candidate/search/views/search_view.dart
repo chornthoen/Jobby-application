@@ -167,7 +167,7 @@ class ButtonClear extends StatelessWidget {
         const Text(
           'Recently Searched',
           style: TextStyle(
-            color: AppColors.kQuinaryColor,
+            color: AppColors.kColorGray500,
             fontSize: 16,
             fontWeight: FontWeight.w500,
           ),

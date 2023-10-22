@@ -8,8 +8,8 @@ import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/CustomSocials.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/custom_text_button.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
@@ -73,7 +73,7 @@ class _SignInPageState extends State<SignInPage> {
                   const CustomText(
                     textTop: "Let's",
                     textBottom: 'Sign you in!',
-                    color: AppColors.kOrange400Color,
+                    color: AppColors.kOrangeColor400,
                   ),
                   const SizedBox(height: AppSpacing.xxxlg),
                   const LabelText(text: 'Phone number/email'),

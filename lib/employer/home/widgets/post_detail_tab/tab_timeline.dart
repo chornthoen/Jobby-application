@@ -38,7 +38,7 @@ class _TabTimelineState extends State<TabTimeline> {
                   icon: const Icon(
                     PhosphorIcons.caret_down_bold,
                     size: 20,
-                    color: AppColors.kTertiaryColor,
+                    color: AppColors.kColorGray700,
                   ),
                 ),
               ],

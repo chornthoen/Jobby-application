@@ -4,9 +4,9 @@ import 'package:jobby_application/authentication/create_password/views/create_pa
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/customPicCodeTextField.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/custom_text_button.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
@@ -53,14 +53,14 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                   const CustomText(
                     textTop: 'Enter',
                     textBottom: 'verification code',
-                    color: AppColors.kBlue400Color,
+                    color: AppColors.kColorBlue400,
                   ),
                   const SizedBox(height: AppSpacing.xlg),
                   const Text(
                     'Enter the phone number or email associated with your '
                     'account and we’ll send you OTP to reset your password',
                     style: TextStyle(
-                      color: AppColors.kTertiaryColor,
+                      color: AppColors.kColorGray700,
                       fontSize: 16,
                     ),
                   ),
@@ -103,7 +103,7 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
         'Please enter OTP 6 digits',
       );
     } else {
-      context.go(CreatePasswordPage.routePath);
+      context.push(CreatePasswordPage.routePath);
     }
   }
 }

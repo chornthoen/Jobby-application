@@ -21,7 +21,7 @@ class ItemUpComing extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: AppColors.kSeptenaryColor),
+            border: Border.all(color: AppColors.kColorGray300),
           ),
           margin: const EdgeInsets.only(bottom: 10),
           child: Column(
@@ -34,7 +34,7 @@ class ItemUpComing extends StatelessWidget {
                     height: 8,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.kBlueColor,
+                      color: AppColors.kColorBlue500,
                     ),
                   ),
                   const SizedBox(width: 4),
@@ -42,7 +42,7 @@ class ItemUpComing extends StatelessWidget {
                     date,
                     style: const TextStyle(
                       fontSize: 14,
-                      color: AppColors.kQuinaryColor,
+                      color: AppColors.kColorGray500,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -62,7 +62,7 @@ class ItemUpComing extends StatelessWidget {
                 description,
                 style: const TextStyle(
                   fontSize: 14,
-                  color: AppColors.kQuinaryColor,
+                  color: AppColors.kColorGray500,
                   fontWeight: FontWeight.w400,
                 ),
               ),

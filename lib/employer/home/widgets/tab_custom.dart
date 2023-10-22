@@ -30,7 +30,7 @@ class TabCustom extends StatelessWidget {
               decoration: BoxDecoration(
                 color: number == ''
                     ? Colors.transparent
-                    : AppColors.kSeptenaryColor,
+                    : AppColors.kColorGray300,
                 shape: BoxShape.circle,
               ),
               child: Center(
@@ -83,7 +83,7 @@ class ItemAction extends StatelessWidget {
                 height: 25,
                 color: title == 'Delete'
                     ? AppColors.kRedColor
-                    : AppColors.kQuaternaryColor,
+                    : AppColors.kColorGray600,
               ),
               const SizedBox(width: 8),
               Text(
@@ -93,7 +93,7 @@ class ItemAction extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   color: title == 'Delete'
                       ? AppColors.kRedColor
-                      : AppColors.kQuaternaryColor,
+                      : AppColors.kColorGray600,
                 ),
               ),
             ],
@@ -101,7 +101,7 @@ class ItemAction extends StatelessWidget {
         ),
         const Divider(
           height: 1,
-          color: AppColors.kSeptenaryColor,
+          color: AppColors.kColorGray300,
         ),
       ],
     );

@@ -19,7 +19,7 @@ class ActionSkills extends StatelessWidget {
       ),
       margin: const EdgeInsets.only(bottom: 5),
       decoration: BoxDecoration(
-        color: AppColors.kGray100,
+        color: AppColors.kColorGray100,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
@@ -27,7 +27,7 @@ class ActionSkills extends StatelessWidget {
           Text(
             text,
             style: const TextStyle(
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),
@@ -37,7 +37,7 @@ class ActionSkills extends StatelessWidget {
             onTap: onTap,
             child: const Icon(
               PhosphorIcons.x,
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               size: 24,
             ),
           ),

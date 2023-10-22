@@ -30,7 +30,7 @@ class Profile extends StatelessWidget {
               color: AppColors.kWhiteColor,
               boxShadow: const [
                 BoxShadow(
-                  color: AppColors.kGray200,
+                  color: AppColors.kColorGray200,
                   blurRadius: 2,
                   offset: Offset(0, 5),
                 ),

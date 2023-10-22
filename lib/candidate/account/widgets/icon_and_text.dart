@@ -23,14 +23,14 @@ class IconAndText extends StatelessWidget {
             svg,
             width: 22,
             height: 22,
-            color: AppColors.kQuaternaryColor,
+            color: AppColors.kColorGray600,
           ),
           const SizedBox(width: 10),
           Flexible(
             child: Text(
               text,
               style: const TextStyle(
-                color: AppColors.kQuaternaryColor,
+                color: AppColors.kColorGray600,
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),

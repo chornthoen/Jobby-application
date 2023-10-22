@@ -26,7 +26,7 @@ class TabPostDetail extends StatelessWidget {
           decoration: BoxDecoration(
             color: tabController == index
                 ? AppColors.kPrimaryColor
-                : AppColors.kSeptenaryColor,
+                : AppColors.kColorGray300,
             shape: BoxShape.circle,
           ),
           child: Center(

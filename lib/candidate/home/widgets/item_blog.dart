@@ -76,7 +76,7 @@ class ItemBlog extends StatelessWidget {
                         children: [
                           const Icon(
                             PhosphorIcons.calendar_blank,
-                            color: AppColors.kQuinaryColor,
+                            color: AppColors.kColorGray500,
                             size: 22,
                           ),
                           const SizedBox(width: 5),
@@ -85,7 +85,7 @@ class ItemBlog extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.kQuinaryColor,
+                              color: AppColors.kColorGray500,
                             ),
                           ),
                         ],
@@ -94,7 +94,7 @@ class ItemBlog extends StatelessWidget {
                         children: [
                           const Icon(
                             PhosphorIcons.clock,
-                            color: AppColors.kQuinaryColor,
+                            color: AppColors.kColorGray500,
                             size: 22,
                           ),
                           const SizedBox(width: 5),
@@ -103,7 +103,7 @@ class ItemBlog extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.kQuinaryColor,
+                              color: AppColors.kColorGray500,
                             ),
                           ),
                         ],

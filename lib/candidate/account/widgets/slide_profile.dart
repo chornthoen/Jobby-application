@@ -60,7 +60,7 @@ class _SlideProfilesState extends State<SlideProfiles> {
                 decoration: BoxDecoration(
                   color: currentTab == i
                       ? AppColors.kBlackColor
-                      : AppColors.kSeptenaryColor,
+                      : AppColors.kColorGray300,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),

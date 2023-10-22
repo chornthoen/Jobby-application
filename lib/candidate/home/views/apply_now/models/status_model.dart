@@ -21,24 +21,24 @@ List<StatusModel> statusList = [
     title: 'Location',
     description: 'Phnom Penh',
     svgUrl: 'assets/svg/location.svg',
-    color: AppColors.kGreen200Color,
+    color: AppColors.kGreenColor200,
   ),
   StatusModel(
     title: 'Job Type',
     description: 'Full Time',
     svgUrl: 'assets/svg/jobs.svg',
-    color: AppColors.kPurple200Color,
+    color: AppColors.kPurpleColor200,
   ),
   StatusModel(
     title: 'Salary',
     description: '2k/month',
     svgUrl: 'assets/svg/money.svg',
-    color: AppColors.kOrange200Color,
+    color: AppColors.kOrangeColor200,
   ),
   StatusModel(
     title: 'Posted',
     description: '2 days ago',
     svgUrl: 'assets/svg/time.svg',
-    color: AppColors.kBlue200Color,
+    color: AppColors.kColorBlue200,
   ),
 ];

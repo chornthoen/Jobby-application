@@ -25,7 +25,7 @@ class CoverAndProfile extends StatelessWidget {
                 child: Container(
                   height: MediaQuery.of(context).size.height * 0.2,
                   alignment: Alignment.topCenter,
-                  color: AppColors.kOrange400Color,
+                  color: AppColors.kOrangeColor400,
                 ),
               ),
               Positioned(

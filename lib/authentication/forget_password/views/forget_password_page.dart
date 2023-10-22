@@ -57,14 +57,14 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                 const CustomText(
                   textTop: 'Reset',
                   textBottom: 'your Password',
-                  color: AppColors.kBlue400Color,
+                  color: AppColors.kColorBlue400,
                 ),
                 const SizedBox(height: AppSpacing.xlg),
                 const Text(
                   'Enter the phone number or email associated with your account'
                   ' and we’ll send you OTP to reset your password',
                   style: TextStyle(
-                    color: AppColors.kTertiaryColor,
+                    color: AppColors.kColorGray700,
                     fontSize: 16,
                   ),
                 ),

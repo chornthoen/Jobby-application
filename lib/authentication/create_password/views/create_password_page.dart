@@ -64,7 +64,7 @@ class _CreatePasswordPageState extends State<CreatePasswordPage> {
                   const CustomText(
                     textTop: "Let's",
                     textBottom: 'Sign you in!',
-                    color: AppColors.kGreen400Color,
+                    color: AppColors.kGreenColor400,
                   ),
                   const SizedBox(height: AppSpacing.xxxlg),
                   const LabelText(text: 'New Password'),

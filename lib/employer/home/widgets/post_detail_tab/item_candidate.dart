@@ -20,7 +20,7 @@ class ItemCandidateDetail extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: AppColors.kSeptenaryColor),
+        border: Border.all(color: AppColors.kColorGray300),
       ),
       child: Column(
         children: [
@@ -49,7 +49,7 @@ class ItemCandidateDetail extends StatelessWidget {
                           'assets/svg/star-outline.svg',
                           width: 22,
                           height: 22,
-                          color: AppColors.kQuinaryColor,
+                          color: AppColors.kColorGray500,
                         ),
                     ],
                   ),
@@ -65,7 +65,7 @@ class ItemCandidateDetail extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                 ),
               ),
               Text(

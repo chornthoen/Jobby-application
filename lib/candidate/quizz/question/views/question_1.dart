@@ -105,7 +105,7 @@ class _Question1PageState extends State<Question1Page> {
                 Text(
                   'Question ${currentQuestion + 1}/${questionsList.length}',
                   style: const TextStyle(
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
@@ -120,7 +120,7 @@ class _Question1PageState extends State<Question1Page> {
                       vertical: 4,
                     ),
                     decoration: BoxDecoration(
-                      color: AppColors.kOrange200Color.withOpacity(0.5),
+                      color: AppColors.kOrangeColor200.withOpacity(0.5),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const Row(
@@ -133,7 +133,7 @@ class _Question1PageState extends State<Question1Page> {
                         Text(
                           'Hint',
                           style: TextStyle(
-                            color: AppColors.kOrange400Color,
+                            color: AppColors.kOrangeColor400,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -228,8 +228,8 @@ class _Question1PageState extends State<Question1Page> {
             ),
             decoration: BoxDecoration(
               color: isSelected
-                  ? AppColors.kBlue400Color
-                  : AppColors.kSeptenaryColor,
+                  ? AppColors.kColorBlue400
+                  : AppColors.kColorGray300,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Container(
@@ -239,7 +239,7 @@ class _Question1PageState extends State<Question1Page> {
               ),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? AppColors.kBlue200Color
+                    ? AppColors.kColorBlue200
                     : AppColors.kWhiteColor,
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -324,7 +324,7 @@ class _Question1PageState extends State<Question1Page> {
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                           ),
                         ),
                       ],
@@ -362,7 +362,7 @@ class _Question1PageState extends State<Question1Page> {
                                   style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
-                                    color: AppColors.kQuaternaryColor,
+                                    color: AppColors.kColorGray600,
                                   ),
                                 ),
                               ],
@@ -401,7 +401,7 @@ class _Question1PageState extends State<Question1Page> {
                               style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
-                                color: AppColors.kQuaternaryColor,
+                                color: AppColors.kColorGray600,
                               ),
                             ),
                             const Divider(),

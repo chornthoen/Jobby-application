@@ -47,7 +47,7 @@ class ItemNotes extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                           ),
                         ),
                         const SizedBox(width: 14),
@@ -56,7 +56,7 @@ class ItemNotes extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                           ),
                         ),
                       ],
@@ -69,7 +69,7 @@ class ItemNotes extends StatelessWidget {
                           child: const Icon(
                             PhosphorIcons.pencil_simple,
                             size: 20,
-                            color: AppColors.kTertiaryColor,
+                            color: AppColors.kColorGray700,
                           ),
                         ),
                         const SizedBox(width: 15),
@@ -78,7 +78,7 @@ class ItemNotes extends StatelessWidget {
                           child: const Icon(
                             PhosphorIcons.trash,
                             size: 20,
-                            color: AppColors.kTertiaryColor,
+                            color: AppColors.kColorGray700,
                           ),
                         ),
                       ],
@@ -96,7 +96,7 @@ class ItemNotes extends StatelessWidget {
                 ),
                 const SizedBox(height: 5),
                 const Divider(
-                  color: AppColors.kSeptenaryColor,
+                  color: AppColors.kColorGray300,
                   thickness: 1,
                 ),
               ],

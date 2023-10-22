@@ -38,7 +38,7 @@ class ItemTimeline extends StatelessWidget {
             name: name,
           ),
           const DottedLine(
-            dashColor: AppColors.kQuinaryColor,
+            dashColor: AppColors.kColorGray500,
             dashGapLength: 5,
             dashLength: 5,
           ),
@@ -111,7 +111,7 @@ class ActionTimeline extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: AppColors.kTertiaryColor,
+                    color: AppColors.kColorGray700,
                   ),
                   children: [
                     TextSpan(
@@ -119,7 +119,7 @@ class ActionTimeline extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.kTertiaryColor,
+                        color: AppColors.kColorGray700,
                       ),
                     ),
                     const TextSpan(
@@ -127,7 +127,7 @@ class ActionTimeline extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kTertiaryColor,
+                        color: AppColors.kColorGray700,
                       ),
                     ),
                     TextSpan(
@@ -135,7 +135,7 @@ class ActionTimeline extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
-                        color: AppColors.kTertiaryColor,
+                        color: AppColors.kColorGray700,
                       ),
                     ),
                   ],
@@ -149,7 +149,7 @@ class ActionTimeline extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                     ),
                   ),
                   const SizedBox(width: 5),
@@ -165,7 +165,7 @@ class ActionTimeline extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
-                      color: AppColors.kTertiaryColor,
+                      color: AppColors.kColorGray700,
                     ),
                   ),
                 ],

@@ -50,7 +50,7 @@ class ItemSpeakerList extends StatelessWidget {
               Text(
                 position,
                 style: const TextStyle(
-                  color: AppColors.kQuinaryColor,
+                  color: AppColors.kColorGray500,
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                 ),
@@ -86,7 +86,7 @@ class ItemDetail extends StatelessWidget {
                   svg,
                   height: 22,
                   width: 22,
-                  color: AppColors.kQuinaryColor,
+                  color: AppColors.kColorGray500,
                 ),
                 const SizedBox(width: 5),
                 Text(
@@ -94,7 +94,7 @@ class ItemDetail extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
-                    color: AppColors.kQuinaryColor,
+                    color: AppColors.kColorGray500,
                   ),
                 ),
               ],

@@ -35,7 +35,7 @@ class ItemMoreTurns extends StatelessWidget {
                         vertical: 2,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.kOrange400Color,
+                        color: AppColors.kOrangeColor400,
                         borderRadius: BorderRadius.circular(4),
                         border: Border.all(
                           color: AppColors.kWhiteColor,
@@ -69,7 +69,7 @@ class ItemMoreTurns extends StatelessWidget {
           ],
         ),
         const Divider(
-          color: AppColors.kGray200,
+          color: AppColors.kColorGray200,
           thickness: 1,
           height: 30,
         ),

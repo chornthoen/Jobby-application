@@ -152,7 +152,7 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
                           child:const Center(
                             child: Icon(
                               PhosphorIcons.cloud_arrow_up,
-                              color: AppColors.kQuaternaryColor,
+                              color: AppColors.kColorGray600,
                               size: 30,
                             ),
                           ),

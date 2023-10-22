@@ -59,7 +59,7 @@ class _TabCompanyDetailState extends State<TabCompanyDetail> {
                         style: TextStyle(
                           color: currentTab == i
                               ? Colors.white
-                              : AppColors.kQuaternaryColor,
+                              : AppColors.kColorGray600,
                           fontWeight: FontWeight.w500,
                           fontSize: 16,
                         ),

@@ -33,7 +33,7 @@ class _TabCandidateState extends State<TabCandidate> {
                   Container(
                     padding: const EdgeInsets.all(5),
                     decoration: const BoxDecoration(
-                      color: AppColors.kSeptenaryColor,
+                      color: AppColors.kColorGray300,
                       shape: BoxShape.circle,
                     ),
                     child: const Text(

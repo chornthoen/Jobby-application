@@ -31,7 +31,7 @@ class ItemReviews extends StatelessWidget {
               Text(
                 '2 days ago',
                 style: TextStyle(
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                 ),
@@ -44,7 +44,7 @@ class ItemReviews extends StatelessWidget {
                 ' - A shopping, entertainment and culinary paradise with'
                 ' 4 brand lines.',
             style: TextStyle(
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               fontSize: 16,
               fontWeight: FontWeight.w500,
             ),
@@ -53,7 +53,7 @@ class ItemReviews extends StatelessWidget {
           Container(
             height: 1,
             width: MediaQuery.of(context).size.width,
-            color: AppColors.kGray200,
+            color: AppColors.kColorGray200,
           ),
         ],
       ),

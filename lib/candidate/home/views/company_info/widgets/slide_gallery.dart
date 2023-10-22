@@ -68,7 +68,7 @@ class _SlideGalleryState extends State<SlideGallery> {
                 decoration: BoxDecoration(
                   color: currentTab == i
                       ? AppColors.kBlackColor
-                      : AppColors.kSeptenaryColor,
+                      : AppColors.kColorGray300,
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),

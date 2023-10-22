@@ -44,8 +44,8 @@ class AvatarRank extends StatelessWidget {
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
                       colors: [
-                        AppColors.kRed400Color,
-                        AppColors.kBlue300Color,
+                        AppColors.kColorRed400,
+                        AppColors.kColorBlue300,
                       ],
                     ),
                   ),

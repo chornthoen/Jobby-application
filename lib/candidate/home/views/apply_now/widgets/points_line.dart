@@ -17,7 +17,7 @@ class PointsLine extends StatelessWidget {
       lineHeight: 8,
       percent: percent,
       progressColor: color,
-      backgroundColor: AppColors.kGray200,
+      backgroundColor: AppColors.kColorGray200,
       barRadius: const Radius.circular(10),
 
     );

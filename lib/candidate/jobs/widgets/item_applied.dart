@@ -81,7 +81,7 @@ class ItemApplied extends StatelessWidget {
                     '$name • $salary',
                     style: const TextStyle(
                       fontSize: 16,
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -118,7 +118,7 @@ class ItemApplied extends StatelessWidget {
                     date,
                     style: const TextStyle(
                       fontSize: 16,
-                      color: AppColors.kQuinaryColor,
+                      color: AppColors.kColorGray500,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -139,14 +139,14 @@ class ItemApplied extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.kGray100,
+                          color: AppColors.kColorGray100,
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: Text(
                           time,
                           style: const TextStyle(
                             fontSize: 12,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -160,14 +160,14 @@ class ItemApplied extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.kGray100,
+                          color: AppColors.kColorGray100,
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: Text(
                           role,
                           style: const TextStyle(
                             fontSize: 14,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -182,7 +182,7 @@ class ItemApplied extends StatelessWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: AppColors.kGray200,
+                  color: AppColors.kColorGray200,
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: const Text(

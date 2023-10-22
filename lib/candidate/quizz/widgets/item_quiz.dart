@@ -43,7 +43,7 @@ class ItemQuizs extends StatelessWidget {
               left: 16,
             ),
             decoration: BoxDecoration(
-              color: AppColors.kSeptenaryColor,
+              color: AppColors.kColorGray300,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Container(
@@ -84,7 +84,7 @@ class ItemQuizs extends StatelessWidget {
                               vertical: 4,
                             ),
                             decoration: BoxDecoration(
-                              color: AppColors.kSenaryColor,
+                              color: AppColors.kColorGray400,
                               borderRadius: BorderRadius.circular(6),
                             ),
                             child: Text(

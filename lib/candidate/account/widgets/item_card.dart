@@ -35,7 +35,7 @@ class ItemCard extends StatelessWidget {
                 height: 25,
                 color: title == 'Log out'
                     ? AppColors.kRedColor
-                    : AppColors.kQuaternaryColor,
+                    : AppColors.kColorGray600,
               ),
               const SizedBox(width: 10),
               Text(
@@ -54,13 +54,13 @@ class ItemCard extends StatelessWidget {
             Icons.arrow_forward_ios,
             color: title == 'Log out'
                 ? AppColors.kRedColor
-                : AppColors.kQuaternaryColor,
+                : AppColors.kColorGray600,
             size: 20,
           ),
         ),
         const Divider(
           height: 1,
-          color: AppColors.kSeptenaryColor,
+          color: AppColors.kColorGray300,
         ),
       ],
     );

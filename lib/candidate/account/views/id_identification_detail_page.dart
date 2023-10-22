@@ -44,7 +44,7 @@ State<IDIdentificationDetailPage> {
                         child:const Center(
                           child: Icon(
                             PhosphorIcons.cloud_arrow_up,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             size: 30,
                           ),
                         ),
@@ -57,7 +57,7 @@ State<IDIdentificationDetailPage> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -74,7 +74,7 @@ State<IDIdentificationDetailPage> {
                         child:const Center(
                           child: Icon(
                             PhosphorIcons.cloud_arrow_up,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             size: 30,
                           ),
                         ),
@@ -87,7 +87,7 @@ State<IDIdentificationDetailPage> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                     ),
                   ),
                 ],
@@ -99,7 +99,7 @@ State<IDIdentificationDetailPage> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
-                color: AppColors.kQuaternaryColor,
+                color: AppColors.kColorGray600,
               ),
             ),
             const SizedBox(height: 10),
@@ -107,7 +107,7 @@ State<IDIdentificationDetailPage> {
               children: [
                 Icon(
                   PhosphorIcons.check,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                   size: 22,
                 ),
                 SizedBox(width: 10),
@@ -116,7 +116,7 @@ State<IDIdentificationDetailPage> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                   ),
                 ),
               ],
@@ -126,7 +126,7 @@ State<IDIdentificationDetailPage> {
               children: [
                 Icon(
                   PhosphorIcons.check,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                   size: 22,
                 ),
                 SizedBox(width: 10),
@@ -135,7 +135,7 @@ State<IDIdentificationDetailPage> {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                   ),
                 ),
               ],

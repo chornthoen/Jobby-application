@@ -54,8 +54,8 @@ class ItemPending extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                 decoration: BoxDecoration(
                   color: status == 'Pending'
-                      ? AppColors.kOrange400Color
-                      : AppColors.kRed400Color,
+                      ? AppColors.kOrangeColor400
+                      : AppColors.kColorRed400,
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Text(

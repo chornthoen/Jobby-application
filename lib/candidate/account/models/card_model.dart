@@ -18,16 +18,16 @@ final cardModel = [
   CardModel(
     title: 'Passport',
     image: 'assets/images/wallet.png',
-    color: AppColors.kOrange200Color,
+    color: AppColors.kOrangeColor200,
   ),
   CardModel(
     title: 'Driver’s license',
     image: 'assets/images/folders.png',
-    color: AppColors.kBlue200Color,
+    color: AppColors.kColorBlue200,
   ),
   CardModel(
     title: 'Identity card',
     image: 'assets/images/flag.png',
-    color: AppColors.kRed200Color,
+    color: AppColors.kColorRed200,
   ),
 ];

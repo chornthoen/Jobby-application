@@ -64,8 +64,8 @@ class _ItemQuestionState extends State<ItemQuestion> {
             ),
             decoration: BoxDecoration(
               color: widget.isCorrect
-                  ? AppColors.kBlue400Color
-                  : AppColors.kSeptenaryColor,
+                  ? AppColors.kColorBlue400
+                  : AppColors.kColorGray300,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Container(
@@ -75,7 +75,7 @@ class _ItemQuestionState extends State<ItemQuestion> {
               ),
               decoration: BoxDecoration(
                 color: widget.isCorrect
-                    ? AppColors.kBlue200Color
+                    ? AppColors.kColorBlue200
                     : AppColors.kWhiteColor,
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -125,8 +125,8 @@ class RankWidget extends StatelessWidget {
           LinearPercentIndicator(
             lineHeight: 10,
             percent: percent,
-            backgroundColor: AppColors.kGray200,
-            progressColor: AppColors.kPurple400Color,
+            backgroundColor: AppColors.kColorGray200,
+            progressColor: AppColors.kPurpleColor400,
             barRadius: const Radius.circular(10),
           ),
           Positioned(

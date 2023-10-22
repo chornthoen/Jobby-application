@@ -23,8 +23,8 @@ class StarRate extends StatelessWidget {
         percent: percent,
         animation: true,
         animationDuration: 2000,
-        backgroundColor: AppColors.kGray200,
-        progressColor: AppColors.kOrange400Color,
+        backgroundColor: AppColors.kColorGray200,
+        progressColor: AppColors.kOrangeColor400,
         barRadius: const Radius.circular(10),
         leading: Text(
           leading,

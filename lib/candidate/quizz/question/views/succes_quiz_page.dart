@@ -71,7 +71,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                       ),
                     ),
                   ],
@@ -139,7 +139,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
-                color: AppColors.kQuaternaryColor,
+                color: AppColors.kColorGray600,
               ),
             ),
           ],
@@ -161,7 +161,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
-            color: AppColors.kQuaternaryColor,
+            color: AppColors.kColorGray600,
           ),
         ),
         const Divider(),
@@ -193,7 +193,7 @@ class ItemSuccess extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
-                color: AppColors.kQuaternaryColor,
+                color: AppColors.kColorGray600,
               ),
             ),
           ],
@@ -223,7 +223,7 @@ class ItemSuccess extends StatelessWidget {
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
-            color: AppColors.kQuaternaryColor,
+            color: AppColors.kColorGray600,
           ),
         ),
         const Divider(),

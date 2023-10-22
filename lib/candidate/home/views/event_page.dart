@@ -83,7 +83,7 @@ class _EventPageState extends State<EventPage> {
                       decoration: BoxDecoration(
                         color: this.index == index
                             ? AppColors.kPrimaryColor
-                            : AppColors.kGray200,
+                            : AppColors.kColorGray200,
                         borderRadius: BorderRadius.circular(34),
                       ),
                       child: Text(
@@ -91,7 +91,7 @@ class _EventPageState extends State<EventPage> {
                         style: TextStyle(
                           color: this.index == index
                               ? Colors.white
-                              : AppColors.kQuaternaryColor,
+                              : AppColors.kColorGray600,
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),

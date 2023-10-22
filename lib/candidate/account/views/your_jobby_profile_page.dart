@@ -121,7 +121,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                    Text(
                     goals.isNotEmpty ? goals[0] : '',
                     style: const TextStyle(
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
@@ -402,7 +402,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: AppColors.kGray200,
+                      color: AppColors.kColorGray200,
                     ),
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -47,12 +47,12 @@ class _ActionTopState extends State<ActionTop> {
           child: Container(
             padding: const EdgeInsets.all(8),
             decoration: const BoxDecoration(
-              color: AppColors.kGray200,
+              color: AppColors.kColorGray200,
               shape: BoxShape.circle,
             ),
             child: const Icon(
               PhosphorIcons.x,
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               size: 24,
             ),
           ),

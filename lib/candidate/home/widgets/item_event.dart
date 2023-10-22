@@ -75,7 +75,7 @@ class ItemEvent extends StatelessWidget {
                           vertical: 5,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.kBlue400Color,
+                          color: AppColors.kColorBlue400,
                           borderRadius: BorderRadius.circular(40),
                         ),
                         child: Text(
@@ -148,7 +148,7 @@ class ItemEvent extends StatelessWidget {
                         children: [
                           const Icon(
                             PhosphorIcons.calendar_blank,
-                            color: AppColors.kQuinaryColor,
+                            color: AppColors.kColorGray500,
                             size: 22,
                           ),
                           const SizedBox(width: 5),
@@ -157,7 +157,7 @@ class ItemEvent extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 19,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.kQuinaryColor,
+                              color: AppColors.kColorGray500,
                             ),
                           ),
                         ],
@@ -168,7 +168,7 @@ class ItemEvent extends StatelessWidget {
                             'assets/svg/users.svg',
                             height: 22,
                             width: 22,
-                            color: AppColors.kQuinaryColor,
+                            color: AppColors.kColorGray500,
                           ),
                           const SizedBox(width: 5),
                           Text(
@@ -176,7 +176,7 @@ class ItemEvent extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 19,
                               fontWeight: FontWeight.w400,
-                              color: AppColors.kQuinaryColor,
+                              color: AppColors.kColorGray500,
                             ),
                           ),
                         ],

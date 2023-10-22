@@ -107,7 +107,7 @@ class _ChangeAccountEmPageState extends State<ChangeAccountEmPage> {
                 Text(
                   subtitle,
                   style: const TextStyle(
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                     fontSize: 16,
                   ),
                 ),

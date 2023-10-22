@@ -164,9 +164,9 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                   ),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: AppColors.kGray100,
+                    color: AppColors.kColorGray100,
                     borderRadius: BorderRadius.circular(AppSpacing.sm),
-                    border: Border.all(color: AppColors.kGray200),
+                    border: Border.all(color: AppColors.kColorGray200),
                   ),
                   child: const Center(
                     child: Row(

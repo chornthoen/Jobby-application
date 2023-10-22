@@ -20,12 +20,12 @@ class MatchScore extends StatelessWidget {
             percent: 0.7,
             animation: true,
             animationDuration: 2000,
-            progressColor: AppColors.kGreen400Color,
-            backgroundColor: AppColors.kGray200,
+            progressColor: AppColors.kGreenColor400,
+            backgroundColor: AppColors.kColorGray200,
             center: const Text(
               '70%',
               style: TextStyle(
-                color: AppColors.kGreen400Color,
+                color: AppColors.kGreenColor400,
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
               ),
@@ -43,7 +43,7 @@ class MatchScore extends StatelessWidget {
               ),
               PointsLine(
                 percent: 0.7,
-                color: AppColors.kPurple400Color,
+                color: AppColors.kPurpleColor400,
               ),
               TextMatchScore(
                 label: 'Exp',
@@ -51,7 +51,7 @@ class MatchScore extends StatelessWidget {
               ),
               PointsLine(
                 percent: 0.6,
-                color: AppColors.kOrange400Color,
+                color: AppColors.kOrangeColor400,
               ),
               TextMatchScore(
                 label: 'Orientation',
@@ -59,7 +59,7 @@ class MatchScore extends StatelessWidget {
               ),
               PointsLine(
                 percent: 0.9,
-                color: AppColors.kBlue400Color,
+                color: AppColors.kColorBlue400,
               ),
               TextMatchScore(
                 label: 'Education',
@@ -67,7 +67,7 @@ class MatchScore extends StatelessWidget {
               ),
               PointsLine(
                 percent: 0.5,
-                color: AppColors.kRed400Color,
+                color: AppColors.kColorRed400,
               ),
             ],
           ),

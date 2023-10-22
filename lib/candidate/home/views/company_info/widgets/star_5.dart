@@ -11,27 +11,27 @@ class Star5 extends StatelessWidget {
       children: [
         Icon(
           PhosphorIcons.star_fill,
-          color: AppColors.kOrange400Color,
+          color: AppColors.kOrangeColor400,
           size: 20,
         ),
         Icon(
           PhosphorIcons.star_fill,
-          color: AppColors.kOrange400Color,
+          color: AppColors.kOrangeColor400,
           size: 20,
         ),
         Icon(
           PhosphorIcons.star_fill,
-          color: AppColors.kOrange400Color,
+          color: AppColors.kOrangeColor400,
           size: 20,
         ),
         Icon(
           PhosphorIcons.star_fill,
-          color: AppColors.kOrange400Color,
+          color: AppColors.kOrangeColor400,
           size: 20,
         ),
         Icon(
           PhosphorIcons.star_fill,
-          color: AppColors.kOrange400Color,
+          color: AppColors.kOrangeColor400,
           size: 20,
         ),
 

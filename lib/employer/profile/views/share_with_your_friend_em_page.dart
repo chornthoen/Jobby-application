@@ -53,7 +53,7 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -69,7 +69,7 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: AppColors.kGray200,),
+                  color: AppColors.kColorGray200,),
               ),
               child: ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 6),

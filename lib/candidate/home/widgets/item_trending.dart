@@ -64,7 +64,7 @@ class ItemTrending extends StatelessWidget {
           Text(
             description,
             style: const TextStyle(
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               fontWeight: FontWeight.w500,
             ),
           ),

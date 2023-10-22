@@ -27,7 +27,7 @@ class ItemInfo extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: AppColors.kQuinaryColor,
+                    color: AppColors.kColorGray500,
                   ),
                 ),
               ],

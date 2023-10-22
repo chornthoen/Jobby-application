@@ -56,7 +56,7 @@ class _CareerGoalPageState extends State<CareerGoalPage> {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                 ),
               ),
               const SizedBox(height: 10),
@@ -72,14 +72,14 @@ class _CareerGoalPageState extends State<CareerGoalPage> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8),
                     borderSide: const BorderSide(
-                      color: AppColors.kQuinaryColor,
+                      color: AppColors.kColorGray500,
                     ),
                   ),
                   hintText: 'Write your career goals or personal bio',
                   hintStyle: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                   ),
                 ),
               ),

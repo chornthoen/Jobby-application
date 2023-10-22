@@ -69,7 +69,7 @@ class _TrendingSeeAllPageState extends State<TrendingSeeAllPage> {
                     Text(
                       listTrending[index].description,
                       style: const TextStyle(
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                         fontWeight: FontWeight.w500,
                       ),
                     ),

@@ -45,7 +45,7 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                       Container(
                         padding: const EdgeInsets.only(top: 80),
                         height: 220,
-                        color: AppColors.kRed400Color,
+                        color: AppColors.kColorRed400,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
@@ -76,20 +76,20 @@ class _DetailCompanyPageState extends State<DetailCompanyPage> {
                           svgPath: 'assets/svg/location.svg',
                           title: 'Location',
                           description: 'Phnom Penh',
-                          color: AppColors.kGreen200Color,
+                          color: AppColors.kGreenColor200,
                         ),
                         ItemWidget(
                           svgPath: 'assets/svg/users.svg',
                           title: 'Followers',
                           description: '11,000',
-                          color: AppColors.kPurple200Color,
+                          color: AppColors.kPurpleColor200,
                         ),
                         ItemWidget(
                           svgPath: 'assets/svg/star-outline.svg',
                           title: 'Rating',
                           isStar: true,
                           description: '9.5',
-                          color: AppColors.kGreen200Color,
+                          color: AppColors.kGreenColor200,
                         ),
                       ],
                     ),

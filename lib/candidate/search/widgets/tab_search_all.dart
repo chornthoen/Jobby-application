@@ -27,7 +27,7 @@ class _TabSearchAllState extends State<TabSearchAll> {
                     TextSpan(
                       text: 'Search results for ',
                       style: TextStyle(
-                        color: AppColors.kQuinaryColor,
+                        color: AppColors.kColorGray500,
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
                       ),

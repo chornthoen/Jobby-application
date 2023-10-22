@@ -39,7 +39,7 @@ class _TabAllTimeState extends State<TabAllTime> {
                     diamond: '200k',
                     rank: 'assets/svg/p1.svg',
                     number: 'assets/svg/number1.svg',
-                    colorName: AppColors.kOrange400Color,
+                    colorName: AppColors.kOrangeColor400,
                   ),
                 ),
                 const AvatarRank(

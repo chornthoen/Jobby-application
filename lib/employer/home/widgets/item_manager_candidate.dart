@@ -61,7 +61,7 @@ class ItemManagerCandidate extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                       ),
                     ),
                     const SizedBox(height: 6),
@@ -74,8 +74,8 @@ class ItemManagerCandidate extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             color: star == '0'
-                                ? AppColors.kGray200
-                                : AppColors.kOrange200Color,
+                                ? AppColors.kColorGray200
+                                : AppColors.kOrangeColor200,
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Row(
@@ -86,8 +86,8 @@ class ItemManagerCandidate extends StatelessWidget {
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
                                   color: star == '0'
-                                      ? AppColors.kTertiaryColor
-                                      : AppColors.kOrange400Color,
+                                      ? AppColors.kColorGray700
+                                      : AppColors.kOrangeColor400,
                                 ),
                               ),
                               const SizedBox(width: 4),
@@ -96,8 +96,8 @@ class ItemManagerCandidate extends StatelessWidget {
                                 width: 16,
                                 height: 16,
                                 color: star == '0'
-                                    ? AppColors.kTertiaryColor
-                                    : AppColors.kOrange400Color,
+                                    ? AppColors.kColorGray700
+                                    : AppColors.kOrangeColor400,
                               ),
                             ],
                           ),
@@ -109,7 +109,7 @@ class ItemManagerCandidate extends StatelessWidget {
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: AppColors.kGray200,
+                            color: AppColors.kColorGray200,
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: Row(
@@ -119,7 +119,7 @@ class ItemManagerCandidate extends StatelessWidget {
                                 style: const TextStyle(
                                   fontSize: 14,
                                   fontWeight: FontWeight.w400,
-                                  color: AppColors.kTertiaryColor,
+                                  color: AppColors.kColorGray700,
                                 ),
                               ),
                             ],
@@ -133,7 +133,7 @@ class ItemManagerCandidate extends StatelessWidget {
                 const Icon(
                   Icons.more_horiz,
                   size: 24,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                 ),
               ],
             ),

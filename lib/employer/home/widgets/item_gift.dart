@@ -27,7 +27,7 @@ class ItemGift extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.kWhiteColor,
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: AppColors.kSeptenaryColor),
+            border: Border.all(color: AppColors.kColorGray300),
             boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
           ),
           child: Column(
@@ -54,7 +54,7 @@ class ItemGift extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w400,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                           ),
                         ),
                       ],
@@ -69,7 +69,7 @@ class ItemGift extends StatelessWidget {
                 ),
               ),
               const DottedLine(
-                dashColor: AppColors.kSeptenaryColor,
+                dashColor: AppColors.kColorGray300,
                 dashGapLength: 8,
                 dashLength: 8,
               ),
@@ -80,7 +80,7 @@ class ItemGift extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     decoration: const BoxDecoration(
-                      color: AppColors.kSeptenaryColor,
+                      color: AppColors.kColorGray300,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10),
                         topRight: Radius.circular(10),
@@ -91,7 +91,7 @@ class ItemGift extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                       ),
                     ),
                   ),

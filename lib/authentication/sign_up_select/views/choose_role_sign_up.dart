@@ -41,7 +41,7 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
             const CustomText(
               textTop: 'Create',
               textBottom: 'New Account',
-              color: AppColors.kPurple400Color,
+              color: AppColors.kPurpleColor400,
             ),
             const SizedBox(height: AppSpacing.xxxlg),
             const LabelText(text: 'You are'),
@@ -102,9 +102,9 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
             vertical: AppSpacing.md,
           ),
           decoration: BoxDecoration(
-            color: selected ? AppColors.kOrange200Color : AppColors.kWhiteColor,
+            color: selected ? AppColors.kOrangeColor200 : AppColors.kWhiteColor,
             borderRadius: BorderRadius.circular(AppSpacing.sm),
-            border: Border.all(color: AppColors.kGray200),
+            border: Border.all(color: AppColors.kColorGray200),
           ),
           child: Row(
             children: [

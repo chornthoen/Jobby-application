@@ -67,7 +67,7 @@ class _CustomTextFieldFormsState extends State<CustomTextFieldForms> {
           hintStyle: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w400,
-            color: AppColors.kQuinaryColor,
+            color: AppColors.kColorGray500,
           ),
           suffixIcon: IconButton(
             splashRadius: 24,
@@ -90,7 +90,7 @@ class _CustomTextFieldFormsState extends State<CustomTextFieldForms> {
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(11),
-            borderSide: const BorderSide(color: AppColors.kSeptenaryColor),
+            borderSide: const BorderSide(color: AppColors.kColorGray300),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(11),

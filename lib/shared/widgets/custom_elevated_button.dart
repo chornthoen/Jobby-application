@@ -30,7 +30,7 @@ class CustomElevatedButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: 0,
           backgroundColor: isClick ? AppColors.kPrimaryColor :
-          AppColors.kSeptenaryColor,
+          AppColors.kColorGray300,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppSpacing.sm),
           ),
@@ -51,7 +51,7 @@ class CustomElevatedButton extends StatelessWidget {
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: isClick ? AppColors.kWhiteColor :
-                    AppColors.kQuinaryColor,
+                    AppColors.kColorGray500,
                   ),
                 ),
 

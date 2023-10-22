@@ -61,7 +61,7 @@ class ItemInterested extends StatelessWidget {
               Text(
                 location,
                 style: const TextStyle(
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
                 ),
@@ -76,14 +76,14 @@ class ItemInterested extends StatelessWidget {
                   ? PhosphorIcons.check_circle_fill
                   : PhosphorIcons.plus_circle_fill,
               color:
-                  follow ? AppColors.kOrange400Color : AppColors.kPrimaryColor,
+                  follow ? AppColors.kOrangeColor400 : AppColors.kPrimaryColor,
               size: 20,
             ),
             label: Text(
               follow ? 'Following' : 'Follow',
               style: TextStyle(
                 color: follow
-                    ? AppColors.kOrange400Color
+                    ? AppColors.kOrangeColor400
                     : AppColors.kPrimaryColor,
                 fontSize: 16,
                 fontWeight: FontWeight.w500,

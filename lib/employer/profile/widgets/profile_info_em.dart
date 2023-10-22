@@ -23,7 +23,7 @@ class ProfileInfoEmployer extends StatelessWidget {
               color: AppColors.kWhiteColor,
               boxShadow: const [
                 BoxShadow(
-                  color: AppColors.kGray200,
+                  color: AppColors.kColorGray200,
                   blurRadius: 2,
                   offset: Offset(0, 5),
                 ),
@@ -72,7 +72,7 @@ class ProfileInfoEmployer extends StatelessWidget {
                 const Text(
                   'Technologies',
                   style: TextStyle(
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
@@ -87,19 +87,19 @@ class ProfileInfoEmployer extends StatelessWidget {
                         svgPath: 'assets/svg/jobs.svg',
                         title: 'Total Jobs',
                         description: '222',
-                        color: AppColors.kGreen200Color,
+                        color: AppColors.kGreenColor200,
                       ),
                       ItemWidget(
                         svgPath: 'assets/svg/eye.svg',
                         title: 'Job Viewed',
                         description: '222',
-                        color: AppColors.kPurple200Color,
+                        color: AppColors.kPurpleColor200,
                       ),
                       ItemWidget(
                         svgPath: 'assets/svg/users.svg',
                         title: 'Candidates',
                         description: '222',
-                        color: AppColors.kRed200Color,
+                        color: AppColors.kColorRed200,
                       ),
                     ],
                   ),

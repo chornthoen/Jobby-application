@@ -31,18 +31,18 @@ class ItemServicePackage extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               gradient: LinearGradient(
                 colors: index == 0
-                    ? [AppColors.kRed200Color, AppColors.kRedColor]
+                    ? [AppColors.kColorRed200, AppColors.kRedColor]
                     : index == 1
-                        ? [AppColors.kOrange200Color, AppColors.kOrangeColor]
+                        ? [AppColors.kOrangeColor200, AppColors.kOrangeColor]
                         : index == 2
-                            ? [AppColors.kGreen200Color, AppColors.kGreenColor]
+                            ? [AppColors.kGreenColor200, AppColors.kGreenColor]
                             : index == 3
                                 ? [
-                                    AppColors.kBlue200Color,
-                                    AppColors.kBlueColor,
+                                    AppColors.kColorBlue200,
+                                    AppColors.kColorBlue500,
                                   ]
                                 : [
-                                    AppColors.kPurple200Color,
+                                    AppColors.kPurpleColor200,
                                     AppColors.kPurpleColor,
                                   ],
               ),
@@ -75,7 +75,7 @@ class ItemServicePackage extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
-                            color: AppColors.kTertiaryColor,
+                            color: AppColors.kColorGray700,
                           ),
                         ),
                         const SizedBox(width: 8),
@@ -85,7 +85,7 @@ class ItemServicePackage extends StatelessWidget {
                             shape: BoxShape.circle,
                             color: AppColors.kWhiteColor.withOpacity(0.5),
                             border: Border.all(
-                              color: AppColors.kOrange200Color,
+                              color: AppColors.kOrangeColor200,
                             ),
                           ),
                           child: SvgPicture.asset(

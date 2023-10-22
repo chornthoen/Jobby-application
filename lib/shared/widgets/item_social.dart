@@ -19,7 +19,7 @@ class ItemSocials extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           side: const BorderSide(
-            color: AppColors.kGray200,
+            color: AppColors.kColorGray200,
           ),
           elevation: 0,
           backgroundColor: AppColors.kWhiteColor,

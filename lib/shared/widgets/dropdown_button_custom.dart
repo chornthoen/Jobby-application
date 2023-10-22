@@ -28,7 +28,7 @@ class _DropdownButtonCustomState extends State<DropdownButtonCustom> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         border: Border.all(
-          color: AppColors.kGray200,
+          color: AppColors.kColorGray200,
         ),
       ),
       child: DropdownButton<String>(
@@ -36,7 +36,7 @@ class _DropdownButtonCustomState extends State<DropdownButtonCustom> {
         underline: const SizedBox(),
         icon: const Icon(
           PhosphorIcons.caret_down,
-          color: AppColors.kQuaternaryColor,
+          color: AppColors.kColorGray600,
         ),
         value: widget.levelValue,
         onChanged: (String? newValue) {

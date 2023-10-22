@@ -31,7 +31,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w400,
-                color: AppColors.kQuaternaryColor,
+                color: AppColors.kColorGray600,
               ),
             ),
             const SizedBox(height: 30),
@@ -48,7 +48,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
                     SizedBox(width: 20),
                     Icon(
                       PhosphorIcons.cloud_arrow_up,
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       size: 30,
                     ),
                     SizedBox(width: 10),
@@ -57,7 +57,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w400,
-                        color: AppColors.kQuaternaryColor,
+                        color: AppColors.kColorGray600,
                       ),
                     ),
                   ],
@@ -112,7 +112,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
                               style: const TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400,
-                                color: AppColors.kQuaternaryColor,
+                                color: AppColors.kColorGray600,
                               ),
                             ),
                           ],
@@ -126,7 +126,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
                           },
                           child: const Icon(
                             PhosphorIcons.trash,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             size: 24,
                           ),
                         ),

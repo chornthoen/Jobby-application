@@ -61,7 +61,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                       decoration: BoxDecoration(
                         color: this.index == index
                             ? AppColors.kPrimaryColor
-                            : AppColors.kGray200,
+                            : AppColors.kColorGray200,
                         borderRadius: BorderRadius.circular(34),
                       ),
                       child: Text(
@@ -69,7 +69,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                         style: TextStyle(
                           color: this.index == index
                               ? Colors.white
-                              : AppColors.kQuaternaryColor,
+                              : AppColors.kColorGray600,
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),
@@ -97,7 +97,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                     children: [
                       const Icon(
                         PhosphorIcons.calendar_blank,
-                        color: AppColors.kQuinaryColor,
+                        color: AppColors.kColorGray500,
                         size: 22,
                       ),
                       const SizedBox(width: 5),
@@ -106,7 +106,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.kQuinaryColor,
+                          color: AppColors.kColorGray500,
                         ),
                       ),
                       const SizedBox(width: 20),
@@ -114,7 +114,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                         'assets/svg/user.svg',
                         height: 22,
                         width: 22,
-                        color: AppColors.kQuinaryColor,
+                        color: AppColors.kColorGray500,
                       ),
                       const SizedBox(width: 5),
                       const Text(
@@ -122,7 +122,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.kQuinaryColor,
+                          color: AppColors.kColorGray500,
                         ),
                       ),
                     ],
@@ -141,7 +141,7 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                         ' those sessions depends on how they are prepared'
                         ' and conducted.',
                     style: TextStyle(
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       fontSize: 17,
                       fontWeight: FontWeight.w400,
                     ),

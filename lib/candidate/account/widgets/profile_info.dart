@@ -23,7 +23,7 @@ class ProfileInfo extends StatelessWidget {
               color: AppColors.kWhiteColor,
               boxShadow: const [
                 BoxShadow(
-                  color: AppColors.kGray200,
+                  color: AppColors.kColorGray200,
                   blurRadius: 2,
                   offset: Offset(0, 5),
                 ),
@@ -72,7 +72,7 @@ class ProfileInfo extends StatelessWidget {
                 const Text(
                   'Mobile Developer',
                   style: TextStyle(
-                    color: AppColors.kQuaternaryColor,
+                    color: AppColors.kColorGray600,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),

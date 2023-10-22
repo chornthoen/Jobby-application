@@ -48,7 +48,7 @@ class _HobbyPageState extends State<HobbyPage> {
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                 ),
               ),
               const SizedBox(height: 10),

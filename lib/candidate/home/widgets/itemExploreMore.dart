@@ -56,7 +56,7 @@ class ItemExploreMore extends StatelessWidget {
             style: const TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w400,
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
             ),
           ),
           const Spacer(),

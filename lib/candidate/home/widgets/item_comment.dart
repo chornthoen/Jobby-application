@@ -55,7 +55,7 @@ class ItemCommentInEvent extends StatelessWidget {
                   Text(
                     date,
                     style: const TextStyle(
-                      color: AppColors.kQuinaryColor,
+                      color: AppColors.kColorGray500,
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                     ),
@@ -68,7 +68,7 @@ class ItemCommentInEvent extends StatelessWidget {
           Text(
             comment,
             style: const TextStyle(
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               fontSize: 17,
               fontWeight: FontWeight.w400,
             ),
@@ -83,13 +83,13 @@ class ItemCommentInEvent extends StatelessWidget {
                       : PhosphorIcons.thumbs_up,
                   color: isLiked
                       ? AppColors.kPrimaryColor
-                      : AppColors.kQuinaryColor,
+                      : AppColors.kColorGray500,
                   size: 24,
                 ),
                 label: Text(
                   '$like',
                   style: const TextStyle(
-                    color: AppColors.kQuinaryColor,
+                    color: AppColors.kColorGray500,
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
@@ -100,13 +100,13 @@ class ItemCommentInEvent extends StatelessWidget {
                 onPressed: () {},
                 icon: const Icon(
                   PhosphorIcons.share,
-                  color: AppColors.kQuinaryColor,
+                  color: AppColors.kColorGray500,
                   size: 24,
                 ),
                 label: Text(
                   '$share',
                   style: const TextStyle(
-                    color: AppColors.kQuinaryColor,
+                    color: AppColors.kColorGray500,
                     fontSize: 18,
                     fontWeight: FontWeight.w400,
                   ),
@@ -117,7 +117,7 @@ class ItemCommentInEvent extends StatelessWidget {
           Container(
             height: 1,
             width: double.infinity,
-            color: AppColors.kGray200,
+            color: AppColors.kColorGray200,
           ),
         ],
       ),

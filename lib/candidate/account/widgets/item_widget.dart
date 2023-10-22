@@ -43,7 +43,7 @@ class ItemWidget extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              color: AppColors.kQuaternaryColor,
+              color: AppColors.kColorGray600,
               fontSize: 14,
               fontWeight: FontWeight.w400,
             ),
@@ -65,7 +65,7 @@ class ItemWidget extends StatelessWidget {
                 const Icon(
                   PhosphorIcons.star_fill,
                   size: 18,
-                  color: AppColors.kOrange400Color,
+                  color: AppColors.kOrangeColor400,
                 ),
             ],
           ),

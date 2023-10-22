@@ -65,7 +65,7 @@ class ItemHomeBanner extends StatelessWidget {
                       Text(
                         description,
                         style: const TextStyle(
-                          color: AppColors.kQuaternaryColor,
+                          color: AppColors.kColorGray600,
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),
@@ -133,7 +133,7 @@ class InfoProfile extends StatelessWidget {
               color: AppColors.kWhiteColor,
               boxShadow: const [
                 BoxShadow(
-                  color: AppColors.kGray200,
+                  color: AppColors.kColorGray200,
                   blurRadius: 2,
                   offset: Offset(0, 5),
                 ),
@@ -154,7 +154,7 @@ class InfoProfile extends StatelessWidget {
                       width: 80,
                       padding: const EdgeInsets.all(10),
                       decoration: const BoxDecoration(
-                        color: AppColors.kBlue200Color,
+                        color: AppColors.kColorBlue200,
                         shape: BoxShape.circle,
                         border: Border.fromBorderSide(
                           BorderSide(
@@ -243,14 +243,14 @@ class TextRole extends StatelessWidget {
         vertical: 5,
       ),
       decoration: BoxDecoration(
-        color: AppColors.kGray100,
+        color: AppColors.kColorGray100,
         borderRadius: BorderRadius.circular(14),
       ),
       child: Text(
         text,
         style: const TextStyle(
           fontSize: 14,
-          color: AppColors.kQuaternaryColor,
+          color: AppColors.kColorGray600,
           fontWeight: FontWeight.w400,
         ),
       ),

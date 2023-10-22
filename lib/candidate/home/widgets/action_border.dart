@@ -22,7 +22,7 @@ class ActionBorder extends StatelessWidget {
             decoration: BoxDecoration(
               color: currentTab == i
                   ? AppColors.kBlackColor
-                  : AppColors.kSeptenaryColor,
+                  : AppColors.kColorGray300,
               borderRadius: BorderRadius.circular(10),
             ),
           ),

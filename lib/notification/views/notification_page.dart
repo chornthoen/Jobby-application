@@ -95,7 +95,7 @@ class _NotificationPageState extends State<NotificationPage> {
                                   fontSize: 18,
                                   color: notificationList[index].isRead! == true
                                       ? AppColors.kPrimaryColor
-                                      : AppColors.kQuinaryColor,
+                                      : AppColors.kColorGray500,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -106,8 +106,8 @@ class _NotificationPageState extends State<NotificationPage> {
                               style:  TextStyle(
                                 fontSize: 14,
                                 color: notificationList[index].isRead! == true
-                                    ? AppColors.kQuaternaryColor
-                                    : AppColors.kQuinaryColor,
+                                    ? AppColors.kColorGray600
+                                    : AppColors.kColorGray500,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
@@ -120,7 +120,7 @@ class _NotificationPageState extends State<NotificationPage> {
                 Container(
                   height: 1,
                   width: MediaQuery.of(context).size.width,
-                  color: AppColors.kGray200,
+                  color: AppColors.kColorGray200,
                 ),
               ],
             ),

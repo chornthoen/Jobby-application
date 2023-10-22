@@ -68,7 +68,7 @@ class ItemLeaderboard extends StatelessWidget {
         ),
         //divider
         const Divider(
-          color: AppColors.kQuaternaryColor,
+          color: AppColors.kColorGray600,
           thickness: 1,
         ),
       ],

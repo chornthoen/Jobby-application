@@ -25,7 +25,7 @@ class ItemOverview extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: AppColors.kSeptenaryColor),
+            border: Border.all(color: AppColors.kColorGray300),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +34,7 @@ class ItemOverview extends StatelessWidget {
                 title,
                 style: const TextStyle(
                   fontSize: 16,
-                  color: AppColors.kQuaternaryColor,
+                  color: AppColors.kColorGray600,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -54,7 +54,7 @@ class ItemOverview extends StatelessWidget {
                     'This week ',
                     style: TextStyle(
                       fontSize: 14,
-                      color: AppColors.kQuinaryColor,
+                      color: AppColors.kColorGray500,
                       fontWeight: FontWeight.w400,
                     ),
                   ),

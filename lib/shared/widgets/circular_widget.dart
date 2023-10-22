@@ -24,7 +24,7 @@ class CircularWidget extends StatelessWidget {
           ? 0.75
           : 1,
       progressColor: AppColors.kPrimaryColor,
-      backgroundColor: AppColors.kSeptenaryColor,
+      backgroundColor: AppColors.kColorGray300,
       circularStrokeCap: CircularStrokeCap.round,
       center: IconButton(
         onPressed: () {

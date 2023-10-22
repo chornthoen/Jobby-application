@@ -22,24 +22,24 @@ List<SlideProfile> sliderProfile = [
     image: 'assets/images/business.png',
     title: 'Update work experience',
     subtitle: 'Update your work experience to impress employers',
-    color: AppColors.kBlue200Color,
+    color: AppColors.kColorBlue200,
   ),
   SlideProfile(
     image: 'assets/images/balloon.png',
     title: 'This is your profile page',
     subtitle: 'Mobile Developer and 3 more',
-    color: AppColors.kRed200Color,
+    color: AppColors.kColorRed200,
   ),
   SlideProfile(
     image: 'assets/images/battery.png',
     title: 'How to get more interview',
     subtitle: 'Mobile Developer and 3 more',
-    color: AppColors.kPurple200Color,
+    color: AppColors.kPurpleColor200,
   ),
   SlideProfile(
     image: 'assets/images/sport.png',
     title: 'What is your dream job?',
     subtitle: 'Mobile Developer',
-    color: AppColors.kOrange200Color,
+    color: AppColors.kOrangeColor200,
   ),
 ];

@@ -28,7 +28,7 @@ class ItemMyPrivilege extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 16,
-            color: AppColors.kSecondaryColor,
+            color: AppColors.kColorGray800,
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -36,7 +36,7 @@ class ItemMyPrivilege extends StatelessWidget {
           description,
           style: const TextStyle(
             fontSize: 16,
-            color: AppColors.kOrange400Color,
+            color: AppColors.kOrangeColor400,
             fontWeight: FontWeight.w500,
           ),
         ),

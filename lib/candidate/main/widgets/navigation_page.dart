@@ -53,7 +53,7 @@ class _NavigationPageState extends State<NavigationPage> {
             ),
             labelColor: AppColors.kPrimaryColor,
             controller: widget.tabController,
-            unselectedLabelColor: AppColors.kQuinaryColor,
+            unselectedLabelColor: AppColors.kColorGray500,
             tabs: [
               buildItem(
                 tabController == 0

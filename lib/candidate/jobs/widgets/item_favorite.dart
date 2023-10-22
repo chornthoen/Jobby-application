@@ -81,7 +81,7 @@ class ItemFavorite extends StatelessWidget {
                     '$name • $salary',
                     style: const TextStyle(
                       fontSize: 16,
-                      color: AppColors.kQuaternaryColor,
+                      color: AppColors.kColorGray600,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -111,7 +111,7 @@ class ItemFavorite extends StatelessWidget {
                           : PhosphorIcons.bookmark_simple,
                       color: isSaved == true
                           ? AppColors.kPrimaryColor
-                          : AppColors.kQuinaryColor,
+                          : AppColors.kColorGray500,
                       size: 24,
                     ),
                   ),
@@ -120,7 +120,7 @@ class ItemFavorite extends StatelessWidget {
                     date,
                     style: const TextStyle(
                       fontSize: 16,
-                      color: AppColors.kQuinaryColor,
+                      color: AppColors.kColorGray500,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -141,14 +141,14 @@ class ItemFavorite extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.kGray100,
+                          color: AppColors.kColorGray100,
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: Text(
                           time,
                           style: const TextStyle(
                             fontSize: 12,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
@@ -162,14 +162,14 @@ class ItemFavorite extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.kGray100,
+                          color: AppColors.kColorGray100,
                           borderRadius: BorderRadius.circular(14),
                         ),
                         child: Text(
                           role,
                           style: const TextStyle(
                             fontSize: 14,
-                            color: AppColors.kQuaternaryColor,
+                            color: AppColors.kColorGray600,
                             fontWeight: FontWeight.w400,
                           ),
                         ),
