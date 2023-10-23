@@ -3,11 +3,12 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_prise4_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class SignUpEnterPrise3Page extends StatefulWidget {
   const SignUpEnterPrise3Page({super.key});
@@ -61,13 +62,9 @@ class _SignUpEnterPrise3PageState extends State<SignUpEnterPrise3Page> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                 Text(
                   'Contact information',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.kBlackColor,
-                  ),
+                  style: CustomTextStyles.headlineMediumSemiBold,
                 ),
                 const SizedBox(height: AppSpacing.lg * 1.3),
                 const LabelText(text: 'Full Name'),

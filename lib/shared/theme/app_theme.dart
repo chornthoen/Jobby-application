@@ -7,6 +7,7 @@ import 'package:jobby_application/shared/theme/theme_helper.dart';
 class AppTheme {
   static final lightTheme = ThemeData(
     fontFamily: 'Kantumruy Pro',
+    textTheme:  TextThemes.textTheme(ColorSchemes.primaryColorScheme),
     appBarTheme: const AppBarTheme(color: AppColors.kPrimaryColor),
     colorScheme: const ColorScheme.light(
       primary: AppColors.kPrimaryColor,
@@ -52,8 +53,8 @@ class TextThemes {
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w400,
     ),
-    bodySmall: TextStyle(
-      color: appTheme.gray900,
+    bodySmall: const TextStyle(
+      //color: appTheme.gray900,
       fontSize: 12,
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w400,
@@ -64,20 +65,20 @@ class TextThemes {
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w700,
     ),
-    headlineSmall: TextStyle(
-      color: appTheme.gray900,
+    headlineSmall: const TextStyle(
+      //color: appTheme.gray900,
       fontSize: 24,
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w600,
     ),
-    labelLarge: TextStyle(
-      color: appTheme.gray900,
+    labelLarge: const TextStyle(
+      //color: appTheme.gray900,
       fontSize: 12,
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w500,
     ),
-    labelMedium: TextStyle(
-      color: appTheme.gray900,
+    labelMedium: const TextStyle(
+     // color: appTheme.gray900,
       fontSize: 10,
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w600,
@@ -88,23 +89,73 @@ class TextThemes {
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w700,
     ),
-    titleLarge: TextStyle(
-      color: appTheme.gray900,
+    titleLarge: const TextStyle(
+     // color: appTheme.gray900,
       fontSize: 20,
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w600,
     ),
-    titleMedium: TextStyle(
-      color: appTheme.gray900,
+    titleMedium: const TextStyle(
+     // color: appTheme.gray900,
       fontSize: 16,
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w500,
     ),
-    titleSmall: TextStyle(
-      color: appTheme.gray900,
+    titleSmall: const TextStyle(
+     // color: appTheme.gray900,
       fontSize: 14,
       fontFamily: 'Kantumruy Pro',
       fontWeight: FontWeight.w400,
     ),
+  );
+}
+
+class ColorSchemes {
+  static const primaryColorScheme = ColorScheme.light(
+    // Primary colors
+    primary: Color(0XFF0A113C),
+    primaryContainer: Color(0XFF434E58),
+    secondary: Color(0XFF434E58),
+    secondaryContainer: Color(0XE5FFFFFF),
+    tertiary: Color(0XFF434E58),
+    tertiaryContainer: Color(0XE5FFFFFF),
+
+    // Background colors
+    background: Color(0XFF434E58),
+
+    // Surface colors
+    surface: Color(0XFF434E58),
+    surfaceTint: Color(0XFF78828A),
+    surfaceVariant: Color(0XE5FFFFFF),
+
+    // Error colors
+    error: Color(0XFF78828A),
+    errorContainer: Color(0X3D1F1D2B),
+    onError: Color(0XFF0A113C),
+    onErrorContainer: Color(0XFFB3B3B3),
+
+    // On colors(text colors)
+    onBackground: Color(0XE5FFFFFF),
+    onInverseSurface: Color(0XFF0A113C),
+    onPrimary: Color(0XFF78828A),
+    onPrimaryContainer: Color(0XE5FFFFFF),
+    onSecondary: Color(0XE5FFFFFF),
+    onSecondaryContainer: Color(0XFF1F2C37),
+    onTertiary: Color(0XE5FFFFFF),
+    onTertiaryContainer: Color(0XFF1F2C37),
+
+    // Other colors
+    outline: Color(0XFF78828A),
+    outlineVariant: Color(0XFF434E58),
+    scrim: Color(0XFF434E58),
+    shadow: Color(0XFF78828A),
+
+    // Inverse colors
+    inversePrimary: Color(0XFF434E58),
+    inverseSurface: Color(0XFF78828A),
+
+    // Pending colors
+    onSurface: Color(0XE5FFFFFF),
+    onSurfaceVariant: Color(0XFF1F2C37),
   );
 }

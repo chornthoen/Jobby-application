@@ -12,7 +12,7 @@ import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:jobby_application/shared/widgets/text_and_button.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 import 'package:jobby_application/shared/widgets/widget_or.dart';
 
 class SignUpJobSeekerPage extends StatefulWidget {

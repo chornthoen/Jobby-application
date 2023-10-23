@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class TextAndButton extends StatelessWidget {
   const TextAndButton({
-    required this.text, required this.textButton, super.key,
+    required this.text,
+    required this.textButton,
+    super.key,
     this.onPressed,
   });
+
   final String text;
   final VoidCallback? onPressed;
   final String textButton;
@@ -18,21 +22,13 @@ class TextAndButton extends StatelessWidget {
       children: [
         Text(
           text,
-          style: const TextStyle(
-            fontSize: 16,
-            color: AppColors.kPrimaryColor,
-            fontWeight: FontWeight.w400,
-          ),
+          style: CustomTextStyles.titleMediumRegularBlack,
         ),
         TextButton(
           onPressed: onPressed,
-          child:  Text(
-             textButton,
-            style: const TextStyle(
-              fontSize: 16,
-              color: AppColors.kPrimaryColor,
-              fontWeight: FontWeight.w700,
-            ),
+          child: Text(
+            textButton,
+            style: CustomTextStyles.buttonTitleSmallSemiBoldBlack,
           ),
         ),
       ],

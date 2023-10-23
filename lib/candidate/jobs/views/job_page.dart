@@ -5,7 +5,7 @@ import 'package:jobby_application/candidate/jobs/widgets/tab_favorite.dart';
 import 'package:jobby_application/candidate/jobs/widgets/tab_matching.dart';
 import 'package:jobby_application/candidate/jobs/widgets/tab_rejected.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class JobPage extends StatefulWidget {
   const JobPage({super.key});

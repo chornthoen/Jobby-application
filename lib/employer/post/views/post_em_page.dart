@@ -11,7 +11,7 @@ import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/dropdown_button_custom.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_custom.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class PostEmployerPage extends StatefulWidget {
   const PostEmployerPage({super.key});

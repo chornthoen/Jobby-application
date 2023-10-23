@@ -3,13 +3,14 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/verify_otp_code/views/otp_forget_password_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class ForgetPasswordPage extends StatefulWidget {
   const ForgetPasswordPage({super.key});
@@ -60,13 +61,10 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                   color: AppColors.kColorBlue400,
                 ),
                 const SizedBox(height: AppSpacing.xlg),
-                const Text(
+                 Text(
                   'Enter the phone number or email associated with your account'
                   ' and we’ll send you OTP to reset your password',
-                  style: TextStyle(
-                    color: AppColors.kColorGray700,
-                    fontSize: 16,
-                  ),
+                  style: CustomTextStyles.titleMediumGray700,
                 ),
                 const SizedBox(height: AppSpacing.lg * 2),
                 const LabelText(text: 'Phone number/email'),

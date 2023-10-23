@@ -6,6 +6,7 @@ import 'package:jobby_application/authentication/sign_up_select/views/choose_pos
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
@@ -116,11 +117,7 @@ class _SignUpSelectPageState extends State<SignUpSelectPage> {
               const SizedBox(width: AppSpacing.sm),
               Text(
                 title,
-                style: const TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: CustomTextStyles.bodyLargeSemiBoldBlack,
               ),
               const Spacer(),
               Icon(

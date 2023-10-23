@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class LabelText extends StatelessWidget {
   const LabelText({
@@ -15,11 +16,7 @@ class LabelText extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: Text(
         text,
-        style: const TextStyle(
-          color: AppColors.kPrimaryColor,
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
+        style: CustomTextStyles.titleMediumBlack,
       ),
     );
   }

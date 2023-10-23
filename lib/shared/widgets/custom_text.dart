@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
@@ -20,11 +21,7 @@ class CustomText extends StatelessWidget {
       children: [
         Text(
           textTop!,
-          style: const TextStyle(
-            fontSize: 34,
-            fontWeight: FontWeight.w600,
-            color: AppColors.kPrimaryColor,
-          ),
+          style: CustomTextStyles.headlineLarge,
         ),
         Text(
           textBottom!,

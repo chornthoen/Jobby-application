@@ -1,22 +1,15 @@
-
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:lottie/lottie.dart';
 
-class SnackBarTop{
+class SnackBarTop {
   static void topSnackBar(BuildContext context, String message) {
     Flushbar(
       messageText: Row(
-        children:  [
-          Text(
-            message,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+        children: [
+          Text(message, style: CustomTextStyles.titleMediumRegularWhite),
         ],
       ),
       duration: const Duration(seconds: 3),
@@ -27,10 +20,11 @@ class SnackBarTop{
       borderRadius: BorderRadius.circular(8),
     ).show(context);
   }
+
   static void topSnackBarLottie(BuildContext context, String message) {
     Flushbar(
       messageText: Row(
-        children:  [
+        children: [
           Lottie.asset(
             'assets/animations/saved.json',
             height: 30,
@@ -56,14 +50,15 @@ class SnackBarTop{
       borderRadius: BorderRadius.circular(8),
     ).show(context);
   }
-
 }
+
 class Snackbar extends StatelessWidget {
   const Snackbar({
     super.key,
     this.imagePath,
     this.title,
   });
+
   final String? imagePath;
   final String? title;
 
@@ -75,7 +70,7 @@ class Snackbar extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
-        children:   [
+        children: [
           Lottie.asset(
             'assets/animations/saved.json',
             height: 30,

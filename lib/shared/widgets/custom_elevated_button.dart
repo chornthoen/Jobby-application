@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   const CustomElevatedButton({
@@ -47,12 +48,7 @@ class CustomElevatedButton extends StatelessWidget {
               children: [
                 Text(
                   text,
-                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: isClick ? AppColors.kWhiteColor :
-                    AppColors.kColorGray500,
-                  ),
+                  style: CustomTextStyles.buttonMediumWhite,
                 ),
 
               ],

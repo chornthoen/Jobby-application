@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
@@ -108,11 +109,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: const EdgeInsets.only(right: 10, top: 20),
           child: Text(
             subTitle!,
-            style: const TextStyle(
-              color: AppColors.kPrimaryColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-            ),
+            style: CustomTextStyles.headlineSmallMedium,
           ),
         ),
       ],

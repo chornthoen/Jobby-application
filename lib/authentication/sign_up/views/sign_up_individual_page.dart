@@ -8,7 +8,7 @@ import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class SignUpIndividualPage extends StatefulWidget {
   const SignUpIndividualPage({super.key});

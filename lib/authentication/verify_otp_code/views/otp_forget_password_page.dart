@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/create_password/views/create_password_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/customPicCodeTextField.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
@@ -56,13 +57,10 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
                     color: AppColors.kColorBlue400,
                   ),
                   const SizedBox(height: AppSpacing.xlg),
-                  const Text(
+                   Text(
                     'Enter the phone number or email associated with your '
                     'account and we’ll send you OTP to reset your password',
-                    style: TextStyle(
-                      color: AppColors.kColorGray700,
-                      fontSize: 16,
-                    ),
+                    style: CustomTextStyles.titleMediumGray700,
                   ),
                   const SizedBox(height: AppSpacing.lg * 2),
                   const LabelText(text: 'Verification code'),

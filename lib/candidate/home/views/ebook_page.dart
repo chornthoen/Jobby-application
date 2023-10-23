@@ -6,7 +6,7 @@ import 'package:jobby_application/candidate/home/views/ebook_detail_page.dart';
 import 'package:jobby_application/candidate/home/widgets/item_ebook.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class EBookPage extends StatefulWidget {
   const EBookPage({super.key});

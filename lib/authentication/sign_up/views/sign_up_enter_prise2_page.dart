@@ -4,11 +4,12 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/sign_up/views/sign_up_enter_prise3_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
 
 class SignUpEnterPrise2Page extends StatefulWidget {
   const SignUpEnterPrise2Page({super.key});
@@ -77,13 +78,9 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                 Text(
                   'Company information',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.kBlackColor,
-                  ),
+                  style:  CustomTextStyles.headlineMediumSemiBold,
                 ),
                 const SizedBox(height: AppSpacing.xlg),
                 const LabelText(text: 'Company Name'),
@@ -168,23 +165,19 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
                     borderRadius: BorderRadius.circular(AppSpacing.sm),
                     border: Border.all(color: AppColors.kColorGray200),
                   ),
-                  child: const Center(
+                  child:  Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.upload_file,
                           color: AppColors.kPrimaryColor,
                           size: AppSpacing.xlg,
                         ),
-                        SizedBox(width: AppSpacing.sm),
+                        const SizedBox(width: AppSpacing.sm),
                         Text(
                           'Upload business license',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.kPrimaryColor,
-                          ),
+                          style: CustomTextStyles.titleMediumRegularBlack,
                         ),
                       ],
                     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class WidgetOr extends StatelessWidget {
   const WidgetOr({
@@ -23,11 +24,7 @@ class WidgetOr extends StatelessWidget {
         const SizedBox(width: 10),
         Text(
           text,
-          style: const TextStyle(
-            fontSize: 16,
-            color: AppColors.kColorGray500,
-            fontWeight: FontWeight.w400,
-          ),
+          style: CustomTextStyles.titleMediumGray500,
         ),
         const SizedBox(width: 10),
         Expanded(

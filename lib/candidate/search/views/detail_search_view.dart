@@ -3,7 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/candidate/search/widgets/tab_search_all.dart';
 import 'package:jobby_application/candidate/search/widgets/tab_search_company.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class DetailSearchView extends StatefulWidget {
   const DetailSearchView({required this.title, super.key});

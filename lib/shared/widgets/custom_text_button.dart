@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
@@ -14,11 +15,7 @@ class CustomTextButton extends StatelessWidget {
       onPressed: onPressed,
       child:  Text(
         text,
-        style:const TextStyle(
-          color: AppColors.kPrimaryColor,
-          fontSize: 17,
-          fontWeight: FontWeight.w600,
-        ),
+        style: CustomTextStyles.buttonMediumBlack
       ),
     );
   }

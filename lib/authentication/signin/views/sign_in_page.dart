@@ -12,10 +12,10 @@ import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text.dart';
 import 'package:jobby_application/shared/widgets/custom_text_button.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 import 'package:jobby_application/shared/widgets/label_text.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 import 'package:jobby_application/shared/widgets/text_and_button.dart';
-import 'package:jobby_application/shared/widgets/text_form_field.dart';
 import 'package:jobby_application/shared/widgets/widget_or.dart';
 
 class SignInPage extends StatefulWidget {
@@ -82,7 +82,7 @@ class _SignInPageState extends State<SignInPage> {
                     controller: emailController,
                     hintText: 'Enter your phone number/email',
                   ),
-                  const SizedBox(height: AppSpacing.xlg),
+                  const SizedBox(height: AppSpacing.lg * 1.3),
                   const LabelText(text: 'Password'),
                   CustomTextFieldForms(
                     keyboardType: TextInputType.visiblePassword,

@@ -3,9 +3,11 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/models/on_boarding_model.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/action_borderline.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/circular_widget.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -42,7 +44,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         toolbarHeight: 65,
         leadingWidth: 80,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 5, top: 10),
+          padding: const EdgeInsets.only(
+            left: AppSpacing.xs,
+            top: AppSpacing.sm,
+          ),
           child: TextButton(
             onPressed: () {
               pageController.previousPage(
@@ -52,28 +57,23 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             },
             child: Text(
               currentIndex == 0 ? '' : 'Prev',
-              style: const TextStyle(
-                color: AppColors.kPrimaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
+              style: CustomTextStyles.buttonMediumBlack,
             ),
           ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 5, top: 5),
+            padding: const EdgeInsets.only(
+              right: AppSpacing.xs,
+              top: AppSpacing.xs,
+            ),
             child: TextButton(
               onPressed: () {
                 context.push(SignInPage.routePath);
               },
               child: Text(
                 currentIndex == 3 ? '' : 'Skip',
-                style: const TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: CustomTextStyles.buttonMediumBlack,
               ),
             ),
           ),
@@ -91,7 +91,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             },
             itemBuilder: (context, index) {
               return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16),
+                padding: const EdgeInsets.symmetric(vertical: AppSpacing.lg),
                 child: Column(
                   children: [
                     Image.asset(
@@ -99,25 +99,19 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       height: MediaQuery.of(context).size.height * 0.4,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(25),
+                      padding: const EdgeInsets.all(AppSpacing.xlg),
                       child: Column(
                         children: [
                           Text(
                             onBoardingModel[index].title,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontSize: 34,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: CustomTextStyles.headlineLarge,
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: AppSpacing.lg * 1.3),
                           Text(
                             onBoardingModel[index].description,
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style: CustomTextStyles.titleMediumRegularBlack,
                           ),
                         ],
                       ),
@@ -143,8 +137,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     pageController: pageController,
                   )
                 : Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: CustomElevatedButton(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                    ),
+                    child: CustomElevatedButton(
                       isClick: true,
                       text: 'Get Started',
                       onPressed: () {
@@ -153,10 +149,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       child: const Icon(
                         Icons.arrow_forward_outlined,
                         color: AppColors.kWhiteColor,
-                        size: 26,
+                        size: AppSpacing.xlg,
                       ),
                     ),
-                ),
+                  ),
           ),
         ],
       ),
