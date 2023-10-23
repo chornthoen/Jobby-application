@@ -2,31 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/candidate/home/widgets/item_home_banner.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class Profile extends StatelessWidget {
   const Profile({
-    required this.name, required this.image, super.key,
+    required this.name,
+    required this.image,
+    super.key,
     this.color,
-
   });
+
   final String name;
   final String image;
   final Color? color;
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      height: MediaQuery.of(context).size.height * 0.29,
+      padding: const EdgeInsets.symmetric(vertical: AppSpacing.md),
+      margin: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+      height: height * 0.29,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: height * 0.2,
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(AppSpacing.lg),
               color: AppColors.kWhiteColor,
               boxShadow: const [
                 BoxShadow(
@@ -38,7 +43,7 @@ class Profile extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 16,
+            top: AppSpacing.lg,
             left: 0,
             right: 0,
             child: Column(
@@ -47,10 +52,10 @@ class Profile extends StatelessWidget {
                 Stack(
                   children: [
                     Container(
-                      height: 80,
-                      width: 80,
-                      padding: const EdgeInsets.all(14),
-                      decoration:  BoxDecoration(
+                      height: AppSpacing.xxxlg * 2,
+                      width: AppSpacing.xxxlg * 2,
+                      padding: const EdgeInsets.all(AppSpacing.lg),
+                      decoration: BoxDecoration(
                         color: color,
                         shape: BoxShape.circle,
                         border: const Border.fromBorderSide(
@@ -60,7 +65,7 @@ class Profile extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child:  Image(
+                      child: Image(
                         image: AssetImage(image),
                         height: 35,
                         width: 35,
@@ -70,7 +75,7 @@ class Profile extends StatelessWidget {
                       bottom: 0,
                       right: 0,
                       child: Container(
-                        padding: const EdgeInsets.all(2),
+                        padding: const EdgeInsets.all(AppSpacing.xxs),
                         decoration: const BoxDecoration(
                           color: AppColors.kWhiteColor,
                           shape: BoxShape.circle,
@@ -84,19 +89,15 @@ class Profile extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Text(
+                    Text(
                       name,
-                      style: const TextStyle(
-                        color: AppColors.kPrimaryColor,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: CustomTextStyles.headlineMediumSemiBold,
                     ),
-                    const SizedBox(width: 5),
+                    const SizedBox(width: AppSpacing.xs),
                     SvgPicture.asset(
                       'assets/svg/verified.svg',
                       width: 20,
@@ -104,9 +105,9 @@ class Profile extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg),
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 2),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.xxs),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [

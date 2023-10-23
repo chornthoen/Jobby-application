@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/home/models/hot_job_model.dart';
 import 'package:jobby_application/candidate/home/widgets/item_hot_jobs.dart';
-import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class TabJobs extends StatefulWidget {
   const TabJobs({super.key});
@@ -16,14 +17,10 @@ class _TabJobsState extends State<TabJobs> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 20),
-        const Text(
+        const SizedBox(height: AppSpacing.xlg),
+        Text(
           '241 jobs in this company',
-          style: TextStyle(
-            color: AppColors.kPrimaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
+          style: CustomTextStyles.headlineSmallBold,
         ),
         ListView.builder(
           shrinkWrap: true,
@@ -47,7 +44,6 @@ class _TabJobsState extends State<TabJobs> {
               },
               onApply: () {},
             );
-
           },
         ),
       ],

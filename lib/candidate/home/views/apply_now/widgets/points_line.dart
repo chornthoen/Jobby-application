@@ -19,7 +19,6 @@ class PointsLine extends StatelessWidget {
       progressColor: color,
       backgroundColor: AppColors.kColorGray200,
       barRadius: const Radius.circular(10),
-
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class Star5 extends StatelessWidget {
   const Star5({super.key});
@@ -12,31 +13,28 @@ class Star5 extends StatelessWidget {
         Icon(
           PhosphorIcons.star_fill,
           color: AppColors.kOrangeColor400,
-          size: 20,
+          size: AppSpacing.xlg,
         ),
         Icon(
           PhosphorIcons.star_fill,
           color: AppColors.kOrangeColor400,
-          size: 20,
+          size: AppSpacing.xlg,
         ),
         Icon(
           PhosphorIcons.star_fill,
           color: AppColors.kOrangeColor400,
-          size: 20,
+          size: AppSpacing.xlg,
         ),
         Icon(
           PhosphorIcons.star_fill,
           color: AppColors.kOrangeColor400,
-          size: 20,
+          size: AppSpacing.xlg,
         ),
         Icon(
           PhosphorIcons.star_fill,
           color: AppColors.kOrangeColor400,
-          size: 20,
+          size: AppSpacing.xlg,
         ),
-
-
-
       ],
     );
   }

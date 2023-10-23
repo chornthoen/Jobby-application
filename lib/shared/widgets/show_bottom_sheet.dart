@@ -4,8 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class ShowBottomSheetCustom {
@@ -60,8 +62,8 @@ class ShowBottomSheetCustom {
     showModalBottomSheet<void>(
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(AppSpacing.xlg),
+          topRight: Radius.circular(AppSpacing.xlg),
         ),
       ),
       context: context,
@@ -69,7 +71,10 @@ class ShowBottomSheetCustom {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,13 +84,9 @@ class ShowBottomSheetCustom {
                   children: [
                     Text(
                       title,
-                      style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.kPrimaryColor,
-                      ),
+                      style: CustomTextStyles.bodyLargeSemiBoldBlack,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.sm),
                     Image(
                       image: AssetImage(image),
                       width: 180,
@@ -93,35 +94,31 @@ class ShowBottomSheetCustom {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 16,
-                        vertical: 10,
+                        horizontal: AppSpacing.lg,
+                        vertical: AppSpacing.sm,
                       ),
                       child: Text(
                         description,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.kColorGray600,
-                        ),
+                        style: CustomTextStyles.titleSmallMediumGray600,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 CustomElevatedButton(
                   isClick: true,
                   text: textButton,
                   onPressed: onPressed,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 ButtonOutLineAction(
                   text: 'Cancel',
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.xlg),
               ],
             ),
           ),

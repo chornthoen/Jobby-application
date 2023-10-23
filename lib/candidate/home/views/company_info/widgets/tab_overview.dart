@@ -4,7 +4,8 @@ import 'package:jobby_application/candidate/home/views/company_info/widgets/item
 import 'package:jobby_application/candidate/home/views/company_info/widgets/slide_gallery.dart';
 import 'package:jobby_application/candidate/home/widgets/item_speaker_list.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class TabOverview extends StatefulWidget {
   const TabOverview({super.key});
@@ -21,7 +22,7 @@ class _TabOverviewState extends State<TabOverview> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(height: AppSpacing.xlg),
         const ItemDetail(
           svg: 'assets/svg/world.svg',
           label: 'Website:',
@@ -45,32 +46,23 @@ class _TabOverviewState extends State<TabOverview> {
         const ItemDetail(
           svg: 'assets/svg/building.svg',
           label: 'Company:',
-          value:
-          'The 4.0 revolution makes the term artificial intelligence no '
+          value: 'The 4.0 revolution makes the term artificial intelligence no '
               'longer strange to everyone, no matter what field you are in.'
               ' The use of AI in recruitment has been and is the mainstream'
               ' in the future with undeniable benefits for both employers and'
               ' candidates.',
         ),
-        const Text(
+        Text(
           'Gallery',
-          style: TextStyle(
-            color: AppColors.kPrimaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
+          style: CustomTextStyles.headlineSmallBold,
         ),
         const SlideGallery(),
-        const SizedBox(height: 10),
-        const Text(
+        const SizedBox(height: AppSpacing.md),
+        Text(
           'Maybe you are interested',
-          style: TextStyle(
-            color: AppColors.kPrimaryColor,
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-          ),
+          style: CustomTextStyles.headlineSmallBold,
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: AppSpacing.md),
         ListView.builder(
           itemCount: interestedModel.length,
           shrinkWrap: true,
@@ -90,7 +82,7 @@ class _TabOverviewState extends State<TabOverview> {
             );
           },
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: AppSpacing.xlg),
       ],
     );
   }

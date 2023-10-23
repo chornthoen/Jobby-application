@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemHomeBanner extends StatelessWidget {
   const ItemHomeBanner({
@@ -238,21 +240,17 @@ class TextRole extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-        vertical: 5,
+      padding:  const EdgeInsets.symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.xs,
       ),
       decoration: BoxDecoration(
         color: AppColors.kColorGray100,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(AppSpacing.md),
       ),
       child: Text(
         text,
-        style: const TextStyle(
-          fontSize: 14,
-          color: AppColors.kColorGray600,
-          fontWeight: FontWeight.w400,
-        ),
+        style: CustomTextStyles.titleSmallMediumGray600,
       ),
     );
   }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemWidget extends StatelessWidget {
   const ItemWidget({
@@ -21,13 +23,14 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.26,
+      width: width * 0.26,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(AppSpacing.sm),
             decoration: BoxDecoration(
               color: color,
               shape: BoxShape.circle,
@@ -39,32 +42,24 @@ class ItemWidget extends StatelessWidget {
               color: AppColors.kPrimaryColor,
             ),
           ),
-          const SizedBox(height: 5),
+          const SizedBox(height: AppSpacing.xs),
           Text(
             title,
-            style: const TextStyle(
-              color: AppColors.kColorGray600,
-              fontSize: 14,
-              fontWeight: FontWeight.w400,
-            ),
+            style: CustomTextStyles.titleSmallGray500,
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: AppSpacing.xs),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 description,
-                style: const TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: CustomTextStyles.titleSmallBlack,
               ),
-              const SizedBox(width: 5),
+              const SizedBox(width: AppSpacing.xs),
               if (isStar!)
                 const Icon(
                   PhosphorIcons.star_fill,
-                  size: 18,
+                  size: AppSpacing.lg,
                   color: AppColors.kOrangeColor400,
                 ),
             ],

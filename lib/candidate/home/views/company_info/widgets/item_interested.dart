@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemInterested extends StatelessWidget {
   const ItemInterested({
@@ -24,17 +26,17 @@ class ItemInterested extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: AppSpacing.lg),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
         boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.all(14),
+            padding: const EdgeInsets.all(AppSpacing.md),
             decoration: const BoxDecoration(
               color: AppColors.kPrimaryColor,
               shape: BoxShape.circle,
@@ -45,27 +47,13 @@ class ItemInterested extends StatelessWidget {
               height: 32,
             ),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: AppSpacing.md),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                nameCompany,
-                style: const TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                location,
-                style: const TextStyle(
-                  color: AppColors.kColorGray600,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+              Text(nameCompany, style: CustomTextStyles.bodyLargeSemiBoldBlack),
+              const SizedBox(height: AppSpacing.sm),
+              Text(location, style: CustomTextStyles.titleSmallMediumGray600),
             ],
           ),
           const Spacer(),
@@ -77,7 +65,7 @@ class ItemInterested extends StatelessWidget {
                   : PhosphorIcons.plus_circle_fill,
               color:
                   follow ? AppColors.kOrangeColor400 : AppColors.kPrimaryColor,
-              size: 20,
+              size: AppSpacing.xlg,
             ),
             label: Text(
               follow ? 'Following' : 'Follow',

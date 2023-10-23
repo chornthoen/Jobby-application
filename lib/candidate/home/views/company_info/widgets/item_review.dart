@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/home/views/company_info/widgets/star_5.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemReviews extends StatelessWidget {
   const ItemReviews({
@@ -10,46 +12,33 @@ class ItemReviews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: AppSpacing.xlg),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-
         children: [
-          const Text(
+          Text(
             'Ideal working environment',
-            style: TextStyle(
-              color: AppColors.kPrimaryColor,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            ),
+            style: CustomTextStyles.titleMediumSemiBoldBlack,
           ),
-          const SizedBox(height: 10),
-           const Row(
+          const SizedBox(height: AppSpacing.md),
+          Row(
             children: [
-              Star5(),
-              SizedBox(width: 10),
+              const Star5(),
+              const SizedBox(width: AppSpacing.sm),
               Text(
                 '2 days ago',
-                style: TextStyle(
-                  color: AppColors.kColorGray600,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
+                style: CustomTextStyles.titleSmallMediumGray600,
               ),
             ],
           ),
-          const SizedBox(height: 10),
-          const Text(
+          const SizedBox(height: AppSpacing.md),
+          Text(
             'Tmrw studio owns, manages and operates a system of Trade Centers'
-                ' - A shopping, entertainment and culinary paradise with'
-                ' 4 brand lines.',
-            style: TextStyle(
-              color: AppColors.kColorGray600,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+            ' - A shopping, entertainment and culinary paradise with'
+            ' 4 brand lines.',
+            style: CustomTextStyles.titleMediumRegularGray600,
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: AppSpacing.md),
           Container(
             height: 1,
             width: MediaQuery.of(context).size.width,

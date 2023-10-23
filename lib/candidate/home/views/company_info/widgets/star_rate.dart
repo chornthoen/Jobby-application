@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class StarRate extends StatelessWidget {
@@ -17,7 +19,7 @@ class StarRate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.only(bottom: AppSpacing.md),
       child: LinearPercentIndicator(
         lineHeight: 8,
         percent: percent,
@@ -25,22 +27,14 @@ class StarRate extends StatelessWidget {
         animationDuration: 2000,
         backgroundColor: AppColors.kColorGray200,
         progressColor: AppColors.kOrangeColor400,
-        barRadius: const Radius.circular(10),
+        barRadius: const Radius.circular(AppSpacing.md),
         leading: Text(
           leading,
-          style: const TextStyle(
-            color: AppColors.kPrimaryColor,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
+          style: CustomTextStyles.titleMediumBlack,
         ),
         trailing: Text(
           trailing,
-          style: const TextStyle(
-            color: AppColors.kPrimaryColor,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
+          style: CustomTextStyles.titleMediumBlack,
         ),
       ),
     );

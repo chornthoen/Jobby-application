@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ActionBackAndSave extends StatelessWidget {
   const ActionBackAndSave({
@@ -26,7 +27,7 @@ class ActionBackAndSave extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Container(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.kWhiteColor.withOpacity(0.3),
@@ -34,14 +35,14 @@ class ActionBackAndSave extends StatelessWidget {
               child: const Icon(
                 PhosphorIcons.arrow_left,
                 color: AppColors.kPrimaryColor,
-                size: 24,
+                size: AppSpacing.xlg,
               ),
             ),
           ),
           GestureDetector(
             onTap: onSaved,
             child: Container(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: AppColors.kWhiteColor.withOpacity(0.3),
@@ -51,7 +52,7 @@ class ActionBackAndSave extends StatelessWidget {
                     ? PhosphorIcons.bookmark_simple_fill
                     : PhosphorIcons.bookmark_simple,
                 color: AppColors.kPrimaryColor,
-                size: 24,
+                size: AppSpacing.xlg,
               ),
             ),
           ),

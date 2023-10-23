@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/home/views/company_info/models/slide_model.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class SlideGallery extends StatefulWidget {
   const SlideGallery({super.key});
@@ -24,6 +25,8 @@ class _SlideGalleryState extends State<SlideGallery> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         CarouselSlider.builder(
@@ -31,22 +34,23 @@ class _SlideGalleryState extends State<SlideGallery> {
           carouselController: carouselController,
           itemBuilder: (context, index, realIndex) {
             return Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.3,
-                margin: const EdgeInsets.symmetric(
-                  vertical: 16,
-                  horizontal: 10,
+              width: width,
+              height: height * 0.3,
+              margin: const EdgeInsets.symmetric(
+                vertical: AppSpacing.lg,
+                horizontal: AppSpacing.sm,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(AppSpacing.sm),
+                image: DecorationImage(
+                  image: AssetImage(slideModel[index].image),
+                  fit: BoxFit.cover,
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: AssetImage(slideModel[index].image),
-                    fit: BoxFit.cover,
-                  ),
-                ),);
+              ),
+            );
           },
           options: CarouselOptions(
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: height * 0.2,
             viewportFraction: 1,
             autoPlay: true,
             autoPlayAnimationDuration: const Duration(seconds: 1),
@@ -62,14 +66,14 @@ class _SlideGalleryState extends State<SlideGallery> {
           children: [
             for (int i = 0; i < slideModel.length; i++)
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 3),
-                height: 2,
-                width: 40,
+                margin: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
+                height: AppSpacing.xs,
+                width: AppSpacing.xxxlg,
                 decoration: BoxDecoration(
                   color: currentTab == i
                       ? AppColors.kBlackColor
                       : AppColors.kColorGray300,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
               ),
           ],

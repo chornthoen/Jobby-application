@@ -1,6 +1,7 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:lottie/lottie.dart';
 
@@ -16,8 +17,8 @@ class SnackBarTop {
       flushbarPosition: FlushbarPosition.TOP,
       backgroundColor: AppColors.kPrimaryColor.withOpacity(0.6),
       barBlur: 1,
-      margin: const EdgeInsets.all(8),
-      borderRadius: BorderRadius.circular(8),
+      margin: const EdgeInsets.all(AppSpacing.sm),
+      borderRadius: BorderRadius.circular(AppSpacing.sm),
     ).show(context);
   }
 
@@ -31,23 +32,16 @@ class SnackBarTop {
             width: 30,
             alignment: Alignment.center,
           ),
-          const SizedBox(width: 3),
-          Text(
-            message,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+          const SizedBox(width: AppSpacing.xs),
+          Text(message, style: CustomTextStyles.titleMediumRegularWhite),
         ],
       ),
       duration: const Duration(seconds: 2),
       flushbarPosition: FlushbarPosition.TOP,
       backgroundColor: AppColors.kColorGray600.withOpacity(0.8),
       barBlur: 1,
-      margin: const EdgeInsets.all(8),
-      borderRadius: BorderRadius.circular(8),
+      margin: const EdgeInsets.all(AppSpacing.sm),
+      borderRadius: BorderRadius.circular(AppSpacing.sm),
     ).show(context);
   }
 }

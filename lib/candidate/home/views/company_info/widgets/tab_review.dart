@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
-import 'package:jobby_application/candidate/home/views/company_info/widgets/item_review.dart';
+import 'package:jobby_application/candidate/home/views/company_info/widgets/list_review.dart';
 import 'package:jobby_application/candidate/home/views/company_info/widgets/star_rate.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 class TabReviews extends StatefulWidget {
@@ -13,17 +15,17 @@ class TabReviews extends StatefulWidget {
 }
 
 class _TabReviewsState extends State<TabReviews> {
-
   bool isNext = true;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20),
+      padding: const EdgeInsets.symmetric(vertical: AppSpacing.xlg),
       color: AppColors.kWhiteColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Row(
+          Row(
             children: [
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,16 +36,12 @@ class _TabReviewsState extends State<TabReviews> {
                         children: [
                           Text(
                             '4.5',
-                            style: TextStyle(
-                              color: AppColors.kPrimaryColor,
-                              fontSize: 50,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            style: CustomTextStyles.displayMediumBlack,
                           ),
-                          Icon(
+                          const Icon(
                             PhosphorIcons.star_fill,
                             color: AppColors.kOrangeColor400,
-                            size: 30,
+                            size: AppSpacing.xxlg,
                           ),
                         ],
                       ),
@@ -51,16 +49,12 @@ class _TabReviewsState extends State<TabReviews> {
                   ),
                   Text(
                     '100 reviews',
-                    style: TextStyle(
-                      color: AppColors.kColorGray600,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: CustomTextStyles.bodyMediumBlack,
                   ),
                 ],
               ),
-              SizedBox(width: 20),
-              Expanded(
+              const SizedBox(width: AppSpacing.xlg),
+              const Expanded(
                 child: Column(
                   children: [
                     StarRate(
@@ -93,7 +87,7 @@ class _TabReviewsState extends State<TabReviews> {
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: AppSpacing.xlg),
           ButtonOutLineAction(
             text: 'Write a review',
             onPressed: () {},
@@ -101,58 +95,33 @@ class _TabReviewsState extends State<TabReviews> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+              Text(
                 'Reviews',
-                style: TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
+                style: CustomTextStyles.headlineSmallBold,
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.md),
               TextButton.icon(
                 onPressed: () {
                   setState(() {
                     isNext = !isNext;
                   });
                 },
-                label: const Text(
+                label: Text(
                   'Newest',
-                  style: TextStyle(
-                    color: AppColors.kPrimaryColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: CustomTextStyles.titleMediumBlack,
                 ),
-                icon:  Icon(
+                icon: Icon(
                   isNext ? PhosphorIcons.caret_up : PhosphorIcons.caret_down,
                   color: AppColors.kPrimaryColor,
-                  size: 20,
+                  size: AppSpacing.xlg,
                 ),
               ),
             ],
           ),
-          if (isNext)
-            const ListReview(),
-          const SizedBox(height: 30),
+          if (isNext) const ListReview(),
+          const SizedBox(height: AppSpacing.xlg),
         ],
       ),
-    );
-  }
-}
-
-class ListReview extends StatelessWidget {
-  const ListReview({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 3,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemBuilder: (context, index) {
-        return const ItemReviews();
-      },
     );
   }
 }

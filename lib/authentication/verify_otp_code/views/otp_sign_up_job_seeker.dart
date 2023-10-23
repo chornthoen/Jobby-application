@@ -98,10 +98,7 @@ class _OTPSignUpJonSeekerPageState extends State<OTPSignUpJonSeekerPage> {
     if (otpController.text.isEmpty) {
       SnackBarTop.topSnackBar(context, 'Please enter OTP');
     } else if (otpController.text.length < 6) {
-      SnackBarTop.topSnackBar(
-        context,
-        'Please enter OTP 6 digits',
-      );
+      SnackBarTop.topSnackBar(context, 'Please enter OTP 6 digits');
     } else {
       context.push(MainView.routePath);
     }

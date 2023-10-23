@@ -3,6 +3,7 @@ import 'package:jobby_application/candidate/home/views/company_info/widgets/tab_
 import 'package:jobby_application/candidate/home/views/company_info/widgets/tab_overview.dart';
 import 'package:jobby_application/candidate/home/views/company_info/widgets/tab_review.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TabCompanyDetail extends StatefulWidget {
   const TabCompanyDetail({super.key});
@@ -29,11 +30,11 @@ class _TabCompanyDetailState extends State<TabCompanyDetail> {
     return Column(
       children: [
         Container(
-          height: 46,
+          height: AppSpacing.xxxlg + 6,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: AppColors.kWhiteColor,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(AppSpacing.sm),
             boxShadow: [AppColors.kBoxShadowColor],
           ),
           child: Row(
@@ -52,7 +53,7 @@ class _TabCompanyDetailState extends State<TabCompanyDetail> {
                         color: currentTab == i
                             ? AppColors.kPrimaryColor
                             : Colors.white,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(AppSpacing.sm),
                       ),
                       child: Text(
                         tabTitle[i],

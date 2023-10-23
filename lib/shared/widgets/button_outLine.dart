@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ButtonOutLineAction extends StatelessWidget {
   const ButtonOutLineAction({
-    required this.text, required this.onPressed, super.key,
+    required this.text,
+    required this.onPressed,
+    super.key,
     this.width = double.infinity,
     this.height = 54,
     this.icon,
   });
+
   final String text;
   final VoidCallback onPressed;
   final double? width;
@@ -23,28 +28,23 @@ class ButtonOutLineAction extends StatelessWidget {
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           side: const BorderSide(
-            color: AppColors.kPrimaryColor,),
+            color: AppColors.kPrimaryColor,
+          ),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(AppSpacing.sm),
           ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              text,
-              style: const TextStyle(
-                color: AppColors.kPrimaryColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
+            Text(text, style: CustomTextStyles.buttonMediumBlack),
             SizedBox(width: icon != null ? 5 : 0),
-            Icon(
-              icon,
-              color: AppColors.kPrimaryColor,
-              size: 20,
-            ),
+            if (icon != null)
+              Icon(
+                icon,
+                color: AppColors.kPrimaryColor,
+                size: AppSpacing.xlg,
+              ),
           ],
         ),
       ),
