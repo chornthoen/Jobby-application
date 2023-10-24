@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/models/hot_job_model.dart';
 import 'package:jobby_application/candidate/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/candidate/home/widgets/item_hot_jobs.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TabJob extends StatefulWidget {
   const TabJob({super.key});
@@ -17,7 +18,7 @@ class _TabJobState extends State<TabJob> {
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       itemCount: 3,
       itemBuilder: (context, index) {
         return ItemHotJobs(
@@ -36,11 +37,8 @@ class _TabJobState extends State<TabJob> {
               hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
             });
           },
-          onApply: () {
-            context.push(ApplyNowPage.routePath);
-          },
+          onApply: () => context.push(ApplyNowPage.routePath),
         );
-
       },
     );
   }

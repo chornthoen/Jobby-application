@@ -8,7 +8,7 @@ class CustomTextStyles {
       theme.textTheme.bodyLarge!.copyWith(
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w600,
-        fontSize: 18,
+        fontSize: 20,
       );
 
   static TextStyle get bodyMediumBlack =>
@@ -95,23 +95,6 @@ class CustomTextStyles {
         fontWeight: FontWeight.w600,
       );
 
-  // Label text style
-  static TextStyle get labelLargeGray600 =>
-      theme.textTheme.labelLarge!.copyWith(
-        color: appTheme.gray600,
-      );
-
-  static TextStyle get labelLargeOnPrimary =>
-      theme.textTheme.labelLarge!.copyWith(
-        color: theme.colorScheme.onPrimary,
-      );
-
-  static TextStyle get labelLargeOnPrimarySemiBold =>
-      theme.textTheme.labelLarge!.copyWith(
-        color: theme.colorScheme.onPrimary,
-        fontWeight: FontWeight.w600,
-      );
-
   // Title text style
 
   static TextStyle get titleMediumBlack =>
@@ -119,14 +102,19 @@ class CustomTextStyles {
         color: AppColors.kPrimaryColor,
         fontWeight: FontWeight.w500,
       );
+  static TextStyle get titleSmallSemiBoldBlack =>
+      theme.textTheme.titleMedium!.copyWith(
+        color: AppColors.kPrimaryColor,
+        fontWeight: FontWeight.w600,
+      );
 
   static TextStyle get titleMediumGray500 =>
       theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kColorGray500,
         fontWeight: FontWeight.w400,
       );
-  static TextStyle get titleSmallGray500 =>
-      theme.textTheme.titleSmall!.copyWith(
+  static TextStyle get titleMediumRegularGray500 =>
+      theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kColorGray500,
         fontWeight: FontWeight.w400,
       );

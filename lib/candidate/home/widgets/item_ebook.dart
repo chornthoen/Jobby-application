@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemEbook extends StatelessWidget {
   const ItemEbook({
@@ -28,11 +30,14 @@ class ItemEbook extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 10),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        margin: const EdgeInsets.symmetric(vertical: AppSpacing.md),
+        padding: const EdgeInsets.symmetric(
+          vertical: AppSpacing.md,
+          horizontal: AppSpacing.md,
+        ),
         decoration: BoxDecoration(
           color: AppColors.kWhiteColor,
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(AppSpacing.sm),
           boxShadow: [
             AppColors.kBoxShadowColor,
             AppColors.kBoxShadowColor1,
@@ -45,40 +50,29 @@ class ItemEbook extends StatelessWidget {
               height: 88,
               width: 88,
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: AppSpacing.sm),
             Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.kBlackColor,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
+                  Text(title, style: CustomTextStyles.bodyLargeSemiBoldBlack),
+                  const SizedBox(height: AppSpacing.sm),
                   Row(
                     children: [
                       SvgPicture.asset(
                         'assets/svg/user.svg',
-                        height: 24,
-                        width: 23,
+                        height: AppSpacing.xlg,
+                        width: AppSpacing.xlg,
                         color: AppColors.kColorGray500,
                       ),
-                      const SizedBox(width: 5),
+                      const SizedBox(width: AppSpacing.sm),
                       Text(
                         name,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.kColorGray500,
-                        ),
+                        style: CustomTextStyles.titleMediumRegularGray500,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: AppSpacing.sm),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -86,17 +80,13 @@ class ItemEbook extends StatelessWidget {
                         children: [
                           const Icon(
                             PhosphorIcons.calendar_blank,
-                            size: 24,
+                            size: AppSpacing.xlg - 2,
                             color: AppColors.kColorGray500,
                           ),
-                          const SizedBox(width: 5),
+                          const SizedBox(width: AppSpacing.sm),
                           Text(
                             date,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.kColorGray500,
-                            ),
+                            style: CustomTextStyles.titleMediumRegularGray500,
                           ),
                         ],
                       ),
@@ -106,7 +96,7 @@ class ItemEbook extends StatelessWidget {
                           isSaved
                               ? PhosphorIcons.bookmark_simple_fill
                               : PhosphorIcons.bookmark_simple,
-                          size: 24,
+                          size: AppSpacing.xlg,
                           color: AppColors.kPrimaryColor,
                         ),
                       ),

@@ -19,46 +19,29 @@ class ItemSpeakerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.all(AppSpacing.md),
+      margin: const EdgeInsets.only(bottom: AppSpacing.sm),
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
-        borderRadius: BorderRadius.circular(8),
-        boxShadow: [
-          AppColors.kBoxShadowColor,
-          AppColors.kBoxShadowColor1,
-        ],
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
+        boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Row(
         children: [
           CircleAvatar(
-            radius: 30,
+            radius: AppSpacing.xxlg,
             backgroundColor: AppColors.kWhiteColor,
             backgroundImage: AssetImage(
               image,
             ),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: AppSpacing.md),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                name,
-                style: const TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              const SizedBox(height: 5),
-              Text(
-                position,
-                style: const TextStyle(
-                  color: AppColors.kColorGray500,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
+              Text(name, style: CustomTextStyles.bodyLargeSemiBoldBlack),
+              const SizedBox(height: AppSpacing.xs),
+              Text(position, style: CustomTextStyles.titleMediumRegularGray600),
             ],
           ),
         ],
@@ -92,8 +75,8 @@ class ItemDetail extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   svg,
-                  height: 22,
-                  width: 22,
+                  height: AppSpacing.xlg - 2,
+                  width: AppSpacing.xlg - 2,
                   color: AppColors.kColorGray500,
                 ),
                 const SizedBox(width: AppSpacing.xs),

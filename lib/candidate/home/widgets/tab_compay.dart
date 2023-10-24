@@ -6,6 +6,8 @@ import 'package:jobby_application/candidate/home/models/hot_job_model.dart';
 import 'package:jobby_application/candidate/home/models/tab_company_model.dart';
 import 'package:jobby_application/candidate/home/views/company_info/views/detail_company_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class TabCompany extends StatelessWidget {
   const TabCompany({super.key});
@@ -69,14 +71,14 @@ class ItemCompany extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.only(
-        left: 16,
-        right: 16,
+        left: AppSpacing.lg,
+        right: AppSpacing.lg,
         bottom: sizeBox ?? 14,
       ),
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
         boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Column(
@@ -97,7 +99,7 @@ class ItemCompany extends StatelessWidget {
                     width: 40,
                   ),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: AppSpacing.sm),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -105,13 +107,9 @@ class ItemCompany extends StatelessWidget {
                       children: [
                         Text(
                           nameCompany,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            color: AppColors.kPrimaryColor,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: CustomTextStyles.bodyLargeSemiBoldBlack,
                         ),
-                        const SizedBox(width: 4),
+                        const SizedBox(width: AppSpacing.xs),
                         SvgPicture.asset(
                           'assets/svg/verified.svg',
                           height: 16,
@@ -119,37 +117,29 @@ class ItemCompany extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: AppSpacing.xs),
                     Row(
                       children: [
                         const Icon(
                           PhosphorIcons.map_pin,
                           color: AppColors.kColorGray600,
-                          size: 18,
+                          size: AppSpacing.lg,
                         ),
-                        const SizedBox(width: 5),
+                        const SizedBox(width: AppSpacing.xs),
                         Text(
                           location,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: AppColors.kColorGray600,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: CustomTextStyles.titleSmallMediumGray600,
                         ),
-                        const SizedBox(width: 10),
+                        const SizedBox(width: AppSpacing.md),
                         const Icon(
                           PhosphorIcons.briefcase,
                           color: AppColors.kColorGray600,
-                          size: 18,
+                          size: AppSpacing.lg,
                         ),
-                        const SizedBox(width: 5),
+                        const SizedBox(width: AppSpacing.xs),
                         Text(
                           '$totalJob jobs',
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: AppColors.kColorGray600,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: CustomTextStyles.titleSmallMediumGray600,
                         ),
                       ],
                     ),
@@ -162,78 +152,62 @@ class ItemCompany extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 6,
+                  horizontal: AppSpacing.sm,
+                  vertical: AppSpacing.xs,
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.kColorGray100,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
                 child: Text(
                   status1,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: AppColors.kColorGray600,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: CustomTextStyles.bodySmallMediumGray600,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.sm),
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 6,
+                  horizontal: AppSpacing.sm,
+                  vertical: AppSpacing.xs,
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.kColorGray100,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
                 child: Text(
                   status2,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: AppColors.kColorGray600,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: CustomTextStyles.bodySmallMediumGray600,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.sm),
               Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 6,
+                  horizontal: AppSpacing.sm,
+                  vertical: AppSpacing.xs,
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.kColorGray100,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
                 child: Text(
                   status3,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: AppColors.kColorGray600,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  style: CustomTextStyles.bodySmallMediumGray600,
                 ),
               ),
               const Spacer(),
               TextButton(
                 onPressed: onApply,
-                child: const Row(
+                child:  Row(
                   children: [
                     Text(
                       'Apply Now',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: AppColors.kPrimaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: CustomTextStyles.buttonTitleSmallSemiBoldBlack,
                     ),
-                    SizedBox(width: 2),
-                    Icon(
+                    const SizedBox(width: AppSpacing.xxs),
+                    const Icon(
                       PhosphorIcons.arrow_right,
                       color: AppColors.kPrimaryColor,
-                      size: 22,
+                      size: AppSpacing.xlg-4,
                     ),
                   ],
                 ),

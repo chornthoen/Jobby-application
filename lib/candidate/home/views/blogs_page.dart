@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/models/blog_model.dart';
 import 'package:jobby_application/candidate/home/views/blog_detail_page.dart';
 import 'package:jobby_application/candidate/home/widgets/item_blog.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class BlogsPage extends StatefulWidget {
@@ -20,7 +21,7 @@ class _BlogsPageState extends State<BlogsPage> {
     return Scaffold(
       appBar: const CustomAppBar(title: 'Blogs'),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: ListView.builder(
           itemCount: listBlog.length,
           shrinkWrap: true,
@@ -33,9 +34,7 @@ class _BlogsPageState extends State<BlogsPage> {
               read: blog.readTime,
               date: blog.date,
               isBookmark: blog.isSaved,
-              onPressed: () {
-                context.push(BlogDetailPage.routePath);
-              },
+              onPressed: () => context.push(BlogDetailPage.routePath),
               onBookmark: () {
                 setState(() {
                   blog.isSaved = !blog.isSaved;

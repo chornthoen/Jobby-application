@@ -45,7 +45,7 @@ class ItemWidget extends StatelessWidget {
           const SizedBox(height: AppSpacing.xs),
           Text(
             title,
-            style: CustomTextStyles.titleSmallGray500,
+            style: CustomTextStyles.titleMediumRegularGray500,
           ),
           const SizedBox(height: AppSpacing.xs),
           Row(

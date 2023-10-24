@@ -21,18 +21,19 @@ class ItemHomeBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Container(
-      padding: const EdgeInsets.only(bottom: 10),
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      height: MediaQuery.of(context).size.height * 0.4,
+      padding: const EdgeInsets.only(bottom: AppSpacing.md),
+      margin: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+      height: height * 0.4,
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.16,
+            height: height * 0.16,
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(AppSpacing.xlg),
               image: const DecorationImage(
                 image: AssetImage('assets/images/background_banner.png'),
                 fit: BoxFit.cover,
@@ -51,28 +52,20 @@ class ItemHomeBanner extends StatelessWidget {
                   image: AssetImage('assets/images/woman.png'),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: AppSpacing.xlg),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         title,
-                        style: const TextStyle(
-                          color: AppColors.kPrimaryColor,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                        ),
+                        style: CustomTextStyles.headlineSmallBold,
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: AppSpacing.xs),
                       Text(
                         description,
-                        style: const TextStyle(
-                          color: AppColors.kColorGray600,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                        ),
+                        style: CustomTextStyles.titleMediumRegularGray600,
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: AppSpacing.sm),
                       GestureDetector(
                         onTap: onPressed,
                         child: Container(
@@ -80,24 +73,20 @@ class ItemHomeBanner extends StatelessWidget {
                           width: 124,
                           decoration: BoxDecoration(
                             color: AppColors.kPrimaryColor,
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(AppSpacing.sm),
                           ),
-                          child: const Row(
+                          child:  Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 'Join Now',
-                                style: TextStyle(
-                                  color: AppColors.kWhiteColor,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                                style: CustomTextStyles.buttonMediumWhite,
                               ),
-                              SizedBox(width: 4),
-                              Icon(
+                              const SizedBox(width: AppSpacing.xs),
+                              const Icon(
                                 PhosphorIcons.arrow_right_bold,
                                 color: AppColors.kWhiteColor,
-                                size: 18,
+                                size: AppSpacing.lg + 2,
                               ),
                             ],
                           ),

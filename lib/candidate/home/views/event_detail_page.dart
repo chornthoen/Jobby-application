@@ -6,6 +6,9 @@ import 'package:jobby_application/candidate/home/models/speaker_list_model.dart'
 import 'package:jobby_application/candidate/home/widgets/item_comment.dart';
 import 'package:jobby_application/candidate/home/widgets/item_speaker_list.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
@@ -60,19 +63,10 @@ class _EventDetailPageState extends State<EventDetailPage> {
     }
   }
 
-  //close keyboard
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.closeKeyboard(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: CustomAppBar(
@@ -85,11 +79,11 @@ class _EventDetailPageState extends State<EventDetailPage> {
           child: Column(
             children: [
               Container(
-                margin: const EdgeInsets.only(top: 10),
-                height: 34,
+                margin: const EdgeInsets.only(top: AppSpacing.sm),
+                height: AppSpacing.xxlg,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsets.only(left: 16),
+                  padding: const EdgeInsets.only(left: AppSpacing.lg),
                   itemCount: tabs.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
@@ -100,16 +94,16 @@ class _EventDetailPageState extends State<EventDetailPage> {
                       },
                       child: Container(
                         alignment: Alignment.center,
-                        margin: const EdgeInsets.only(right: 10),
+                        margin: const EdgeInsets.only(right: AppSpacing.md),
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 8,
+                          horizontal: AppSpacing.lg,
+                          vertical: AppSpacing.sm,
                         ),
                         decoration: BoxDecoration(
                           color: this.index == index
                               ? AppColors.kPrimaryColor
                               : AppColors.kColorGray200,
-                          borderRadius: BorderRadius.circular(34),
+                          borderRadius: BorderRadius.circular(AppSpacing.xlg),
                         ),
                         child: Text(
                           tabs[index],
@@ -128,82 +122,66 @@ class _EventDetailPageState extends State<EventDetailPage> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 10,
+                  horizontal: AppSpacing.lg,
+                  vertical: AppSpacing.sm,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
+                     Text(
                       'Market Insight – See salary, understand your favorite'
                       ' job position',
-                      style: TextStyle(
-                        color: AppColors.kPrimaryColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: CustomTextStyles.bodyLargeSemiBoldBlack,
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: AppSpacing.sm),
                     Row(
                       children: [
                         const Icon(
                           PhosphorIcons.calendar_blank,
                           color: AppColors.kColorGray500,
-                          size: 22,
+                          size: AppSpacing.xlg - 2,
                         ),
-                        const SizedBox(width: 5),
-                        const Text(
+                        const SizedBox(width: AppSpacing.xs),
+                         Text(
                           '12/12/2021',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.kColorGray500,
-                          ),
+                          style: CustomTextStyles.titleMediumRegularGray500,
                         ),
-                        const SizedBox(width: 20),
+                        const SizedBox(width: AppSpacing.xlg),
                         SvgPicture.asset(
                           'assets/svg/users.svg',
-                          height: 22,
-                          width: 22,
+                          height: AppSpacing.xlg - 2,
+                          width: AppSpacing.xlg - 2,
                           color: AppColors.kColorGray500,
                         ),
-                        const SizedBox(width: 5),
-                        const Text(
+                        const SizedBox(width: AppSpacing.xs),
+                         Text(
                           '100 - 500',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: AppColors.kColorGray500,
-                          ),
+                          style: CustomTextStyles.titleMediumRegularGray500,
                         ),
                       ],
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: AppSpacing.xlg),
                     Container(
                       height: MediaQuery.of(context).size.height * 0.25,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
+                        borderRadius: BorderRadius.circular(AppSpacing.sm),
                         image: const DecorationImage(
                           image: AssetImage('assets/images/events1.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 14),
-                    const Text(
+                    const SizedBox(height: AppSpacing.lg),
+                     Text(
                       'Employee performance reviews, where managers evaluate '
                       'their staff’s overall performance, are vital for'
                       ' every business. However, the effectiveness of those'
                       ' sessions depends on how they are prepared and '
                       'conducted.',
-                      style: TextStyle(
-                        color: AppColors.kColorGray600,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: CustomTextStyles.titleMediumRegularGray600,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.md),
                     const ItemDetail(
                       svg: 'assets/svg/calendar.svg',
                       label: 'Time:',
@@ -227,24 +205,19 @@ class _EventDetailPageState extends State<EventDetailPage> {
                     const ItemDetail(
                       svg: 'assets/svg/list.svg',
                       label: 'Overview:',
-                      value:
-                          'The 4.0 revolution makes the term artificial '
-                              'intelligence no longer strange to everyone, no '
-                              'matter what field you are in. The use of AI in '
-                              'recruitment has been and is the mainstream in '
-                              'the future with undeniable benefits for both'
-                              ' employers and candidates.',
+                      value: 'The 4.0 revolution makes the term artificial '
+                          'intelligence no longer strange to everyone, no '
+                          'matter what field you are in. The use of AI in '
+                          'recruitment has been and is the mainstream in '
+                          'the future with undeniable benefits for both'
+                          ' employers and candidates.',
                     ),
-                    const SizedBox(height: 8),
-                    const Text(
+                    const SizedBox(height: AppSpacing.sm),
+                     Text(
                       'Speakers list',
-                      style: TextStyle(
-                        color: AppColors.kPrimaryColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: CustomTextStyles.bodyLargeSemiBoldBlack,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.md),
                     ListView.builder(
                       itemCount: speakerModel.length,
                       shrinkWrap: true,
@@ -258,15 +231,11 @@ class _EventDetailPageState extends State<EventDetailPage> {
                         );
                       },
                     ),
-                    const Text(
+                     Text(
                       'Comments (2)',
-                      style: TextStyle(
-                        color: AppColors.kPrimaryColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: CustomTextStyles.bodyLargeSemiBoldBlack,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.md),
                     CustomTextFieldForms(
                       onChange: (value) {
                         setState(() {});
@@ -276,7 +245,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
                       hintText: 'Add your comment',
                       maxLines: 3,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.md),
                     if (_commentController.text.isNotEmpty)
                       CustomElevatedButton(
                         isClick: true,
@@ -286,7 +255,7 @@ class _EventDetailPageState extends State<EventDetailPage> {
                         },
                         text: 'Submit',
                       ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.md),
                     ListView.builder(
                       itemCount: commentModel.length,
                       shrinkWrap: true,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/models/company_for_you_model.dart';
+import 'package:jobby_application/candidate/home/views/company_info/views/detail_company_page.dart';
 import 'package:jobby_application/candidate/home/widgets/itemCompany.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class CompanySeeAllPage extends StatefulWidget {
@@ -20,7 +23,7 @@ class _CompanySeeAllPageState extends State<CompanySeeAllPage> {
         title: 'Company For You',
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: GridView.count(
           crossAxisCount: 2,
           physics: const BouncingScrollPhysics(),
@@ -29,13 +32,14 @@ class _CompanySeeAllPageState extends State<CompanySeeAllPage> {
             (index) {
               return Container(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 10,
+                  horizontal: AppSpacing.lg,
+                  vertical: AppSpacing.md,
                 ),
                 child: ItemCompanyForYou(
                   image: listCompany[index].image,
                   title: listCompany[index].title,
                   description: listCompany[index].description,
+                  onPressed: () => context.push(DetailCompanyPage.routePath),
                 ),
               );
             },

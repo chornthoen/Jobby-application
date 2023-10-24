@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class WidgetSeeAll extends StatelessWidget {
   const WidgetSeeAll({
@@ -23,22 +24,14 @@ class WidgetSeeAll extends StatelessWidget {
         children: [
           Text(
             title,
-            style:  TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w700,
-              color: color,
-            ),
+            style: CustomTextStyles.headlineSmallBold,
           ),
           const Spacer(),
           TextButton(
             onPressed: onPressed,
             child:  Text(
               'See All',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-                color: color,
-              ),
+              style: CustomTextStyles.buttonMediumBlack,
             ),
           ),
         ],

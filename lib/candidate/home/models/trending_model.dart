@@ -74,4 +74,18 @@ List<TrendingModel> listTrending = [
     description: '422 jobs',
     color: AppColors.kPurpleColor200,
   ),
+  TrendingModel(
+    id: 7,
+    title: 'Architecture',
+    svgPath: 'assets/svg/building-2.svg',
+    description: '100 jobs',
+    color: AppColors.kColorRed200,
+  ),
+  TrendingModel(
+    id: 8,
+    title: 'Multimedia',
+    svgPath: 'assets/svg/wand.svg',
+    description: '422 jobs',
+    color: AppColors.kPurpleColor200,
+  ),
 ];

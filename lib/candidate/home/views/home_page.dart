@@ -25,6 +25,8 @@ import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/candidate/search/views/search_view.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -48,36 +50,31 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
       appBar: AppBarHome(
         name: 'Hello! Chorn Thoen',
         diamond: '100.00',
         imageProfile: 'assets/images/rose.png',
-        onNotification: () {
-          context.push(NotificationPage.routePath);
-        },
-        onSearch: () {
-          context.push(SearchView.routePath);
-        },
+        onNotification: () => context.push(NotificationPage.routePath),
+        onSearch: () => context.push(SearchView.routePath),
         onProfile: () => tabController.animateTo(4),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.md),
             const WidgetSlider(),
             WidgetSeeAll(
-              onPressed: () {
-                context.push(TrendingSeeAllPage.routePath);
-              },
+              onPressed: () => context.push(TrendingSeeAllPage.routePath),
               title: 'Trending now',
             ),
             SizedBox(
               height: 130,
               child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
                 scrollDirection: Axis.horizontal,
                 itemCount: listTrending.length,
                 itemBuilder: (context, index) {
@@ -93,15 +90,13 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             WidgetSeeAll(
-              onPressed: () {
-                context.push(HotJobSeeAllPage.routePath);
-              },
+              onPressed: () => context.push(HotJobSeeAllPage.routePath),
               title: 'Hot jobs',
             ),
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
               itemCount: hotJobModel.length,
               itemBuilder: (context, index) {
                 return ItemHotJobs(
@@ -120,22 +115,21 @@ class _HomePageState extends State<HomePage> {
                       hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
                     });
                   },
-                  onApply: () {
-                    context.push(ApplyNowPage.routePath);
-                  },
+                  onApply: () => context.push(ApplyNowPage.routePath),
                 );
               },
             ),
             WidgetSeeAll(
-              onPressed: () {
-                context.push(CompanySeeAllPage.routePath);
-              },
+              onPressed: () => context.push(CompanySeeAllPage.routePath),
               title: 'Company for you',
             ),
             SizedBox(
-              height: 150,
+              height: height * 0.15,
               child: ListView.builder(
-                padding: const EdgeInsets.only(left: 16, top: 10),
+                padding: const EdgeInsets.only(
+                  left: AppSpacing.lg,
+                  top: AppSpacing.sm,
+                ),
                 scrollDirection: Axis.horizontal,
                 itemCount: listCompany.length,
                 itemBuilder: (context, index) {
@@ -156,15 +150,13 @@ class _HomePageState extends State<HomePage> {
             ),
             const CompetitiveSalaryWidget(),
             WidgetSeeAll(
-              onPressed: () {
-                context.push(HotJobSeeAllPage.routePath);
-              },
+              onPressed: () => context.push(HotJobSeeAllPage.routePath),
               title: 'For you',
             ),
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
               itemCount: hotJobModel.length,
               itemBuilder: (context, index) {
                 return ItemHotJobs(
@@ -183,30 +175,24 @@ class _HomePageState extends State<HomePage> {
                       hotJobModel[index].isSaved = !hotJobModel[index].isSaved;
                     });
                   },
-                  onApply: () {
-                    context.push(ApplyNowPage.routePath);
-                  },
+                  onApply: () => context.push(ApplyNowPage.routePath),
                 );
               },
             ),
-            const Padding(
-              padding: EdgeInsets.all(16),
+            Padding(
+              padding: const EdgeInsets.all(AppSpacing.lg),
               child: Text(
                 'Explore more',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.kBlackColor,
-                ),
+                style: CustomTextStyles.headlineSmallBold,
               ),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.42,
+              height: height * 0.42,
               child: ListView.builder(
                 padding: const EdgeInsets.only(
-                  left: 16,
-                  bottom: 10,
-                  top: 10,
+                  left: AppSpacing.lg,
+                  bottom: AppSpacing.md,
+                  top: AppSpacing.sm,
                 ),
                 scrollDirection: Axis.horizontal,
                 itemCount: listExplore.length,
@@ -228,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xlg),
           ],
         ),
       ),

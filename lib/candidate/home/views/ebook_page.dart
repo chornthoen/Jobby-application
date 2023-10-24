@@ -5,6 +5,7 @@ import 'package:jobby_application/candidate/home/models/ebook_model.dart';
 import 'package:jobby_application/candidate/home/views/ebook_detail_page.dart';
 import 'package:jobby_application/candidate/home/widgets/item_ebook.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
@@ -18,13 +19,7 @@ class EBookPage extends StatefulWidget {
 }
 
 class _EBookPageState extends State<EBookPage> {
-  List<String> tabList = [
-    'All',
-    'Knowledges',
-    'Skills',
-    'Design',
-    'Marketing',
-  ];
+  List<String> tabList = ['All', 'Knowledges', 'Skills', 'Design', 'Marketing'];
   int index = 0;
 
   @override
@@ -35,21 +30,24 @@ class _EBookPageState extends State<EBookPage> {
         child: Column(
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+              padding: EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.sm,
+              ),
               child: CustomTextFieldForms(
                 prefixIcon: Icon(
                   PhosphorIcons.magnifying_glass,
-                  size: 28,
+                  size: AppSpacing.xlg,
                 ),
                 keyboardType: TextInputType.emailAddress,
                 hintText: 'Search',
               ),
             ),
             SizedBox(
-              height: 34,
+              height: AppSpacing.xxlg,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: AppSpacing.lg),
                 itemCount: tabList.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
@@ -60,16 +58,16 @@ class _EBookPageState extends State<EBookPage> {
                     },
                     child: Container(
                       alignment: Alignment.center,
-                      margin: const EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.only(right: AppSpacing.md),
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 8,
+                        horizontal: AppSpacing.lg,
+                        vertical: AppSpacing.sm,
                       ),
                       decoration: BoxDecoration(
                         color: this.index == index
                             ? AppColors.kPrimaryColor
                             : AppColors.kColorGray200,
-                        borderRadius: BorderRadius.circular(34),
+                        borderRadius: BorderRadius.circular(AppSpacing.xxlg),
                       ),
                       child: Text(
                         tabList[index],
@@ -86,9 +84,9 @@ class _EBookPageState extends State<EBookPage> {
                 },
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.md),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
               child: ListView.builder(
                 itemCount: listEBook.length,
                 shrinkWrap: true,
@@ -101,9 +99,7 @@ class _EBookPageState extends State<EBookPage> {
                     date: event.date,
                     name: event.name,
                     isSaved: event.isSaved,
-                    onPressed: () {
-                      context.push(EbookDetailPage.routePath);
-                    },
+                    onPressed: () => context.push(EbookDetailPage.routePath),
                     onSaved: () {
                       setState(() {
                         event.isSaved = !event.isSaved;

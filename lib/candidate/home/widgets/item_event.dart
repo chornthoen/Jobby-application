@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemEvent extends StatelessWidget {
   const ItemEvent({
@@ -36,11 +38,14 @@ class ItemEvent extends StatelessWidget {
         GestureDetector(
           onTap: onPressed,
           child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            padding: const EdgeInsets.only(bottom: 16),
+            margin: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
+            padding: const EdgeInsets.only(bottom: AppSpacing.lg),
             decoration: BoxDecoration(
               color: AppColors.kWhiteColor,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
               boxShadow: [
                 AppColors.kBoxShadowColor,
                 AppColors.kBoxShadowColor1,
@@ -57,8 +62,8 @@ class ItemEvent extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: AppColors.kWhiteColor,
                         borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
+                          topLeft: Radius.circular(AppSpacing.sm),
+                          topRight: Radius.circular(AppSpacing.sm),
                         ),
                         image: DecorationImage(
                           image: AssetImage(image),
@@ -67,59 +72,47 @@ class ItemEvent extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: 10,
-                      left: 10,
+                      top: AppSpacing.sm,
+                      left: AppSpacing.sm,
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 5,
+                          horizontal: AppSpacing.md,
+                          vertical: AppSpacing.xs,
                         ),
                         decoration: BoxDecoration(
                           color: AppColors.kColorBlue400,
-                          borderRadius: BorderRadius.circular(40),
+                          borderRadius: BorderRadius.circular(AppSpacing.xxxlg),
                         ),
                         child: Text(
                           status,
-                          style: const TextStyle(
-                            color: AppColors.kWhiteColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: CustomTextStyles.buttonMediumWhite,
                         ),
                       ),
                     ),
                     Positioned(
                       bottom: -1,
-                      left: 10,
+                      left: AppSpacing.sm,
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 5,
+                          horizontal: AppSpacing.lg,
+                          vertical: AppSpacing.xs,
                         ),
                         decoration: const BoxDecoration(
                           color: AppColors.kWhiteColor,
                           borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(10),
-                            topRight: Radius.circular(10),
+                            topLeft: Radius.circular(AppSpacing.sm),
+                            topRight: Radius.circular(AppSpacing.sm),
                           ),
                         ),
                         child: Column(
                           children: [
                             Text(
                               day,
-                              style: const TextStyle(
-                                color: AppColors.kPrimaryColor,
-                                fontSize: 28,
-                                fontWeight: FontWeight.w700,
-                              ),
+                              style: CustomTextStyles.headlineMediumSemiBold,
                             ),
                             Text(
                               month,
-                              style: const TextStyle(
-                                color: AppColors.kPrimaryColor,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: CustomTextStyles.titleMediumBlack,
                             ),
                           ],
                         ),
@@ -127,20 +120,18 @@ class ItemEvent extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 TextButton(
                   onPressed: onPressed,
                   child: Text(
                     title,
-                    style: const TextStyle(
-                      fontSize: 21,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.kBlackColor,
-                    ),
+                    style: CustomTextStyles.bodyLargeSemiBoldBlack,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.sm,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -149,16 +140,12 @@ class ItemEvent extends StatelessWidget {
                           const Icon(
                             PhosphorIcons.calendar_blank,
                             color: AppColors.kColorGray500,
-                            size: 22,
+                            size: AppSpacing.xlg,
                           ),
-                          const SizedBox(width: 5),
+                          const SizedBox(width: AppSpacing.xs),
                           Text(
                             date,
-                            style: const TextStyle(
-                              fontSize: 19,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.kColorGray500,
-                            ),
+                            style: CustomTextStyles.titleMediumRegularGray600,
                           ),
                         ],
                       ),
@@ -166,18 +153,14 @@ class ItemEvent extends StatelessWidget {
                         children: [
                           SvgPicture.asset(
                             'assets/svg/users.svg',
-                            height: 22,
-                            width: 22,
+                            height: AppSpacing.xlg,
+                            width: AppSpacing.xlg,
                             color: AppColors.kColorGray500,
                           ),
-                          const SizedBox(width: 5),
+                          const SizedBox(width: AppSpacing.xs),
                           Text(
                             count,
-                            style: const TextStyle(
-                              fontSize: 19,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.kColorGray500,
-                            ),
+                            style: CustomTextStyles.titleMediumRegularGray600,
                           ),
                         ],
                       ),
@@ -188,7 +171,7 @@ class ItemEvent extends StatelessWidget {
                               ? PhosphorIcons.bookmark_simple_fill
                               : PhosphorIcons.bookmark_simple,
                           color: AppColors.kPrimaryColor,
-                          size: 24,
+                          size: AppSpacing.xlg,
                         ),
                       ),
                     ],

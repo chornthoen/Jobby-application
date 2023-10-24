@@ -5,6 +5,8 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/models/ebook_model.dart';
 import 'package:jobby_application/candidate/home/widgets/item_ebook.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class EbookDetailPage extends StatefulWidget {
@@ -38,11 +40,11 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.only(top: 10),
+              margin: const EdgeInsets.only(top: AppSpacing.md),
               height: 34,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: AppSpacing.lg),
                 itemCount: tabs.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
@@ -53,16 +55,16 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
                     },
                     child: Container(
                       alignment: Alignment.center,
-                      margin: const EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.only(right: AppSpacing.sm),
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 8,
+                        horizontal: AppSpacing.lg,
+                        vertical: AppSpacing.sm,
                       ),
                       decoration: BoxDecoration(
                         color: this.index == index
                             ? AppColors.kPrimaryColor
                             : AppColors.kColorGray200,
-                        borderRadius: BorderRadius.circular(34),
+                        borderRadius: BorderRadius.circular(AppSpacing.xxlg),
                       ),
                       child: Text(
                         tabs[index],
@@ -80,108 +82,87 @@ class _EbookDetailPageState extends State<EbookDetailPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.sm,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Perfomance evaluation review',
-                    style: TextStyle(
-                      color: AppColors.kPrimaryColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  Text(
+                    'Performance evaluation review',
+                    style: CustomTextStyles.bodyLargeSemiBoldBlack,
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: AppSpacing.sm),
                   Row(
                     children: [
                       const Icon(
                         PhosphorIcons.calendar_blank,
                         color: AppColors.kColorGray500,
-                        size: 22,
+                        size: AppSpacing.xlg - 2,
                       ),
-                      const SizedBox(width: 5),
-                      const Text(
+                      const SizedBox(width: AppSpacing.xs),
+                      Text(
                         '12/12/2021',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.kColorGray500,
-                        ),
+                        style: CustomTextStyles.titleMediumRegularGray500,
                       ),
-                      const SizedBox(width: 20),
+                      const SizedBox(width: AppSpacing.lg),
                       SvgPicture.asset(
                         'assets/svg/user.svg',
-                        height: 22,
-                        width: 22,
+                        height: AppSpacing.xlg - 2,
+                        width: AppSpacing.xlg - 2,
                         color: AppColors.kColorGray500,
                       ),
-                      const SizedBox(width: 5),
-                      const Text(
+                      const SizedBox(width: AppSpacing.xs),
+                      Text(
                         'Chorn Thoen',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.kColorGray500,
-                        ),
+                        style: CustomTextStyles.titleMediumRegularGray500,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   const Image(
                     image: AssetImage('assets/images/event1.png'),
                     height: 180,
                     width: double.infinity,
                   ),
-                  const SizedBox(height: 14),
-                  const Text(
+                  const SizedBox(height: AppSpacing.lg),
+                  Text(
                     'Employee performance reviews, where managers evaluate '
-                        'their staff’s overall performance, are vital for'
-                        ' every business. However, the effectiveness of'
-                        ' those sessions depends on how they are prepared'
-                        ' and conducted.',
-                    style: TextStyle(
-                      color: AppColors.kColorGray600,
-                      fontSize: 17,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    'their staff’s overall performance, are vital for'
+                    ' every business. However, the effectiveness of'
+                    ' those sessions depends on how they are prepared'
+                    ' and conducted.',
+                    style: CustomTextStyles.titleMediumRegularGray600,
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   Row(
                     children: [
                       TextButton(
                         onPressed: () {},
-                        child: const Row(
+                        child: Row(
                           children: [
-                            Icon(
+                            const Icon(
                               PhosphorIcons.download_simple,
                               color: AppColors.kPrimaryColor,
-                              size: 24,
+                              size: AppSpacing.xlg,
                             ),
-                            SizedBox(width: 5),
+                            const SizedBox(width: AppSpacing.xs),
                             Text(
                               'Download',
-                              style: TextStyle(
-                                color: AppColors.kPrimaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: CustomTextStyles.buttonMediumBlack,
                             ),
                           ],
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8),
-                  const Text(
+                  const SizedBox(height: AppSpacing.sm),
+                  Text(
                     'Maybe you are interested',
-                    style: TextStyle(
-                      color: AppColors.kPrimaryColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: CustomTextStyles.bodyLargeSemiBoldBlack,
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   ListView.builder(
                     itemCount: listEBook.length,
                     shrinkWrap: true,

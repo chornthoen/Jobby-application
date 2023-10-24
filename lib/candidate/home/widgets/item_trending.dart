@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemTrending extends StatelessWidget {
   const ItemTrending({
@@ -10,7 +12,7 @@ class ItemTrending extends StatelessWidget {
     required this.description,
     super.key,
     this.color,
-    this.sizeBox = 12,
+    this.sizeBox = AppSpacing.md,
     this.colorBackground,
   });
 
@@ -23,51 +25,38 @@ class ItemTrending extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Container(
-      height: MediaQuery.of(context).size.height * 0.1,
-      width: MediaQuery.of(context).size.width * 0.3,
-      margin: EdgeInsets.only(right: sizeBox ?? 12),
-      padding: const EdgeInsets.all(10),
+      height: height * 0.1,
+      width: width * 0.3,
+      margin: EdgeInsets.only(right: sizeBox ?? AppSpacing.md),
+      padding: const EdgeInsets.all(AppSpacing.sm),
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            height: 50,
-            width: 50,
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(AppSpacing.md),
             decoration: BoxDecoration(
               color: colorBackground,
               shape: BoxShape.circle,
             ),
             child: SvgPicture.asset(
               svgPath,
-              height: 16,
-              width: 16,
+              height: AppSpacing.xlg,
+              width: AppSpacing.xlg,
               color: AppColors.kPrimaryColor,
             ),
           ),
-          const SizedBox(height: 10),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 16,
-              color: AppColors.kPrimaryColor,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 5),
-          Text(
-            description,
-            style: const TextStyle(
-              color: AppColors.kColorGray600,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+          const SizedBox(height: AppSpacing.md),
+          Text(title, style: CustomTextStyles.titleSmallSemiBoldBlack),
+          const SizedBox(height: AppSpacing.xs),
+          Text(description, style: CustomTextStyles.titleSmallMediumGray600),
         ],
       ),
     );

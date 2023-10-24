@@ -5,6 +5,7 @@ import 'package:jobby_application/candidate/home/models/event_models.dart';
 import 'package:jobby_application/candidate/home/views/event_detail_page.dart';
 import 'package:jobby_application/candidate/home/widgets/item_event.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
@@ -34,8 +35,11 @@ class _EventPageState extends State<EventPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.sm,
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -43,18 +47,18 @@ class _EventPageState extends State<EventPage> {
                     child: CustomTextFieldForms(
                       prefixIcon: Icon(
                         PhosphorIcons.magnifying_glass,
-                        size: 28,
+                        size: AppSpacing.xlg,
                       ),
                       keyboardType: TextInputType.emailAddress,
                       hintText: 'Search',
                     ),
                   ),
                   IconButton(
-                    splashRadius: 24,
+                    splashRadius: AppSpacing.xlg,
                     onPressed: () {},
                     icon: const Icon(
                       PhosphorIcons.faders,
-                      size: 28,
+                      size: AppSpacing.xlg,
                     ),
                   ),
                 ],
@@ -64,7 +68,7 @@ class _EventPageState extends State<EventPage> {
               height: 34,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.only(left: 16),
+                padding: const EdgeInsets.only(left: AppSpacing.lg),
                 itemCount: tabList.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
@@ -75,16 +79,16 @@ class _EventPageState extends State<EventPage> {
                     },
                     child: Container(
                       alignment: Alignment.center,
-                      margin: const EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.only(right: AppSpacing.sm),
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 14,
-                        vertical: 8,
+                        horizontal: AppSpacing.lg,
+                        vertical: AppSpacing.sm,
                       ),
                       decoration: BoxDecoration(
                         color: this.index == index
                             ? AppColors.kPrimaryColor
                             : AppColors.kColorGray200,
-                        borderRadius: BorderRadius.circular(34),
+                        borderRadius: BorderRadius.circular(AppSpacing.xlg),
                       ),
                       child: Text(
                         tabList[index],
@@ -101,7 +105,7 @@ class _EventPageState extends State<EventPage> {
                 },
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.md),
             ListView.builder(
               itemCount: eventModel.length,
               shrinkWrap: true,
@@ -117,9 +121,7 @@ class _EventPageState extends State<EventPage> {
                   count: event.countUser,
                   status: event.status,
                   isSaved: event.isSaved,
-                  onPressed: () {
-                    context.push(EventDetailPage.routePath);
-                  },
+                  onPressed: () => context.push(EventDetailPage.routePath),
                   onSaved: () {
                     setState(() {
                       event.isSaved = !event.isSaved;

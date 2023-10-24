@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/home/widgets/item_home_banner.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/models/banner_home_model.dart';
-
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class WidgetSlider extends StatefulWidget {
   const WidgetSlider({super.key});
@@ -20,16 +20,19 @@ class _WidgetSliderState extends State<WidgetSlider> {
     super.initState();
     carouselController = CarouselController();
   }
+
   int currentTab = 0;
+
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Column(
       children: [
         CarouselSlider.builder(
           itemCount: listBanner.length,
           carouselController: carouselController,
           itemBuilder: (context, index, realIndex) {
-            return  ItemHomeBanner(
+            return ItemHomeBanner(
               image: listBanner[index].image,
               title: listBanner[index].title,
               description: listBanner[index].description,
@@ -37,10 +40,10 @@ class _WidgetSliderState extends State<WidgetSlider> {
             );
           },
           options: CarouselOptions(
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: height * 0.2,
             viewportFraction: 1,
             autoPlay: true,
-            autoPlayInterval:const   Duration(seconds: 7),
+            autoPlayInterval: const Duration(seconds: 7),
             autoPlayAnimationDuration: const Duration(seconds: 1),
             onPageChanged: (index, reason) {
               setState(() {
@@ -54,14 +57,14 @@ class _WidgetSliderState extends State<WidgetSlider> {
           children: [
             for (int i = 0; i < listBanner.length; i++)
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 3),
-                height: 2,
-                width: 40,
+                margin: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
+                height: AppSpacing.xxs,
+                width: AppSpacing.xxxlg,
                 decoration: BoxDecoration(
                   color: currentTab == i
                       ? AppColors.kBlackColor
                       : AppColors.kColorGray300,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
               ),
           ],

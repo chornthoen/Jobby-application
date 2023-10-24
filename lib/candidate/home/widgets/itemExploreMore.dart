@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemExploreMore extends StatelessWidget {
   const ItemExploreMore({
@@ -18,18 +20,17 @@ class ItemExploreMore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Container(
-      width: MediaQuery.of(context).size.width * 0.7,
-      margin: const EdgeInsets.only(
-        right: 16,
-      ),
+      width: width * 0.7,
+      margin: const EdgeInsets.only(right: AppSpacing.lg),
       padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 8,
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.sm,
       ),
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
         boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Column(
@@ -42,48 +43,32 @@ class ItemExploreMore extends StatelessWidget {
               width: 150,
             ),
           ),
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: AppColors.kBlackColor,
-            ),
-          ),
-          const SizedBox(height: 10),
-          Text(
-            description,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              color: AppColors.kColorGray600,
-            ),
-          ),
+          Text(title, style: CustomTextStyles.bodyLargeSemiBoldBlack),
+          const SizedBox(height: AppSpacing.sm),
+          Text(description, style: CustomTextStyles.titleMediumRegularGray600),
           const Spacer(),
-          SizedBox(
-            width: 155,
-            child: TextButton(
-              onPressed: onPressed,
-              child: const Row(
-                children: [
-                  Text(
-                    'Explore Now',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.kPrimaryColor,
+          Row(
+            children: [
+              TextButton(
+                onPressed: onPressed,
+                child:  Row(
+                  children: [
+                    Text(
+                      'Explore Now',
+                      style: CustomTextStyles.buttonMediumBlack,
                     ),
-                  ),
-                  SizedBox(width: 5),
-                  Icon(
-                    PhosphorIcons.arrow_right_bold,
-                    color: AppColors.kPrimaryColor,
-                    size: 22,
-                  ),
-                ],
+                    const SizedBox(width: AppSpacing.xs),
+                    const Icon(
+                      PhosphorIcons.arrow_right_bold,
+                      color: AppColors.kPrimaryColor,
+                      size: AppSpacing.xlg,
+                    ),
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
+          const SizedBox(height: AppSpacing.sm),
         ],
       ),
     );

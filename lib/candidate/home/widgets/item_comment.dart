@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemCommentInEvent extends StatelessWidget {
   const ItemCommentInEvent({
@@ -27,52 +29,37 @@ class ItemCommentInEvent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: AppSpacing.sm),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
               CircleAvatar(
-                radius: 26,
+                radius: AppSpacing.xlg,
                 backgroundColor: AppColors.kWhiteColor,
                 backgroundImage: AssetImage(
                   image,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.md),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     name,
-                    style: const TextStyle(
-                      color: AppColors.kPrimaryColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
+                    style: CustomTextStyles.bodyLargeSemiBoldBlack,
                   ),
                   Text(
                     date,
-                    style: const TextStyle(
-                      color: AppColors.kColorGray500,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: CustomTextStyles.titleSmallMediumGray500,
                   ),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 10),
-          Text(
-            comment,
-            style: const TextStyle(
-              color: AppColors.kColorGray600,
-              fontSize: 17,
-              fontWeight: FontWeight.w400,
-            ),
-          ),
+          const SizedBox(height: AppSpacing.md),
+          Text(comment, style: CustomTextStyles.titleMediumRegularGray600),
           Row(
             children: [
               TextButton.icon(
@@ -84,32 +71,22 @@ class ItemCommentInEvent extends StatelessWidget {
                   color: isLiked
                       ? AppColors.kPrimaryColor
                       : AppColors.kColorGray500,
-                  size: 24,
+                  size: AppSpacing.xlg,
                 ),
-                label: Text(
-                  '$like',
-                  style: const TextStyle(
-                    color: AppColors.kColorGray500,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                label: Text('$like',
+                    style: CustomTextStyles.titleMediumRegularGray500),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.md),
               TextButton.icon(
                 onPressed: () {},
                 icon: const Icon(
                   PhosphorIcons.share,
                   color: AppColors.kColorGray500,
-                  size: 24,
+                  size: AppSpacing.xlg,
                 ),
                 label: Text(
                   '$share',
-                  style: const TextStyle(
-                    color: AppColors.kColorGray500,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: CustomTextStyles.titleMediumRegularGray500,
                 ),
               ),
             ],

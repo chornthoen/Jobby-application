@@ -3,6 +3,7 @@ import 'package:jobby_application/candidate/home/widgets/tab_compay.dart';
 import 'package:jobby_application/candidate/home/widgets/tab_hight_salary.dart';
 import 'package:jobby_application/candidate/home/widgets/tab_job.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class CompetitiveSalaryWidget extends StatefulWidget {
   const CompetitiveSalaryWidget({super.key});
@@ -31,12 +32,12 @@ class _CompetitiveSalaryWidgetState extends State<CompetitiveSalaryWidget> {
     return Column(
       children: [
         Container(
-          height: 46,
-          margin: const EdgeInsets.symmetric(horizontal: 16),
+          height: AppSpacing.xxxlg + 6,
+          margin: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: AppColors.kWhiteColor,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(AppSpacing.sm),
             boxShadow: [AppColors.kBoxShadowColor],
           ),
           child: Row(
@@ -54,7 +55,7 @@ class _CompetitiveSalaryWidgetState extends State<CompetitiveSalaryWidget> {
                       decoration: BoxDecoration(
                         color: currentTab == i ? AppColors.kPrimaryColor :
                         Colors.white,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(AppSpacing.sm),
                       ),
                       child: Text(
                         tabTitle[i],
@@ -71,7 +72,7 @@ class _CompetitiveSalaryWidgetState extends State<CompetitiveSalaryWidget> {
             ],
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: AppSpacing.lg),
         tabContent[currentTab],
       ],
     );

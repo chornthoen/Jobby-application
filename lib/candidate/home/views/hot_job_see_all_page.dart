@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/views/apply_now/views/apply_now_page.dart';
 import 'package:jobby_application/candidate/home/widgets/item_hot_jobs.dart';
 import 'package:jobby_application/candidate/jobs/models/matching_model.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class HotJobSeeAllPage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HotJobSeeAllPageState extends State<HotJobSeeAllPage> {
         itemCount: matchingModel.length,
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         itemBuilder: (context, index) {
           final model = matchingModel[index];
           return ItemHotJobs(

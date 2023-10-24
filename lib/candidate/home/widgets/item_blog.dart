@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemBlog extends StatelessWidget {
   const ItemBlog({
@@ -29,11 +31,11 @@ class ItemBlog extends StatelessWidget {
         GestureDetector(
           onTap: onPressed,
           child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            padding: const EdgeInsets.only(bottom: 16),
+            margin: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
+            padding: const EdgeInsets.only(bottom: AppSpacing.lg),
             decoration: BoxDecoration(
               color: AppColors.kWhiteColor,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
               boxShadow: [
                 AppColors.kBoxShadowColor,
               ],
@@ -46,8 +48,8 @@ class ItemBlog extends StatelessWidget {
                   height: 200,
                   decoration: BoxDecoration(
                     borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10),
+                      topLeft: Radius.circular(AppSpacing.sm),
+                      topRight: Radius.circular(AppSpacing.sm),
                     ),
                     image: DecorationImage(
                       image: AssetImage(image),
@@ -55,20 +57,18 @@ class ItemBlog extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 TextButton(
                   onPressed: onPressed,
                   child: Text(
                     title,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.kBlackColor,
-                    ),
+                    style: CustomTextStyles.bodyLargeSemiBoldBlack,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.sm,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -77,16 +77,12 @@ class ItemBlog extends StatelessWidget {
                           const Icon(
                             PhosphorIcons.calendar_blank,
                             color: AppColors.kColorGray500,
-                            size: 22,
+                            size: AppSpacing.xlg - 2,
                           ),
-                          const SizedBox(width: 5),
+                          const SizedBox(width: AppSpacing.xs),
                           Text(
                             date,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.kColorGray500,
-                            ),
+                            style: CustomTextStyles.titleMediumRegularGray500,
                           ),
                         ],
                       ),
@@ -95,16 +91,12 @@ class ItemBlog extends StatelessWidget {
                           const Icon(
                             PhosphorIcons.clock,
                             color: AppColors.kColorGray500,
-                            size: 22,
+                            size: AppSpacing.xlg - 2,
                           ),
-                          const SizedBox(width: 5),
+                          const SizedBox(width: AppSpacing.xs),
                           Text(
                             '$read min read',
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.kColorGray500,
-                            ),
+                            style: CustomTextStyles.titleMediumRegularGray500,
                           ),
                         ],
                       ),
@@ -115,7 +107,7 @@ class ItemBlog extends StatelessWidget {
                               ? PhosphorIcons.bookmark_simple_fill
                               : PhosphorIcons.bookmark_simple,
                           color: AppColors.kPrimaryColor,
-                          size: 23,
+                          size: AppSpacing.xlg,
                         ),
                       ),
                     ],

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/candidate/home/models/trending_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class TrendingSeeAllPage extends StatefulWidget {
@@ -22,56 +24,49 @@ class _TrendingSeeAllPageState extends State<TrendingSeeAllPage> {
         title: 'Trending now',
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: GridView.count(
           crossAxisCount: 2,
+          physics: const BouncingScrollPhysics(),
           children: List.generate(
             listTrending.length,
             (index) {
               return Container(
                 height: MediaQuery.of(context).size.height * 0.1,
                 width: MediaQuery.of(context).size.width * 0.3,
-                margin: const EdgeInsets.all(10),
-                padding: const EdgeInsets.all(10),
+                margin: const EdgeInsets.all(AppSpacing.md),
+                padding: const EdgeInsets.all(AppSpacing.sm),
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: listTrending[index].color,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      height: 50,
-                      width: 50,
-                      padding: const EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(AppSpacing.lg),
                       decoration: const BoxDecoration(
                         color: AppColors.kWhiteColor,
                         shape: BoxShape.circle,
                       ),
                       child: SvgPicture.asset(
                         listTrending[index].svgPath,
-                        height: 16,
-                        width: 16,
+                        height: AppSpacing.xlg,
+                        width: AppSpacing.xlg,
                         color: AppColors.kPrimaryColor,
                       ),
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.sm),
                     Text(
                       listTrending[index].title,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: AppColors.kPrimaryColor,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      textAlign: TextAlign.center,
+                      style: CustomTextStyles.bodyLargeSemiBoldBlack,
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: AppSpacing.sm),
                     Text(
                       listTrending[index].description,
-                      style: const TextStyle(
-                        color: AppColors.kColorGray600,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: CustomTextStyles.titleSmallMediumGray600,
                     ),
                   ],
                 ),
