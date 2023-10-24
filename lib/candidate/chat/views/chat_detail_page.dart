@@ -17,6 +17,7 @@ class ChatDetailPage extends StatefulWidget {
   });
 
   final ChatModel chatModel;
+  //test
 
   static const String routePath = '/chat-detail-page';
 
