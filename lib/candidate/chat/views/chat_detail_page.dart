@@ -1,4 +1,3 @@
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/chat/models/chat_model.dart';
@@ -9,10 +8,12 @@ import 'package:jobby_application/candidate/chat/widgets/message_other.dart';
 import 'package:jobby_application/candidate/chat/widgets/my_message.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 
 class ChatDetailPage extends StatefulWidget {
   const ChatDetailPage({
-    required this.chatModel, super.key,
+    required this.chatModel,
+    super.key,
   });
 
   final ChatModel chatModel;
@@ -38,16 +39,6 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
 
     super.dispose();
   }
-
-  //close keyboard
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
   List<String> messages = [
     'Hello, Chorn Thoen',
     'Hello, how are you? I am fine. What about you? ',
@@ -64,14 +55,16 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: (){
+        CloseKeyboard.closeKeyboard(context);
+      },
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: CustomAppBarChat(
           chatModel: widget.chatModel,
           onCall: () {},
           onVideoCall: () {
-            //context.push(CallVideoPage.routePath);
+            context.push(CallVideoPage.routePath);
           },
         ),
         body: SafeArea(
@@ -127,72 +120,4 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       ),
     );
   }
-
-}
-
-class MessageModel {
-
-  MessageModel({required this.sms, required this.isMe});
-  String sms;
-  bool isMe;
-
-  final List<MessageModel> messages = [
-    MessageModel(
-      sms: 'Hello, Chorn Thoen',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello!!!!!!!',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'This is my message.',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Where are you?',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'When will you come back?',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: false,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. What about you? ',
-      isMe: true,
-    ),
-    MessageModel(
-      sms: 'Hello, how are you? I am fine. ',
-      isMe: true,
-    ),
-
-  ];
 }
