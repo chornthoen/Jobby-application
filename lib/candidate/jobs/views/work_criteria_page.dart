@@ -16,10 +16,12 @@ import 'package:jobby_application/candidate/jobs/widgets/item_level.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_location.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_type_of_work.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
-import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
+import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class WorkCriteriaPage extends StatefulWidget {
   const WorkCriteriaPage({super.key});
@@ -67,7 +69,10 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       appBar: const CustomAppBar(title: 'Your Work Criteria'),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.lg,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -75,16 +80,12 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 icon: 'assets/svg/jobs.svg',
                 text: 'Job you are looking for',
               ),
-              const SizedBox(height: 10),
-              const Text(
+              const SizedBox(height: AppSpacing.md),
+              Text(
                 'Add up to 10 positions you want to search for',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.kColorGray600,
-                ),
+                style: CustomTextStyles.titleMediumRegularGray600,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               CustomTextFieldForms(
                 controller: addPositionController,
                 hintText: 'Add position',
@@ -92,60 +93,60 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: addPositionSheet,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const LabelIconAndText(
                 icon: 'assets/svg/time.svg',
                 text: 'Type of work',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               CustomTextFieldForms(
                 controller: typeOfWorkController,
                 hintText: 'Choose type of work',
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: typeOfWorkSheet,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const LabelIconAndText(
                 icon: 'assets/svg/location.svg',
                 text: 'Location',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               CustomTextFieldForms(
                 controller: locationController,
                 hintText: 'Choose location',
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: locationSheet,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const LabelIconAndText(
                 icon: 'assets/svg/star-outline.svg',
                 text: 'Level',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               CustomTextFieldForms(
                 controller: levelController,
                 hintText: 'Choose level',
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: levelSheet,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const LabelIconAndText(
                 icon: 'assets/svg/building.svg',
                 text: 'Industry',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               CustomTextFieldForms(
                 controller: industryController,
                 hintText: 'Choose industry',
                 suffixIcon: PhosphorIcons.caret_down,
                 onPressed: industrySheet,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const LabelIconAndText(
                 icon: 'assets/svg/money.svg',
                 text: 'Expected salary',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               CustomTextFieldForms(
                 controller: expectedSalaryController,
                 hintText: 'Choose expected salary',
@@ -158,17 +159,15 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(
-          left: 16,
-          right: 16,
+          left: AppSpacing.lg,
+          right: AppSpacing.lg,
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-        margin: const EdgeInsets.only(bottom: 10),
+        margin: const EdgeInsets.only(bottom: AppSpacing.md),
         child: CustomElevatedButton(
           isClick: true,
           text: 'Save',
-          onPressed: () {
-            context.pop(context);
-          },
+          onPressed: () => context.pop(context),
         ),
       ),
     );
@@ -190,9 +189,9 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Job Are You Looking For'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemAddPosition()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );
@@ -214,9 +213,9 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Type of Work'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemTypeOfWork()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );
@@ -238,9 +237,9 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Location'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemLocation()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );
@@ -262,9 +261,9 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Level'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemLevel()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );
@@ -286,9 +285,9 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Industry'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemIndustry()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );
@@ -311,9 +310,9 @@ class _WorkCriteriaPageState extends State<WorkCriteriaPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Expected Salary'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemExpectedSalary()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );

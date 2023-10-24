@@ -67,7 +67,7 @@ class _CallVideoPageState extends State<CallVideoPage> {
       body: Stack(
         children: [
           Image.asset(
-            'assets/images/thoen.png',
+            'assets/images/rose.png',
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
@@ -100,7 +100,7 @@ class _CallVideoPageState extends State<CallVideoPage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                   image: const DecorationImage(
-                    image: AssetImage('assets/images/ly.png'),
+                    image: AssetImage('assets/images/rose.png'),
                     fit: BoxFit.cover,
                   ),
                 ),

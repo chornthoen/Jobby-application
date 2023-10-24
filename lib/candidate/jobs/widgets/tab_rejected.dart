@@ -16,7 +16,7 @@ class _RejectedContentState extends State<RejectedContent> {
       itemCount: rejectedModel.length,
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
-      itemBuilder: (context,index){
+      itemBuilder: (context, index) {
         final rejected = rejectedModel[index];
         return ItemRejected(
           title: rejected.title,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class CheckCustom extends StatefulWidget {
   const CheckCustom({
@@ -27,30 +28,23 @@ class _CheckCustomState extends State<CheckCustom> {
       onTap: widget.onTap,
       minVerticalPadding: 0,
       contentPadding: const EdgeInsets.only(
-        left: 10,
-        right: 4,
+        left: AppSpacing.sm,
+        right: AppSpacing.xs,
       ),
       title: Row(
         children: [
           Checkbox(
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(AppSpacing.xs),
             ),
-            splashRadius: 20,
+            splashRadius: AppSpacing.xlg,
             value: widget.isClick,
             checkColor: Colors.white,
             focusColor: AppColors.kPrimaryColor,
             activeColor: AppColors.kPrimaryColor,
             onChanged: widget.onChanged,
           ),
-          Text(
-            widget.title!,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: AppColors.kPrimaryColor,
-            ),
-          ),
+          Text(widget.title!, style: CustomTextStyles.titleMediumBlack),
         ],
       ),
     );

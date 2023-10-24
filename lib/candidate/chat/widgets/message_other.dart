@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class MessageOther extends StatelessWidget {
   const MessageOther({
@@ -21,25 +23,25 @@ class MessageOther extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           // if (index == 0)
-            SizedBox(
-              child: CircleAvatar(
-                radius: 14,
-                backgroundColor: AppColors.kWhiteColor,
-                backgroundImage: AssetImage(image!),
-              ),
+          SizedBox(
+            child: CircleAvatar(
+              radius: AppSpacing.lg,
+              backgroundColor: AppColors.kWhiteColor,
+              backgroundImage: AssetImage(image!),
             ),
-          // if (index != 0) const SizedBox(width: 26),
-          const SizedBox(width: 8),
+          ),
+          //if (index != 0) const SizedBox(width: 26),
+          const SizedBox(width: AppSpacing.sm),
           Flexible(
             child: Container(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(AppSpacing.sm),
               decoration: BoxDecoration(
                 color: AppColors.kWhiteColor,
                 borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(12),
-                  bottomLeft: Radius.circular(2),
-                  topRight: Radius.circular(12),
-                  bottomRight: Radius.circular(12),
+                  topLeft: Radius.circular(AppSpacing.md),
+                  bottomLeft: Radius.circular(AppSpacing.xxs),
+                  topRight: Radius.circular(AppSpacing.md),
+                  bottomRight: Radius.circular(AppSpacing.md),
                 ),
                 border: Border.all(
                   color: AppColors.kColorGray400,
@@ -47,11 +49,7 @@ class MessageOther extends StatelessWidget {
               ),
               child: Text(
                 message,
-                style: const TextStyle(
-                  color: AppColors.kPrimaryColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
+                style: CustomTextStyles.titleMediumRegularBlack,
               ),
             ),
           ),

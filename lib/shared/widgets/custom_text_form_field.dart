@@ -20,6 +20,7 @@ class CustomTextFieldForms extends StatefulWidget {
     this.prefixText,
     this.maxLines = 1,
     this.minLines = 1,
+    this.onTap,
   });
 
   final String hintText;
@@ -35,6 +36,7 @@ class CustomTextFieldForms extends StatefulWidget {
   final String? prefixText;
   final int? maxLines;
   final int? minLines;
+  final VoidCallback? onTap;
 
   @override
   State<CustomTextFieldForms> createState() => _CustomTextFieldFormsState();
@@ -44,6 +46,7 @@ class _CustomTextFieldFormsState extends State<CustomTextFieldForms> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onTap: widget.onTap,
       onChanged: widget.onChange,
       obscureText: widget.obscureText!,
       enabled: widget.enable,
@@ -96,7 +99,7 @@ class _CustomTextFieldFormsState extends State<CustomTextFieldForms> {
         ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(AppSpacing.sm),
-          borderSide: const BorderSide(color: Colors.transparent),
+          borderSide:  const BorderSide(color: AppColors.kColorGray400),
         ),
         filled: true,
         fillColor: AppColors.kBackgroundColor,

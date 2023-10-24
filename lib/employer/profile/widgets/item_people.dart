@@ -1,33 +1,35 @@
+
 import 'package:flutter/material.dart';
-import 'package:jobby_application/candidate/jobs/models/location_model.dart';
+import 'package:jobby_application/candidate/jobs/models/industry_model.dart';
 import 'package:jobby_application/candidate/jobs/widgets/check_custom.dart';
 
-class ItemLocation extends StatefulWidget {
-  const ItemLocation({super.key});
+
+class ItemPeople extends StatefulWidget {
+  const ItemPeople({super.key});
 
   @override
-  State<ItemLocation> createState() => _ItemLocationState();
+  State<ItemPeople> createState() => _ItemPeopleState();
 }
 
-class _ItemLocationState extends State<ItemLocation> {
+class _ItemPeopleState extends State<ItemPeople> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: locationModel.length,
+      itemCount: peopleModel.length,
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
         return CheckCustom(
-          isClick: locationModel[index].isClick,
-          title: locationModel[index].position,
+          isClick: peopleModel[index].isClick,
+          title: peopleModel[index].position,
           onTap: () {
             setState(() {
-              locationModel[index].isClick = !locationModel[index].isClick!;
+              peopleModel[index].isClick = !peopleModel[index].isClick!;
             });
           },
           onChanged: (value) {
             setState(() {
-              locationModel[index].isClick = value;
+              peopleModel[index].isClick = value;
             });
           },
         );

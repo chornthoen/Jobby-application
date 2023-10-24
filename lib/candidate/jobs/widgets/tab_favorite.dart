@@ -12,20 +12,19 @@ class FavoriteContent extends StatefulWidget {
 }
 
 class _FavoriteContentState extends State<FavoriteContent> {
-
-  //remove saved
   void removeSaved() {
     setState(() {
       suitableModel.removeWhere((element) => element.isSaved == false);
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: suitableModel.length,
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
-      itemBuilder: (context,index){
+      itemBuilder: (context, index) {
         return ItemFavorite(
           title: suitableModel[index].title,
           name: suitableModel[index].name,
@@ -42,9 +41,7 @@ class _FavoriteContentState extends State<FavoriteContent> {
               removeSaved();
             });
           },
-          onApply: () {
-            context.push(ApplyNowPage.routePath);
-          },
+          onApply: () => context.push(ApplyNowPage.routePath),
         );
       },
     );

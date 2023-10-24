@@ -5,12 +5,13 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/jobs/models/industry_model.dart';
 import 'package:jobby_application/candidate/jobs/widgets/action_tab.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_industry.dart';
+import 'package:jobby_application/employer/profile/widgets/item_people.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_custom.dart';
-import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class CompanyProfilePage extends StatefulWidget {
   const CompanyProfilePage({super.key});

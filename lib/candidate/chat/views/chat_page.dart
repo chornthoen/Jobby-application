@@ -5,6 +5,8 @@ import 'package:jobby_application/candidate/chat/models/chat_model.dart';
 import 'package:jobby_application/candidate/chat/views/chat_detail_page.dart';
 import 'package:jobby_application/candidate/chat/widgets/item_chat.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({super.key});
@@ -18,37 +20,31 @@ class ChatPage extends StatefulWidget {
 class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
       appBar: AppBar(
-        toolbarHeight: MediaQuery.of(context).size.height * 0.075,
+        toolbarHeight: height * 0.075,
         backgroundColor: AppColors.kBackgroundColor,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
+            bottom: Radius.circular(AppSpacing.xlg),
           ),
         ),
         shadowColor: AppColors.kWhiteColor,
         elevation: 2,
-        title: const Text(
-          'Chat',
-          style: TextStyle(
-            color: AppColors.kPrimaryColor,
-            fontSize: 26,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
+        title: Text('Chat', style: CustomTextStyles.headlineMediumSemiBold),
         automaticallyImplyLeading: false,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 8),
+            padding: const EdgeInsets.only(right: AppSpacing.sm),
             child: IconButton(
-              splashRadius: 20,
+              splashRadius: AppSpacing.xlg,
               onPressed: () {},
               icon: const Icon(
                 PhosphorIcons.magnifying_glass,
                 color: AppColors.kPrimaryColor,
-                size: 28,
+                size: AppSpacing.xlg,
               ),
             ),
           ),

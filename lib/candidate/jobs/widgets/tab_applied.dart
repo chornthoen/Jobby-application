@@ -16,7 +16,7 @@ class _AppliedContentState extends State<AppliedContent> {
       itemCount: appliedModel.length,
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
-      itemBuilder: (context,index){
+      itemBuilder: (context, index) {
         final applied = appliedModel[index];
         return ItemApplied(
           title: applied.title,

@@ -8,6 +8,7 @@ import 'package:jobby_application/candidate/chat/widgets/custom_text_field_chat.
 import 'package:jobby_application/candidate/chat/widgets/message_other.dart';
 import 'package:jobby_application/candidate/chat/widgets/my_message.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ChatDetailPage extends StatefulWidget {
   const ChatDetailPage({
@@ -70,17 +71,17 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
           chatModel: widget.chatModel,
           onCall: () {},
           onVideoCall: () {
-            context.push(CallVideoPage.routePath);
+            //context.push(CallVideoPage.routePath);
           },
         ),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.xlg),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -95,7 +96,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                       );
                     },
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: AppSpacing.xs),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -119,11 +120,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
               messageController.clear();
             });
           },
-          onEmoji: () {
-            setState(() {
-              isShowEmoji = !isShowEmoji;
-            });
-          },
+          onEmoji: () {},
           onPickImage: () {},
           onPickFile: () {},
         ),
@@ -131,27 +128,6 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     );
   }
 
-  Widget buildEmoji() {
-    return Container(
-      padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom,
-        left: 16,
-        right: 16,
-      ),
-      child: SizedBox(
-        height: 300,
-        child: EmojiPicker(
-          textEditingController: messageController,
-          config: const Config(
-            emojiSizeMax: 32 * 1.3,
-          ),
-          onEmojiSelected: (category, emoji) {
-
-          },
-        ),
-      ),
-    );
-  }
 }
 
 class MessageModel {

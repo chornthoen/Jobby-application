@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 
 class ActionTop extends StatefulWidget {
@@ -23,29 +25,21 @@ class _ActionTopState extends State<ActionTop> {
         TextButton(
           onPressed: () {
           },
-          child: const Text(
+          child:  Text(
             'Clear all',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: AppColors.kPrimaryColor,
-            ),
+            style: CustomTextStyles.buttonMediumBlack,
           ),
         ),
          Text(
           widget.title,
-          style:const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w700,
-            color: AppColors.kPrimaryColor,
-          ),
+          style: CustomTextStyles.headlineSmallMedium,
         ),
         GestureDetector(
           onTap: () {
             context.pop(context);
           },
           child: Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(AppSpacing.sm),
             decoration: const BoxDecoration(
               color: AppColors.kColorGray200,
               shape: BoxShape.circle,
@@ -53,7 +47,7 @@ class _ActionTopState extends State<ActionTop> {
             child: const Icon(
               PhosphorIcons.x,
               color: AppColors.kColorGray600,
-              size: 24,
+              size: AppSpacing.xlg,
             ),
           ),
         ),

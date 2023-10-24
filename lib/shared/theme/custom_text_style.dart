@@ -8,19 +8,17 @@ class CustomTextStyles {
       theme.textTheme.bodyLarge!.copyWith(
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w600,
-        fontSize: 20,
+        fontSize: 18,
       );
 
-  static TextStyle get bodyMediumBlack =>
-      theme.textTheme.bodyMedium!.copyWith(
+  static TextStyle get bodyMediumBlack => theme.textTheme.bodyMedium!.copyWith(
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w400,
       );
-  static TextStyle get bodySmallBlack =>
-      theme.textTheme.bodySmall!.copyWith(
+
+  static TextStyle get bodySmallBlack => theme.textTheme.bodySmall!.copyWith(
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w400,
-
       );
 
   static TextStyle get bodySmallMediumGray600 =>
@@ -36,11 +34,13 @@ class CustomTextStyles {
         fontWeight: FontWeight.w700,
         fontSize: 40,
       );
+
   static TextStyle get displayLargeBlack =>
       theme.textTheme.displayLarge!.copyWith(
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w700,
       );
+
   static TextStyle get displaySmallBlack =>
       theme.textTheme.displaySmall!.copyWith(
         color: AppColors.kBlackColor,
@@ -58,6 +58,7 @@ class CustomTextStyles {
         fontWeight: FontWeight.w500,
         fontSize: 18,
       );
+
   static TextStyle get headlineSmallBold =>
       theme.textTheme.headlineSmall!.copyWith(
         fontWeight: FontWeight.w700,
@@ -70,6 +71,7 @@ class CustomTextStyles {
         fontSize: 22,
         color: AppColors.kBlackColor,
       );
+
   static TextStyle get headlineBoldGreen400 =>
       theme.textTheme.headlineLarge!.copyWith(
         fontWeight: FontWeight.w700,
@@ -83,25 +85,40 @@ class CustomTextStyles {
         color: AppColors.kPrimaryColor,
         fontWeight: FontWeight.w600,
       );
+
   static TextStyle get buttonMediumWhite =>
       theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kWhiteColor,
         fontWeight: FontWeight.w600,
         fontSize: 16,
       );
+
   static TextStyle get buttonTitleSmallSemiBoldBlack =>
       theme.textTheme.titleSmall!.copyWith(
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w600,
       );
 
+  static TextStyle get buttonTitleSmallSemiBoldWhite =>
+      theme.textTheme.titleSmall!.copyWith(
+        color: AppColors.kWhiteColor,
+        fontWeight: FontWeight.w600,
+      );
+
   // Title text style
+
+  static TextStyle get titleSmallSemiBoldRed =>
+      theme.textTheme.titleSmall!.copyWith(
+        color: AppColors.kRedColor,
+        fontWeight: FontWeight.w600,
+      );
 
   static TextStyle get titleMediumBlack =>
       theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kPrimaryColor,
         fontWeight: FontWeight.w500,
       );
+
   static TextStyle get titleSmallSemiBoldBlack =>
       theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kPrimaryColor,
@@ -113,18 +130,20 @@ class CustomTextStyles {
         color: AppColors.kColorGray500,
         fontWeight: FontWeight.w400,
       );
+
   static TextStyle get titleMediumRegularGray500 =>
       theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kColorGray500,
         fontWeight: FontWeight.w400,
       );
+
   static TextStyle get titleSmallMediumGray500 =>
       theme.textTheme.titleSmall!.copyWith(
         color: AppColors.kColorGray500,
         fontWeight: FontWeight.w500,
       );
-  static TextStyle get titleSmallBlack =>
-      theme.textTheme.titleSmall!.copyWith(
+
+  static TextStyle get titleSmallBlack => theme.textTheme.titleSmall!.copyWith(
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w400,
       );
@@ -134,6 +153,7 @@ class CustomTextStyles {
         color: AppColors.kColorGray700,
         fontWeight: FontWeight.w400,
       );
+
   static TextStyle get titleSmallMediumGray600 =>
       theme.textTheme.titleSmall!.copyWith(
         color: AppColors.kColorGray600,
@@ -145,11 +165,13 @@ class CustomTextStyles {
         color: AppColors.kBlackColor,
         fontWeight: FontWeight.w400,
       );
+
   static TextStyle get titleMediumRegularWhite =>
       theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kWhiteColor,
         fontWeight: FontWeight.w400,
       );
+
   static TextStyle get titleMediumRegularGray600 =>
       theme.textTheme.titleMedium!.copyWith(
         color: AppColors.kColorGray600,
@@ -162,7 +184,11 @@ class CustomTextStyles {
         fontWeight: FontWeight.w600,
         fontSize: 18,
       );
-
+  static TextStyle get titleSmallRegularWhite =>
+      theme.textTheme.titleSmall!.copyWith(
+        color: AppColors.kWhiteColor,
+        fontWeight: FontWeight.w400,
+      );
 }
 
 extension on TextStyle {

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/jobs/models/type_fo_work_model.dart';
 import 'package:jobby_application/candidate/jobs/widgets/check_custom.dart';
 
-
 class ItemTypeOfWork extends StatefulWidget {
   const ItemTypeOfWork({super.key});
 
@@ -23,8 +22,7 @@ class _ItemTypeOfWorkState extends State<ItemTypeOfWork> {
           title: typeOfWorkModel[index].position,
           onTap: () {
             setState(() {
-              typeOfWorkModel[index].isClick =
-              !typeOfWorkModel[index].isClick!;
+              typeOfWorkModel[index].isClick = !typeOfWorkModel[index].isClick!;
             });
           },
           onChanged: (value) {

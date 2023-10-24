@@ -40,47 +40,4 @@ class _ItemAddPositionState extends State<ItemAddPosition> {
   }
 }
 
-class TextAdd extends StatelessWidget {
-  const TextAdd({
-    super.key,
-    this.text,
-    this.onTap,
-  });
-  final String? text;
-  final VoidCallback? onTap;
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-        vertical: 4,
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.kColorGray200,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: Row(
-        children: [
-          Text(
-            text!,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: AppColors.kPrimaryColor,
-            ),
-          ),
-          const SizedBox(width: 10),
-          GestureDetector(
-            onTap: onTap,
-            child: const Icon(
-              PhosphorIcons.x,
-              color: AppColors.kColorGray600,
-              size: 18,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}

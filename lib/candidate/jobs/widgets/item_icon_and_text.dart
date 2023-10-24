@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class LabelIconAndText extends StatelessWidget {
   const LabelIconAndText({
@@ -22,11 +23,7 @@ class LabelIconAndText extends StatelessWidget {
         const SizedBox(width: 8),
         Text(
           text,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-            color: AppColors.kPrimaryColor,
-          ),
+          style: CustomTextStyles.bodyLargeSemiBoldBlack,
         ),
       ],
     );

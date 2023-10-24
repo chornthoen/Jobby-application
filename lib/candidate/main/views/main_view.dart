@@ -6,6 +6,7 @@ import 'package:jobby_application/candidate/home/views/home_page.dart';
 import 'package:jobby_application/candidate/jobs/views/job_page.dart';
 import 'package:jobby_application/candidate/main/widgets/navigation_page.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
+
 late TabController tabController;
 
 class MainView extends StatefulWidget {
@@ -18,8 +19,6 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-
-
   @override
   Widget build(BuildContext context) {
     return const _BodyMainView();
@@ -35,7 +34,6 @@ class _BodyMainView extends StatefulWidget {
 
 class _BodyMainViewState extends State<_BodyMainView>
     with SingleTickerProviderStateMixin {
-
   @override
   void initState() {
     super.initState();
@@ -48,13 +46,13 @@ class _BodyMainViewState extends State<_BodyMainView>
       body: TabBarView(
         controller: tabController,
         physics: const NeverScrollableScrollPhysics(),
-        children:  [
+        children: [
           const HomePage(),
           const JobPage(),
           const ChatPage(),
           GestureDetector(
             onTap: () {
-              context.go(QuizzPage.routePath );
+              context.go(QuizzPage.routePath);
             },
           ),
           const AccountPage(),

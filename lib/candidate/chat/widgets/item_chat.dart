@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class ItemChat extends StatelessWidget {
   const ItemChat({
@@ -33,11 +35,17 @@ class ItemChat extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+        margin: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.xs,
+        ),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.md,
+          vertical: AppSpacing.md,
+        ),
         decoration: BoxDecoration(
           color: AppColors.kWhiteColor,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(AppSpacing.md),
           border: Border.all(color: AppColors.kColorGray100),
           boxShadow: [
             AppColors.kBoxShadowColor,
@@ -58,7 +66,7 @@ class ItemChat extends StatelessWidget {
                   bottom: 0,
                   right: 0,
                   child: Container(
-                    padding: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(AppSpacing.sm - 2),
                     decoration: BoxDecoration(
                       color: online
                           ? AppColors.kGreenColor
@@ -66,14 +74,14 @@ class ItemChat extends StatelessWidget {
                       shape: BoxShape.circle,
                       border: Border.all(
                         color: AppColors.kWhiteColor,
-                        width: 2,
+                        width: AppSpacing.xxs,
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: AppSpacing.sm),
             Flexible(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,32 +90,26 @@ class ItemChat extends StatelessWidget {
                     children: [
                       Text(
                         name,
-                        style:
-                            Theme.of(context).textTheme.titleMedium!.copyWith(
-                                  fontSize: 18,
-                                  color: AppColors.kPrimaryColor,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                        style: CustomTextStyles.bodyLargeSemiBoldBlack,
                       ),
-                      const SizedBox(width: 4),
+                      const SizedBox(width: AppSpacing.xs),
                       if (isVerified)
                         SvgPicture.asset(
                           'assets/svg/verified.svg',
-                          width: 16,
-                          height: 16,
+                          width: AppSpacing.lg,
+                          height: AppSpacing.lg,
                         ),
                     ],
                   ),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: AppSpacing.sm),
                   Row(
                     children: [
                       Flexible(
                         child: Text(
                           message,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: AppColors.kPrimaryColor,
-                          ),
+                          style: isMessageRead
+                              ? CustomTextStyles.titleMediumRegularBlack
+                              : CustomTextStyles.titleMediumRegularGray500,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                         ),
@@ -120,28 +122,18 @@ class ItemChat extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  time,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    color: AppColors.kColorGray500,
-                  ),
-                ),
-                const SizedBox(height: 2),
+                Text(time, style: CustomTextStyles.titleSmallMediumGray500),
+                const SizedBox(height: AppSpacing.xxs),
                 if (isMessageRead)
                   Container(
-                    padding: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(AppSpacing.xs),
                     decoration: const BoxDecoration(
                       color: AppColors.kPrimaryColor,
                       shape: BoxShape.circle,
                     ),
                     child: Text(
                       countMessage.toString(),
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: AppColors.kWhiteColor,
-                        fontWeight: FontWeight.w500,
-                      ),
+                      style: CustomTextStyles.titleSmallRegularWhite,
                     ),
                   ),
               ],

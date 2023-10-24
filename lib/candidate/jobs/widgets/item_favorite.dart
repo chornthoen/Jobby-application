@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/theme/custom_text_style.dart';
 import 'package:jobby_application/shared/widgets/snack_bar_top.dart';
 
 class ItemFavorite extends StatelessWidget {
@@ -38,14 +40,14 @@ class ItemFavorite extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: EdgeInsets.only(
-        left: 16,
-        right: 16,
+        left: AppSpacing.lg,
+        right: AppSpacing.lg,
         bottom: sizeBox ?? 14,
       ),
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(AppSpacing.md),
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
         boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
       ),
       child: Column(
@@ -53,10 +55,10 @@ class ItemFavorite extends StatelessWidget {
           Row(
             children: [
               Container(
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(AppSpacing.md),
                 decoration: BoxDecoration(
                   color: color,
-                  borderRadius: BorderRadius.circular(14),
+                  borderRadius: BorderRadius.circular(AppSpacing.md),
                 ),
                 child: Image(
                   image: AssetImage(image),
@@ -64,26 +66,15 @@ class ItemFavorite extends StatelessWidget {
                   width: 40,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.sm),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: AppColors.kPrimaryColor,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(height: 6),
+                  Text(title, style: CustomTextStyles.bodyLargeSemiBoldBlack),
+                  const SizedBox(height: AppSpacing.sm),
                   Text(
                     '$name • $salary',
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: AppColors.kColorGray600,
-                      fontWeight: FontWeight.w400,
-                    ),
+                    style: CustomTextStyles.titleSmallMediumGray600,
                   ),
                 ],
               ),
@@ -112,18 +103,11 @@ class ItemFavorite extends StatelessWidget {
                       color: isSaved == true
                           ? AppColors.kPrimaryColor
                           : AppColors.kColorGray500,
-                      size: 24,
+                      size: AppSpacing.xlg,
                     ),
                   ),
-                  const SizedBox(height: 6),
-                  Text(
-                    date,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: AppColors.kColorGray500,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(date, style: CustomTextStyles.titleSmallMediumGray500),
                 ],
               ),
             ],
@@ -137,41 +121,33 @@ class ItemFavorite extends StatelessWidget {
                     Flexible(
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 6,
+                          horizontal: AppSpacing.sm,
+                          vertical: AppSpacing.xs,
                         ),
                         decoration: BoxDecoration(
                           color: AppColors.kColorGray100,
-                          borderRadius: BorderRadius.circular(14),
+                          borderRadius: BorderRadius.circular(AppSpacing.md),
                         ),
                         child: Text(
                           time,
-                          style: const TextStyle(
-                            fontSize: 12,
-                            color: AppColors.kColorGray600,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: CustomTextStyles.bodySmallMediumGray600,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 2),
+                    const SizedBox(width: AppSpacing.xxs),
                     Flexible(
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                          horizontal: 12,
-                          vertical: 6,
+                          horizontal: AppSpacing.sm,
+                          vertical: AppSpacing.xs,
                         ),
                         decoration: BoxDecoration(
                           color: AppColors.kColorGray100,
-                          borderRadius: BorderRadius.circular(14),
+                          borderRadius: BorderRadius.circular(AppSpacing.md),
                         ),
                         child: Text(
                           role,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            color: AppColors.kColorGray600,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: CustomTextStyles.bodySmallMediumGray600,
                         ),
                       ),
                     ),
@@ -180,21 +156,17 @@ class ItemFavorite extends StatelessWidget {
               ),
               TextButton(
                 onPressed: onApply,
-                child: const Row(
+                child: Row(
                   children: [
                     Text(
                       'Apply',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: AppColors.kPrimaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
+                      style: CustomTextStyles.buttonTitleSmallSemiBoldBlack,
                     ),
-                    SizedBox(width: 2),
-                    Icon(
+                    const SizedBox(width: AppSpacing.xxs),
+                    const Icon(
                       PhosphorIcons.arrow_right,
                       color: AppColors.kPrimaryColor,
-                      size: 18,
+                      size: AppSpacing.lg,
                     ),
                   ],
                 ),
