@@ -55,7 +55,7 @@ class _SignUpIndividualPageState extends State<SignUpIndividualPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => CloseKeyboard.closeKeyboard(context),
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(subTitle: 'Individual (2/2)'),

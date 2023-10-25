@@ -2,6 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class MangeCVPage extends StatefulWidget {
@@ -20,13 +21,16 @@ class _MangeCVPageState extends State<MangeCVPage> {
       backgroundColor: AppColors.kBackgroundColor,
       appBar: const CustomAppBar(title: 'Manage CV'),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'Upload your CV or resume to apply the job vacancy in our'
-                  ' application',
+              ' application',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -34,24 +38,24 @@ class _MangeCVPageState extends State<MangeCVPage> {
                 color: AppColors.kColorGray600,
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: AppSpacing.xlg),
             GestureDetector(
               onTap: () {},
               child: DottedBorder(
-                padding: const EdgeInsets.symmetric(vertical: 30),
+                padding: const EdgeInsets.symmetric(vertical: AppSpacing.xxlg),
                 dashPattern: const [8, 4],
                 borderType: BorderType.RRect,
-                radius: const Radius.circular(10),
+                radius: const Radius.circular(AppSpacing.md),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(width: 20),
+                    SizedBox(width: AppSpacing.xlg),
                     Icon(
                       PhosphorIcons.cloud_arrow_up,
                       color: AppColors.kColorGray600,
-                      size: 30,
+                      size: AppSpacing.xxlg,
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: AppSpacing.sm),
                     Text(
                       'Upload your file',
                       style: TextStyle(
@@ -64,7 +68,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: AppSpacing.xlg),
             const Text(
               'Your list CV or resume',
               style: TextStyle(
@@ -73,7 +77,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
                 color: AppColors.kPrimaryColor,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.sm),
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -127,7 +131,7 @@ class _MangeCVPageState extends State<MangeCVPage> {
                           child: const Icon(
                             PhosphorIcons.trash,
                             color: AppColors.kColorGray600,
-                            size: 24,
+                            size: AppSpacing.xlg,
                           ),
                         ),
                       ],
@@ -144,16 +148,16 @@ class _MangeCVPageState extends State<MangeCVPage> {
   }
 }
 
-class ListCVModel{
-
+class ListCVModel {
   ListCVModel({
     required this.title,
     required this.date,
     required this.index,
   });
+
   final String title;
   final String date;
-   int index;
+  int index;
 }
 
 //list cv model 3 item

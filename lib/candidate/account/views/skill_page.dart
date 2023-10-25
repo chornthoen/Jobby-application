@@ -5,9 +5,10 @@ import 'package:jobby_application/candidate/jobs/models/add_position_model.dart'
 import 'package:jobby_application/candidate/jobs/widgets/action_tab.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_add_position.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
-import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
+import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class SkillsPage extends StatefulWidget {
   const SkillsPage({super.key});
@@ -39,7 +40,10 @@ class _SkillsPageState extends State<SkillsPage> {
       appBar: const CustomAppBar(title: 'Skill'),
       backgroundColor: AppColors.kBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -51,7 +55,7 @@ class _SkillsPageState extends State<SkillsPage> {
                 color: AppColors.kColorGray600,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.sm),
             CustomTextFieldForms(
               controller: skillController,
               hintText: 'Add your skills',
@@ -64,6 +68,7 @@ class _SkillsPageState extends State<SkillsPage> {
       ),
     );
   }
+
   void addPositionSheet() {
     ShowBottomSheetCustom.showBottomSheet(
       context: context,
@@ -80,9 +85,9 @@ class _SkillsPageState extends State<SkillsPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Skills'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemAddPosition()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );

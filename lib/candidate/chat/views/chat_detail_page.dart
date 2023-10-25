@@ -17,7 +17,6 @@ class ChatDetailPage extends StatefulWidget {
   });
 
   final ChatModel chatModel;
-  //test
 
   static const String routePath = '/chat-detail-page';
 
@@ -57,7 +56,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        CloseKeyboard.closeKeyboard(context);
+        CloseKeyboard.close(context);
       },
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,

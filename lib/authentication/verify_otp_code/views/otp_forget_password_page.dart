@@ -36,7 +36,7 @@ class _VerifyOTPForgetPageState extends State<VerifyOTPForgetPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => CloseKeyboard.closeKeyboard(context),
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         appBar: const CustomAppBar(logo: 'Jobby.'),
         backgroundColor: AppColors.kBackgroundColor,

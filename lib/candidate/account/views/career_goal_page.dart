@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/account/models/list_string.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class CareerGoalPage extends StatefulWidget {
   const CareerGoalPage({super.key});
@@ -15,7 +17,6 @@ class CareerGoalPage extends StatefulWidget {
 }
 
 class _CareerGoalPageState extends State<CareerGoalPage> {
-
   late TextEditingController careerGoalController;
 
   @override
@@ -32,22 +33,18 @@ class _CareerGoalPageState extends State<CareerGoalPage> {
     super.dispose();
   }
 
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(title: 'Career Goal'),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -59,18 +56,18 @@ class _CareerGoalPageState extends State<CareerGoalPage> {
                   color: AppColors.kColorGray600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               TextFormField(
                 controller: careerGoalController,
                 maxLines: 5,
                 style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.kBlackColor,
-                ),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      color: AppColors.kBlackColor,
+                    ),
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(AppSpacing.sm),
                     borderSide: const BorderSide(
                       color: AppColors.kColorGray500,
                     ),
@@ -94,7 +91,7 @@ class _CareerGoalPageState extends State<CareerGoalPage> {
                 },
                 isClick: true,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.xlg),
             ],
           ),
         ),

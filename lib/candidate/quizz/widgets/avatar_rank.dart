@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class AvatarRank extends StatelessWidget {
   const AvatarRank({
@@ -30,12 +31,12 @@ class AvatarRank extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          height: 90,
+          height: AppSpacing.xxxlg * 2.2,
           child: Stack(
             children: [
               Center(
                 child: Container(
-                  padding: const EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(AppSpacing.xxs),
                   height: 70,
                   width: 70,
                   alignment: Alignment.center,
@@ -50,7 +51,7 @@ class AvatarRank extends StatelessWidget {
                     ),
                   ),
                   child: CircleAvatar(
-                    radius: 46,
+                    radius: AppSpacing.xxxlg + 6,
                     backgroundImage: AssetImage(image),
                   ),
                 ),
@@ -61,8 +62,8 @@ class AvatarRank extends StatelessWidget {
                 left: 0,
                 child: SvgPicture.asset(
                   rank,
-                  width: 22,
-                  height: 22,
+                  width: AppSpacing.xlg - 2,
+                  height: AppSpacing.xlg - 2,
                 ),
               ),
               Positioned(
@@ -71,14 +72,14 @@ class AvatarRank extends StatelessWidget {
                 left: 0,
                 child: SvgPicture.asset(
                   number!,
-                  width: 22,
-                  height: 22,
+                  width: AppSpacing.xlg - 2,
+                  height: AppSpacing.xlg - 2,
                 ),
               ),
             ],
           ),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: AppSpacing.md),
         Text(
           name,
           style: TextStyle(
@@ -87,16 +88,16 @@ class AvatarRank extends StatelessWidget {
             color: colorName,
           ),
         ),
-        const SizedBox(height: 4),
+        const SizedBox(height: AppSpacing.xs),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
               'assets/svg/diamond-color.svg',
-              width: 16,
-              height: 16,
+              width: AppSpacing.lg,
+              height: AppSpacing.lg,
             ),
-            const SizedBox(width: 4),
+            const SizedBox(width: AppSpacing.xs),
             Text(
               diamond,
               style: const TextStyle(

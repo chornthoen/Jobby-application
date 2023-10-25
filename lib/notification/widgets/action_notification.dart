@@ -29,9 +29,10 @@ class _ActionNotificationState extends State<ActionNotification> {
           children: [
             Text(
               widget.title,
-              style: const TextStyle(
+              style:  const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
+                color: AppColors.kBlackColor,
               ),
             ),
             const Spacer(),

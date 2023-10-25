@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/text_custom.dart';
@@ -47,40 +49,35 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
     super.dispose();
   }
 
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
   String gender = '';
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(title: 'Contact Info'),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Column(
               children: [
                 const TextCustom(text: 'Full Name'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'full name',
                   controller: fullNameController,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(
                   text: 'Gender',
                   star: false,
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: AppSpacing.sm),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -88,7 +85,8 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                       children: [
                         Radio(
                           fillColor: MaterialStateProperty.all<Color>(
-                              AppColors.kPrimaryColor,),
+                            AppColors.kPrimaryColor,
+                          ),
                           value: 'Male',
                           groupValue: gender,
                           onChanged: (value) {
@@ -111,7 +109,8 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                       children: [
                         Radio(
                           fillColor: MaterialStateProperty.all<Color>(
-                              AppColors.kPrimaryColor,),
+                            AppColors.kPrimaryColor,
+                          ),
                           value: 'Female',
                           groupValue: gender,
                           onChanged: (value) {
@@ -157,37 +156,37 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Title'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Title',
                   controller: titleController,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Email'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Email',
                   controller: emailController,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Phone number'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Phone number',
                   controller: phoneNumberController,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Address', star: false),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Address',
                   controller: addressController,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Personal Website', star: false),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Personal Website',
                   controller: personalWebsiteController,
@@ -198,11 +197,11 @@ class _ContactInfoPageState extends State<ContactInfoPage> {
         ),
         bottomNavigationBar: Container(
           padding: EdgeInsets.only(
-            left: 16,
-            right: 16,
+            left: AppSpacing.lg,
+            right: AppSpacing.lg,
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
-          margin: const EdgeInsets.only(bottom: 15),
+          margin: const EdgeInsets.only(bottom: AppSpacing.lg),
           child: CustomElevatedButton(
             isClick: true,
             text: 'Save',

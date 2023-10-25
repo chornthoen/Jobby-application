@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/home/views/company_info/models/interested_model.dart';
 import 'package:jobby_application/candidate/home/views/company_info/widgets/item_interested.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 class TabSearchCompany extends StatefulWidget {
   const TabSearchCompany({super.key});
 
@@ -15,7 +16,7 @@ class _TabSearchCompanyState extends State<TabSearchCompany> {
       itemCount: interestedModel.length,
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       itemBuilder: (context, index) {
         final item = interestedModel[index];
         return ItemInterested(

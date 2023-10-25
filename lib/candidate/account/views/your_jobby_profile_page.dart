@@ -14,12 +14,12 @@ import 'package:jobby_application/candidate/account/views/work_experience_page.d
 import 'package:jobby_application/candidate/account/widgets/action_skill.dart';
 import 'package:jobby_application/candidate/account/widgets/cover_and_profile.dart';
 import 'package:jobby_application/candidate/account/widgets/custom_container.dart';
+import 'package:jobby_application/candidate/account/widgets/icon_and_text.dart';
 import 'package:jobby_application/candidate/account/widgets/slide_profile.dart';
 import 'package:jobby_application/candidate/account/widgets/text_label_and_button.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
-
-import '../widgets/icon_and_text.dart';
 
 class YourJobbyProfilePage extends StatefulWidget {
   const YourJobbyProfilePage({super.key});
@@ -31,11 +31,9 @@ class YourJobbyProfilePage extends StatefulWidget {
 }
 
 class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
-
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
@@ -50,9 +48,12 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
               imageCover: 'assets/images/bg_profile.png',
               imageProfile: 'assets/images/thoen.png',
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.lg),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.lg,
+                vertical: AppSpacing.sm,
+              ),
               child: Column(
                 children: [
                   CustomContainer(
@@ -65,7 +66,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                             context.push(ContactInfoPage.routePath);
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.sm),
                         const IconAndText(
                           svg: 'assets/svg/jobs.svg',
                           text: 'Mobile Developer',
@@ -93,7 +94,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   const TextLabelAndButton(
                     text: 'Slide profile',
                     size: 22,
@@ -101,11 +102,11 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                 ],
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.sm),
             const SlideProfiles(),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xlg),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -117,8 +118,8 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       context.push(CareerGoalPage.routePath);
                     },
                   ),
-                  const SizedBox(height: 10),
-                   Text(
+                  const SizedBox(height: AppSpacing.sm),
+                  Text(
                     goals.isNotEmpty ? goals[0] : '',
                     style: const TextStyle(
                       color: AppColors.kColorGray600,
@@ -126,7 +127,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'Work Experience',
                     size: 22,
@@ -135,7 +136,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       context.push(WorkExperiencePage.routePath);
                     },
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.md),
                   CustomContainer(
                     child: Column(
                       children: [
@@ -147,7 +148,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                             context.push(WorkExperiencePage.routePath);
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.md),
                         const IconAndText(
                           svg: 'assets/svg/building.svg',
                           text: 'Borey Peng Huoth',
@@ -160,12 +161,12 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                           svg: 'assets/svg/file.svg',
                           text:
                               'Tmrw studio owns, manages and operates a system '
-                                  'of Trade Centers',
+                              'of Trade Centers',
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'Academic level',
                     size: 22,
@@ -174,7 +175,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       context.push(AcademicLevelPage.routePath);
                     },
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.md),
                   CustomContainer(
                     child: Column(
                       children: [
@@ -186,7 +187,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                             context.push(AcademicLevelPage.routePath);
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.md),
                         const IconAndText(
                           svg: 'assets/svg/education.svg',
                           text: 'Computer Science',
@@ -202,7 +203,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'Skills',
                     size: 22,
@@ -214,12 +215,12 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       // });
                     },
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.md),
                   CustomContainer(
                     child: Wrap(
                       direction: Axis.vertical,
-                      spacing: 10,
-                      runSpacing: 10,
+                      spacing: AppSpacing.sm,
+                      runSpacing: AppSpacing.sm,
                       children: [
                         for (int i = 0; i < skills.length; i++)
                           ActionSkills(
@@ -233,7 +234,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'Languages',
                     size: 22,
@@ -242,12 +243,12 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       context.push(LanguagePage.routePath);
                     },
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.md),
                   CustomContainer(
                     child: Wrap(
                       direction: Axis.vertical,
-                      spacing: 10,
-                      runSpacing: 10,
+                      spacing: AppSpacing.sm,
+                      runSpacing: AppSpacing.sm,
                       children: [
                         for (int i = 0; i < languages.length; i++)
                           ActionSkills(
@@ -261,7 +262,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'Prize',
                     size: 22,
@@ -270,7 +271,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       context.push(PrizePage.routePath);
                     },
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.md),
                   CustomContainer(
                     child: Column(
                       children: [
@@ -282,7 +283,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                             context.push(PrizePage.routePath);
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.sm),
                         const IconAndText(
                           svg: 'assets/svg/building.svg',
                           text: 'www.thoenchorn.com',
@@ -294,7 +295,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.lg),
                   CustomContainer(
                     child: Column(
                       children: [
@@ -306,7 +307,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                             context.push(PrizePage.routePath);
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.sm),
                         const IconAndText(
                           svg: 'assets/svg/building.svg',
                           text: 'www.thoenchorn.com',
@@ -318,7 +319,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'Hobbies',
                     size: 22,
@@ -327,12 +328,12 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       context.push(HobbyPage.routePath);
                     },
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   CustomContainer(
                     child: Wrap(
                       direction: Axis.vertical,
-                      spacing: 10,
-                      runSpacing: 10,
+                      spacing: AppSpacing.sm,
+                      runSpacing: AppSpacing.sm,
                       children: [
                         for (int i = 0; i < hobbies.length; i++)
                           ActionSkills(
@@ -346,7 +347,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'References person',
                     size: 22,
@@ -355,7 +356,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       context.push(ReferencePersonPage.routePath);
                     },
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   CustomContainer(
                     child: Column(
                       children: [
@@ -367,7 +368,7 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                             context.push(ReferencePersonPage.routePath);
                           },
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.sm),
                         const IconAndText(
                           svg: 'assets/svg/building.svg',
                           text: 'Phnom Penh',
@@ -387,21 +388,21 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.lg),
                   TextLabelAndButton(
                     text: 'Resume',
                     size: 22,
                     icon1: PhosphorIcons.plus_circle,
                     onTap: () {},
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: AppSpacing.sm),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 14,
+                      horizontal: AppSpacing.md,
+                      vertical: AppSpacing.lg,
                     ),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(AppSpacing.sm),
                       color: AppColors.kColorGray200,
                     ),
                     child: const Row(
@@ -420,15 +421,12 @@ class _YourJobbyProfilePageState extends State<YourJobbyProfilePage> {
                         Icon(
                           PhosphorIcons.x,
                           color: AppColors.kPrimaryColor,
-                          size: 24,
+                          size: AppSpacing.xlg,
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const SizedBox(
-                    height: 40,
-                  ),
+                  const SizedBox(height: AppSpacing.xlg),
                 ],
               ),
             ),

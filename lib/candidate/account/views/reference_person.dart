@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
-import 'package:jobby_application/shared/widgets/text_custom.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
+import 'package:jobby_application/shared/widgets/text_custom.dart';
 
 class ReferencePersonPage extends StatefulWidget {
   const ReferencePersonPage({super.key});
@@ -49,59 +50,62 @@ class _ReferencePersonPageState extends State<ReferencePersonPage> {
       backgroundColor: AppColors.kBackgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: Column(
             children: [
               const TextCustom(text: 'Full name'),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Full name',
                 controller: fullNameController,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.lg),
               const TextCustom(text: 'Company name'),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Company name',
                 controller: companyNameController,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.lg),
               const TextCustom(
                 text: 'Title',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Title',
                 controller: titleController,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.lg),
               const TextCustom(
                 text: 'Email',
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Email',
                 controller: emailController,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.lg),
               const TextCustom(text: 'Phone number'),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Phone number',
                 controller: phoneNumberController,
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: AppSpacing.xxxlg),
             ],
           ),
         ),
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(
-          left: 16,
-          right: 16,
+          left: AppSpacing.lg,
+          right: AppSpacing.lg,
           bottom: MediaQuery.of(context).viewInsets.bottom,
         ),
-        margin: const EdgeInsets.only(bottom: 20),
+        margin: const EdgeInsets.only(bottom: AppSpacing.xlg),
         child: CustomElevatedButton(
           isClick: true,
           text: 'Save',

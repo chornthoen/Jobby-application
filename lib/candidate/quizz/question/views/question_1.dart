@@ -6,6 +6,7 @@ import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
 import 'package:jobby_application/candidate/quizz/widgets/widget_question.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class Question1Page extends StatefulWidget {
@@ -41,9 +42,9 @@ class _Question1PageState extends State<Question1Page> {
         ),
         automaticallyImplyLeading: false,
         centerTitle: true,
-        leadingWidth: 62,
+        leadingWidth: AppSpacing.xxlg * 2,
         leading: IconButton(
-          splashRadius: 24,
+          splashRadius: AppSpacing.xlg,
           onPressed: () {
             if (currentQuestion > 0) {
               setState(() {
@@ -56,7 +57,7 @@ class _Question1PageState extends State<Question1Page> {
           icon: const Icon(
             PhosphorIcons.x,
             color: AppColors.kPrimaryColor,
-            size: 26,
+            size: AppSpacing.xlg,
           ),
         ),
         actions: [
@@ -77,7 +78,7 @@ class _Question1PageState extends State<Question1Page> {
                       height: 26,
                       width: 26,
                     ),
-                    const SizedBox(width: 4),
+                    const SizedBox(width: AppSpacing.xs),
                     const Text(
                       '10',
                       style: TextStyle(
@@ -91,11 +92,14 @@ class _Question1PageState extends State<Question1Page> {
               ],
             ),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: AppSpacing.lg),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.lg,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -116,12 +120,12 @@ class _Question1PageState extends State<Question1Page> {
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 8,
-                      vertical: 4,
+                      horizontal: AppSpacing.sm,
+                      vertical: AppSpacing.xs,
                     ),
                     decoration: BoxDecoration(
                       color: AppColors.kOrangeColor200.withOpacity(0.5),
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(AppSpacing.sm),
                     ),
                     child: const Row(
                       children: [
@@ -144,16 +148,16 @@ class _Question1PageState extends State<Question1Page> {
                 ),
               ],
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: AppSpacing.sm),
             RankWidget(
               percent: (currentQuestion + 1).toDouble() /
                   questionsList.length.toDouble(),
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.lg),
             Question(
               question: questionsList[currentQuestion].question,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.lg),
             Expanded(
               child: ListView.builder(
                 itemCount: questionsList[currentQuestion].answersList.length,
@@ -170,10 +174,7 @@ class _Question1PageState extends State<Question1Page> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 16,
-        ),
+        padding: const EdgeInsets.all(AppSpacing.lg),
         child: CustomElevatedButton(
           isClick: selectedAnswerModel != null,
           text: currentQuestion < questionsList.length - 1 ? 'Next' : 'Submit',
@@ -218,30 +219,30 @@ class _Question1PageState extends State<Question1Page> {
         children: [
           Container(
             padding: const EdgeInsets.only(
-              top: 1,
-              left: 1,
-              right: 1,
-              bottom: 6,
+              top: AppSpacing.xxxs,
+              left: AppSpacing.xxxs,
+              right: AppSpacing.xxxs,
+              bottom: AppSpacing.xs + 2,
             ),
             margin: const EdgeInsets.only(
-              bottom: 14,
+              bottom: AppSpacing.lg - 2,
             ),
             decoration: BoxDecoration(
               color: isSelected
                   ? AppColors.kColorBlue400
                   : AppColors.kColorGray300,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
             ),
             child: Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 20,
+                horizontal: AppSpacing.md,
+                vertical: AppSpacing.lg,
               ),
               decoration: BoxDecoration(
                 color: isSelected
                     ? AppColors.kColorBlue200
                     : AppColors.kWhiteColor,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(AppSpacing.sm),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -251,7 +252,7 @@ class _Question1PageState extends State<Question1Page> {
                     height: 28,
                     width: 28,
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: AppSpacing.sm),
                   Flexible(
                     child: Text(
                       answer.answerText,
@@ -285,14 +286,13 @@ class _Question1PageState extends State<Question1Page> {
           body: SafeArea(
             child: SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Center(
                       child: Image(
-                        image:
-                            AssetImage('assets/images/on_boarding_4.png'),
+                        image: AssetImage('assets/images/on_boarding_4.png'),
                         width: 220,
                         height: 250,
                       ),
@@ -317,7 +317,7 @@ class _Question1PageState extends State<Question1Page> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: AppSpacing.sm),
                         Text(
                           'You have successfully completed $score/${questionsList.length} points',
                           textAlign: TextAlign.center,
@@ -329,7 +329,7 @@ class _Question1PageState extends State<Question1Page> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: AppSpacing.sm),
                     const Text(
                       'Your answer',
                       style: TextStyle(
@@ -337,7 +337,7 @@ class _Question1PageState extends State<Question1Page> {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: AppSpacing.sm),
                     ListView.builder(
                       shrinkWrap: true,
                       physics: const BouncingScrollPhysics(),
@@ -356,7 +356,7 @@ class _Question1PageState extends State<Question1Page> {
                                   width: 22,
                                   height: 22,
                                 ),
-                                const SizedBox(width: 8),
+                                const SizedBox(width: AppSpacing.sm),
                                 Text(
                                   'Question ${index + 1}',
                                   style: const TextStyle(
@@ -367,7 +367,7 @@ class _Question1PageState extends State<Question1Page> {
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(height: AppSpacing.sm),
                             Text(
                               question.question,
                               style: const TextStyle(
@@ -376,14 +376,11 @@ class _Question1PageState extends State<Question1Page> {
                                 color: AppColors.kPrimaryColor,
                               ),
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(height: AppSpacing.sm),
                             Text(
-                              question.answersList
-                                  .firstWhere(
-                                    (element) {
-                                      return element.isCorrect == false;
-                                    }
-                                  ).answerText,
+                              question.answersList.firstWhere((element) {
+                                return element.isCorrect == false;
+                              }).answerText,
                               style: const TextStyle(
                                 decoration: TextDecoration.lineThrough,
                                 fontSize: 16,
@@ -391,7 +388,7 @@ class _Question1PageState extends State<Question1Page> {
                                 color: AppColors.kOrangeColor,
                               ),
                             ),
-                            const SizedBox(height: 5),
+                            const SizedBox(height: AppSpacing.xs),
                             Text(
                               question.answersList
                                   .firstWhere(
@@ -415,12 +412,16 @@ class _Question1PageState extends State<Question1Page> {
             ),
           ),
           bottomNavigationBar: Container(
-            margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+            margin: const EdgeInsets.only(
+              left: AppSpacing.lg,
+              right: AppSpacing.lg,
+              bottom: AppSpacing.lg,
+            ),
             child: CustomElevatedButton(
               isClick: true,
               text: 'Go to home',
               onPressed: () {
-                context.go( QuizzPage.routePath);
+                context.go(QuizzPage.routePath);
               },
             ),
           ),

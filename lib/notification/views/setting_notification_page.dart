@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/notification/widgets/action_notification.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class SettingNotificationPage extends StatefulWidget {
@@ -21,7 +22,6 @@ class _SettingNotificationPageState extends State<SettingNotificationPage> {
   bool isApplicationStatus = true;
   bool isNoticeFromEmployer = true;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,10 @@ class _SettingNotificationPageState extends State<SettingNotificationPage> {
       backgroundColor: AppColors.kBackgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

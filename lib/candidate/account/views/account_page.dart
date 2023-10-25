@@ -3,7 +3,7 @@ import 'package:jobby_application/candidate/account/widgets/body_info.dart';
 import 'package:jobby_application/candidate/account/widgets/item_widget.dart';
 import 'package:jobby_application/candidate/account/widgets/profile_info.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({super.key});
@@ -17,6 +17,7 @@ class AccountPage extends StatefulWidget {
 class _AccountPageState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColors.kWhiteColor,
       body: Stack(
@@ -25,16 +26,16 @@ class _AccountPageState extends State<AccountPage> {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.42,
+                  height: height * 0.42,
                   child: Stack(
                     children: [
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.28,
+                        height: height * 0.28,
                         color: AppColors.kPurpleColor400,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
-                        padding: const EdgeInsets.only(top: 40),
+                        padding: const EdgeInsets.only(top: AppSpacing.xxxlg),
                         child: const Image(
                           image: AssetImage('assets/images/bg_profile.png'),
                           width: 200,
@@ -48,8 +49,7 @@ class _AccountPageState extends State<AccountPage> {
                     ],
                   ),
                 ),
-
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.xlg - 4),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -73,9 +73,8 @@ class _AccountPageState extends State<AccountPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.xlg - 4),
                 const BodyInfo(),
-
               ],
             ),
           ),

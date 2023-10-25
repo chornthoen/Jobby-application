@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ActionSkills extends StatelessWidget {
   const ActionSkills({
@@ -14,13 +15,13 @@ class ActionSkills extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: 12,
-        vertical: 8,
+        horizontal: AppSpacing.md,
+        vertical: AppSpacing.xs,
       ),
-      margin: const EdgeInsets.only(bottom: 5),
+      margin: const EdgeInsets.only(bottom: AppSpacing.xs),
       decoration: BoxDecoration(
         color: AppColors.kColorGray100,
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
       ),
       child: Row(
         children: [
@@ -32,13 +33,13 @@ class ActionSkills extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: AppSpacing.sm),
           GestureDetector(
             onTap: onTap,
             child: const Icon(
               PhosphorIcons.x,
               color: AppColors.kColorGray600,
-              size: 24,
+              size: AppSpacing.xlg,
             ),
           ),
         ],

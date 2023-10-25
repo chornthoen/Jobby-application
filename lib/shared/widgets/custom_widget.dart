@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class CustomWidget extends StatelessWidget {
   const CustomWidget({
-    required this.image, required this.title, super.key,
+    required this.image,
+    required this.title,
+    super.key,
     this.description = '',
     this.onTap,
     this.color = AppColors.kOrangeColor200,
   });
+
   final String image;
   final String title;
   final String? description;
@@ -22,18 +25,18 @@ class CustomWidget extends StatelessWidget {
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.12,
       margin: const EdgeInsets.only(
-        left: 16,
-        right: 16,
-        bottom: 14,
+        left: AppSpacing.lg,
+        right: AppSpacing.lg,
+        bottom: AppSpacing.lg - 2,
       ),
       padding: const EdgeInsets.only(
-        right: 10,
-        top: 10,
-        bottom: 10,
+        right: AppSpacing.sm,
+        top: AppSpacing.sm,
+        bottom: AppSpacing.sm,
       ),
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,12 +49,12 @@ class CustomWidget extends StatelessWidget {
                   width: 50,
                   height: 50,
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: AppSpacing.sm),
                 Flexible(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children:  [
+                    children: [
                       Flexible(
                         child: Text(
                           title,
@@ -62,10 +65,9 @@ class CustomWidget extends StatelessWidget {
                           ),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
-
                         ),
                       ),
-                      const SizedBox(height: 6),
+                      const SizedBox(height: AppSpacing.sm),
                       Flexible(
                         child: Text(
                           description ?? '',
@@ -88,8 +90,8 @@ class CustomWidget extends StatelessWidget {
             onTap: onTap,
             child: Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 8,
+                horizontal: AppSpacing.md,
+                vertical: AppSpacing.sm,
               ),
               decoration: const BoxDecoration(
                 color: AppColors.kWhiteColor,
@@ -98,7 +100,7 @@ class CustomWidget extends StatelessWidget {
               child: const Icon(
                 PhosphorIcons.arrow_right,
                 color: AppColors.kPrimaryColor,
-                size: 24,
+                size: AppSpacing.xlg,
               ),
             ),
           ),

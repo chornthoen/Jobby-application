@@ -37,8 +37,8 @@ class ItemWidget extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               svgPath,
-              width: 22,
-              height: 22,
+              width: AppSpacing.xlg - 2,
+              height: AppSpacing.xlg - 2,
               color: AppColors.kPrimaryColor,
             ),
           ),

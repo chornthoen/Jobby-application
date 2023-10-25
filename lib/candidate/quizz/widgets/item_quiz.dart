@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/quizz/widgets/action_in_item.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemQuizs extends StatelessWidget {
   const ItemQuizs({
@@ -32,28 +33,28 @@ class ItemQuizs extends StatelessWidget {
         children: [
           Container(
             padding: const EdgeInsets.only(
-              top: 1,
-              left: 1,
-              right: 1,
-              bottom: 6,
+              top: AppSpacing.xxxs,
+              left: AppSpacing.xxxs,
+              right: AppSpacing.xxxs,
+              bottom: AppSpacing.xs + 2,
             ),
             margin: const EdgeInsets.only(
-              bottom: 14,
-              right: 16,
-              left: 16,
+              bottom: AppSpacing.md,
+              right: AppSpacing.lg,
+              left: AppSpacing.lg,
             ),
             decoration: BoxDecoration(
               color: AppColors.kColorGray300,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
             ),
             child: Container(
               padding: const EdgeInsets.symmetric(
-                horizontal: 8,
-                vertical: 10,
+                horizontal: AppSpacing.sm,
+                vertical: AppSpacing.md,
               ),
               decoration: BoxDecoration(
                 color: AppColors.kWhiteColor,
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(AppSpacing.sm),
               ),
               child: Row(
                 children: [
@@ -62,7 +63,7 @@ class ItemQuizs extends StatelessWidget {
                     width: 70,
                     height: 70,
                   ),
-                  const SizedBox(width: 8),
+                  const SizedBox(width: AppSpacing.sm),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -77,15 +78,17 @@ class ItemQuizs extends StatelessWidget {
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          const SizedBox(width: 6),
+                          const SizedBox(width: AppSpacing.sm),
                           Container(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 4,
-                              vertical: 4,
+                              horizontal: AppSpacing.xs,
+                              vertical: AppSpacing.xs,
                             ),
                             decoration: BoxDecoration(
                               color: AppColors.kColorGray400,
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(
+                                AppSpacing.sm,
+                              ),
                             ),
                             child: Text(
                               percent,
@@ -98,28 +101,28 @@ class ItemQuizs extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: AppSpacing.xs),
                       Row(
                         children: [
                           ActionInItem(
                             svgPath: 'assets/svg/arcade.svg',
                             text: level,
                           ),
-                          const SizedBox(width: 14),
+                          const SizedBox(width: AppSpacing.md),
                           ActionInItem(
                             svgPath: 'assets/svg/question.svg',
                             text: question,
                           ),
                         ],
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(height: AppSpacing.xs),
                       Row(
                         children: [
                           ActionInItem(
                             svgPath: 'assets/svg/like.svg',
                             text: like,
                           ),
-                          const SizedBox(width: 14),
+                          const SizedBox(width: AppSpacing.md),
                           ActionInItem(
                             svgPath: 'assets/svg/users.svg',
                             text: user,
