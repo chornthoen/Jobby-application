@@ -2,6 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemGift extends StatelessWidget {
   const ItemGift({
@@ -21,20 +22,22 @@ class ItemGift extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 16),
+        const SizedBox(height: AppSpacing.lg),
         Container(
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             color: AppColors.kWhiteColor,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(AppSpacing.sm),
             border: Border.all(color: AppColors.kColorGray300),
             boxShadow: [AppColors.kBoxShadowColor, AppColors.kBoxShadowColor1],
           ),
           child: Column(
             children: [
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.lg,
+                  vertical: AppSpacing.sm,
+                ),
                 child: Row(
                   children: [
                     Column(
@@ -48,7 +51,7 @@ class ItemGift extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                         ),
-                        const SizedBox(height: 8),
+                        const SizedBox(height: AppSpacing.sm),
                         Text(
                           description,
                           style: const TextStyle(
@@ -70,20 +73,22 @@ class ItemGift extends StatelessWidget {
               ),
               const DottedLine(
                 dashColor: AppColors.kColorGray300,
-                dashGapLength: 8,
-                dashLength: 8,
+                dashGapLength: AppSpacing.sm,
+                dashLength: AppSpacing.sm,
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: AppSpacing.lg),
               Row(
                 children: [
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                      vertical: AppSpacing.sm,
+                    ),
                     decoration: const BoxDecoration(
                       color: AppColors.kColorGray300,
                       borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(10),
-                        topRight: Radius.circular(10),
+                        bottomLeft: Radius.circular(AppSpacing.sm),
+                        topRight: Radius.circular(AppSpacing.sm),
                       ),
                     ),
                     child: Text(
@@ -97,13 +102,15 @@ class ItemGift extends StatelessWidget {
                   ),
                   const Spacer(),
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.lg,
+                      vertical: AppSpacing.sm,
+                    ),
                     decoration: const BoxDecoration(
                       color: AppColors.kPrimaryColor,
                       borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(10),
-                        topLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(AppSpacing.sm),
+                        topLeft: Radius.circular(AppSpacing.sm),
                       ),
                     ),
                     child: Text(

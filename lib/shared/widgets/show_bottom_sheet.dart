@@ -161,9 +161,6 @@ class ShowBottomSheetCustom {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: AppBarBottomSheet(
                   title: quizModel.title,
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
                 ),
               ),
               const SizedBox(height: 16),
@@ -300,26 +297,24 @@ class ShowBottomSheetCustom {
       backgroundColor: AppColors.kBackgroundColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(AppSpacing.lg),
+          topRight: Radius.circular(AppSpacing.lg),
         ),
       ),
       builder: (context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppBarBottomSheet(
-                  title: 'Add Note',
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                const SizedBox(height: 10),
+                const AppBarBottomSheet(title: 'Add Note'),
+                const SizedBox(height: AppSpacing.sm),
                 const Text(
                   'Note',
                   style: TextStyle(
@@ -328,14 +323,14 @@ class ShowBottomSheetCustom {
                     color: AppColors.kBlackColor,
                   ),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   controller: noteController,
                   hintText: 'Type your note here',
                   maxLines: 5,
                   minLines: 5,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -346,7 +341,7 @@ class ShowBottomSheetCustom {
                         Navigator.pop(context);
                       },
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(width: AppSpacing.xlg),
                     CustomElevatedButton(
                       isClick: true,
                       width: 120,
@@ -357,7 +352,7 @@ class ShowBottomSheetCustom {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
               ],
             ),
           ),
@@ -371,11 +366,9 @@ class AppBarBottomSheet extends StatelessWidget {
   const AppBarBottomSheet({
     super.key,
     this.title = '',
-    this.onPressed,
   });
 
   final String? title;
-  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -392,7 +385,9 @@ class AppBarBottomSheet extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: onPressed,
+          onTap: () {
+            Navigator.pop(context);
+          },
           child: Container(
             padding: const EdgeInsets.all(4),
             decoration: const BoxDecoration(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemHiringTeam extends StatelessWidget {
   const ItemHiringTeam({
@@ -23,14 +24,11 @@ class ItemHiringTeam extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 16,
-            ),
-            margin: const EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.all(AppSpacing.lg),
+            margin: const EdgeInsets.only(bottom: AppSpacing.sm),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
               boxShadow: [
                 AppColors.kBoxShadowColor,
                 AppColors.kBoxShadowColor1,
@@ -39,13 +37,13 @@ class ItemHiringTeam extends StatelessWidget {
             child: Row(
               children: [
                 CircleAvatar(
-                  radius: 34,
+                  radius: AppSpacing.xxlg,
                   backgroundColor: Colors.white,
                   backgroundImage: AssetImage(
                     image,
                   ),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: AppSpacing.sm),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -57,12 +55,12 @@ class ItemHiringTeam extends StatelessWidget {
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: AppSpacing.xs),
                     Text(
                       position,
                       style: const TextStyle(
-                        color: Colors.grey,
-                        fontSize: 16,
+                        color: AppColors.kColorGray600,
+                        fontSize: AppSpacing.lg,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -71,7 +69,7 @@ class ItemHiringTeam extends StatelessWidget {
                 const Spacer(),
                 const Icon(
                   PhosphorIcons.pencil_simple,
-                  size: 24,
+                  size: AppSpacing.xlg,
                 ),
               ],
             ),

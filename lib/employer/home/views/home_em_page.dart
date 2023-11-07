@@ -15,7 +15,7 @@ import 'package:jobby_application/employer/home/widgets/item_upcoming.dart';
 import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class HomeEmployerPage extends StatefulWidget {
   const HomeEmployerPage({super.key});
@@ -46,11 +46,14 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               const Text(
                 'Overview',
                 style: TextStyle(
@@ -59,7 +62,7 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               GridView.builder(
                 itemCount: listOverview.length,
                 shrinkWrap: true,
@@ -70,18 +73,17 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 15,
                 ),
-                itemBuilder: (context,index){
+                itemBuilder: (context, index) {
                   final item = listOverview[index];
-                  return  ItemOverview(
+                  return ItemOverview(
                     title: item.title,
                     value: item.value,
                     percent: item.percent,
                     isUp: item.isUp,
                   );
                 },
-
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               const Text(
                 'Upcoming Interview',
                 style: TextStyle(
@@ -90,12 +92,12 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               ListView.builder(
                 itemCount: listUpcoming.length,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context,index){
+                itemBuilder: (context, index) {
                   final item = listUpcoming[index];
                   return ItemUpComing(
                     title: item.title,
@@ -104,7 +106,7 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                   );
                 },
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               const Text(
                 'Category',
                 style: TextStyle(
@@ -113,7 +115,7 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: AppSpacing.lg),
               GridView.builder(
                 itemCount: listCategory.length,
                 shrinkWrap: true,
@@ -123,14 +125,14 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 15,
                 ),
-                itemBuilder: (context,index){
+                itemBuilder: (context, index) {
                   final item = listCategory[index];
-                  return  ItemCategory(
+                  return ItemCategory(
                     title: item.title,
                     svgPath: item.svgPath,
                     color: item.color,
-                    onPressed: (){
-                      switch(item.id){
+                    onPressed: () {
+                      switch (item.id) {
                         case 1:
                           context.push(ManagerPostPage.routePath);
                           break;

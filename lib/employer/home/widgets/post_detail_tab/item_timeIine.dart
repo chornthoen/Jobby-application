@@ -1,6 +1,7 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemTimeline extends StatelessWidget {
   const ItemTimeline({
@@ -19,10 +20,10 @@ class ItemTimeline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: AppSpacing.lg),
       decoration: BoxDecoration(
         color: AppColors.kWhiteColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
         boxShadow: [
           AppColors.kBoxShadowColor1,
           AppColors.kBoxShadowColor,
@@ -37,11 +38,7 @@ class ItemTimeline extends StatelessWidget {
             image: image,
             name: name,
           ),
-          const DottedLine(
-            dashColor: AppColors.kColorGray500,
-            dashGapLength: 5,
-            dashLength: 5,
-          ),
+          const DottedLine(dashColor: AppColors.kColorGray500),
           ActionTimeline(
             time: timeShow,
             status: 'Job Paused',
@@ -80,13 +77,13 @@ class ActionTimeline extends StatelessWidget {
           decoration: const BoxDecoration(
             color: AppColors.kPrimaryColor,
             borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
+              topRight: Radius.circular(AppSpacing.sm),
+              bottomLeft: Radius.circular(AppSpacing.sm),
             ),
           ),
           padding: const EdgeInsets.symmetric(
-            horizontal: 8,
-            vertical: 5,
+            horizontal: AppSpacing.sm,
+            vertical: AppSpacing.xs,
           ),
           child: Text(
             time,
@@ -99,8 +96,8 @@ class ActionTimeline extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 10,
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +106,7 @@ class ActionTimeline extends StatelessWidget {
                 text: TextSpan(
                   text: 'Status changed - ',
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: AppSpacing.lg,
                     fontWeight: FontWeight.w400,
                     color: AppColors.kColorGray700,
                   ),
@@ -117,7 +114,7 @@ class ActionTimeline extends StatelessWidget {
                     TextSpan(
                       text: status,
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: AppSpacing.lg,
                         fontWeight: FontWeight.w500,
                         color: AppColors.kColorGray700,
                       ),
@@ -125,7 +122,7 @@ class ActionTimeline extends StatelessWidget {
                     const TextSpan(
                       text: ' to ',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: AppSpacing.lg,
                         fontWeight: FontWeight.w400,
                         color: AppColors.kColorGray700,
                       ),
@@ -133,7 +130,7 @@ class ActionTimeline extends StatelessWidget {
                     TextSpan(
                       text: statusChange,
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: AppSpacing.lg,
                         fontWeight: FontWeight.w500,
                         color: AppColors.kColorGray700,
                       ),
@@ -141,29 +138,29 @@ class ActionTimeline extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               Row(
                 children: [
                   const Text(
                     'by',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: AppSpacing.lg,
                       fontWeight: FontWeight.w400,
                       color: AppColors.kColorGray600,
                     ),
                   ),
-                  const SizedBox(width: 5),
+                  const SizedBox(width: AppSpacing.xs),
                   CircleAvatar(
                     radius: 18,
                     backgroundImage: AssetImage(
                       image,
                     ),
                   ),
-                  const SizedBox(width: 5),
+                  const SizedBox(width: AppSpacing.xs),
                   Text(
                     name,
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: AppSpacing.lg,
                       fontWeight: FontWeight.w500,
                       color: AppColors.kColorGray700,
                     ),

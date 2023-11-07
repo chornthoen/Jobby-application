@@ -1,11 +1,13 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemDetailEm extends StatelessWidget {
   const ItemDetailEm({
-    required this.label, required this.value, super.key,
+    required this.label,
+    required this.value,
+    super.key,
   });
 
   final String label;
@@ -14,7 +16,7 @@ class ItemDetailEm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(bottom: AppSpacing.lg),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -23,7 +25,7 @@ class ItemDetailEm extends StatelessWidget {
             child: Text(
               label,
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: AppSpacing.lg,
                 fontWeight: FontWeight.w400,
                 color: AppColors.kColorGray500,
               ),
@@ -33,7 +35,7 @@ class ItemDetailEm extends StatelessWidget {
             child: Text(
               value,
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: AppSpacing.lg,
                 fontWeight: FontWeight.w400,
                 color: AppColors.kPrimaryColor,
               ),

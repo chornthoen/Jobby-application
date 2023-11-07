@@ -5,8 +5,9 @@ import 'package:jobby_application/employer/home/models/manager_candidate_model.d
 import 'package:jobby_application/employer/home/views/candidate_detail_page.dart';
 import 'package:jobby_application/employer/home/widgets/item_manager_candidate.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class ManagerCandidatePage extends StatefulWidget {
   const ManagerCandidatePage({super.key});
@@ -24,8 +25,8 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
       backgroundColor: AppColors.kBackgroundColor,
       appBar: CustomAppBar(
         title: 'Manager Candidate',
-        icon2: PhosphorIcons.magnifying_glass,
-        onTap2: () {},
+        iconLeft: PhosphorIcons.magnifying_glass,
+        onTapLeft: () {},
       ),
       body: Stack(
         alignment: Alignment.bottomCenter,
@@ -33,7 +34,7 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
           Column(
             children: [
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: EdgeInsets.symmetric(horizontal: AppSpacing.lg),
                 child: Row(
                   children: [
                     Text(
@@ -47,12 +48,12 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
                     Text(
                       '33',
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: AppSpacing.lg,
                         fontWeight: FontWeight.w600,
                         color: AppColors.kPrimaryColor,
                       ),
                     ),
-                    SizedBox(width: 16),
+                    SizedBox(width: AppSpacing.lg),
                     Text(
                       'New: ',
                       style: TextStyle(
@@ -75,9 +76,9 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
               Expanded(
                 child: ListView.builder(
                   padding: const EdgeInsets.only(
-                    left: 16,
-                    right: 16,
-                    bottom: 70,
+                    left: AppSpacing.lg,
+                    right: AppSpacing.lg,
+                    bottom: AppSpacing.xxxlg * 2,
                   ),
                   itemCount: managerCandidateList.length,
                   shrinkWrap: true,
@@ -100,7 +101,7 @@ class _ManagerCandidatePageState extends State<ManagerCandidatePage> {
             ],
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 22, vertical: 16),
+            margin: const EdgeInsets.all(AppSpacing.lg),
             child: CustomElevatedButton(
               isClick: true,
               text: 'Filter Candidates',
