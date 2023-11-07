@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemMoreTurns extends StatelessWidget {
   const ItemMoreTurns({
@@ -31,12 +32,12 @@ class ItemMoreTurns extends StatelessWidget {
                     right: 0,
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 4,
-                        vertical: 2,
+                        horizontal: AppSpacing.xs,
+                        vertical: AppSpacing.xxs,
                       ),
                       decoration: BoxDecoration(
                         color: AppColors.kOrangeColor400,
-                        borderRadius: BorderRadius.circular(4),
+                        borderRadius: BorderRadius.circular(AppSpacing.xs),
                         border: Border.all(
                           color: AppColors.kWhiteColor,
                           width: 1.4,
@@ -55,7 +56,7 @@ class ItemMoreTurns extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: AppSpacing.sm),
             Flexible(
               child: Text(
                 title,

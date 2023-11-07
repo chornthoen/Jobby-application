@@ -4,6 +4,7 @@ import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/question/views/question_1.dart';
 import 'package:jobby_application/candidate/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class SeeAllProgrammingPage extends StatefulWidget {
@@ -31,10 +32,10 @@ class _SeeAllProgrammingPageState extends State<SeeAllProgrammingPage> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            toolbarHeight: 80,
+            toolbarHeight: AppSpacing.xxxlg * 2,
             automaticallyImplyLeading: false,
             leading: Padding(
-              padding: const EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.only(left: AppSpacing.lg),
               child: GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
@@ -46,7 +47,7 @@ class _SeeAllProgrammingPageState extends State<SeeAllProgrammingPage> {
                 ),
               ),
             ),
-            leadingWidth: 50,
+            leadingWidth: AppSpacing.xxxlg + 10,
             title: const Text(
               'Programming Language',
               style: TextStyle(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemLeaderboard extends StatelessWidget {
   const ItemLeaderboard({
@@ -30,12 +31,12 @@ class ItemLeaderboard extends StatelessWidget {
                 color: AppColors.kWhiteColor,
               ),
             ),
-            const SizedBox(width: 14),
+            const SizedBox(width: AppSpacing.md),
             CircleAvatar(
-              radius: 30,
+              radius: AppSpacing.xxlg,
               backgroundImage: AssetImage(image),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: AppSpacing.md),
             Text(
               name,
               style: const TextStyle(
@@ -50,10 +51,10 @@ class ItemLeaderboard extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   'assets/svg/diamond-color.svg',
-                  width: 16,
-                  height: 16,
+                  width: AppSpacing.lg,
+                  height: AppSpacing.lg,
                 ),
-                const SizedBox(width: 4),
+                const SizedBox(width: AppSpacing.xs),
                 Text(
                   diamond,
                   style: const TextStyle(

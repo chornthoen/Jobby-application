@@ -3,6 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/employer/home/models/candidate_model.dart';
 import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_candidate.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 
 class TabCandidate extends StatefulWidget {
@@ -20,18 +21,22 @@ class _TabCandidateState extends State<TabCandidate> {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          padding: const EdgeInsets.all(AppSpacing.lg),
           child: Column(
             children: [
               Row(
                 children: [
                   const Text(
                     'New Apply',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.kBlackColor,
+                    ),
                   ),
-                  const SizedBox(width: 5),
+                  const SizedBox(width: AppSpacing.xs),
                   Container(
-                    padding: const EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(AppSpacing.xs),
                     decoration: const BoxDecoration(
                       color: AppColors.kColorGray300,
                       shape: BoxShape.circle,
@@ -39,14 +44,15 @@ class _TabCandidateState extends State<TabCandidate> {
                     child: const Text(
                       '12',
                       style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.kPrimaryColor,),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.kPrimaryColor,
+                      ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -65,9 +71,9 @@ class _TabCandidateState extends State<TabCandidate> {
       ),
       bottomNavigationBar: Container(
         margin: const EdgeInsets.only(
-          left: 16,
-          right: 16,
-          bottom: 16,
+          left: AppSpacing.lg,
+          right: AppSpacing.lg,
+          bottom: AppSpacing.lg,
         ),
         child: ButtonOutLineAction(
           text: 'Filter',

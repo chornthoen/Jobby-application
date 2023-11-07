@@ -2,14 +2,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jobby_application/candidate/account/models/languag_models.dart';
 import 'package:jobby_application/candidate/jobs/widgets/check_custom.dart';
-class ItemLangauge extends StatefulWidget {
-  const ItemLangauge({super.key});
+class ItemLanguage extends StatefulWidget {
+  const ItemLanguage({super.key});
 
   @override
-  State<ItemLangauge> createState() => _ItemLangaugeState();
+  State<ItemLanguage> createState() => _ItemLanguageState();
 }
 
-class _ItemLangaugeState extends State<ItemLangauge> {
+class _ItemLanguageState extends State<ItemLanguage> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(

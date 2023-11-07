@@ -4,6 +4,7 @@ import 'package:jobby_application/candidate/home/views/apply_now/views/apply_now
 import 'package:jobby_application/candidate/home/widgets/item_hot_jobs.dart';
 import 'package:jobby_application/candidate/jobs/models/matching_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TabSearchAll extends StatefulWidget {
   const TabSearchAll({super.key});
@@ -16,7 +17,7 @@ class _TabSearchAllState extends State<TabSearchAll> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       child: Column(
         children: [
           Row(

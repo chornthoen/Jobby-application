@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemServicePackage extends StatelessWidget {
   const ItemServicePackage({
@@ -20,7 +21,7 @@ class ItemServicePackage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
+      margin: const EdgeInsets.only(bottom: AppSpacing.lg),
       child: Stack(
         alignment: Alignment.centerRight,
         children: [
@@ -28,7 +29,7 @@ class ItemServicePackage extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.1,
             decoration: BoxDecoration(
               color: AppColors.kWhiteColor,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
               gradient: LinearGradient(
                 colors: index == 0
                     ? [AppColors.kColorRed200, AppColors.kRedColor]
@@ -53,7 +54,10 @@ class ItemServicePackage extends StatelessWidget {
             width: 220,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.xlg,
+              vertical: AppSpacing.sm,
+            ),
             child: Row(
               children: [
                 Column(
@@ -67,7 +71,7 @@ class ItemServicePackage extends StatelessWidget {
                         color: AppColors.kPrimaryColor,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: AppSpacing.sm),
                     Row(
                       children: [
                         Text(
@@ -78,9 +82,9 @@ class ItemServicePackage extends StatelessWidget {
                             color: AppColors.kColorGray700,
                           ),
                         ),
-                        const SizedBox(width: 8),
+                        const SizedBox(width: AppSpacing.sm),
                         Container(
-                          padding: const EdgeInsets.all(2),
+                          padding: const EdgeInsets.all(AppSpacing.xxs),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: AppColors.kWhiteColor.withOpacity(0.5),
@@ -90,8 +94,8 @@ class ItemServicePackage extends StatelessWidget {
                           ),
                           child: SvgPicture.asset(
                             'assets/svg/diamond-color.svg',
-                            width: 16,
-                            height: 16,
+                            width: AppSpacing.lg,
+                            height: AppSpacing.lg,
                           ),
                         ),
                       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TabPostDetail extends StatelessWidget {
   const TabPostDetail({
@@ -20,9 +21,9 @@ class TabPostDetail extends StatelessWidget {
     return Row(
       children: [
         Text(title),
-        const SizedBox(width: 5),
+        const SizedBox(width: AppSpacing.xs),
         Container(
-          padding: const EdgeInsets.all(5),
+          padding: const EdgeInsets.all(AppSpacing.xs),
           decoration: BoxDecoration(
             color: tabController == index
                 ? AppColors.kPrimaryColor

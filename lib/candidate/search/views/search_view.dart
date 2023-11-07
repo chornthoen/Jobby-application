@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/candidate/search/models/model_search.dart';
+import 'package:jobby_application/candidate/search/views/detail_search_view.dart';
+import 'package:jobby_application/candidate/search/widgets/RecentSearch.dart';
+import 'package:jobby_application/candidate/search/widgets/button_clear.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
-
-import 'detail_search_view.dart';
 
 class SearchView extends StatefulWidget {
   const SearchView({super.key});
@@ -30,14 +34,6 @@ class _SearchViewState extends State<SearchView> {
     super.dispose();
   }
 
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
   void removeAllListSearch() {
     listSearch.clear();
     setState(() {});
@@ -46,32 +42,38 @@ class _SearchViewState extends State<SearchView> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: AppBar(
           backgroundColor: AppColors.kBackgroundColor,
-          toolbarHeight: 62,
-          leadingWidth: 46,
+          toolbarHeight: AppSpacing.xxlg * 2,
+          leadingWidth: AppSpacing.xxxlg,
           elevation: 0,
           leading: Padding(
-            padding: const EdgeInsets.only(left: 5, top: 8),
+            padding: const EdgeInsets.only(
+              left: AppSpacing.xs,
+              top: AppSpacing.sm,
+            ),
             child: IconButton(
-              splashRadius: 25,
+              splashRadius: AppSpacing.xlg,
               onPressed: () {
                 Navigator.pop(context);
               },
               icon: const Icon(
                 PhosphorIcons.arrow_left,
                 color: Colors.black,
-                size: 28,
+                size: AppSpacing.xlg,
               ),
             ),
           ),
           title: Container(
-            margin: const EdgeInsets.only(top: 8),
+            margin: const EdgeInsets.only(top: AppSpacing.sm),
             child: CustomTextFieldForms(
-              prefixIcon: const Icon(PhosphorIcons.magnifying_glass, size: 24),
+              prefixIcon: const Icon(
+                PhosphorIcons.magnifying_glass,
+                size: AppSpacing.xlg,
+              ),
               controller: _searchController,
               keyboardType: TextInputType.emailAddress,
               hintText: 'Search',
@@ -81,7 +83,10 @@ class _SearchViewState extends State<SearchView> {
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Column(
               children: [
                 ButtonClear(onPressed: removeAllListSearch),
@@ -110,116 +115,3 @@ class _SearchViewState extends State<SearchView> {
     );
   }
 }
-
-class RecentSearch extends StatelessWidget {
-  const RecentSearch({
-    super.key,
-    this.onTap,
-    this.title = '',
-  });
-
-  final VoidCallback? onTap;
-  final String? title;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onTap,
-      contentPadding: const EdgeInsets.all(1),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      dense: true,
-      title: Row(
-        children: [
-          const Icon(
-            PhosphorIcons.clock,
-            color: AppColors.kPrimaryColor,
-            size: 24,
-          ),
-          const SizedBox(width: 10),
-          Text(
-            title!,
-            style: const TextStyle(
-              color: AppColors.kPrimaryColor,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ButtonClear extends StatelessWidget {
-  const ButtonClear({
-    super.key,
-    this.onPressed,
-  });
-
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const Text(
-          'Recently Searched',
-          style: TextStyle(
-            color: AppColors.kColorGray500,
-            fontSize: 16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        const Spacer(),
-        TextButton(
-          onPressed: onPressed,
-          child: const Text(
-            'Clear All',
-            style: TextStyle(
-              color: AppColors.kPrimaryColor,
-              fontSize: 14,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class ModelSearch {
-  ModelSearch({
-    required this.title,
-  });
-
-  final String title;
-}
-
-final listSearch = [
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-  ModelSearch(title: 'Flutter Developer'),
-  ModelSearch(title: 'UI/UX Designer'),
-  ModelSearch(title: 'Product Manager'),
-];

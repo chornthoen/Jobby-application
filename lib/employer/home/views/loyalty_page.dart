@@ -5,6 +5,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/employer/home/widgets/item_my_privilege.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
@@ -23,11 +24,16 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const CustomAppBar(title: 'Loyalty'),
       backgroundColor: AppColors.kBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,9 +41,9 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
               alignment: Alignment.centerLeft,
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.24,
+                  height: height * 0.24,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(AppSpacing.sm),
                     image: const DecorationImage(
                       image: AssetImage('assets/images/bg_em.png'),
                       fit: BoxFit.cover,
@@ -45,8 +51,8 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(14),
-                  height: MediaQuery.of(context).size.height * 0.24,
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  height: height * 0.24,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -62,20 +68,20 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                       Row(
                         children: [
                           CircularPercentIndicator(
-                            radius: 40,
+                            radius: AppSpacing.xxxlg,
                             lineWidth: 3.5,
                             percent: 0.7,
                             center: SvgPicture.asset(
                               'assets/svg/trophy.svg',
                               color: AppColors.kOrangeColor,
-                              width: 40,
-                              height: 40,
+                              width: AppSpacing.xxxlg,
+                              height: AppSpacing.xxxlg,
                             ),
                             progressColor: AppColors.kOrangeColor,
                             backgroundColor:
                                 AppColors.kOrangeColor.withOpacity(0.3),
                           ),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: AppSpacing.sm),
                           Flexible(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +94,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                                     fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                const SizedBox(height: 4),
+                                const SizedBox(height: AppSpacing.xs),
                                 Row(
                                   children: [
                                     const Text(
@@ -99,9 +105,11 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                    const SizedBox(width: 4),
+                                    const SizedBox(width: AppSpacing.xs),
                                     Container(
-                                      padding: const EdgeInsets.all(2),
+                                      padding: const EdgeInsets.all(
+                                        AppSpacing.xxs,
+                                      ),
                                       decoration: BoxDecoration(
                                         color: AppColors.kWhiteColor,
                                         shape: BoxShape.circle,
@@ -111,13 +119,13 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                                       ),
                                       child: SvgPicture.asset(
                                         'assets/svg/diamond-color.svg',
-                                        width: 16,
-                                        height: 16,
+                                        width: AppSpacing.lg,
+                                        height: AppSpacing.lg,
                                       ),
                                     ),
                                   ],
                                 ),
-                                const SizedBox(height: 4),
+                                const SizedBox(height: AppSpacing.xs),
                                 const Text(
                                   '10,000 diamond till your next',
                                   style: TextStyle(
@@ -136,7 +144,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xlg),
             Text(
               'My Privilege',
               style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -145,7 +153,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                     fontWeight: FontWeight.w600,
                   ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.sm),
             const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -167,10 +175,10 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xlg),
             Center(
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.6,
+                width: width * 0.6,
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -180,7 +188,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                       width: 45,
                       height: 45,
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: AppSpacing.sm),
                     const Text(
                       'Refer your friends and earn 100 points',
                       textAlign: TextAlign.center,
@@ -196,7 +204,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
             ),
             const Text(
               'Every time one of your friends users your code when purchasing'
-                  ' he gets 20 points and you get 100 points',
+              ' he gets 20 points and you get 100 points',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 16,
@@ -204,15 +212,15 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                 fontWeight: FontWeight.w400,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.lg),
             DottedBorder(
               dashPattern: const [8, 4],
               borderType: BorderType.RRect,
               color: AppColors.kColorGray300,
-              radius: const Radius.circular(10),
+              radius: const Radius.circular(AppSpacing.sm),
               child: ListTile(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
                 onTap: () {
                   setState(() {
@@ -234,7 +242,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                     ),
                     const Spacer(),
                     IconButton(
-                      splashRadius: 25,
+                      splashRadius: AppSpacing.xlg,
                       onPressed: () {
                         setState(() {
                           _isCopied = true;
@@ -246,7 +254,7 @@ class _LoyaltyPageState extends State<LoyaltyPage> {
                       icon: Icon(
                         _isCopied ? PhosphorIcons.checks : PhosphorIcons.copy,
                         color: AppColors.kPrimaryColor,
-                        size: 24,
+                        size: AppSpacing.xlg,
                       ),
                     ),
                   ],

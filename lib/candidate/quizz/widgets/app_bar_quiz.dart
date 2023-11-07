@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/candidate/quizz/views/leaderboard_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class AppBarQuiz extends StatelessWidget {
   const AppBarQuiz({
@@ -13,7 +14,7 @@ class AppBarQuiz extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       child: Row(
         children: [
           GestureDetector(
@@ -37,7 +38,7 @@ class AppBarQuiz extends StatelessWidget {
               height: 50,
             ),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: AppSpacing.lg),
           GestureDetector(
             onTap: () {},
             child: Stack(
@@ -52,10 +53,10 @@ class AppBarQuiz extends StatelessWidget {
                   children: [
                     SvgPicture.asset(
                       'assets/svg/diamond-color.svg',
-                      height: 26,
-                      width: 26,
+                      height: AppSpacing.xlg,
+                      width: AppSpacing.xlg,
                     ),
-                    const SizedBox(width: 4),
+                    const SizedBox(width: AppSpacing.xs),
                     const Text(
                       '10',
                       style: TextStyle(

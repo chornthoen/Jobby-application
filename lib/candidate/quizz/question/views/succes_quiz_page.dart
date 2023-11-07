@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class SuccessQuizPage extends StatefulWidget {
@@ -33,7 +34,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -55,6 +56,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
+                            color: AppColors.kBlackColor,
                           ),
                         ),
                         SvgPicture.asset(
@@ -64,7 +66,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 8),
+                    const SizedBox(height: AppSpacing.sm),
                     const Text(
                       'for completing the quiz',
                       textAlign: TextAlign.center,
@@ -82,6 +84,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
+                    color: AppColors.kBlackColor,
                   ),
                 ),
                 const SizedBox(height: 8),

@@ -3,6 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/employer/home/models/timeline_model.dart';
 import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_timeIine.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TabTimeline extends StatefulWidget {
   const TabTimeline({super.key});
@@ -17,7 +18,10 @@ class _TabTimelineState extends State<TabTimeline> {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        margin: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -33,17 +37,17 @@ class _TabTimelineState extends State<TabTimeline> {
                 ),
                 const Spacer(),
                 IconButton(
-                  splashRadius: 20,
+                  splashRadius: AppSpacing.xlg,
                   onPressed: () {},
                   icon: const Icon(
                     PhosphorIcons.caret_down_bold,
-                    size: 20,
+                    size: AppSpacing.xlg,
                     color: AppColors.kColorGray700,
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.sm),
             ListView.builder(
               itemCount: listTimeline.length,
               shrinkWrap: true,

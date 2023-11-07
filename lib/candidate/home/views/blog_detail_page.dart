@@ -29,10 +29,10 @@ class _BlogDetailPageState extends State<BlogDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        icon1: PhosphorIcons.bookmark_simple,
-        icon2: PhosphorIcons.share_network,
-        onTap1: () {},
-        onTap2: () {},
+        iconRight: PhosphorIcons.bookmark_simple,
+        iconLeft: PhosphorIcons.share_network,
+        onTapRight: () {},
+        onTapLeft: () {},
       ),
       body: SingleChildScrollView(
         child: Column(

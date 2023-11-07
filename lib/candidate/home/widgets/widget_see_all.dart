@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/theme/custom_text_style.dart';
 
 class WidgetSeeAll extends StatelessWidget {
@@ -16,9 +17,9 @@ class WidgetSeeAll extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-        left: 16,
-        right: 10,
-        top: 10,
+        left: AppSpacing.lg,
+        right: AppSpacing.md,
+        top: AppSpacing.sm,
       ),
       child: Row(
         children: [

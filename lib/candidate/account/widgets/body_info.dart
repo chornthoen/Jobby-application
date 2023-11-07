@@ -12,6 +12,7 @@ import 'package:jobby_application/candidate/account/views/your_jobby_profile_pag
 import 'package:jobby_application/candidate/account/widgets/item_card.dart';
 import 'package:jobby_application/candidate/jobs/views/work_criteria_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class BodyInfo extends StatefulWidget {
@@ -27,7 +28,7 @@ class _BodyInfoState extends State<BodyInfo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemMyPrivilege extends StatelessWidget {
   const ItemMyPrivilege({
@@ -20,10 +21,10 @@ class ItemMyPrivilege extends StatelessWidget {
       children: [
         SvgPicture.asset(
           svgUrl,
-          width: 45,
-          height: 45,
+          width: AppSpacing.xxxlg + 5,
+          height: AppSpacing.xxxlg + 5,
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: AppSpacing.sm),
         Text(
           title,
           style: const TextStyle(

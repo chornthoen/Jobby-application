@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
 import 'package:jobby_application/notification/models/notification_model.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -25,14 +26,14 @@ class _NotificationPageState extends State<NotificationPage> {
         child: SvgPicture.asset(
           'assets/svg/check-double.svg',
           color: AppColors.kPrimaryColor,
-          height: 25,
+          height: AppSpacing.xlg,
         ),
       ),
       body: ListView.builder(
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
         itemCount: notificationList.length,
-        itemBuilder: (context,index){
+        itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
               setState(() {
@@ -43,26 +44,27 @@ class _NotificationPageState extends State<NotificationPage> {
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(AppSpacing.sm),
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     color: AppColors.kWhiteColor,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(AppSpacing.sm),
                   ),
                   child: Row(
                     children: [
                       Stack(
                         children: [
                           Container(
-                            padding: const EdgeInsets.all(14),
+                            padding: const EdgeInsets.all(AppSpacing.md),
                             decoration: BoxDecoration(
                               color: notificationList[index].color,
-                              borderRadius: BorderRadius.circular(16),
+                              borderRadius:
+                                  BorderRadius.circular(AppSpacing.lg),
                             ),
-                            child:  Image(
+                            child: Image(
                               image: AssetImage(notificationList[index].image),
-                              height: 40,
-                              width: 40,
+                              height: AppSpacing.xxxlg,
+                              width: AppSpacing.xxxlg,
                             ),
                           ),
                           if (notificationList[index].isRead! == true)
@@ -70,10 +72,11 @@ class _NotificationPageState extends State<NotificationPage> {
                               top: 0,
                               right: 0,
                               child: Container(
-                                padding: const EdgeInsets.all(6),
+                                padding:
+                                    const EdgeInsets.all(AppSpacing.sm - 2),
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                    width: 2,
+                                    width: AppSpacing.xxs,
                                     color: AppColors.kWhiteColor,
                                   ),
                                   color: AppColors.kPrimaryColor,
@@ -83,13 +86,13 @@ class _NotificationPageState extends State<NotificationPage> {
                             ),
                         ],
                       ),
-                      const SizedBox(width: 14),
+                      const SizedBox(width: AppSpacing.md),
                       Flexible(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              child:  Text(
+                              child: Text(
                                 notificationList[index].title,
                                 style: TextStyle(
                                   fontSize: 18,
@@ -100,10 +103,10 @@ class _NotificationPageState extends State<NotificationPage> {
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 5),
+                            const SizedBox(height: AppSpacing.xs),
                             Text(
                               notificationList[index].time,
-                              style:  TextStyle(
+                              style: TextStyle(
                                 fontSize: 14,
                                 color: notificationList[index].isRead! == true
                                     ? AppColors.kColorGray600
@@ -118,7 +121,7 @@ class _NotificationPageState extends State<NotificationPage> {
                   ),
                 ),
                 Container(
-                  height: 1,
+                  height: AppSpacing.xxxs,
                   width: MediaQuery.of(context).size.width,
                   color: AppColors.kColorGray200,
                 ),

@@ -65,7 +65,7 @@ class _SignUpEnterPrise2PageState extends State<SignUpEnterPrise2Page> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => CloseKeyboard.closeKeyboard(context),
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(subTitle: 'Enterprise (2/4)'),

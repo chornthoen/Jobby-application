@@ -7,6 +7,7 @@ import 'package:jobby_application/employer/home/widgets/tab_bar_job_rejected.dar
 import 'package:jobby_application/employer/home/widgets/tab_bar_job_showing.dart';
 import 'package:jobby_application/employer/home/widgets/tab_custom.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ManagerPostPage extends StatefulWidget {
@@ -38,20 +39,21 @@ class _ManagerPostPageState extends State<ManagerPostPage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
-      appBar: const CustomAppBar(
+      appBar:  const CustomAppBar(
         title: 'Manager Post',
-        icon2: PhosphorIcons.magnifying_glass,
+        iconLeft: PhosphorIcons.magnifying_glass,
+        //onTapLeft: () => context.push(SearchView.routePath),
       ),
       body: Column(
         children: [
           SizedBox(
-            height: 44,
+            height: AppSpacing.xxxlg,
             child: TabBar(
               isScrollable: true,
               controller: tabController,
               indicator: BoxDecoration(
                 color: AppColors.kPrimaryColor,
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(AppSpacing.sm),
               ),
               indicatorSize: TabBarIndicatorSize.label,
               labelColor: AppColors.kWhiteColor,
@@ -67,36 +69,13 @@ class _ManagerPostPageState extends State<ManagerPostPage>
                 color: AppColors.kPrimaryColor,
               ),
               tabs: const [
+                Tab(child: TabCustom(title: 'Job Showing', number: '2')),
+                Tab(child: TabCustom(title: 'Job Paused', number: '2')),
                 Tab(
-                  child: TabCustom(
-                    title: 'Job Showing',
-                    number: '2',
-                  ),
+                  child: TabCustom(title: 'Job Pending Approval', number: '8'),
                 ),
-                Tab(
-                  child: TabCustom(
-                    title: 'Job Paused',
-                    number: '2',
-                  ),
-                ),
-                Tab(
-                  child: TabCustom(
-                    title: 'Job Pending Approval',
-                    number: '8',
-                  ),
-                ),
-                Tab(
-                  child: TabCustom(
-                    title: 'Job Rejected',
-                    number: '2',
-                  ),
-                ),
-                Tab(
-                  child: TabCustom(
-                    title: 'Job Expired',
-                    number: '2',
-                  ),
-                ),
+                Tab(child: TabCustom(title: 'Job Rejected', number: '2')),
+                Tab(child: TabCustom(title: 'Job Expired', number: '2')),
               ],
             ),
           ),

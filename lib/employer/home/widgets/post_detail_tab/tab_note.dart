@@ -3,10 +3,11 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/employer/home/models/note_model.dart';
 import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_notes.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
-import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
+import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class TabNotes extends StatefulWidget {
   const TabNotes({super.key});
@@ -66,7 +67,10 @@ class _TabNotesState extends State<TabNotes> {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -134,12 +138,7 @@ class _TabNotesState extends State<TabNotes> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppBarBottomSheet(
-                  title: 'Add Note',
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
+                AppBarBottomSheet(title: 'Add Note'),
                 const SizedBox(height: 10),
                 const Text(
                   'Note',
@@ -208,12 +207,7 @@ class _TabNotesState extends State<TabNotes> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppBarBottomSheet(
-                  title: 'Add Note',
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
+                AppBarBottomSheet(title: 'Add Note'),
                 const SizedBox(height: 10),
                 const Text(
                   'Note',

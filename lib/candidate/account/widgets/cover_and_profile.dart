@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class CoverAndProfile extends StatelessWidget {
   const CoverAndProfile({
@@ -11,8 +12,9 @@ class CoverAndProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.25,
+      height: height * 0.25,
       child: Stack(
         children: [
           Stack(
@@ -23,7 +25,7 @@ class CoverAndProfile extends StatelessWidget {
                 right: 0,
                 left: 0,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.2,
+                  height: height * 0.2,
                   alignment: Alignment.topCenter,
                   color: AppColors.kOrangeColor400,
                 ),
@@ -34,7 +36,7 @@ class CoverAndProfile extends StatelessWidget {
                 left: 0,
                 child: Container(
                   alignment: Alignment.center,
-                  padding: const EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: AppSpacing.sm),
                   height: 170,
                   width: double.infinity,
                   child: const Image(
@@ -44,10 +46,10 @@ class CoverAndProfile extends StatelessWidget {
                 ),
               ),
               Positioned(
-                right: 16,
+                right: AppSpacing.lg,
                 bottom: 56,
                 child: Container(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
                     color: AppColors.kPrimaryColor.withOpacity(0.5),
                     shape: BoxShape.circle,
@@ -55,7 +57,7 @@ class CoverAndProfile extends StatelessWidget {
                   child: const Icon(
                     Icons.camera_alt_outlined,
                     color: AppColors.kWhiteColor,
-                    size: 24,
+                    size: AppSpacing.xlg,
                   ),
                 ),
               ),
@@ -64,7 +66,7 @@ class CoverAndProfile extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              padding: const EdgeInsets.all(2),
+              padding: const EdgeInsets.all(AppSpacing.xxs),
               decoration: const BoxDecoration(
                 color: AppColors.kWhiteColor,
                 shape: BoxShape.circle,
@@ -73,7 +75,7 @@ class CoverAndProfile extends StatelessWidget {
                 radius: 46,
                 backgroundImage: const AssetImage('assets/images/thoen.png'),
                 child: Container(
-                  padding: const EdgeInsets.all(38),
+                  padding: const EdgeInsets.all(AppSpacing.xxxlg),
                   decoration: BoxDecoration(
                     color: AppColors.kPrimaryColor.withOpacity(0.4),
                     shape: BoxShape.circle,
@@ -81,7 +83,7 @@ class CoverAndProfile extends StatelessWidget {
                   child: const Icon(
                     Icons.camera_alt_outlined,
                     color: AppColors.kWhiteColor,
-                    size: 20,
+                    size: AppSpacing.xlg - 4,
                   ),
                 ),
               ),

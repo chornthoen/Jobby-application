@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemJobShowing extends StatelessWidget {
   const ItemJobShowing({
@@ -31,12 +32,12 @@ class ItemJobShowing extends StatelessWidget {
       onTap: onPressed,
       child: Column(
         children: [
-          const SizedBox(height: 10),
+          const SizedBox(height: AppSpacing.sm),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            padding: const EdgeInsets.all(AppSpacing.sm),
             decoration: BoxDecoration(
               color: AppColors.kWhiteColor,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
               boxShadow: [
                 AppColors.kBoxShadowColor,
                 AppColors.kBoxShadowColor1,
@@ -51,7 +52,7 @@ class ItemJobShowing extends StatelessWidget {
                       title,
                       style: const TextStyle(
                         color: AppColors.kPrimaryColor,
-                        fontSize: 16,
+                        fontSize: AppSpacing.lg,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -61,19 +62,21 @@ class ItemJobShowing extends StatelessWidget {
                       child: const Icon(
                         Icons.more_horiz,
                         color: AppColors.kPrimaryColor,
-                        size: 24,
+                        size: AppSpacing.xlg,
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: AppSpacing.xs),
                 if (isPaused!)
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.sm,
+                      vertical: AppSpacing.xs,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.kColorGray600,
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(AppSpacing.md),
                     ),
                     child: const Text(
                       'Paused',
@@ -86,11 +89,13 @@ class ItemJobShowing extends StatelessWidget {
                   ),
                 if (isExpired!)
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppSpacing.sm,
+                      vertical: AppSpacing.xs,
+                    ),
                     decoration: BoxDecoration(
                       color: AppColors.kColorRed400,
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(AppSpacing.md),
                     ),
                     child: const Text(
                       'Expired',
@@ -101,7 +106,7 @@ class ItemJobShowing extends StatelessWidget {
                       ),
                     ),
                   ),
-                const SizedBox(height: 5),
+                const SizedBox(height: AppSpacing.xs),
                 Row(
                   children: [
                     SizedBox(
@@ -117,16 +122,16 @@ class ItemJobShowing extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          const SizedBox(height: 5),
+                          const SizedBox(height: AppSpacing.xs),
                           Text(
                             location,
                             style: const TextStyle(
                               color: AppColors.kColorGray600,
-                              fontSize: 16,
+                              fontSize: AppSpacing.lg,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          const SizedBox(height: 10),
+                          const SizedBox(height: AppSpacing.md),
                           const Text(
                             'Job Type',
                             style: TextStyle(
@@ -135,12 +140,12 @@ class ItemJobShowing extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          const SizedBox(height: 5),
+                          const SizedBox(height: AppSpacing.xs),
                           Text(
                             jobType,
                             style: const TextStyle(
                               color: AppColors.kColorGray600,
-                              fontSize: 16,
+                              fontSize: AppSpacing.lg,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -158,16 +163,16 @@ class ItemJobShowing extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        const SizedBox(height: 5),
+                        const SizedBox(height: AppSpacing.xs),
                         Text(
                           salary,
                           style: const TextStyle(
                             color: AppColors.kColorGray600,
-                            fontSize: 16,
+                            fontSize: AppSpacing.lg,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.sm),
                         const Text(
                           'Candidate',
                           style: TextStyle(
@@ -176,12 +181,12 @@ class ItemJobShowing extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
-                        const SizedBox(height: 5),
+                        const SizedBox(height: AppSpacing.xs),
                         Text(
                           candidate,
                           style: const TextStyle(
                             color: AppColors.kColorGray600,
-                            fontSize: 16,
+                            fontSize: AppSpacing.lg,
                             fontWeight: FontWeight.w500,
                           ),
                         ),

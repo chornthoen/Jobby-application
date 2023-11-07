@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/quizz/models/more_turns_model.dart';
 import 'package:jobby_application/candidate/quizz/widgets/item_more_turns.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class MoreTurnsPage extends StatefulWidget {
@@ -18,9 +19,12 @@ class _MoreTurnsPageState extends State<MoreTurnsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
-      appBar: const CustomAppBar(title: 'How To Get More Turns',size: 16,),
+      appBar: const CustomAppBar(
+        title: 'How To Get More Turns',
+        size: AppSpacing.lg,
+      ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: ListView.builder(
           itemCount: moreTurnModel.length,
           shrinkWrap: true,

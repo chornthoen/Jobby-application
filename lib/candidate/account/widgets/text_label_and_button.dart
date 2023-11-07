@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TextLabelAndButton extends StatelessWidget {
   const TextLabelAndButton({
@@ -38,16 +39,16 @@ class TextLabelAndButton extends StatelessWidget {
               child: Icon(
                 icon,
                 color: AppColors.kPrimaryColor,
-                size: 24,
+                size: AppSpacing.xlg,
               ),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: AppSpacing.sm),
             GestureDetector(
               onTap: onTap1,
               child: Icon(
                 icon1,
                 color: AppColors.kPrimaryColor,
-                size: 24,
+                size: AppSpacing.xlg,
               ),
             ),
           ],

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class IconAndText extends StatelessWidget {
   const IconAndText({
@@ -14,18 +15,18 @@ class IconAndText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: AppSpacing.xs),
       width: double.infinity,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset(
             svg,
-            width: 22,
-            height: 22,
+            width: AppSpacing.xlg - 2,
+            height: AppSpacing.xlg - 2,
             color: AppColors.kColorGray600,
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: AppSpacing.sm),
           Flexible(
             child: Text(
               text,

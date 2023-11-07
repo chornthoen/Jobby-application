@@ -3,6 +3,7 @@ import 'package:jobby_application/candidate/quizz/models/leader_board_model.dart
 import 'package:jobby_application/candidate/quizz/widgets/avatar_rank.dart';
 import 'package:jobby_application/candidate/quizz/widgets/item_leader_boad.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TabWeekly extends StatefulWidget {
   const TabWeekly({super.key});
@@ -17,10 +18,10 @@ class _TabWeeklyState extends State<TabWeekly> {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: Column(
           children: [
-            const SizedBox(height: 16),
+            const SizedBox(height: AppSpacing.lg),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -32,7 +33,7 @@ class _TabWeeklyState extends State<TabWeekly> {
                   number: 'assets/svg/number2.svg',
                 ),
                 Container(
-                  margin: const EdgeInsets.only(bottom: 65),
+                  margin: const EdgeInsets.only(bottom: AppSpacing.xxlg * 2),
                   child: const AvatarRank(
                     image: 'assets/images/thoen.png',
                     name: 'Chorn Thoen',
@@ -51,7 +52,7 @@ class _TabWeeklyState extends State<TabWeekly> {
                 ),
               ],
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: AppSpacing.xs),
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),

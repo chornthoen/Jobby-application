@@ -6,6 +6,7 @@ import 'package:jobby_application/candidate/account/views/term_of_service_page.d
 import 'package:jobby_application/candidate/account/widgets/item_card.dart';
 import 'package:jobby_application/notification/views/setting_notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
@@ -25,7 +26,7 @@ class _AccountSettingPageState extends State<AccountSettingPage> {
       backgroundColor: AppColors.kBackgroundColor,
       appBar:const CustomAppBar(title: 'Account Setting'),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: Column(
           children: [
             ItemCard(

@@ -184,7 +184,7 @@ class TextThemes {
 class ColorSchemes {
   static const primaryColorScheme = ColorScheme.light(
     // Primary colors
-    primary: Color(0XFF0A113C),
+    primary: Color(0XFF080A12),
     primaryContainer: Color(0XFF434E58),
     secondary: Color(0XFF434E58),
     secondaryContainer: Color(0XE5FFFFFF),
@@ -192,7 +192,7 @@ class ColorSchemes {
     tertiaryContainer: Color(0XE5FFFFFF),
 
     // Background colors
-    background: Color(0XFF434E58),
+    background: Color(0XFFFFFFFF),
 
     // Surface colors
     surface: Color(0XFF434E58),

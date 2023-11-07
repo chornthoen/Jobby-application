@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemNotes extends StatelessWidget {
   const ItemNotes({
@@ -24,15 +25,18 @@ class ItemNotes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSpacing.xs,
+        vertical: AppSpacing.sm,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CircleAvatar(
-            radius: 26,
+            radius: AppSpacing.xlg + 2,
             backgroundImage: AssetImage(image),
           ),
-          const SizedBox(width: 10),
+          const SizedBox(width: AppSpacing.sm),
           Flexible(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,16 +49,16 @@ class ItemNotes extends StatelessWidget {
                         Text(
                           name,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: AppSpacing.lg,
                             fontWeight: FontWeight.w500,
                             color: AppColors.kColorGray600,
                           ),
                         ),
-                        const SizedBox(width: 14),
+                        const SizedBox(width: AppSpacing.md),
                         Text(
                           date,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: AppSpacing.lg,
                             fontWeight: FontWeight.w500,
                             color: AppColors.kColorGray600,
                           ),
@@ -68,16 +72,16 @@ class ItemNotes extends StatelessWidget {
                           onTap: onEdit,
                           child: const Icon(
                             PhosphorIcons.pencil_simple,
-                            size: 20,
+                            size: AppSpacing.xlg - 2,
                             color: AppColors.kColorGray700,
                           ),
                         ),
-                        const SizedBox(width: 15),
+                        const SizedBox(width: AppSpacing.lg),
                         GestureDetector(
                           onTap: onDelete,
                           child: const Icon(
                             PhosphorIcons.trash,
-                            size: 20,
+                            size: AppSpacing.xlg - 2,
                             color: AppColors.kColorGray700,
                           ),
                         ),
@@ -85,19 +89,19 @@ class ItemNotes extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: AppSpacing.sm),
                 Text(
                   note,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: AppSpacing.lg,
                     fontWeight: FontWeight.w500,
                     color: AppColors.kPrimaryColor,
                   ),
                 ),
-                const SizedBox(height: 5),
+                const SizedBox(height: AppSpacing.xs),
                 const Divider(
                   color: AppColors.kColorGray300,
-                  thickness: 1,
+                  thickness: AppSpacing.xxxs,
                 ),
               ],
             ),

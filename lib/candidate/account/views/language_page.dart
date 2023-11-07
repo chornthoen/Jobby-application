@@ -5,6 +5,7 @@ import 'package:jobby_application/candidate/account/models/languag_models.dart';
 import 'package:jobby_application/candidate/account/widgets/item_langaug.dart';
 import 'package:jobby_application/candidate/jobs/widgets/action_tab.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
@@ -36,34 +37,38 @@ class _LanguagePageState extends State<LanguagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(title: 'Language'),
-        backgroundColor: AppColors.kBackgroundColor,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Choose your language skill',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.kColorGray600,
-                ),
-              ),
-              const SizedBox(height: 10),
-              CustomTextFieldForms(
-                controller: languageController,
-                hintText: 'choose your language',
-                maxLines: 3,
-                suffixIcon: PhosphorIcons.caret_down,
-                onPressed: addPositionSheet,
-              ),
-            ],
-          ),
+      appBar: const CustomAppBar(title: 'Language'),
+      backgroundColor: AppColors.kBackgroundColor,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
         ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Choose your language skill',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: AppColors.kColorGray600,
+              ),
+            ),
+            const SizedBox(height: AppSpacing.sm),
+            CustomTextFieldForms(
+              controller: languageController,
+              hintText: 'choose your language',
+              maxLines: 3,
+              suffixIcon: PhosphorIcons.caret_down,
+              onPressed: addPositionSheet,
+            ),
+          ],
+        ),
+      ),
     );
   }
+
   void addPositionSheet() {
     ShowBottomSheetCustom.showBottomSheet(
       context: context,
@@ -80,9 +85,9 @@ class _LanguagePageState extends State<LanguagePage> {
       child: const Column(
         children: [
           ActionTop(title: 'Language'),
-          SizedBox(height: 10),
-          Expanded(child: ItemLangauge()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.sm),
+          Expanded(child: ItemLanguage()),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );

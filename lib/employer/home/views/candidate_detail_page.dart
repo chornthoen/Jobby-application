@@ -4,6 +4,7 @@ import 'package:jobby_application/employer/home/models/note_model.dart';
 import 'package:jobby_application/employer/home/widgets/item_info.dart';
 import 'package:jobby_application/employer/home/widgets/post_detail_tab/item_notes.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/button_outLine.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
@@ -31,6 +32,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
     addNoteController.dispose();
     super.dispose();
   }
+
   void saveNote(String note) {
     setState(() {
       listNote.add(
@@ -50,23 +52,26 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
       backgroundColor: AppColors.kBackgroundColor,
       appBar: CustomAppBar(
         title: 'Candidate Detail',
-        icon2: Icons.more_horiz,
-        onTap2: () {},
+        iconLeft: Icons.more_horiz,
+        onTapLeft: () {},
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
                   const CircleAvatar(
-                    radius: 34,
+                    radius: AppSpacing.xxlg,
                     backgroundImage: AssetImage('assets/images/rose.png'),
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: AppSpacing.sm),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -74,10 +79,11 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                         'Rose',
                         style: TextStyle(
                           fontSize: 18,
+                          color: AppColors.kPrimaryColor,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
-                      const SizedBox(height: 5),
+                      const SizedBox(height: AppSpacing.xs),
                       const Text(
                         'Apple job: UI/UX Designer',
                         style: TextStyle(
@@ -91,7 +97,7 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                             const Icon(
                               Icons.star,
                               color: AppColors.kOrangeColor400,
-                              size: 24,
+                              size: AppSpacing.xlg,
                             ),
                         ],
                       ),
@@ -99,21 +105,22 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.lg),
               ButtonOutLineAction(
                 text: 'View Resume',
-                height: 40,
+                height: AppSpacing.xxxlg,
                 onPressed: () {},
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const Text(
                 'Information',
                 style: TextStyle(
                   fontSize: 18,
+                  color: AppColors.kPrimaryColor,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               const ItemInfo(
                 label: 'Job title',
                 value: 'Mobile Developer',
@@ -170,10 +177,11 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                 'Hiring',
                 style: TextStyle(
                   fontSize: 18,
+                  color: AppColors.kPrimaryColor,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               const Text(
                 'Owner',
                 style: TextStyle(
@@ -182,24 +190,25 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                   color: AppColors.kColorGray600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               const Row(
                 children: [
                   CircleAvatar(
-                    radius: 26,
+                    radius: AppSpacing.xlg,
                     backgroundImage: AssetImage('assets/images/rose.png'),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: AppSpacing.sm),
                   Text(
                     'Rose',
                     style: TextStyle(
                       fontSize: 20,
+                      color: AppColors.kPrimaryColor,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               const Text(
                 'Date',
                 style: TextStyle(
@@ -212,10 +221,11 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                 '12/12/2021',
                 style: TextStyle(
                   fontSize: 18,
+                  color: AppColors.kPrimaryColor,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.sm),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -223,13 +233,14 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                     'Notes',
                     style: TextStyle(
                       fontSize: 18,
+                      color: AppColors.kPrimaryColor,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   TextButton.icon(
                     icon: const Icon(
                       PhosphorIcons.plus_circle,
-                      size: 20,
+                      size: AppSpacing.xlg - 4,
                       color: AppColors.kColorGray700,
                     ),
                     onPressed: () {
@@ -264,10 +275,8 @@ class _CandidateDetailPageState extends State<CandidateDetailPage> {
                     name: listNote[index].name,
                     date: listNote[index].date,
                     note: listNote[index].note,
-                    onEdit: () {
-                    },
-                    onDelete: () {
-                    },
+                    onEdit: () {},
+                    onDelete: () {},
                   );
                 },
               ),

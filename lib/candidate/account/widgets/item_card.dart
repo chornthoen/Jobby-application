@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
@@ -17,27 +18,26 @@ class ItemCard extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          //line 1
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(AppSpacing.xs),
           ),
           minVerticalPadding: 0,
           contentPadding: const EdgeInsets.only(
-            left: 12,
-            right: 4,
+            left: AppSpacing.md,
+            right: AppSpacing.xs,
           ),
           onTap: onPressed,
           title: Row(
             children: [
               SvgPicture.asset(
                 icon,
-                width: 25,
-                height: 25,
+                width: AppSpacing.xlg,
+                height: AppSpacing.xlg,
                 color: title == 'Log out'
                     ? AppColors.kRedColor
                     : AppColors.kColorGray600,
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: AppSpacing.sm),
               Text(
                 title,
                 style: TextStyle(
@@ -55,7 +55,7 @@ class ItemCard extends StatelessWidget {
             color: title == 'Log out'
                 ? AppColors.kRedColor
                 : AppColors.kColorGray600,
-            size: 20,
+            size: AppSpacing.xlg - 2,
           ),
         ),
         const Divider(

@@ -5,6 +5,7 @@ import 'package:jobby_application/employer/home/views/post_detail_page.dart';
 import 'package:jobby_application/employer/home/widgets/item_job_showing.dart';
 import 'package:jobby_application/employer/home/widgets/tab_custom.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class TabABarJobShowing extends StatelessWidget {
@@ -13,28 +14,28 @@ class TabABarJobShowing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+      padding: const EdgeInsets.symmetric(
+        vertical: AppSpacing.sm,
+        horizontal: AppSpacing.lg,
+      ),
       itemCount: listJobShowing.length,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
         final item = listJobShowing[index];
         return ItemJobShowing(
-          onPressed: (){
-            context.push(PostDetailPage.routePath);
-          },
+          onPressed: () => context.push(PostDetailPage.routePath),
           title: item.title,
           location: item.location,
           jobType: item.jobType,
           salary: item.salary,
           candidate: item.candidate,
-          onTap: () {
-            _showBottomSheet(context);
-          },
+          onTap: () => _showBottomSheet(context),
           isPaused: item.isPaused,
         );
       },
     );
   }
+
   void _showBottomSheet(BuildContext context) {
     showModalBottomSheet<void>(
       context: context,
@@ -42,24 +43,22 @@ class TabABarJobShowing extends StatelessWidget {
       backgroundColor: AppColors.kBackgroundColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
-          top: Radius.circular(20),
+          top: Radius.circular(AppSpacing.lg),
         ),
       ),
       builder: (context) {
         return Padding(
           padding: MediaQuery.of(context).viewInsets,
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.md,
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppBarBottomSheet(
-                  title: 'Job Details',
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
+                const AppBarBottomSheet(title: 'Job Details'),
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const BouncingScrollPhysics(),

@@ -3,6 +3,7 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/candidate/search/widgets/tab_search_all.dart';
 import 'package:jobby_application/candidate/search/widgets/tab_search_company.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class DetailSearchView extends StatefulWidget {
@@ -40,27 +41,33 @@ class _DetailSearchViewState extends State<DetailSearchView>
       backgroundColor: AppColors.kBackgroundColor,
       appBar: AppBar(
         backgroundColor: AppColors.kBackgroundColor,
-        toolbarHeight: 62,
-        leadingWidth: 46,
+        toolbarHeight: AppSpacing.xxlg * 2,
+        leadingWidth: AppSpacing.xxxlg,
         elevation: 0,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 5, top: 8),
+          padding: const EdgeInsets.only(
+            left: AppSpacing.xs,
+            top: AppSpacing.sm,
+          ),
           child: IconButton(
-            splashRadius: 25,
+            splashRadius: AppSpacing.xlg,
             onPressed: () {
               Navigator.pop(context);
             },
             icon: const Icon(
               PhosphorIcons.arrow_left,
               color: Colors.black,
-              size: 28,
+              size: AppSpacing.xlg,
             ),
           ),
         ),
         title: Container(
-          margin: const EdgeInsets.only(top: 8),
+          margin: const EdgeInsets.only(top: AppSpacing.sm),
           child: CustomTextFieldForms(
-            prefixIcon: const Icon(PhosphorIcons.magnifying_glass, size: 24),
+            prefixIcon: const Icon(
+              PhosphorIcons.magnifying_glass,
+              size: AppSpacing.xlg,
+            ),
             controller: _searchController,
             keyboardType: TextInputType.emailAddress,
             hintText: 'Search',
@@ -70,17 +77,21 @@ class _DetailSearchViewState extends State<DetailSearchView>
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.only(top: 10, left: 20, right: 20),
+            margin: const EdgeInsets.only(
+              top: AppSpacing.sm,
+              left: AppSpacing.lg,
+              right: AppSpacing.lg,
+            ),
             decoration: BoxDecoration(
               color: AppColors.kWhiteColor,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(AppSpacing.sm),
               boxShadow: [AppColors.kBoxShadowColor],
             ),
             child: TabBar(
               controller: tabController,
               indicator: BoxDecoration(
                 color: AppColors.kPrimaryColor,
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(AppSpacing.sm),
               ),
               unselectedLabelColor: AppColors.kPrimaryColor,
               labelStyle: const TextStyle(

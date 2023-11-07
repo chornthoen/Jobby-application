@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class TabCustom extends StatelessWidget {
   const TabCustom({
@@ -68,28 +69,28 @@ class ItemAction extends StatelessWidget {
         ListTile(
           onTap: onTap,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(AppSpacing.sm),
           ),
           minVerticalPadding: 0,
           contentPadding: const EdgeInsets.only(
-            left: 10,
-            right: 4,
+            left: AppSpacing.sm,
+            right: AppSpacing.xs,
           ),
           title: Row(
             children: [
               SvgPicture.asset(
                 icon,
-                width: 25,
-                height: 25,
+                width: AppSpacing.xlg,
+                height: AppSpacing.xlg,
                 color: title == 'Delete'
                     ? AppColors.kRedColor
                     : AppColors.kColorGray600,
               ),
-              const SizedBox(width: 8),
+              const SizedBox(width: AppSpacing.sm),
               Text(
                 title!,
                 style:  TextStyle(
-                  fontSize: 16,
+                  fontSize: AppSpacing.lg,
                   fontWeight: FontWeight.w500,
                   color: title == 'Delete'
                       ? AppColors.kRedColor
@@ -100,7 +101,7 @@ class ItemAction extends StatelessWidget {
           ),
         ),
         const Divider(
-          height: 1,
+          height: AppSpacing.xxxs,
           color: AppColors.kColorGray300,
         ),
       ],

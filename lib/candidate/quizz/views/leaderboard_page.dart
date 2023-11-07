@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/quizz/widgets/tab_all_time.dart';
 import 'package:jobby_application/candidate/quizz/widgets/tab_weekly.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class LeaderBoardPage extends StatefulWidget {
   const LeaderBoardPage({super.key});
@@ -43,10 +44,10 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            toolbarHeight: 65,
+            toolbarHeight: AppSpacing.xxlg * 2,
             automaticallyImplyLeading: false,
             leading: Padding(
-              padding: const EdgeInsets.only(left: 16),
+              padding: const EdgeInsets.only(left: AppSpacing.lg),
               child: GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
@@ -58,7 +59,7 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
                 ),
               ),
             ),
-            leadingWidth: 50,
+            leadingWidth: AppSpacing.xxxlg + 10,
             title: const Text(
               'Leaderboard',
               style: TextStyle(
@@ -72,18 +73,18 @@ class _LeaderBoardPageState extends State<LeaderBoardPage>
           body: Column(
             children: [
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 16),
-                padding: const EdgeInsets.all(3),
-                height: 46,
+                margin: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+                padding: const EdgeInsets.all(AppSpacing.xxs),
+                height: AppSpacing.xxxlg + 6,
                 decoration: BoxDecoration(
                   color: AppColors.kWhiteColor.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
                 child: TabBar(
                   controller: tabController,
                   indicator: BoxDecoration(
                     color: AppColors.kColorBlue400,
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(AppSpacing.sm),
                   ),
                   unselectedLabelColor: AppColors.kWhiteColor.withOpacity(0.5),
                   labelStyle: const TextStyle(

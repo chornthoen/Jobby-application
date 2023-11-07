@@ -5,6 +5,7 @@ import 'package:jobby_application/employer/home/widgets/post_detail_tab/tab_job_
 import 'package:jobby_application/employer/home/widgets/post_detail_tab/tab_timeline_and_note.dart';
 import 'package:jobby_application/employer/home/widgets/tab_post_detail.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class PostDetailPage extends StatefulWidget {
@@ -36,7 +37,7 @@ class _PostDetailPageState extends State<PostDetailPage>
       body: Column(
         children: [
           SizedBox(
-            height: 44,
+            height: AppSpacing.xxxlg,
             child: TabBar(
               onTap: (index) {
                 setState(() {
@@ -50,7 +51,7 @@ class _PostDetailPageState extends State<PostDetailPage>
                 border: Border(
                   bottom: BorderSide(
                     color: AppColors.kPrimaryColor,
-                    width: 2,
+                    width: AppSpacing.xxs,
                   ),
                 ),
               ),
@@ -58,12 +59,12 @@ class _PostDetailPageState extends State<PostDetailPage>
               labelColor: AppColors.kPrimaryColor,
               unselectedLabelColor: AppColors.kColorGray500,
               labelStyle: const TextStyle(
-                fontSize: 16,
+                fontSize: AppSpacing.lg,
                 fontWeight: FontWeight.w500,
                 color: AppColors.kWhiteColor,
               ),
               unselectedLabelStyle: const TextStyle(
-                fontSize: 16,
+                fontSize: AppSpacing.lg,
                 fontWeight: FontWeight.w500,
                 color: AppColors.kPrimaryColor,
               ),

@@ -10,10 +10,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.logo = '',
     this.subTitle = '',
     this.child,
-    this.icon1,
-    this.icon2,
-    this.onTap1,
-    this.onTap2,
+    this.iconRight,
+    this.iconLeft,
+    this.onTapRight,
+    this.onTapLeft,
     this.size = 18,
     this.onBackTap,
   });
@@ -22,11 +22,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? logo;
   final String? subTitle;
   final Widget? child;
-  final IconData? icon1;
-  final IconData? icon2;
+  final IconData? iconRight;
+  final IconData? iconLeft;
   final double? size;
-  final VoidCallback? onTap1;
-  final VoidCallback? onTap2;
+  final VoidCallback? onTapRight;
+  final VoidCallback? onTapLeft;
   final VoidCallback? onBackTap;
 
   @override
@@ -72,18 +72,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               IconButton(
                 splashRadius: 24,
-                onPressed: onTap1,
+                onPressed: onTapRight,
                 icon:  Icon(
-                  icon1,
+                  iconRight,
                   color: AppColors.kPrimaryColor,
                   size: 24,
                 ),
               ),
               IconButton(
                 splashRadius: 24,
-                onPressed: onTap2,
+                onPressed: onTapLeft,
                 icon:  Icon(
-                  icon2,
+                  iconLeft,
                   color: AppColors.kPrimaryColor,
                   size: 24,
                 ),

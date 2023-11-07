@@ -20,6 +20,7 @@ class TextCustom extends StatelessWidget {
           style: const TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.w500,
+            color: AppColors.kBlackColor,
           ),
         ),
         Text(

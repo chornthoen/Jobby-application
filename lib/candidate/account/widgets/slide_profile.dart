@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:jobby_application/candidate/account/models/slide_model_.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_widget.dart';
 
 class SlideProfiles extends StatefulWidget {
@@ -54,14 +55,14 @@ class _SlideProfilesState extends State<SlideProfiles> {
           children: [
             for (int i = 0; i < sliderProfile.length; i++)
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 3),
-                height: 2,
-                width: 40,
+                margin: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
+                height: AppSpacing.xxs,
+                width: AppSpacing.xxxlg,
                 decoration: BoxDecoration(
                   color: currentTab == i
                       ? AppColors.kBlackColor
                       : AppColors.kColorGray300,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
               ),
           ],

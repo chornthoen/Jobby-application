@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/employer/home/models/service_package_model.dart';
 import 'package:jobby_application/employer/home/widgets/item_service_packages.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ServicePackagePage extends StatefulWidget {
@@ -20,7 +21,10 @@ class _ServicePackagePageState extends State<ServicePackagePage> {
       appBar: const CustomAppBar(title: 'Service Package'),
       backgroundColor: AppColors.kBackgroundColor,
       body: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         itemCount: servicePackageList.length,
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),

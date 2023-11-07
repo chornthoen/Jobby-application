@@ -10,6 +10,7 @@ import 'package:jobby_application/candidate/quizz/views/more_turns_page.dart';
 import 'package:jobby_application/candidate/quizz/views/see_all_program.dart';
 import 'package:jobby_application/candidate/quizz/widgets/item_quiz.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class QuizzPage extends StatefulWidget {
@@ -39,15 +40,15 @@ class _QuizzPageState extends State<QuizzPage> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 0,
-            toolbarHeight: 70,
-            leadingWidth: 60,
+            toolbarHeight: AppSpacing.xxlg * 2.1,
+            leadingWidth: AppSpacing.xxxlg + 20,
             automaticallyImplyLeading: false,
             leading: GestureDetector(
               onTap: () {
                 context.push(MainView.routePath);
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 16),
+                margin: const EdgeInsets.only(left: AppSpacing.lg),
                 child: const Image(
                   image: AssetImage('assets/images/go_home.png'),
                   width: 40,
@@ -66,7 +67,7 @@ class _QuizzPageState extends State<QuizzPage> {
                   height: 42,
                 ),
               ),
-              const SizedBox(width: 16),
+              const SizedBox(width: AppSpacing.lg),
               GestureDetector(
                 onTap: () {
                   context.push(MoreTurnsPage.routePath);
@@ -86,7 +87,7 @@ class _QuizzPageState extends State<QuizzPage> {
                           height: 26,
                           width: 26,
                         ),
-                        const SizedBox(width: 4),
+                        const SizedBox(width: AppSpacing.xs),
                         const Text(
                           '10',
                           style: TextStyle(
@@ -100,7 +101,7 @@ class _QuizzPageState extends State<QuizzPage> {
                   ],
                 ),
               ),
-              const SizedBox(width: 16),
+              const SizedBox(width: AppSpacing.lg),
             ],
           ),
           body: SingleChildScrollView(
@@ -108,7 +109,7 @@ class _QuizzPageState extends State<QuizzPage> {
             child: Column(
               children: [
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.xxxlg),
                   child: Image(
                     image: AssetImage('assets/images/quizz_logo_text.png'),
                     fit: BoxFit.cover,
@@ -138,7 +139,7 @@ class _QuizzPageState extends State<QuizzPage> {
                   color: AppColors.kWhiteColor,
                   title: 'Programming Language',
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 ListView.builder(
                   itemCount: 4,
                   shrinkWrap: true,
