@@ -67,17 +67,21 @@ import 'package:jobby_application/employer/home/views/post_detail_page.dart';
 import 'package:jobby_application/employer/home/views/service_package_page.dart';
 import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/employer/post/views/post_em_page.dart';
+import 'package:jobby_application/employer/profile/views/about_jobby_em_page.dart';
 import 'package:jobby_application/employer/profile/views/account_setting_em_page.dart';
 import 'package:jobby_application/employer/profile/views/change_acount_em_page.dart';
+import 'package:jobby_application/employer/profile/views/change_password_em_page.dart';
 import 'package:jobby_application/employer/profile/views/company_profile_page.dart';
 import 'package:jobby_application/employer/profile/views/id_identification_em_page.dart';
 import 'package:jobby_application/employer/profile/views/member_em_page.dart';
 import 'package:jobby_application/employer/profile/views/service_packages_em_page.dart';
+import 'package:jobby_application/employer/profile/views/setting_notification_em_page.dart';
 import 'package:jobby_application/employer/profile/views/share_with_your_friend_em_page.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/notification/views/setting_notification_page.dart';
 import 'package:jobby_application/onboarding/views/on_boarding_page.dart';
 import 'package:jobby_application/splash/views/splash_page.dart';
+
 class AppRouter {
   AppRouter._();
 
@@ -406,7 +410,18 @@ class AppRouter {
         path: CandidateDetailPage.routePath,
         builder: (context, state) => const CandidateDetailPage(),
       ),
-
-  ],
+      GoRoute(
+        path: AboutJobbyEmPage.routePath,
+        builder: (context, state) => const AboutJobbyEmPage(),
+      ),
+      GoRoute(
+        path: ChangePasswordEmPage.routePath,
+        builder: (context, state) => const ChangePasswordEmPage(),
+      ),
+      GoRoute(
+        path: SettingNotificationEmPage.routePath,
+        builder: (context, state) => const SettingNotificationEmPage(),
+      ),
+    ],
   );
 }

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:jobby_application/candidate/account/views/change_password_page.dart';
 import 'package:jobby_application/candidate/account/widgets/item_card.dart';
-import 'package:jobby_application/notification/views/setting_notification_page.dart';
+import 'package:jobby_application/employer/profile/views/change_password_em_page.dart';
+import 'package:jobby_application/employer/profile/views/setting_notification_em_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class AccountSettingEmPage extends StatefulWidget {
@@ -23,21 +23,21 @@ class _AccountSettingEmPageState extends State<AccountSettingEmPage> {
       backgroundColor: AppColors.kBackgroundColor,
       appBar:const CustomAppBar(title: 'Account Setting'),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: Column(
           children: [
             ItemCard(
               title: 'Notification',
               icon: 'assets/svg/notification.svg',
               onPressed: () {
-                context.push(SettingNotificationPage.routePath);
+                context.push(SettingNotificationEmPage.routePath);
               },
             ),
             ItemCard(
               title: 'Change Password',
               icon: 'assets/svg/lock.svg',
               onPressed: () {
-                context.push(ChangePasswordPage.routePath);
+                context.push(ChangePasswordEmPage.routePath);
               },
             ),
           ],

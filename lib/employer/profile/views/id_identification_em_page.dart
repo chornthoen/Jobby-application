@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/account/models/card_model.dart';
 import 'package:jobby_application/candidate/account/views/id_identification_detail_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class IDIdentificationEmPage extends StatefulWidget {
@@ -23,18 +24,21 @@ class _IDIdentificationEmPageState extends State<IDIdentificationEmPage> {
       backgroundColor: AppColors.kBackgroundColor,
       appBar: const CustomAppBar(title: 'ID Identification'),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           children: [
             Row(
               children: [
                 SvgPicture.asset(
                   'assets/svg/id.svg',
-                  width: 30,
-                  height: 30,
+                  width: AppSpacing.xxlg,
+                  height: AppSpacing.xxlg,
                   color: AppColors.kPrimaryColor,
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: AppSpacing.md),
                 const Text(
                   'Select your ID type',
                   style: TextStyle(
@@ -45,7 +49,7 @@ class _IDIdentificationEmPageState extends State<IDIdentificationEmPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.md),
             const Text(
               'Please select your ID type to continue the registration process',
               style: TextStyle(
@@ -54,7 +58,7 @@ class _IDIdentificationEmPageState extends State<IDIdentificationEmPage> {
                 color: AppColors.kColorGray600,
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.md),
             ListView.builder(
               itemCount: cardModel.length,
               shrinkWrap: true,
@@ -63,21 +67,21 @@ class _IDIdentificationEmPageState extends State<IDIdentificationEmPage> {
                 return Container(
                   decoration: BoxDecoration(
                     color: cardModel[index].color,
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(AppSpacing.sm),
                   ),
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 10,
+                    horizontal: AppSpacing.md,
+                    vertical: AppSpacing.sm,
                   ),
-                  margin: const EdgeInsets.only(top: 16),
+                  margin: const EdgeInsets.only(top: AppSpacing.lg),
                   child: Row(
                     children: [
                       Image(
                         image: AssetImage(cardModel[index].image),
-                        width: 50,
-                        height: 50,
+                        width: AppSpacing.xlg * 2,
+                        height: AppSpacing.xlg * 2,
                       ),
-                      const SizedBox(width: 10),
+                      const SizedBox(width: AppSpacing.sm),
                       Text(
                         cardModel[index].title,
                         style: const TextStyle(
@@ -94,10 +98,7 @@ class _IDIdentificationEmPageState extends State<IDIdentificationEmPage> {
                           );
                         },
                         child: Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 8,
-                          ),
+                          padding: const EdgeInsets.all(AppSpacing.sm),
                           decoration: const BoxDecoration(
                             color: AppColors.kWhiteColor,
                             shape: BoxShape.circle,
@@ -105,7 +106,7 @@ class _IDIdentificationEmPageState extends State<IDIdentificationEmPage> {
                           child: const Icon(
                             PhosphorIcons.arrow_right,
                             color: AppColors.kPrimaryColor,
-                            size: 24,
+                            size: AppSpacing.xlg,
                           ),
                         ),
                       ),

@@ -55,9 +55,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
-        CloseKeyboard.close(context);
-      },
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: CustomAppBarChat(

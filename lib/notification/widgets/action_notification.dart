@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ActionNotification extends StatefulWidget {
   const ActionNotification({
@@ -46,7 +47,7 @@ class _ActionNotificationState extends State<ActionNotification> {
         Text(
           widget.description,
           style: const TextStyle(
-            fontSize: 16,
+            fontSize: AppSpacing.lg,
             fontWeight: FontWeight.w400,
             color: AppColors.kColorGray600,
           ),

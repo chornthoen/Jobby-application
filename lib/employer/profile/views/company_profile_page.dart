@@ -7,6 +7,8 @@ import 'package:jobby_application/candidate/jobs/widgets/action_tab.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_industry.dart';
 import 'package:jobby_application/employer/profile/widgets/item_people.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
@@ -54,107 +56,103 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
     super.dispose();
   }
 
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
   String gender = '';
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(title: 'Contact Info'),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Column(
               children: [
                 const TextCustom(text: 'Company Name'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Company name',
                   controller: companyNameController,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Location'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Location',
                   controller: locationController,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Website'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Website',
                   controller: websiteController,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Industry'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Industry',
                   controller: industryController,
                   suffixIcon: PhosphorIcons.caret_down,
                   onPressed: industrySheet,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'People'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'People',
                   controller: peopleController,
                   suffixIcon: PhosphorIcons.caret_down,
                   onPressed: peopleSheet,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Company'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   maxLines: 5,
                   hintText: 'Company',
                   controller: companyController,
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.md),
                 const TextCustom(text: 'Gallery'),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.sm),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.12,
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      height: height * 0.12,
+                      width: width * 0.4,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(AppSpacing.sm),
                         image: const DecorationImage(
                           image: AssetImage('assets/images/events4.png'),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
-                    const SizedBox(width: 10,),
+                    const SizedBox(width: AppSpacing.sm),
                     GestureDetector(
                       onTap: () {},
                       child: SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.12,
-                        width: MediaQuery.of(context).size.width * 0.4,
+                        height: height * 0.12,
+                        width: width * 0.4,
                         child: DottedBorder(
-                          padding: const EdgeInsets.symmetric(vertical: 40),
                           dashPattern: const [8, 4],
                           borderType: BorderType.RRect,
-                          radius: const Radius.circular(10),
-                          child:const Center(
+                          radius: const Radius.circular(AppSpacing.sm),
+                          child: const Center(
                             child: Icon(
                               PhosphorIcons.cloud_arrow_up,
                               color: AppColors.kColorGray600,
-                              size: 30,
+                              size: AppSpacing.xxlg,
                             ),
                           ),
                         ),
@@ -162,18 +160,16 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),
         ),
         bottomNavigationBar: Container(
-          padding: EdgeInsets.only(
-            left: 16,
-            right: 16,
-            bottom: MediaQuery.of(context).viewInsets.bottom,
+          padding: const EdgeInsets.only(
+            left: AppSpacing.lg,
+            right: AppSpacing.lg,
+            bottom: AppSpacing.lg,
           ),
-          margin: const EdgeInsets.only(bottom: 15),
           child: CustomElevatedButton(
             isClick: true,
             text: 'Save',
@@ -202,13 +198,14 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
       child: const Column(
         children: [
           ActionTop(title: 'Industry'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemIndustry()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );
   }
+
   void peopleSheet() {
     ShowBottomSheetCustom.showBottomSheet(
       context: context,
@@ -225,9 +222,9 @@ class _CompanyProfilePageState extends State<CompanyProfilePage> {
       child: const Column(
         children: [
           ActionTop(title: 'Industry'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemPeople()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );

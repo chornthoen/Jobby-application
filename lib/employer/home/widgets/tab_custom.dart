@@ -10,24 +10,24 @@ class TabCustom extends StatelessWidget {
   });
 
   final String title;
-  final String? number;
+  final int? number;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 44,
-      padding: const EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.sm),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(AppSpacing.sm),
         border: Border.all(color: AppColors.kPrimaryColor),
       ),
       child: Align(
         child: Row(
           children: [
             Text(title),
-            const SizedBox(width: 5),
+            const SizedBox(width: AppSpacing.xs),
             Container(
-              padding: const EdgeInsets.all(5),
+              padding: const EdgeInsets.all(AppSpacing.xs),
               decoration: BoxDecoration(
                 color: number == ''
                     ? Colors.transparent
@@ -36,7 +36,7 @@ class TabCustom extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  number ?? '',
+                  '$number',
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,

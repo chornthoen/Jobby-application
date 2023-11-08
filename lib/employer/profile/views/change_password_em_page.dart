@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
-import 'package:jobby_application/shared/widgets/text_custom.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
+import 'package:jobby_application/shared/widgets/text_custom.dart';
 
 class ChangePasswordEmPage extends StatefulWidget {
   const ChangePasswordEmPage({super.key});
@@ -16,7 +18,6 @@ class ChangePasswordEmPage extends StatefulWidget {
 }
 
 class _ChangePasswordEmPageState extends State<ChangePasswordEmPage> {
-
   late TextEditingController oldPasswordController;
   late TextEditingController newPasswordController;
   late TextEditingController confirmPasswordController;
@@ -36,41 +37,38 @@ class _ChangePasswordEmPageState extends State<ChangePasswordEmPage> {
     confirmPasswordController.dispose();
     super.dispose();
   }
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
 
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: const CustomAppBar(title: 'Change Password'),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.lg,
+              vertical: AppSpacing.sm,
+            ),
             child: Column(
               children: [
-                const TextCustom(text: 'Old Password',star: false),
-                const SizedBox(height: 10),
+                const TextCustom(text: 'Old Password', star: false),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Old Password',
                   controller: oldPasswordController,
                 ),
-                const SizedBox(height: 20),
-                const TextCustom(text: 'New Password',star: false),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.lg),
+                const TextCustom(text: 'New Password', star: false),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'New Password',
                   controller: newPasswordController,
                 ),
-                const SizedBox(height: 20),
-                const TextCustom(text: 'Confirm Password',star: false),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppSpacing.lg),
+                const TextCustom(text: 'Confirm Password', star: false),
+                const SizedBox(height: AppSpacing.sm),
                 CustomTextFieldForms(
                   hintText: 'Confirm Password',
                   controller: confirmPasswordController,
@@ -81,11 +79,11 @@ class _ChangePasswordEmPageState extends State<ChangePasswordEmPage> {
         ),
         bottomNavigationBar: Container(
           padding: EdgeInsets.only(
-            left: 16,
-            right: 16,
+            left: AppSpacing.lg,
+            right: AppSpacing.lg,
             bottom: MediaQuery.of(context).viewInsets.bottom,
           ),
-          margin: const EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: AppSpacing.xlg),
           child: CustomElevatedButton(
             isClick: true,
             text: 'Save',
