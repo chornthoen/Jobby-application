@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/employer/post/views/post_em_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class NavigationEmployerPage extends StatefulWidget {
   const NavigationEmployerPage({
@@ -47,7 +48,7 @@ class _NavigationEmployerPageState extends State<NavigationEmployerPage> {
               border: Border(
                 top: BorderSide(
                   color: AppColors.kPrimaryColor,
-                  width: 2,
+                  width: AppSpacing.xxs,
                 ),
               ),
             ),
@@ -99,13 +100,13 @@ class _NavigationEmployerPageState extends State<NavigationEmployerPage> {
 
   Widget buildItem(String icon, String text, int index) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 6, top: 6),
+      padding: const EdgeInsets.only(bottom: AppSpacing.xs, top: AppSpacing.xs),
       child: Column(
         children: [
           SvgPicture.asset(
             icon,
-            height: 28,
-            width: 28,
+            height: AppSpacing.xlg + 2,
+            width: AppSpacing.xlg + 2,
           ),
           Text(
             text,

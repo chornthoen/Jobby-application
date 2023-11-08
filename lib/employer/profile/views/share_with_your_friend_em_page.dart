@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class ShareWithYourFriendEmPage extends StatefulWidget {
@@ -25,17 +26,17 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
       appBar: const CustomAppBar(title: 'Share With Your Friend'),
       backgroundColor: AppColors.kBackgroundColor,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
         child: Column(
           children: [
             Row(
               children: [
                 SvgPicture.asset(
                   'assets/svg/users.svg',
-                  width: 24,
-                  height: 24,
+                  width: AppSpacing.xlg,
+                  height: AppSpacing.xlg,
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: AppSpacing.sm),
                 const Text(
                   'Recommend to your friends',
                   style: TextStyle(
@@ -45,7 +46,7 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: AppSpacing.sm),
             Row(
               children: [
                 const Text(
@@ -56,25 +57,26 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                     color: AppColors.kColorGray600,
                   ),
                 ),
-                const SizedBox(width: 5),
+                const SizedBox(width: AppSpacing.xs),
                 SvgPicture.asset(
                   'assets/svg/diamond-color.svg',
-                  width: 16,
-                  height: 16,
+                  width: AppSpacing.lg,
+                  height: AppSpacing.lg,
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.xlg),
             DecoratedBox(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: AppColors.kColorGray200,),
+                borderRadius: BorderRadius.circular(AppSpacing.sm),
+                border: Border.all(color: AppColors.kColorGray200),
               ),
               child: ListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 6),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.sm,
+                ),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
                 ),
                 onTap: () {
                   setState(() {
@@ -96,7 +98,7 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                     ),
                     const Spacer(),
                     IconButton(
-                      splashRadius: 25,
+                      splashRadius: AppSpacing.xlg,
                       onPressed: () {
                         setState(() {
                           _isCopied = true;
@@ -108,7 +110,7 @@ class _ShareWithYourFriendEmPageState extends State<ShareWithYourFriendEmPage> {
                       icon: Icon(
                         _isCopied ? PhosphorIcons.checks : PhosphorIcons.copy,
                         color: AppColors.kPrimaryColor,
-                        size: 24,
+                        size: AppSpacing.xlg,
                       ),
                     ),
                   ],

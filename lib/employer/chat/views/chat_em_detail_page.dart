@@ -7,10 +7,13 @@ import 'package:jobby_application/candidate/chat/widgets/custom_text_field_chat.
 import 'package:jobby_application/candidate/chat/widgets/message_other.dart';
 import 'package:jobby_application/candidate/chat/widgets/my_message.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
+import 'package:jobby_application/shared/utils/close_keyboard.dart';
 
 class ChatEmployerDetailPage extends StatefulWidget {
   const ChatEmployerDetailPage({
-    required this.chatModel, super.key,
+    required this.chatModel,
+    super.key,
   });
 
   final ChatModel chatModel;
@@ -37,15 +40,6 @@ class _ChatEmployerDetailPageState extends State<ChatEmployerDetailPage> {
     super.dispose();
   }
 
-  //close keyboard
-  bool get isKeyboardOpen => MediaQuery.of(context).viewInsets.bottom > 0;
-
-  void closeKeyboard() {
-    if (isKeyboardOpen) {
-      FocusScope.of(context).unfocus();
-    }
-  }
-
   List<String> messages = [
     'Hello, Chorn Thoen',
     'Hello, how are you? I am fine. What about you? ',
@@ -62,7 +56,7 @@ class _ChatEmployerDetailPageState extends State<ChatEmployerDetailPage> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: closeKeyboard,
+      onTap: () => CloseKeyboard.close(context),
       child: Scaffold(
         backgroundColor: AppColors.kBackgroundColor,
         appBar: CustomAppBarChat(
@@ -75,11 +69,11 @@ class _ChatEmployerDetailPageState extends State<ChatEmployerDetailPage> {
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 20),
+                  const SizedBox(height: AppSpacing.xlg),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -94,7 +88,7 @@ class _ChatEmployerDetailPageState extends State<ChatEmployerDetailPage> {
                       );
                     },
                   ),
-                  const SizedBox(height: 5),
+                  const SizedBox(height: AppSpacing.xs),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -118,6 +112,7 @@ class _ChatEmployerDetailPageState extends State<ChatEmployerDetailPage> {
               messageController.clear();
             });
           },
+          onEmoji: () {},
           onPickImage: () {},
           onPickFile: () {},
         ),

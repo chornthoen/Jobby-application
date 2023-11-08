@@ -39,7 +39,7 @@ class _ManagerPostPageState extends State<ManagerPostPage>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
-      appBar:  const CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Manager Post',
         iconLeft: PhosphorIcons.magnifying_glass,
         //onTapLeft: () => context.push(SearchView.routePath),
@@ -59,23 +59,21 @@ class _ManagerPostPageState extends State<ManagerPostPage>
               labelColor: AppColors.kWhiteColor,
               unselectedLabelColor: AppColors.kPrimaryColor,
               labelStyle: const TextStyle(
-                fontSize: 16,
+                fontSize: AppSpacing.lg,
                 fontWeight: FontWeight.w600,
                 color: AppColors.kWhiteColor,
               ),
               unselectedLabelStyle: const TextStyle(
-                fontSize: 16,
+                fontSize: AppSpacing.lg,
                 fontWeight: FontWeight.w600,
                 color: AppColors.kPrimaryColor,
               ),
               tabs: const [
-                Tab(child: TabCustom(title: 'Job Showing', number: '2')),
-                Tab(child: TabCustom(title: 'Job Paused', number: '2')),
-                Tab(
-                  child: TabCustom(title: 'Job Pending Approval', number: '8'),
-                ),
-                Tab(child: TabCustom(title: 'Job Rejected', number: '2')),
-                Tab(child: TabCustom(title: 'Job Expired', number: '2')),
+                Tab(child: TabCustom(title: 'Job Showing', number: 2)),
+                Tab(child: TabCustom(title: 'Job Paused', number: 2)),
+                Tab(child: TabCustom(title: 'Job Pending Approval', number: 8)),
+                Tab(child: TabCustom(title: 'Job Rejected', number: 3)),
+                Tab(child: TabCustom(title: 'Job Expired', number: 4)),
               ],
             ),
           ),

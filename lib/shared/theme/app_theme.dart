@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
-import 'package:jobby_application/shared/theme/theme_helper.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
@@ -113,7 +112,7 @@ class TextThemes {
 class ColorSchemes {
   static const primaryColorScheme = ColorScheme.light(
     // Primary colors
-    primary: Color(0XFF0A113C),
+    primary: Color(0xFF080A12),
     primaryContainer: Color(0XFF434E58),
     secondary: Color(0XFF434E58),
     secondaryContainer: Color(0XE5FFFFFF),
@@ -137,7 +136,7 @@ class ColorSchemes {
     // On colors(text colors)
     onBackground: Color(0XE5FFFFFF),
     onInverseSurface: Color(0XFF0A113C),
-    onPrimary: Color(0XFF78828A),
+    onPrimary: Color(0xFF080A12),
     onPrimaryContainer: Color(0XE5FFFFFF),
     onSecondary: Color(0XE5FFFFFF),
     onSecondaryContainer: Color(0XFF1F2C37),

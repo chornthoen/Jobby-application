@@ -58,7 +58,7 @@ class _HomeEmployerPageState extends State<HomeEmployerPage> {
                 'Overview',
                 style: TextStyle(
                   fontSize: 20,
-                  color: AppColors.kPrimaryColor,
+                  //color: AppColors.kPrimaryColor,
                   fontWeight: FontWeight.w600,
                 ),
               ),

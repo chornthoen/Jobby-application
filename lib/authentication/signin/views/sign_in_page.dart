@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/forget_password/views/forget_password_page.dart';
 import 'package:jobby_application/authentication/sign_up_select/views/choose_role_sign_up.dart';
 import 'package:jobby_application/candidate/main/views/main_view.dart';
+import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/utils/CustomSocials.dart';
@@ -120,7 +121,9 @@ class _SignInPageState extends State<SignInPage> {
                   const SizedBox(height: AppSpacing.xlg),
                   CustomSocials(
                     onFacebook: () {},
-                    onGoogle: () {},
+                    onGoogle: () {
+                      context.push(MainEmployerPage.routePath);
+                    },
                     onApple: () {},
                   ),
                   const SizedBox(height: AppSpacing.lg * 2),

@@ -42,6 +42,7 @@ class _BodyInfoState extends State<BodyInfo> {
           ),
           ListView.builder(
             shrinkWrap: true,
+            padding: const EdgeInsets.only(top: AppSpacing.xs),
             physics: const BouncingScrollPhysics(),
             itemCount: listSetting.length,
             itemBuilder: (context, index) {

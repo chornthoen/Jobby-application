@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 import 'package:jobby_application/shared/widgets/text_custom.dart';
@@ -18,21 +19,24 @@ class MemberEmPage extends StatefulWidget {
 class _MemberEmPageState extends State<MemberEmPage> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.kBackgroundColor,
       appBar: const CustomAppBar(title: 'Member'),
-      body:  Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const ItemAddMember(),
             TextButton(
-              onPressed: (){},
+              onPressed: () {},
               child: const Text(
                 'Add member +',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: AppSpacing.lg,
                   fontWeight: FontWeight.w600,
                   color: AppColors.kPrimaryColor,
                 ),
@@ -42,7 +46,7 @@ class _MemberEmPageState extends State<MemberEmPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        padding: const EdgeInsets.all(AppSpacing.lg),
         child: CustomElevatedButton(
           isClick: true,
           text: 'Save',
@@ -68,12 +72,12 @@ class ItemAddMember extends StatelessWidget {
           child: Column(
             children: [
               TextCustom(text: 'Email'),
-              SizedBox(height: 10),
+              SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(hintText: 'Email'),
             ],
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: AppSpacing.sm),
         SizedBox(
           width: MediaQuery.of(context).size.width * 0.35,
           child: const Column(
@@ -85,11 +89,11 @@ class ItemAddMember extends StatelessWidget {
                   Icon(
                     PhosphorIcons.trash,
                     color: AppColors.kRedColor,
-                    size: 20,
+                    size: AppSpacing.xlg - 4,
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(hintText: 'Role'),
             ],
           ),

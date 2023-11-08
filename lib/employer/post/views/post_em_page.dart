@@ -6,12 +6,13 @@ import 'package:jobby_application/candidate/jobs/widgets/action_tab.dart';
 import 'package:jobby_application/candidate/jobs/widgets/item_industry.dart';
 import 'package:jobby_application/employer/main/views/main_em.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
-import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
+import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
+import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 import 'package:jobby_application/shared/widgets/dropdown_button_custom.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 import 'package:jobby_application/shared/widgets/text_custom.dart';
-import 'package:jobby_application/shared/widgets/custom_text_form_field.dart';
 
 class PostEmployerPage extends StatefulWidget {
   const PostEmployerPage({super.key});
@@ -23,7 +24,6 @@ class PostEmployerPage extends StatefulWidget {
 }
 
 class _PostEmployerPageState extends State<PostEmployerPage> {
-
   late TextEditingController jobTitleController;
   late TextEditingController locationController;
   late TextEditingController jobTypeController;
@@ -65,7 +65,6 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
     super.dispose();
   }
 
-
   List<String> level = [
     'Entry Level',
     'Mid Level',
@@ -83,7 +82,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
   ];
   String jobTypeValue = 'Full Time';
 
-  List<String> salary =  [
+  List<String> salary = [
     r'500$/month',
     r'600$/month',
     r'700$/month',
@@ -92,7 +91,6 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
     r'1000$/month',
     '2k/month',
     '3k/month',
-
   ];
   String salaryValue = r'500$/month';
 
@@ -108,25 +106,25 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
           child: Column(
             children: [
               const TextCustom(text: 'Job Title'),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Job Title',
                 controller: jobTitleController,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const TextCustom(text: 'Location'),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Location',
                 controller: locationController,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const TextCustom(text: 'Job Type'),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppSpacing.sm),
               DropdownButtonCustom(
                 level: jobType,
                 levelValue: jobTypeValue,
@@ -136,18 +134,18 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                   });
                 },
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const TextCustom(text: 'Industry'),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Industry',
                 suffixIcon: PhosphorIcons.caret_down,
                 controller: industryController,
                 onPressed: industrySheet,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const TextCustom(text: 'Salary'),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppSpacing.sm),
               DropdownButtonCustom(
                 level: salary,
                 levelValue: salaryValue,
@@ -157,7 +155,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                   });
                 },
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const TextCustom(text: 'Level'),
               DropdownButtonCustom(
                 level: level,
@@ -168,23 +166,23 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                   });
                 },
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const TextCustom(text: 'Description'),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 minLines: 3,
                 maxLines: 10,
                 hintText: 'Description',
                 controller: descriptionController,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               const TextCustom(text: 'Boosted Job'),
-              const SizedBox(height: 8),
+              const SizedBox(height: AppSpacing.sm),
               CustomTextFieldForms(
                 hintText: 'Boosted Job',
                 controller: boostedJobController,
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: AppSpacing.md),
               Row(
                 children: [
                   Expanded(
@@ -194,7 +192,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                           text: 'Start Date',
                           star: false,
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.md),
                         CustomTextFieldForms(
                           hintText: 'Title',
                           suffixIcon: PhosphorIcons.calendar_blank,
@@ -204,7 +202,7 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                       ],
                     ),
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: AppSpacing.md),
                   Expanded(
                     child: Column(
                       children: [
@@ -212,12 +210,11 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                           text: 'End Date',
                           star: false,
                         ),
-                        const SizedBox(height: 10),
+                        const SizedBox(height: AppSpacing.md),
                         CustomTextFieldForms(
                           hintText: 'Title',
                           suffixIcon: PhosphorIcons.calendar_blank,
-                          onPressed: () {
-                          },
+                          onPressed: () {},
                           controller: endDateController,
                         ),
                       ],
@@ -225,20 +222,20 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.xlg),
               CustomElevatedButton(
                 isClick: true,
                 text: 'Post',
-                onPressed: (){},
+                onPressed: () {},
               ),
-              const SizedBox(height: 20),
-
+              const SizedBox(height: AppSpacing.xlg),
             ],
           ),
         ),
       ),
     );
   }
+
   void industrySheet() {
     ShowBottomSheetCustom.showBottomSheet(
       context: context,
@@ -255,9 +252,9 @@ class _PostEmployerPageState extends State<PostEmployerPage> {
       child: const Column(
         children: [
           ActionTop(title: 'Industry'),
-          SizedBox(height: 10),
+          SizedBox(height: AppSpacing.sm),
           Expanded(child: ItemIndustry()),
-          SizedBox(height: 60),
+          SizedBox(height: AppSpacing.xxlg * 2),
         ],
       ),
     );

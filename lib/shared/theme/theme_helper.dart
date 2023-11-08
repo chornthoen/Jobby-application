@@ -184,12 +184,12 @@ class TextThemes {
 class ColorSchemes {
   static const primaryColorScheme = ColorScheme.light(
     // Primary colors
-    primary: Color(0XFF080A12),
-    primaryContainer: Color(0XFF434E58),
-    secondary: Color(0XFF434E58),
-    secondaryContainer: Color(0XE5FFFFFF),
-    tertiary: Color(0XFF434E58),
-    tertiaryContainer: Color(0XE5FFFFFF),
+    primary: Color(0xFF080A12),
+    primaryContainer: Color(0xFF434E58),
+    secondary: Color(0xFF434E58),
+    secondaryContainer: Color(0xE5FFFFFF),
+    tertiary: Color(0xFF434E58),
+    tertiaryContainer: Color(0xE5FFFFFF),
 
     // Background colors
     background: Color(0XFFFFFFFF),
@@ -206,14 +206,14 @@ class ColorSchemes {
     onErrorContainer: Color(0XFFB3B3B3),
 
     // On colors(text colors)
-    onBackground: Color(0XE5FFFFFF),
-    onInverseSurface: Color(0XFF0A113C),
-    onPrimary: Color(0XFF78828A),
-    onPrimaryContainer: Color(0XE5FFFFFF),
-    onSecondary: Color(0XE5FFFFFF),
-    onSecondaryContainer: Color(0XFF1F2C37),
+    onBackground: Color(0xFF080A12),
+    onInverseSurface: Color(0xFF0A113C),
+    onPrimary: Color(0xFF080A12),
+    onPrimaryContainer: Color(0xFF080A12),
+    onSecondary: Color(0xFF080A12),
+    onSecondaryContainer: Color(0xFF1F2C37),
     onTertiary: Color(0XE5FFFFFF),
-    onTertiaryContainer: Color(0XFF1F2C37),
+    onTertiaryContainer: Color(0xFF1F2C37),
 
     // Other colors
     outline: Color(0XFF78828A),

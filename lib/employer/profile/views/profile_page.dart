@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobby_application/employer/profile/widgets/body_info_em.dart';
 import 'package:jobby_application/employer/profile/widgets/profile_info_em.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class ProfileEmployerPage extends StatefulWidget {
   const ProfileEmployerPage({super.key});
@@ -15,24 +16,25 @@ class ProfileEmployerPage extends StatefulWidget {
 class _ProfileEmployerPageState extends State<ProfileEmployerPage> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
-        backgroundColor: AppColors.kBackgroundColor,
+      backgroundColor: AppColors.kBackgroundColor,
       body: Stack(
         children: [
           SingleChildScrollView(
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.42,
+                  height: height * 0.42,
                   child: Stack(
                     children: [
                       Container(
-                        height: MediaQuery.of(context).size.height * 0.28,
+                        height: height * 0.28,
                         color: AppColors.kPrimaryColor,
                       ),
                       Container(
                         alignment: Alignment.topCenter,
-                        padding: const EdgeInsets.only(top: 40),
+                        padding: const EdgeInsets.only(top: AppSpacing.xxxlg),
                         child: const Image(
                           image: AssetImage('assets/images/bg_profile.png'),
                           width: 200,
@@ -46,7 +48,7 @@ class _ProfileEmployerPageState extends State<ProfileEmployerPage> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: AppSpacing.lg),
                 const BodyInfoEmployer(),
               ],
             ),

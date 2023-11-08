@@ -106,7 +106,7 @@ class ItemServicePackage extends StatelessWidget {
                 Text(
                   '\$$price',
                   style: const TextStyle(
-                    fontSize: 24,
+                    fontSize: AppSpacing.xlg,
                     fontWeight: FontWeight.w700,
                     color: AppColors.kPrimaryColor,
                   ),

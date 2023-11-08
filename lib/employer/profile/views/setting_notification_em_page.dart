@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:jobby_application/notification/widgets/action_notification.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_app_bar.dart';
 
 class SettingNotificationEmPage extends StatefulWidget {
-  const SettingNotificationEmPage({Key? key}) : super(key: key);
+  const SettingNotificationEmPage({super.key});
 
   static const String routePath = '/setting-notification-em-page';
 
@@ -21,7 +22,6 @@ class _SettingNotificationEmPageState extends State<SettingNotificationEmPage> {
   bool isApplicationStatus = true;
   bool isNoticeFromEmployer = true;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +29,10 @@ class _SettingNotificationEmPageState extends State<SettingNotificationEmPage> {
       backgroundColor: AppColors.kBackgroundColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacing.lg,
+            vertical: AppSpacing.sm,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

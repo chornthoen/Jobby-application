@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/authentication/signin/views/sign_in_page.dart';
@@ -13,6 +12,7 @@ import 'package:jobby_application/employer/profile/views/member_em_page.dart';
 import 'package:jobby_application/employer/profile/views/service_packages_em_page.dart';
 import 'package:jobby_application/employer/profile/views/share_with_your_friend_em_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
+import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/show_bottom_sheet.dart';
 
 class BodyInfoEmployer extends StatefulWidget {
@@ -28,7 +28,7 @@ class _BodyInfoEmployerState extends State<BodyInfoEmployer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -42,6 +42,7 @@ class _BodyInfoEmployerState extends State<BodyInfoEmployer> {
           ),
           ListView.builder(
             shrinkWrap: true,
+            padding: const EdgeInsets.only(top: AppSpacing.xs),
             physics: const BouncingScrollPhysics(),
             itemCount: listSettingEmployer.length,
             itemBuilder: (context, index) {
@@ -96,7 +97,7 @@ class _BodyInfoEmployerState extends State<BodyInfoEmployer> {
       title: 'LOG OUT ACCOUNT',
       image: 'assets/images/enter.png',
       description:
-      'Are you sure you want to log out? You can always log back in.',
+          'Are you sure you want to log out? You can always log back in.',
       textButton: 'Log out',
       onPressed: () {
         setState(() {
