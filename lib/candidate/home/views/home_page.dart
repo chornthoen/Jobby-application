@@ -124,7 +124,7 @@ class _HomePageState extends State<HomePage> {
               title: 'Company for you',
             ),
             SizedBox(
-              height: height * 0.15,
+              height: height * 0.16,
               child: ListView.builder(
                 padding: const EdgeInsets.only(
                   left: AppSpacing.lg,
