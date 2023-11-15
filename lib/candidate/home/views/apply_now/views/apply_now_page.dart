@@ -72,7 +72,7 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                 Column(
                   children: [
                     Container(
-                      height: height * 0.1,
+                      height: height * 0.12,
                       margin: const EdgeInsets.only(top: AppSpacing.sm),
                       child: ListView.builder(
                         itemCount: statusList.length,

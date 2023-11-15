@@ -27,156 +27,161 @@ class QuizzPage extends StatefulWidget {
 class _QuizzPageState extends State<QuizzPage> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Image.asset(
-          'assets/images/quiz_background.png',
-          fit: BoxFit.cover,
-          width: double.infinity,
-          height: double.infinity,
-        ),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            toolbarHeight: AppSpacing.xxlg * 2.1,
-            leadingWidth: AppSpacing.xxxlg + 20,
-            automaticallyImplyLeading: false,
-            leading: GestureDetector(
-              onTap: () {
-                context.push(MainView.routePath);
-              },
-              child: Container(
-                margin: const EdgeInsets.only(left: AppSpacing.lg),
-                child: const Image(
-                  image: AssetImage('assets/images/go_home.png'),
-                  width: 40,
-                  height: 40,
-                ),
-              ),
-            ),
-            actions: [
-              GestureDetector(
-                onTap: () {
-                  context.push(LeaderBoardPage.routePath);
-                },
-                child: const Image(
-                  image: AssetImage('assets/images/rank.png'),
-                  width: 42,
-                  height: 42,
-                ),
-              ),
-              const SizedBox(width: AppSpacing.lg),
-              GestureDetector(
-                onTap: () {
-                  context.push(MoreTurnsPage.routePath);
-                },
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    const Image(
-                      image: AssetImage('assets/images/pech.png'),
-                      width: 80,
-                      height: 45,
-                    ),
-                    Row(
-                      children: [
-                        SvgPicture.asset(
-                          'assets/svg/diamond-color.svg',
-                          height: 26,
-                          width: 26,
-                        ),
-                        const SizedBox(width: AppSpacing.xs),
-                        const Text(
-                          '10',
-                          style: TextStyle(
-                            color: AppColors.kWhiteColor,
-                            fontSize: 24,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(width: AppSpacing.lg),
-            ],
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Stack(
+        children: [
+          Image.asset(
+            'assets/images/quiz_background.png',
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: double.infinity,
           ),
-          body: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: AppSpacing.xxxlg),
-                  child: Image(
-                    image: AssetImage('assets/images/quizz_logo_text.png'),
-                    fit: BoxFit.cover,
+          Scaffold(
+            backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: AppSpacing.xxlg * 2.1,
+              leadingWidth: AppSpacing.xxxlg + 20,
+              automaticallyImplyLeading: false,
+              leading: GestureDetector(
+                onTap: () {
+                  context.go(MainView.routePath);
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(left: AppSpacing.lg),
+                  child: const Image(
+                    image: AssetImage('assets/images/go_home.png'),
+                    width: 40,
+                    height: 40,
                   ),
                 ),
-                WidgetSeeAll(
-                  onPressed: () {
-                    context.push(SeeAllProgrammingPage.routePath);
+              ),
+              actions: [
+                GestureDetector(
+                  onTap: () {
+                    context.push(LeaderBoardPage.routePath);
                   },
-                  color: AppColors.kWhiteColor,
-                  title: 'In-Progress',
+                  child: const Image(
+                    image: AssetImage('assets/images/rank.png'),
+                    width: 42,
+                    height: 42,
+                  ),
                 ),
-                ItemQuizs(
-                  image: 'assets/images/winner.png',
-                  title: 'HTML Quiz',
-                  level: 'Easy',
-                  question: '10',
-                  like: '100',
-                  user: '102',
-                  percent: '10%',
-                  onPressed: () {},
-                ),
-                WidgetSeeAll(
-                  onPressed: () {
-                    context.push(SeeAllProgrammingPage.routePath);
+                const SizedBox(width: AppSpacing.lg),
+                GestureDetector(
+                  onTap: () {
+                    context.push(MoreTurnsPage.routePath);
                   },
-                  color: AppColors.kWhiteColor,
-                  title: 'Programming Language',
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      const Image(
+                        image: AssetImage('assets/images/pech.png'),
+                        width: 80,
+                        height: 45,
+                      ),
+                      Row(
+                        children: [
+                          SvgPicture.asset(
+                            'assets/svg/diamond-color.svg',
+                            height: 26,
+                            width: 26,
+                          ),
+                          const SizedBox(width: AppSpacing.xs),
+                          const Text(
+                            '10',
+                            style: TextStyle(
+                              color: AppColors.kWhiteColor,
+                              fontSize: 24,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                const SizedBox(height: AppSpacing.sm),
-                ListView.builder(
-                  itemCount: 4,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context,index){
-                    return ItemQuizs(
-                      image: quizModel[index].image,
-                      title: quizModel[index].title,
-                      level: quizModel[index].level,
-                      question: quizModel[index].question,
-                      like: quizModel[index].like,
-                      user: quizModel[index].user,
-                      percent: quizModel[index].percent,
-                      onPressed: () {
-                        ShowBottomSheetCustom.showBottomSheetDetailQuiz(
-                          context: context,
-                          quizModel: quizModel[index],
-                          onPressed: () {
-                            context.push(Question1Page.routePath);
-                          },
-                          isLike: () {
-                            setState(() {
-                              quizModel[index].isLike =
-                              !quizModel[index].isLike;
-                            });
-                          },
-                          isLikeClick: quizModel[index].isLike,
-                        );
-                      },
-                    );
-                  },
-                ),
+                const SizedBox(width: AppSpacing.lg),
               ],
             ),
+            body: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: AppSpacing.xxxlg),
+                    child: Image(
+                      image: AssetImage('assets/images/quizz_logo_text.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  WidgetSeeAll(
+                    onPressed: () {
+                      context.push(SeeAllProgrammingPage.routePath);
+                    },
+                    color: AppColors.kWhiteColor,
+                    title: 'In-Progress',
+                  ),
+                  ItemQuizs(
+                    image: 'assets/images/winner.png',
+                    title: 'HTML Quiz',
+                    level: 'Easy',
+                    question: '10',
+                    like: '100',
+                    user: '102',
+                    percent: '10%',
+                    onPressed: () {},
+                  ),
+                  WidgetSeeAll(
+                    onPressed: () {
+                      context.push(SeeAllProgrammingPage.routePath);
+                    },
+                    color: AppColors.kWhiteColor,
+                    title: 'Programming Language',
+                  ),
+                  const SizedBox(height: AppSpacing.sm),
+                  ListView.builder(
+                    itemCount: 4,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context,index){
+                      return ItemQuizs(
+                        image: quizModel[index].image,
+                        title: quizModel[index].title,
+                        level: quizModel[index].level,
+                        question: quizModel[index].question,
+                        like: quizModel[index].like,
+                        user: quizModel[index].user,
+                        percent: quizModel[index].percent,
+                        onPressed: () {
+                          ShowBottomSheetCustom.showBottomSheetDetailQuiz(
+                            context: context,
+                            quizModel: quizModel[index],
+                            onPressed: () {
+                              context.push(Question1Page.routePath);
+                            },
+                            isLike: () {
+                              setState(() {
+                                quizModel[index].isLike =
+                                !quizModel[index].isLike;
+                              });
+                            },
+                            isLikeClick: quizModel[index].isLike,
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

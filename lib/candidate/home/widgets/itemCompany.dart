@@ -29,7 +29,7 @@ class ItemCompanyForYou extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         width: width * 0.3,
-        height: height * 0.1,
+        height: height * 0.2,
         margin: EdgeInsets.only(
           right: sizeBox ?? AppSpacing.md,
           bottom: AppSpacing.md,
@@ -59,8 +59,8 @@ class ItemCompanyForYou extends StatelessWidget {
                   ),
                   child: Image(
                     image: AssetImage(image),
-                    height: 16,
-                    width: 16,
+                    height: AppSpacing.lg,
+                    width: AppSpacing.lg,
                   ),
                 ),
                 Positioned(
@@ -74,16 +74,16 @@ class ItemCompanyForYou extends StatelessWidget {
                     ),
                     child: SvgPicture.asset(
                       'assets/svg/verified.svg',
-                      height: 16,
-                      width: 16,
+                      height: AppSpacing.lg,
+                      width: AppSpacing.lg,
                     ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: AppSpacing.sm),
+            const SizedBox(height: AppSpacing.xxs),
             Text(title, style: CustomTextStyles.titleSmallSemiBoldBlack),
-            const SizedBox(height: AppSpacing.xs),
+            const SizedBox(height: AppSpacing.xxs),
             Text(
               description,
               style: CustomTextStyles.titleSmallMediumGray600,
