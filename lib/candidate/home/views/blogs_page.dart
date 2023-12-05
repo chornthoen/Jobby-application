@@ -13,6 +13,7 @@ class BlogsPage extends StatefulWidget {
 
   @override
   State<BlogsPage> createState() => _BlogsPageState();
+
 }
 
 class _BlogsPageState extends State<BlogsPage> {
