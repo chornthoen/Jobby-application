@@ -5,6 +5,7 @@ import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
+    useMaterial3: false,
     fontFamily: 'Kantumruy Pro',
     textTheme:  TextThemes.textTheme(ColorSchemes.primaryColorScheme),
     appBarTheme: const AppBarTheme(color: AppColors.kPrimaryColor),
