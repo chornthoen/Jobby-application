@@ -1,12 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:jobby_application/candidate/search/views/search_view.dart';
 import 'package:jobby_application/employer/chat/views/chat_em_page.dart';
 import 'package:jobby_application/employer/home/views/home_em_page.dart';
 import 'package:jobby_application/employer/main/widgets/navigation_em_page.dart';
 import 'package:jobby_application/employer/post/views/post_em_page.dart';
 import 'package:jobby_application/employer/profile/views/profile_page.dart';
-import 'package:jobby_application/employer/search/views/search_em_page.dart';
 
 late TabController tabController;
 class MainEmployerPage extends StatefulWidget {
@@ -36,7 +36,8 @@ class _MainEmployerPageState extends State<MainEmployerPage>
         physics: const NeverScrollableScrollPhysics(),
         children:  [
           const HomeEmployerPage(),
-          const SearchEmployerPage(),
+          const SearchView(),
+          // const SearchEmployerPage(),
           GestureDetector(
             onTap: () {
               context.push(PostEmployerPage.routePath );
