@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/onboarding/views/on_boarding_page.dart';
-
 import 'package:jobby_application/shared/colors/app_color.dart';
 
 class SplashPage extends StatefulWidget {
@@ -16,12 +15,9 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Future.delayed(
-      const Duration(seconds: 2),
-      () {
-        context.go(OnBoardingPage.routePath);
-      },
-    );
+    Future.delayed(const Duration(seconds: 2), () {
+      context.go(OnBoardingPage.routePath);
+    });
     super.initState();
   }
 
@@ -30,11 +26,12 @@ class _SplashPageState extends State<SplashPage> {
     return const Scaffold(
       backgroundColor: AppColors.kPrimaryColor,
       body: Center(
-          child: Image(
-        image: AssetImage('assets/images/jobby_logo.png'),
-        height: 100,
-        width: 120,
-      ),),
+        child: Image(
+          image: AssetImage('assets/images/jobby_logo.png'),
+          height: 100,
+          width: 120,
+        ),
+      ),
     );
   }
 }
