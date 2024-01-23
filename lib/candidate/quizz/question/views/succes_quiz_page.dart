@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
-import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
 import 'package:jobby_application/shared/widgets/custom_elevated_button.dart';
 
 class SuccessQuizPage extends StatefulWidget {
   const SuccessQuizPage({
-    required this.questionModel, super.key,
+    required this.questionModel,
+    super.key,
   });
 
   final List<QuestionModel> questionModel;
@@ -26,7 +26,9 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
     currentIndex++;
     super.initState();
   }
+
   int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,14 +97,13 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                   itemBuilder: (context, index) {
                     return itemAnswer(
                       title: widget.questionModel[index].question,
-                      answer: widget.questionModel[index].
-                      answersList[index].answerText,
-                      isTrue: widget.questionModel[index].
-                      answersList[index].isCorrect,
+                      answer: widget
+                          .questionModel[index].answersList[index].answerText,
+                      isTrue: widget
+                          .questionModel[index].answersList[index].isCorrect,
                     );
                   },
                 ),
-
               ],
             ),
           ),
@@ -114,7 +115,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
           isClick: true,
           text: 'Go to home',
           onPressed: () {
-            context.go(QuizzPage.routePath);
+            context.pop();
           },
         ),
       ),
@@ -157,7 +158,6 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
           ),
         ),
         const SizedBox(height: 8),
-
         const SizedBox(height: 5),
         Text(
           answer,
