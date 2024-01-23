@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobby_application/candidate/account/views/account_page.dart';
 import 'package:jobby_application/candidate/chat/views/chat_page.dart';
 import 'package:jobby_application/candidate/home/views/home_page.dart';
 import 'package:jobby_application/candidate/jobs/views/job_page.dart';
+import 'package:jobby_application/candidate/main/bloc/navigation_cubit.dart';
 import 'package:jobby_application/candidate/main/widgets/navigation_page.dart';
 import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
-
-late TabController tabController;
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -32,33 +31,31 @@ class _BodyMainView extends StatefulWidget {
   State<_BodyMainView> createState() => _BodyMainViewState();
 }
 
-class _BodyMainViewState extends State<_BodyMainView>
-    with SingleTickerProviderStateMixin {
-  @override
-  void initState() {
-    super.initState();
-    tabController = TabController(length: 5, vsync: this);
-  }
-
+class _BodyMainViewState extends State<_BodyMainView> {
   @override
   Widget build(BuildContext context) {
+    final selectedTab = context.select(
+      (NavigationCubit cubit) => cubit.state.indexTab,
+    );
     return Scaffold(
-      body: TabBarView(
-        controller: tabController,
-        physics: const NeverScrollableScrollPhysics(),
-        children: [
-          const HomePage(),
-          const JobPage(),
-          const ChatPage(),
-          GestureDetector(
-            onTap: () {
-              context.go(QuizzPage.routePath);
-            },
-          ),
-          const AccountPage(),
+      body: IndexedStack(
+        index: selectedTab,
+        children: const [
+          HomePage(),
+          JobPage(),
+          ChatPage(),
+          QuizzPage(),
+          AccountPage(),
         ],
       ),
-      bottomNavigationBar: NavigationPage(tabController: tabController),
+      bottomNavigationBar: NavigationPage(
+        currentIndex: selectedTab,
+        onTap: (index) {
+          setState(() {
+            context.read<NavigationCubit>().changeIndexTab(index);
+          });
+        },
+      ),
     );
   }
 }

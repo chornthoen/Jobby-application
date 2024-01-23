@@ -3,7 +3,6 @@ import 'package:flutter_phosphor_icons/flutter_phosphor_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
-import 'package:jobby_application/candidate/quizz/views/quizz_page.dart';
 import 'package:jobby_application/candidate/quizz/widgets/widget_question.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
@@ -421,7 +420,10 @@ class _Question1PageState extends State<Question1Page> {
               isClick: true,
               text: 'Go to home',
               onPressed: () {
-                context.go(QuizzPage.routePath);
+                // context.go(MainView.routePath);
+                context
+                  ..pop()
+                  ..pop();
               },
             ),
           ),

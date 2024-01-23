@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/models/company_for_you_model.dart';
 import 'package:jobby_application/candidate/home/models/explore_models.dart';
@@ -21,7 +22,7 @@ import 'package:jobby_application/candidate/home/widgets/item_hot_jobs.dart';
 import 'package:jobby_application/candidate/home/widgets/item_trending.dart';
 import 'package:jobby_application/candidate/home/widgets/widget_see_all.dart';
 import 'package:jobby_application/candidate/home/widgets/widget_slider.dart';
-import 'package:jobby_application/candidate/main/views/main_view.dart';
+import 'package:jobby_application/candidate/main/bloc/navigation_cubit.dart';
 import 'package:jobby_application/candidate/search/views/search_view.dart';
 import 'package:jobby_application/notification/views/notification_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
@@ -59,7 +60,11 @@ class _HomePageState extends State<HomePage> {
         imageProfile: 'assets/images/rose.png',
         onNotification: () => context.push(NotificationPage.routePath),
         onSearch: () => context.push(SearchView.routePath),
-        onProfile: () => tabController.animateTo(4),
+        onProfile: () {
+          setState(() {
+            BlocProvider.of<NavigationCubit>(context).changeIndexTab(4);
+          });
+        },
       ),
       body: SingleChildScrollView(
         child: Column(
