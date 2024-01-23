@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/home/widgets/widget_see_all.dart';
-import 'package:jobby_application/candidate/main/bloc/navigation_cubit.dart';
 import 'package:jobby_application/candidate/quizz/models/quiz_model.dart';
 import 'package:jobby_application/candidate/quizz/question/views/question_1.dart';
 import 'package:jobby_application/candidate/quizz/views/leaderboard_page.dart';
@@ -46,7 +44,7 @@ class _QuizzPageState extends State<QuizzPage> {
             automaticallyImplyLeading: false,
             leading: GestureDetector(
               onTap: () {
-                context.read<NavigationCubit>().changeIndexTab(0);
+                context.pop();
               },
               child: Container(
                 margin: const EdgeInsets.only(left: AppSpacing.lg),

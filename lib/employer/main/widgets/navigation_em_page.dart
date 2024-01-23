@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:jobby_application/employer/post/views/post_em_page.dart';
 import 'package:jobby_application/shared/colors/app_color.dart';
 import 'package:jobby_application/shared/spacing/app_spacing.dart';
 
 class NavigationEmployerPage extends StatefulWidget {
   const NavigationEmployerPage({
-    required this.tabController, super.key,
+    required this.currentIndex,
+    required this.onTap,
+    super.key,
   });
 
-  final TabController tabController;
+  final int currentIndex;
+  final ValueSetter<int> onTap;
 
   @override
   State<NavigationEmployerPage> createState() => _NavigationEmployerPageState();
@@ -22,100 +23,100 @@ class _NavigationEmployerPageState extends State<NavigationEmployerPage> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      shape: const CircularNotchedRectangle(),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          TabBar(
-            onTap: (index) {
-              setState(() {
-                tabController = index;
-                if (tabController == 0) {
-                  widget.tabController.animateTo(0);
-                } else if (tabController == 1) {
-                  widget.tabController.animateTo(1);
-                } else if (tabController == 2) {
-                  context.push(PostEmployerPage.routePath);
-                } else if (tabController == 3) {
-                  widget.tabController.animateTo(3);
-                } else if (tabController == 4) {
-                  widget.tabController.animateTo(4);
-                }
-              });
-            },
-            indicatorSize: TabBarIndicatorSize.label,
-            indicator: const BoxDecoration(
-              border: Border(
-                top: BorderSide(
-                  color: AppColors.kPrimaryColor,
-                  width: AppSpacing.xxs,
-                ),
-              ),
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.07,
+        child: Row(
+          children: [
+            buildItem(
+              icon: widget.currentIndex == 0
+                  ? 'assets/svg/home-active.svg'
+                  : 'assets/svg/home.svg',
+              text: 'Home',
+              index: 0,
+              onTap: () => widget.onTap(0),
             ),
-            labelColor: AppColors.kPrimaryColor,
-            controller: widget.tabController,
-            unselectedLabelColor: AppColors.kColorGray500,
-            tabs: [
-              buildItem(
-                tabController == 0
-                    ? 'assets/svg/home-active.svg'
-                    : 'assets/svg/home.svg',
-                'Home',
-                0,
-              ),
-              buildItem(
-                tabController == 1
-                    ? 'assets/svg/search-active.svg'
-                    : 'assets/svg/user-search.svg',
-                'Search',
-                0,
-              ),
-              buildItem(
-                tabController == 2
-                    ? 'assets/svg/add-circle.svg'
-                    : 'assets/svg/add-circle.svg',
-                'Post',
-                0,
-              ),
-              buildItem(
-                tabController == 3
-                    ? 'assets/svg/message-active.svg'
-                    : 'assets/svg/message.svg',
-                'Chat',
-                0,
-              ),
-              buildItem(
-                tabController == 4
-                    ? 'assets/svg/user-active.svg'
-                    : 'assets/svg/user.svg',
-                'Profile',
-                0,
-              ),
-            ],
-          ),
-        ],
+            buildItem(
+              icon: widget.currentIndex == 1
+                  ? 'assets/svg/search-active.svg'
+                  : 'assets/svg/user-search.svg',
+              text: 'Search',
+              index: 1,
+              onTap: () => widget.onTap(1),
+            ),
+            buildItem(
+              icon: widget.currentIndex == 2
+                  ? 'assets/svg/add-circle.svg'
+                  : 'assets/svg/add-circle.svg',
+              text: 'Post',
+              index: 2,
+              onTap: () => widget.onTap(2),
+            ),
+            buildItem(
+              icon: widget.currentIndex == 3
+                  ? 'assets/svg/message-active.svg'
+                  : 'assets/svg/message.svg',
+              text: 'Chat',
+              index: 3,
+              onTap: () => widget.onTap(3),
+            ),
+            buildItem(
+              icon: widget.currentIndex == 4
+                  ? 'assets/svg/user-active.svg'
+                  : 'assets/svg/user.svg',
+              text: 'Profile',
+              index: 4,
+              onTap: () => widget.onTap(4),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget buildItem(String icon, String text, int index) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: AppSpacing.xs, top: AppSpacing.xs),
-      child: Column(
-        children: [
-          SvgPicture.asset(
-            icon,
-            height: AppSpacing.xlg + 2,
-            width: AppSpacing.xlg + 2,
+  Widget buildItem({
+    required String icon,
+    required String text,
+    required int index,
+    required VoidCallback onTap,
+  }) {
+    return Expanded(
+      child: InkWell(
+        onTap: onTap,
+        child: Ink(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                height: AppSpacing.xxs,
+                width: AppSpacing.xlg * 2,
+                alignment: Alignment.topCenter,
+                decoration: BoxDecoration(
+                  color: index == widget.currentIndex
+                      ? AppColors.kPrimaryColor
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(AppSpacing.sm),
+                ),
+              ),
+              const SizedBox(height: AppSpacing.sm),
+              SvgPicture.asset(
+                icon,
+                height: AppSpacing.xlg + 2,
+                width: AppSpacing.xlg + 2,
+              ),
+              Text(
+                text,
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  color: index == widget.currentIndex
+                      ? AppColors.kPrimaryColor
+                      : AppColors.kColorGray600,
+                ),
+              ),
+              const SizedBox(height: AppSpacing.xs),
+            ],
           ),
-          Text(
-            text,
-            style: const TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

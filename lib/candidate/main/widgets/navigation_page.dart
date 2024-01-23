@@ -22,7 +22,7 @@ class _NavigationPageState extends State<NavigationPage> {
   Widget build(BuildContext context) {
     return BottomAppBar(
       child: SizedBox(
-        height: MediaQuery.of(context).size.height * 0.08,
+        height: MediaQuery.of(context).size.height * 0.07,
         child: Row(
           children: [
             buildItem(
@@ -86,7 +86,7 @@ class _NavigationPageState extends State<NavigationPage> {
             children: [
               Container(
                 height: AppSpacing.xxs,
-                width: AppSpacing.xlg + 2,
+                width: AppSpacing.xlg * 2,
                 alignment: Alignment.topCenter,
                 decoration: BoxDecoration(
                   color: index == widget.currentIndex

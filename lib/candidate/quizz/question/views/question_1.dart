@@ -173,7 +173,7 @@ class _Question1PageState extends State<Question1Page> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: const EdgeInsets.all(AppSpacing.lg),
+        padding: const EdgeInsets.all(AppSpacing.xlg),
         child: CustomElevatedButton(
           isClick: selectedAnswerModel != null,
           text: currentQuestion < questionsList.length - 1 ? 'Next' : 'Submit',
@@ -414,7 +414,7 @@ class _Question1PageState extends State<Question1Page> {
             margin: const EdgeInsets.only(
               left: AppSpacing.lg,
               right: AppSpacing.lg,
-              bottom: AppSpacing.lg,
+              bottom: AppSpacing.xlg,
             ),
             child: CustomElevatedButton(
               isClick: true,

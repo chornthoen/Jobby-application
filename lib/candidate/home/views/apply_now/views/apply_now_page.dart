@@ -173,10 +173,10 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
         ],
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           left: AppSpacing.lg,
           right: AppSpacing.lg,
-          bottom: MediaQuery.of(context).viewInsets.bottom,
+          bottom: AppSpacing.md,
         ),
         margin: const EdgeInsets.only(bottom: AppSpacing.md),
         child: CustomElevatedButton(
