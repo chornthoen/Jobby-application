@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:jobby_application/candidate/account/views/account_page.dart';
 import 'package:jobby_application/candidate/chat/views/chat_page.dart';
 import 'package:jobby_application/candidate/home/views/home_page.dart';
@@ -52,7 +53,18 @@ class _BodyMainViewState extends State<_BodyMainView> {
         currentIndex: selectedTab,
         onTap: (index) {
           setState(() {
-            context.read<NavigationCubit>().changeIndexTab(index);
+            if (index == 0) {
+              context.read<NavigationCubit>().changeIndexTab(0);
+            } else if (index == 1) {
+              context.read<NavigationCubit>().changeIndexTab(1);
+            } else if (index == 2) {
+              context.read<NavigationCubit>().changeIndexTab(2);
+            } else if (index == 3) {
+              context.read<NavigationCubit>().changeIndexTab(0);
+              context.push(QuizzPage.routePath);
+            } else if (index == 4) {
+              context.read<NavigationCubit>().changeIndexTab(4);
+            }
           });
         },
       ),

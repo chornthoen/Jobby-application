@@ -77,6 +77,7 @@ class _JobPageState extends State<JobPage> with SingleTickerProviderStateMixin {
             height: AppSpacing.xxxlg,
             child: TabBar(
               controller: tabController,
+              isScrollable: true,
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
               physics: const BouncingScrollPhysics(),
               indicator: BoxDecoration(

@@ -80,7 +80,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: AppSpacing.sm),
                 const Text(
                   'Your answer',
                   style: TextStyle(
@@ -89,7 +89,7 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
                     color: AppColors.kBlackColor,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: AppSpacing.sm),
                 ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -110,7 +110,11 @@ class _SuccessQuizPageState extends State<SuccessQuizPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+        margin: const EdgeInsets.only(
+          left: AppSpacing.lg,
+          right: AppSpacing.lg,
+          bottom: AppSpacing.lg,
+        ),
         child: CustomElevatedButton(
           isClick: true,
           text: 'Go to home',
