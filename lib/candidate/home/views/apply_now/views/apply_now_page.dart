@@ -134,6 +134,7 @@ class _ApplyNowPageState extends State<ApplyNowPage> {
                           ListView.builder(
                             itemCount: 4,
                             shrinkWrap: true,
+                            padding: const EdgeInsets.only(top: AppSpacing.md),
                             physics: const BouncingScrollPhysics(),
                             itemBuilder: (context, index) {
                               final model = matchingModel[index];

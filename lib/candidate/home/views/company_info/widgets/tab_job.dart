@@ -25,6 +25,7 @@ class _TabJobsState extends State<TabJobs> {
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
+          padding: const EdgeInsets.only(top: AppSpacing.md),
           itemCount: hotJobModel.length,
           itemBuilder: (context, index) {
             return ItemHotJobs(
