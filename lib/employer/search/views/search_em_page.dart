@@ -61,19 +61,15 @@ class _SearchEmployerPageState extends State<SearchEmployerPage> {
             hintText: 'Search',
           ),
         ),
-        body: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Container(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.lg,
-              vertical: AppSpacing.sm,
-            ),
-            child: Column(
-              children: [
-                ButtonClear(onPressed: removeAllListSearch),
-                ListView.builder(
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.lg),
+          child: Column(
+            children: [
+              ButtonClear(onPressed: removeAllListSearch),
+              Expanded(
+                child: ListView.builder(
                   shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   padding: EdgeInsets.zero,
                   itemCount: listSearch.length,
                   itemBuilder: (context, index) {
@@ -88,8 +84,8 @@ class _SearchEmployerPageState extends State<SearchEmployerPage> {
                     );
                   },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

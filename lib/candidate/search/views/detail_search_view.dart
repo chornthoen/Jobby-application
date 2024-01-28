@@ -69,7 +69,6 @@ class _DetailSearchViewState extends State<DetailSearchView>
               size: AppSpacing.xlg,
             ),
             controller: _searchController,
-            keyboardType: TextInputType.emailAddress,
             hintText: 'Search',
           ),
         ),
@@ -95,11 +94,11 @@ class _DetailSearchViewState extends State<DetailSearchView>
               ),
               unselectedLabelColor: AppColors.kPrimaryColor,
               labelStyle: const TextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w700,
               ),
               unselectedLabelStyle: const TextStyle(
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w700,
               ),
               tabs: const [
