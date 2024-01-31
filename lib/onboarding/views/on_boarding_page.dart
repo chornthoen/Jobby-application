@@ -49,12 +49,14 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             top: AppSpacing.sm,
           ),
           child: TextButton(
-            onPressed: () {
-              pageController.previousPage(
-                duration: const Duration(milliseconds: 500),
-                curve: Curves.easeIn,
-              );
-            },
+            onPressed: currentIndex == 0
+                ? null
+                : () {
+                    pageController.previousPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeIn,
+                    );
+                  },
             child: Text(
               currentIndex == 0 ? '' : 'Prev',
               style: CustomTextStyles.buttonMediumBlack,
