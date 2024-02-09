@@ -57,7 +57,7 @@ class _ChangeAccountPageState extends State<ChangeAccountPage> {
           isClick: true,
           text: 'Change Account',
           onPressed: () {
-            context.go(ChangeAccountPage.routePath);
+            context.pop();
           },
         ),
       ),
