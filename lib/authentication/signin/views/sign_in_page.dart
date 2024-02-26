@@ -103,7 +103,7 @@ class _SignInPageState extends State<SignInPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       CustomTextButton(
-                        text: 'Forgot password?',
+                        text: 'Forgot_password?',
                         onPressed: () {
                           context.push(ForgetPasswordPage.routePath);
                         },
