@@ -1,4 +1,5 @@
 # Jobby Application
+![job](https://github.com/user-attachments/assets/f0dc3e92-2ae7-4eff-8b64-f32d62938f4d)
 
 ![coverage][coverage_badge]
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
